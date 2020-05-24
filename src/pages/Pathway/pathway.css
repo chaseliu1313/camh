@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.arrow_d {
+  font-size: 3vmin !important;
+  margin: 3px 0 3px 0;
+}
 .arrow_severe {
   display: flex;
   flex-direction: row !important;

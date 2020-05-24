@@ -7,7 +7,9 @@ import StepCard, {
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import Arrow from '../../resource/arrowdown.svg';
-import { colorPalette } from '../../theme/resource';
+import { colorPalette, PrimaryColor } from '../../theme/resource';
+import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function MildPathway() {
   const [responses, setRes] = useState([false, false, false, false]);
@@ -58,7 +60,11 @@ export default function MildPathway() {
       </Row>
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }} className="arrow">
-          <Img src={Arrow} alt="step arrow" />
+          <FontAwesomeIcon
+            icon={faArrowAltCircleDown}
+            className="arrow_d"
+            color={PrimaryColor}
+          />
           <SubText>Check Response after 2 weeks</SubText>
         </CenterCol>
       </Row>
@@ -132,7 +138,11 @@ export default function MildPathway() {
       <Row className="p_row">
         {responses[0] ? (
           <CenterCol md={{ span: 8, offset: 2 }} className="arrow">
-            <Img src={Arrow} alt="step arrow" />
+            <FontAwesomeIcon
+              icon={faArrowAltCircleDown}
+              className="arrow_d"
+              color={PrimaryColor}
+            />
             <SubText>Check Response after 2-3 months.</SubText>
           </CenterCol>
         ) : null}
@@ -218,9 +228,4 @@ const Container = styled.div`
 const CenterCol = styled(Col)`
   display: flex;
   flex-direction: column;
-`;
-
-const Img = styled.img`
-  height: auto;
-  width: 5vmin;
 `;

@@ -7,8 +7,11 @@ import StepCard, {
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import Arrow from '../../resource/arrowdown.svg';
-import { colorPalette } from '../../theme/resource';
+import { colorPalette, PrimaryColor } from '../../theme/resource';
 import './pathway.css';
+
+import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function SeverePathway() {
   const initialValue = [null, null, null, null, null, null, null];
@@ -145,7 +148,11 @@ export default function SeverePathway() {
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[0] === null ? null : (
             <Fragment>
-              <Img src={Arrow} alt="step arrow" />
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                className="arrow_d"
+                color={PrimaryColor}
+              />
               <StepCard background={colorPalette(2)} height="4vh">
                 <Heading
                   type="h1"
@@ -240,7 +247,11 @@ export default function SeverePathway() {
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[1] !== null || medStreamRes[1] !== null ? (
             <>
-              <Img src={Arrow} alt="step arrow" />
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                className="arrow_d"
+                color={PrimaryColor}
+              />
               <StepCard background={colorPalette(2)} height="4vh">
                 <Heading
                   type="h1"
@@ -310,7 +321,11 @@ export default function SeverePathway() {
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[2] !== null && responses[2] === false ? (
             <>
-              <Img src={Arrow} alt="step arrow" />
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                className="arrow_d"
+                color={PrimaryColor}
+              />
               <StepCard background={colorPalette(2)} height="4vh">
                 <Heading
                   type="h1"
@@ -326,7 +341,11 @@ export default function SeverePathway() {
             </>
           ) : responses[2] !== null && responses[2] === true ? (
             <>
-              <Img src={Arrow} alt="step arrow" />
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                className="arrow_d"
+                color={PrimaryColor}
+              />
               <StepCard background={colorPalette(2)} height="4vh">
                 <Heading
                   type="h1"
@@ -348,7 +367,11 @@ export default function SeverePathway() {
         <CenterCol md={{ span: 8, offset: 2 }}>
           {medStreamRes[2] !== null && medStreamRes[2] === true ? (
             <>
-              <Img src={Arrow} alt="step arrow" />
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                className="arrow_d"
+                color={PrimaryColor}
+              />
               <StepCard background={colorPalette(2)} height="4vh">
                 <Heading
                   type="h1"
@@ -366,7 +389,11 @@ export default function SeverePathway() {
             medStreamRes[2] === false &&
             medStreamRes[1] === false ? (
             <>
-              <Img src={Arrow} alt="step arrow" />
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                className="arrow_d"
+                color={PrimaryColor}
+              />
               <StepCard background={colorPalette(2)} height="4vh">
                 <Heading
                   type="h1"
@@ -431,9 +458,4 @@ const CenterCol = styled(Col)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-
-const Img = styled.img`
-  height: auto;
-  width: 5vmin;
 `;
