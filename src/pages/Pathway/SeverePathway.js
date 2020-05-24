@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
 import StepCard, {
   StepOptionCard,
@@ -144,22 +144,25 @@ export default function SeverePathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[0] === null ? null : (
-            <StepCard background={colorPalette(2)} height="4vh">
-              <Heading
-                type="h1"
-                weight="normal"
-                size="3vmin"
-                color="white"
-                align="center"
-                lineHeight="4vh"
-              >
-                {responses[0] === false
-                  ? 'Psychotherapy'
-                  : responses[0] === true
-                  ? 'Fluoxetine + Psychotherapy'
-                  : null}
-              </Heading>
-            </StepCard>
+            <Fragment>
+              <Img src={Arrow} alt="step arrow" />
+              <StepCard background={colorPalette(2)} height="4vh">
+                <Heading
+                  type="h1"
+                  weight="normal"
+                  size="3vmin"
+                  color="white"
+                  align="center"
+                  lineHeight="4vh"
+                >
+                  {responses[0] === false
+                    ? 'Psychotherapy'
+                    : responses[0] === true
+                    ? 'Fluoxetine + Psychotherapy'
+                    : null}
+                </Heading>
+              </StepCard>
+            </Fragment>
           )}
         </CenterCol>
       </Row>
@@ -236,22 +239,25 @@ export default function SeverePathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[1] !== null || medStreamRes[1] !== null ? (
-            <StepCard background={colorPalette(2)} height="4vh">
-              <Heading
-                type="h1"
-                weight="normal"
-                size="3vmin"
-                color="white"
-                align="center"
-                lineHeight="4vh"
-              >
-                {responses[1] === false || medStreamRes[1] === false
-                  ? 'Team Review'
-                  : responses[1] === true || medStreamRes[1] === true
-                  ? '3 Month Monitoring'
-                  : null}
-              </Heading>
-            </StepCard>
+            <>
+              <Img src={Arrow} alt="step arrow" />
+              <StepCard background={colorPalette(2)} height="4vh">
+                <Heading
+                  type="h1"
+                  weight="normal"
+                  size="3vmin"
+                  color="white"
+                  align="center"
+                  lineHeight="4vh"
+                >
+                  {responses[1] === false || medStreamRes[1] === false
+                    ? 'Team Review'
+                    : responses[1] === true || medStreamRes[1] === true
+                    ? '3 Month Monitoring'
+                    : null}
+                </Heading>
+              </StepCard>
+            </>
           ) : null}
         </CenterCol>
       </Row>
@@ -303,31 +309,37 @@ export default function SeverePathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[2] !== null && responses[2] === false ? (
-            <StepCard background={colorPalette(2)} height="4vh">
-              <Heading
-                type="h1"
-                weight="normal"
-                size="3vmin"
-                color="white"
-                align="center"
-                lineHeight="4vh"
-              >
-                Team Review to consider medication
-              </Heading>
-            </StepCard>
+            <>
+              <Img src={Arrow} alt="step arrow" />
+              <StepCard background={colorPalette(2)} height="4vh">
+                <Heading
+                  type="h1"
+                  weight="normal"
+                  size="3vmin"
+                  color="white"
+                  align="center"
+                  lineHeight="4vh"
+                >
+                  Team Review to consider medication
+                </Heading>
+              </StepCard>
+            </>
           ) : responses[2] !== null && responses[2] === true ? (
-            <StepCard background={colorPalette(2)} height="4vh">
-              <Heading
-                type="h1"
-                weight="normal"
-                size="3vmin"
-                color="white"
-                align="center"
-                lineHeight="4vh"
-              >
-                Reduce Frequency and Intensity of Visits
-              </Heading>
-            </StepCard>
+            <>
+              <Img src={Arrow} alt="step arrow" />
+              <StepCard background={colorPalette(2)} height="4vh">
+                <Heading
+                  type="h1"
+                  weight="normal"
+                  size="3vmin"
+                  color="white"
+                  align="center"
+                  lineHeight="4vh"
+                >
+                  Reduce Frequency and Intensity of Visits
+                </Heading>
+              </StepCard>
+            </>
           ) : null}
         </CenterCol>
       </Row>
@@ -335,33 +347,39 @@ export default function SeverePathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {medStreamRes[2] !== null && medStreamRes[2] === true ? (
-            <StepCard background={colorPalette(2)} height="4vh">
-              <Heading
-                type="h1"
-                weight="normal"
-                size="3vmin"
-                color="white"
-                align="center"
-                lineHeight="4vh"
-              >
-                Continue for 6 Months with Relapse Prevention Plans
-              </Heading>
-            </StepCard>
+            <>
+              <Img src={Arrow} alt="step arrow" />
+              <StepCard background={colorPalette(2)} height="4vh">
+                <Heading
+                  type="h1"
+                  weight="normal"
+                  size="3vmin"
+                  color="white"
+                  align="center"
+                  lineHeight="4vh"
+                >
+                  Continue for 6 Months with Relapse Prevention Plans
+                </Heading>
+              </StepCard>
+            </>
           ) : medStreamRes[2] !== null &&
             medStreamRes[2] === false &&
             medStreamRes[1] === false ? (
-            <StepCard background={colorPalette(2)} height="4vh">
-              <Heading
-                type="h1"
-                weight="normal"
-                size="3vmin"
-                color="white"
-                align="center"
-                lineHeight="4vh"
-              >
-                Consider adjust dose.[tbd]
-              </Heading>
-            </StepCard>
+            <>
+              <Img src={Arrow} alt="step arrow" />
+              <StepCard background={colorPalette(2)} height="4vh">
+                <Heading
+                  type="h1"
+                  weight="normal"
+                  size="3vmin"
+                  color="white"
+                  align="center"
+                  lineHeight="4vh"
+                >
+                  Consider adjust dose.[tbd]
+                </Heading>
+              </StepCard>
+            </>
           ) : null}
         </CenterCol>
       </Row>
@@ -411,6 +429,8 @@ const Container = styled.div`
 const CenterCol = styled(Col)`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Img = styled.img`
