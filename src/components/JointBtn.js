@@ -25,8 +25,6 @@ export function JointBtn({
   setActive,
   active,
 }) {
-  let value = useContext(JointBtnContext);
-
   const handleClick = () => {
     onClick();
     if (index === 0) {
@@ -106,7 +104,6 @@ const btn1AniReverse = keyframes`
 const btnAni = (index, active) => {
   if (index == 0) {
     if (active[0]) {
-      console.log('triggered1');
       return css`
         ${btn1Ani} 0.3s linear forwards;
       `;
@@ -142,7 +139,7 @@ export const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid ${PrimaryColor};
   border-radius: ${(props) => (props.primary ? '0 3px 3px 0' : '3px 0 0 3px')};
-  width: 35vmin;
+  width: 50%;
   margin-left: 0;
   margin-right: 0;
   cursor: pointer;
@@ -164,8 +161,12 @@ export const Button = styled.button`
 `;
 
 const BtnContainer = styled.div`
-  width: 100%;
+  width: 60%;
   height: auto;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;

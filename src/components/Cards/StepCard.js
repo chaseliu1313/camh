@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Correct_G,
   Error_R,
   Correct_G_Hover,
   Error_R_Hover,
 } from '../../theme/resource';
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export default function StepCard({
   height,
@@ -17,6 +17,15 @@ export default function StepCard({
   radius,
   shadow,
 }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+
+    return () => {
+      setMounted(false);
+    };
+  }, []);
+
   return (
     <CardContainer
       height={height}
@@ -26,6 +35,7 @@ export default function StepCard({
       padding={padding}
       radius={radius}
       shadow={shadow}
+      mounted={mounted}
     >
       {children}
     </CardContainer>
@@ -33,27 +43,58 @@ export default function StepCard({
 }
 
 export function StepOptionCard({ height, width, margin, padding, children }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+
+    return () => {
+      setMounted(false);
+    };
+  }, []);
+
   return (
-    <Container height={height} width={width} margin={margin} padding={padding}>
+    <Container
+      height={height}
+      width={width}
+      margin={margin}
+      padding={padding}
+      mounted={mounted}
+    >
       {children}
     </Container>
   );
 }
 
-export function StepOptionButton({ label, color, onClick }) {
+export function StepOptionButton({ label, color, onClick, unSelect }) {
   return (
-    <Button color={color} onClick={onClick}>
+    <Button color={color} onClick={onClick} unSelect={unSelect}>
       {label}
     </Button>
   );
 }
 
+const enterAni = keyframes`
+0% {
+  opacity: 0;
+
+}
+ 
+50% {
+  opacity: 0.7;
+ 
+}
+100% {
+  opacity: 1;
+
+}`;
+
 const CardContainer = styled.div`
-  align-text: center;
+  text-align: center;
   ${({ height, width, margin, padding, background, radius, shadow }) => `
      background-color: ${background || 'green'};
      height: ${height || '13vh'};
-     width: ${width || '20vw'};
+     width: ${width || '80%'};
      margin: ${margin || 'auto'};
      padding: ${padding || '0'};
      border-radius: ${radius || '2px'};
@@ -69,6 +110,13 @@ const CardContainer = styled.div`
       shadow ||
       '0 14px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);'};
   }
+
+  ${({ mounted }) =>
+    mounted
+      ? css`
+          animation: ${enterAni} 0.5s linear forwards;
+        `
+      : null};
 `;
 const Container = styled.div`
   display: flex;
@@ -78,7 +126,7 @@ const Container = styled.div`
   background-color: rgba(201, 76, 76, 0.1);
   ${({ height, width, margin, padding }) => `
   height: ${height || '13vh'};
-  width: ${width || '40vw'};
+  width: ${width || '90%'};
   margin: ${margin || 'auto'};
   padding: ${padding || '0'};
   
@@ -87,13 +135,24 @@ const Container = styled.div`
   &:hover {
     box-shadow: 0 14px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
+  ${({ mounted }) =>
+    mounted
+      ? css`
+          animation: ${enterAni} 0.5s linear forwards;
+        `
+      : null};
 `;
 
 const Button = styled.button`
   font-family: 'Open Sans';
-  background: ${(props) => (props.color === 'green' ? Correct_G : Error_R)};
+  background: ${(props) =>
+    props.unSelect === true
+      ? 'grey'
+      : props.color === 'green'
+      ? Correct_G
+      : Error_R};
   height: 100%;
-  width: 25%;
+  width: 20%;
   color: white;
   font-size: 1em;
   border-radius: ${({ color }) =>
@@ -101,15 +160,23 @@ const Button = styled.button`
   cursor: pointer;
   position: relative;
   border: ${(props) =>
-    props.color === 'green'
+    props.unSelect === true
+      ? 'grey'
+      : props.color === 'green'
       ? `2px solid ${Correct_G}`
       : `2px solid ${Error_R}`};
 
   &:hover {
     background: ${(props) =>
-      props.color === 'green' ? Correct_G_Hover : Error_R_Hover};
+      props.unSelect === true
+        ? 'grey'
+        : props.color === 'green'
+        ? Correct_G_Hover
+        : Error_R_Hover};
     border: ${(props) =>
-      props.color === 'green'
+      props.unSelect === true
+        ? 'grey'
+        : props.color === 'green'
         ? `2px solid ${Correct_G_Hover}`
         : `2px solid ${Error_R_Hover}`};
   }

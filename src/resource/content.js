@@ -1,0 +1,16 @@
+export const highlightsContent = [
+  'Depression is a leading cause of disability and contributes largely to the overall global burden of disease. Worldwide, more than 264 million people live with the illness, and for many, it began in childhood.',
+  'Depression is a serious illness that can lead to suicide, the second leading killer of young people 15 to 29 years-old.',
+  'You may already be familiar with depression—it’s when feelings of sadness, emptiness, and irritability last longer than two weeks, affect most parts of a person’s daily life, and stop them from doing things they used to enjoy.',
+  'We will review diagnostic criteria in more detail in the assessment section of this tool.',
+  'Check out our depression fact sheet here. It was developed for youth, by youth on our team. The resource is free to download, print, and provide to patients in your practice.',
+  'Depression is under-recognized globally in primary care settings. The presenting problem may be somatic complaints (i.e. problems with sleep or fatigue). There is an increased onset during puberty. ',
+  ' Symptoms can range from very mild (below the threshold for diagnosis)—to very severe, requiring the young person to be hospitalized. ',
+  'Depression is associated with other health conditions, such as anxiety and substance use, which can cause considerable suffering and impairment over and above that caused by the depression itself.',
+  'Depression can be seen as an episodic disorder that comes and goes during a youth’s lifetime. Each episode can cause disturbances to the typical developmental trajectory (e.g. succeeding at school, gaining independence). After the first episode, subsequent episodes are more severe, more difficult to treat, and occur with increasing frequency.',
+  'In the last 30 years, there have been no new treatments that have had a clinically significant impact on outcomes for youth with depression.',
+  'The Cundill Centre for Child and Youth Depression at CAMH brings together experts from around the world to tackle this issue by focusing on the screening, prevention, and treatment of child and youth depression.',
+  'This tool is a result of our work. It is based on our systematic review of the best clinical practice guidelines for assessing and treating youth depression, which found the NICE guidelines to be of the highest quality.',
+  'We have taken those guidelines and created a treatment pathway, which we will take you through step-by-step. We start with the assessment process, where two assessment tools, the RCADs and the MFQ, are introduced. The tool then branches into two treatment streams—mild depression and moderate/severe depression. Use the navigation bar at the top to switch between the two, or to go back to previous information in the tool.',
+  'Let’s start by viewing the overall treatment pathway. Don’t worry about remembering each step—we will go through them one-by-one as we work our way through the tool. You can also return to (or print) the pathway at any time.',
+];

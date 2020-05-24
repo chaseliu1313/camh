@@ -22,6 +22,7 @@ export default function Button({
   icon,
   onClick,
   type,
+  href,
 }) {
   return (
     <Btn
@@ -35,6 +36,7 @@ export default function Button({
       icon={icon}
       type={type}
       onClick={onClick}
+      href={href}
     >
       {children}
     </Btn>

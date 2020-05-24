@@ -1,0 +1,38 @@
+/* pathways */
+.arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow_severe {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.p_row {
+  margin: 10px 0 10px 0;
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#path_mild_container,
+.p_row {
+  animation: enter 0.5s linear;
+}
