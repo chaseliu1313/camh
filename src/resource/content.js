@@ -2,7 +2,7 @@ export const highlightsContent = [
   '·The Cundill Centre brings together experts from around the world to improve screening, prevention, and depression treatment.',
   '·This tool was created by our team to familiarize family health teams (primary care clinicians) with best care practices for managing depression in youth. ',
   '·The content provides a step-by-step assessment and treatment pathway for youth depression and is based on our systematic review, which found the NICE guidelines to be of the highest quality.',
-  '·Check out our depression fact sheet here. It was developed for youth, by youth on our team. The resource is free to download, print, and provide to patients in your practice.',
+  'Check out our depression fact sheet here. It was developed for youth, by youth on our team. The resource is free to download, print, and provide to patients in your practice.',
   '·We have taken those guidelines and created a treatment pathway, which we will take you through step-by-step.',
   '·We start with the assessment process. The tool then branches into two treatment streams—mild depression and moderate/severe depression.',
   '·Use the navigation bar at the top to switch between the two, or to go back to previous information in the tool. ',

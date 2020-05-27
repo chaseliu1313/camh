@@ -141,7 +141,7 @@ export default function Hightlights() {
                   target="_blank"
                   download
                 >
-                  <Button primary={true} height="7vh" width="20vw">
+                  <Button primary={true} height="7vh" width="20vw" display>
                     Download
                   </Button>
                 </a>
