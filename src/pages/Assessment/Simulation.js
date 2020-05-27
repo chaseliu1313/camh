@@ -20,10 +20,16 @@ export default function Simulation(props) {
     let a = props.hide;
 
     setHide(a);
+
+    return () => {
+      setShow(false);
+    };
   }, [props.hide]);
 
   const showNotes = () => {
-    setShow(true);
+    if (!hide) {
+      setShow(true);
+    }
   };
 
   const hideNotes = () => {
