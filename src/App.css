@@ -95,7 +95,7 @@ a {
 
 .nav-link:hover,
 .nav-link:active,
-.dropdown-item:hover {
+.navbar_dropdown:hover {
   padding: 7px 3px;
   border-radius: 10px;
   background-color: #4a1961 !important;

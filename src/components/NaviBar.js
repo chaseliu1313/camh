@@ -34,28 +34,34 @@ export default function NaviBar() {
       return logoV;
     } else return logo;
   };
+  let state = [];
 
   const handleClick = () => {
-    switch (location2) {
+    switch (location2.pathname) {
       case '/overview':
-        setClicked([false, true, false, false, false, false]);
+        state = [false, true, false, false, false, false];
         break;
       case '/assessment':
-        setClicked([false, false, true, false, false, false]);
+        state = [false, false, true, false, false, false];
+
         break;
-      case '/miled':
-        setClicked([false, false, false, true, false, false]);
+      case '/mild':
+        state = [false, false, false, true, true, false];
         break;
       case '/severe':
-        setClicked([false, false, false, false, true, false]);
+        state = [false, false, false, true, true, false];
         break;
       case '/resource':
-        setClicked([false, false, false, false, false, true]);
+        state = [false, false, false, false, false, true];
         break;
       default:
-        setClicked([false, false, false, false, false, false]);
+        state = [false, false, false, false, false, false];
         break;
     }
+    setClicked(state);
+    console.log(state);
+    console.log(clicked);
+    console.log(location2);
   };
 
   return (
@@ -101,12 +107,19 @@ export default function NaviBar() {
               title="Treatment"
               id="navbar_dropdown"
               clicked={clicked[3] || clicked[4]}
-              onClick={handleClick}
             >
-              <NavDropdown.Item as="div" className="nav-link">
+              <NavDropdown.Item
+                as="div"
+                className="nav-link"
+                onClick={handleClick}
+              >
                 <Link to="/mild">Mild Depression</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-link">
+              <NavDropdown.Item
+                as="div"
+                className="nav-link"
+                onClick={handleClick}
+              >
                 <Link to="/severe">Moderate/Severe Depression</Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -132,6 +145,7 @@ const Container = styled(C)`
   margin: 0;
   @media (max-width: 768px) {
     height: auto;
+    min-height: 8vh;
   }
   top: 0;
   position: fixed;
@@ -156,7 +170,7 @@ const NavDropdown = styled(D)`
   ${({ clicked }) =>
     clicked
       ? ` background-color: #4a1961;
-  padding: 7px 3px;
+  padding: 0.2rem 0.5rem;
   border-radius: 10px;
   
   
