@@ -89,6 +89,7 @@ const Text = styled.p`
     font-weight: ${weight || 'normal'};
     margin: ${margin || 'auto'};
     padding: ${padding || '0'};
+    text-decoration: none !important;
  
  `};
 `;

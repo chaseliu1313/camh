@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import Anime from 'react-anime';
-import { Navbar as N, Nav, Container as C, NavDropdown } from 'react-bootstrap';
+import {
+  Navbar as N,
+  Nav,
+  Container as C,
+  NavDropdown as D,
+} from 'react-bootstrap';
 import { PrimaryColor, DarkPurple } from '../theme/resource';
 import logo from '../resource/logo_w_h.svg';
 import logoV from '../resource/logo_w_v.svg';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function NaviBar() {
+  const [width, setWidth] = useState(window.innerWidth);
   const [clicked, setClicked] = useState([
     false,
     false,
@@ -16,19 +22,21 @@ export default function NaviBar() {
     false,
     false,
   ]);
+  const location = window.location.pathname;
+  const location2 = useLocation();
+
+  useEffect(() => {
+    handleClick();
+  }, [location2.pathname]);
 
   const switchLogo = () => {
-    const width = window.innerWidth;
-
     if (width < 395) {
       return logoV;
     } else return logo;
   };
 
   const handleClick = () => {
-    const location = window.location.pathname;
-
-    switch (location) {
+    switch (location2) {
       case '/overview':
         setClicked([false, true, false, false, false, false]);
         break;
@@ -42,7 +50,7 @@ export default function NaviBar() {
         setClicked([false, false, false, false, true, false]);
         break;
       case '/resource':
-        setClicked([false, false, false, false, , false, true]);
+        setClicked([false, false, false, false, false, true]);
         break;
       default:
         setClicked([false, false, false, false, false, false]);
@@ -144,12 +152,26 @@ const NavLink = styled(Nav.Link)`
       : ``}
 `;
 
+const NavDropdown = styled(D)`
+  ${({ clicked }) =>
+    clicked
+      ? ` background-color: #4a1961;
+  padding: 7px 3px;
+  border-radius: 10px;
+  
+  
+  `
+      : ``}
+`;
+
 const Navbar = styled(N)`
   width: 100%;
   background-color: ${PrimaryColor};
   height: 8vh;
+  
   @media (max-width: 768px) {
     height: auto;
+    
   }
 
 

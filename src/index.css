@@ -5,7 +5,6 @@
   src: url('./theme/font/OpenSans-Regular.ttf') format('truetype');
   src: url('./theme/font/OpenSans-Light.ttf') format('truetype');
   src: url('./theme/font/OpenSans-ExtraBold.ttf') format('truetype');
-  src: url('./theme/font/OpenSans-LightItalic.ttf') format('truetype');
 }
 
 body {

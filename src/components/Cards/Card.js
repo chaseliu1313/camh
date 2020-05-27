@@ -14,11 +14,11 @@ const Container = styled.div`
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   background-color: ${BackgroundColor};
-  text-align: center;
 
-  div > * {
+  & > h2 {
     transition-timing-function: ease-in;
     transition: 0.2s;
+    text-align: center;
   }
 
   ${({ height, width, margin, padding }) => `

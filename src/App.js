@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Landing from './pages/Landing';
 import Hightlights from './pages/Highlight';
 import Pathways from './pages/Pathway/Pathways';
+import Assessment from './pages/Assessment/Assessment';
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
             <Route path="/" exact component={Landing} />
             <Route path="/overview" exact component={Hightlights} />
             <Route path="/overview/pathways" exact component={Pathways} />
+            <Route path="/assessment" exact component={Assessment} />
           </Switch>
         </main>
         <footer className="App-footer">
-          Copyright © 2020 Cundill Centre for Child and Youth Depression camh{' '}
+          Copyright © 2020 Cundill Centre for Child and Youth Depression camh
         </footer>
       </div>
     </Router>

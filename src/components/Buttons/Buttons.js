@@ -23,6 +23,7 @@ export default function Button({
   onClick,
   type,
   href,
+  display,
 }) {
   return (
     <Btn
@@ -37,6 +38,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       href={href}
+      display={display}
     >
       {children}
     </Btn>
@@ -67,9 +69,9 @@ const Btn = styled.button`
   border-radius: 4px;
   cursor: pointer;
   position: relative;
-
+  text-decoration: none !important;
   text-transform: uppercase;
-  display: inline-flex;
+
   align-items: center;
   justify-content: center;
   min-width: 64px;
@@ -87,6 +89,7 @@ const Btn = styled.button`
     disabled,
     icon,
     type,
+    display,
   }) => `
 height: ${height || '10vh'};
 width: ${width || '15vw'};
@@ -95,9 +98,10 @@ padding: ${padding || '0.25em 1em'};
 border: 1.5px solid ${colorShifter(primary, err)};
 color: ${type === 'outlined' ? colorShifter(primary, err) : 'white'};
 background-color: ${type === 'outlined' ? 'white' : colorShifter(primary, err)};
-
+display: ${display ? 'inline-flex' : 'none'};
 &:hover {
     border: 1.5px solid ${borderShifterHover(primary, err)[0]};
+    text-decoration: none !important;
     background: ${
       type === 'outlined'
         ? '#f2f2f2 radial-gradient(circle, transparent 1%, #f2f2f2 1%) center/15000%'

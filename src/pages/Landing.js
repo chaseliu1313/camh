@@ -56,7 +56,11 @@ export default function Landing() {
             </Heading>
           </Anime>
           <Anime {...animePropsLeft2}>
-            <Button onClick={handleClick}>Begin</Button>
+            <Button onClick={handleClick} width="20vw" display={true}>
+              <Paragraph color="white" size="2vw">
+                Begin
+              </Paragraph>
+            </Button>
           </Anime>
           <Anime {...animePropsLeft3}>
             <Paragraph color="white" size="2.5vmin">

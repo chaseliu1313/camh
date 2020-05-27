@@ -10,6 +10,7 @@ import {
   TertiaryColor_Blu,
   TertiaryColor_Yel,
   TertiaryColor_Bro,
+  PrimaryColor,
 } from '../theme/resource';
 import { highlightsContent } from '../resource/content';
 
@@ -19,11 +20,14 @@ import bg3 from '../resource/illu3.svg';
 import bg4 from '../resource/illu4.svg';
 import bg5 from '../resource/illu5.svg';
 import bg6 from '../resource/illu6.svg';
+import fs from '../resource/factsheet.png';
 
 export default function Hightlights() {
   const [bgKey, updateKey] = useState(1);
   const inv = 15000;
   const [mounted, setMounted] = useState(false);
+  const MarginP = '20px 0 20px 0';
+  const fontWeight = 400;
 
   useEffect(() => {
     setMounted(true);
@@ -58,78 +62,88 @@ export default function Hightlights() {
           >
             <Carousel.Item className="ov_slide" id="ov_slide_1">
               <div>
-                <Paragraph margin="10px 0 0 0" color="#1E1E1E" weight="400">
+                <Heading type="h2" weight="bold" size="3vmin">
+                  Orientation to the Tool
+                </Heading>
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
                   {highlightsContent[0]}
                 </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
                   {highlightsContent[1]}
                 </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
                   {highlightsContent[2]}
-                </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
-                  {highlightsContent[3]}
-                </Paragraph>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item className="ov_slide" id="ov_slide_2">
-              <div>
-                <Paragraph margin="10px 0 0 0" color="#1E1E1E" weight="400">
-                  {highlightsContent[5]}
-                </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
-                  {highlightsContent[6]}
-                </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
-                  {highlightsContent[7]}
                 </Paragraph>
               </div>
             </Carousel.Item>
             <Carousel.Item className="ov_slide" id="ov_slide_3">
               <div>
-                <Paragraph margin="10px 0 0 0" color="#1E1E1E" weight="400">
+                <Heading type="h2" weight="bold" size="3vmin">
+                  Depression in Teens Overview
+                </Heading>
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
+                  {highlightsContent[7]}
+                </Paragraph>
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
                   {highlightsContent[8]}
                 </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
                   {highlightsContent[9]}
                 </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
                   {highlightsContent[10]}
                 </Paragraph>
               </div>
             </Carousel.Item>
-            <Carousel.Item className="ov_slide" id="ov_slide_4">
-              <div>
-                <Paragraph margin="10px 0 0 0" color="#1E1E1E" weight="400">
-                  {highlightsContent[11]}
-                </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
-                  {highlightsContent[12]}
-                </Paragraph>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item className="ov_slide" id="ov_slide_5">
-              <div>
-                <Paragraph margin="10px 0 0 0" color="#1E1E1E" weight="400">
-                  {highlightsContent[13]}
+            <Carousel.Item className="ov_slide">
+              <div id="ov_slide_5">
+                <Paragraph weight={fontWeight} color={PrimaryColor}>
+                  Resource:
                 </Paragraph>
                 <Paragraph
-                  margin="10px 0 10px 0"
-                  color="#1E1E1E"
-                  weight="400"
-                  color="#6E298D"
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
                 >
-                  Resources:
+                  {highlightsContent[3]}
                 </Paragraph>
-                <Paragraph margin="10px 0 10px 0" color="#1E1E1E" weight="400">
-                  {highlightsContent[4]}
-                </Paragraph>
+                <IMG src={fs} />
                 <a
                   href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
                   target="_blank"
                   download
                 >
-                  <Button primary={true}>Download</Button>
+                  <Button primary={true} height="7vh" width="20vw">
+                    Download
+                  </Button>
                 </a>
               </div>
             </Carousel.Item>
@@ -138,9 +152,15 @@ export default function Hightlights() {
       </Row>
       <Row>
         <CenterCol md={{ span: 4, offset: 4 }}>
-          <Link to="/overview/pathways">
-            <Button primary={true} type="outlined" height="7vh">
-              Next
+          <Link to="/assessment">
+            <Button
+              primary={true}
+              type="outlined"
+              height="7vh"
+              width="20vw"
+              display={true}
+            >
+              <Paragraph>Next</Paragraph>
             </Button>
           </Link>
         </CenterCol>
@@ -172,15 +192,10 @@ function switchBackground(index) {
       background-color: ${TertiaryColor_Yel};
       background-image: url(${bg4});
       background-position: right center;`;
-    case 4:
-      return `
-      background-color: ${TertiaryColor_Tel};
-      background-image: url(${bg5});
-      background-position: left center;`;
-      break;
+
     default:
       return ` background-color: ${TertiaryColor_Tel};
-      background-image: url(${bg1});
+      background-image: url(${bg5});
       background-position: left center;`;
   }
 }
@@ -225,8 +240,7 @@ const CenterCol = styled(Col)``;
 
 const IMG = styled.img`
   height: auto;
-  width: 20%;
-  float: right;
+  width: 15%;
 `;
 
 /* 

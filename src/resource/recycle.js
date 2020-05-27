@@ -25,4 +25,31 @@
         </Container>
 
 
+
+
+         <Carousel.Item className="ov_slide" id="ov_slide_2">
+              <div>
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
+                  {highlightsContent[4]}
+                </Paragraph>
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
+                  {highlightsContent[5]}
+                </Paragraph>
+                <Paragraph
+                  margin={MarginP}
+                  color={SecondaryColor_Blk}
+                  weight={fontWeight}
+                >
+                  {highlightsContent[6]}
+                </Paragraph>
+              </div>
+            </Carousel.Item>
 */
