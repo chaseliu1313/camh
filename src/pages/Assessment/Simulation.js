@@ -14,7 +14,7 @@ export default function Simulation(props) {
   const [hide, setHide] = useState(true);
   const [show, setShow] = useState(false);
 
-  const videoURL = 'https://www.youtube.com/watch?v=fWFuQR_Wt4M';
+  const videoURL = 'https://www.youtube.com/watch?v=Gm3FLGxb2ZU&t=1s';
 
   useEffect(() => {
     let a = props.hide;
@@ -58,7 +58,7 @@ export default function Simulation(props) {
           />
         </Col>
         <Col md={6} xs={12}>
-          <Card height="50vh" width="auto" padding="20px">
+          <Card height="60vh" width="auto" padding="20px">
             <div className="assess_simu_side">
               <Paragraph color={SecondaryColor_Blk}>{video1}</Paragraph>
               <Paragraph color={SecondaryColor_Blk}>{video2}</Paragraph>

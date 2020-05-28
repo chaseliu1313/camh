@@ -53,7 +53,7 @@ export default function MildPathway() {
               align="center"
               lineHeight="4vh"
             >
-              Psychosocial Strategies
+              Step 1: Psychosocial Strategies
             </Heading>
           </StepCard>
         </CenterCol>
@@ -114,7 +114,7 @@ export default function MildPathway() {
                 align="center"
                 lineHeight="4vh"
               >
-                Psychotherapy
+                Step 2: Psychotherapy
               </Heading>
             </StepCard>
           ) : null}
@@ -129,7 +129,7 @@ export default function MildPathway() {
                 align="center"
                 lineHeight="4vh"
               >
-                Reduce Frequency and Intensity of Visits
+                Step 3: Reduce Frequency and Intensity of Visits
               </Heading>
             </StepCard>
           ) : null}
@@ -195,7 +195,7 @@ export default function MildPathway() {
                 align="center"
                 lineHeight="4vh"
               >
-                Consider Moderate/Severe Depression
+                Step 3: Consider Moderate/Severe Depression
               </Heading>
             </StepCard>
           ) : null}
@@ -210,7 +210,7 @@ export default function MildPathway() {
                 align="center"
                 lineHeight="4vh"
               >
-                Reduce Frequency and Intensity of Visits
+                Step 3: Reduce Frequency and Intensity of Visits
               </Heading>
             </StepCard>
           ) : null}

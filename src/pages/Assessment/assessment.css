@@ -64,3 +64,28 @@
     margin-top: 10px;
   }
 }
+
+.assess_intro_row2 > div {
+  height: fit-content;
+}
+
+.assess_intro_row3 {
+}
+
+#dsm_modal > .modal-content {
+  background-color: #6e298d !important;
+}
+
+#dsm_header > button {
+  color: white;
+}
+
+.simu_marks {
+  color: #17b978;
+  display: inline;
+}
+
+.simu_cross {
+  color: #ff304f;
+  display: inline;
+}

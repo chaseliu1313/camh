@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Row, Col, Carousel } from 'react-bootstrap';
@@ -27,7 +27,13 @@ export default function Hightlights() {
   const inv = 15000;
   const [mounted, setMounted] = useState(false);
   const MarginP = '20px 0 20px 0';
-  const fontWeight = 400;
+  const fontWeight = 'normal';
+  const titles = [
+    'Orientation to the Tool',
+    'Depression in Teens Overview',
+    '  Resource:',
+  ];
+  const [activeTitle, setActive] = useState(titles[0]);
 
   useEffect(() => {
     setMounted(true);
@@ -37,17 +43,24 @@ export default function Hightlights() {
     };
   }, []);
 
+  useCallback(() => {
+    console.log(active);
+    let active = titles[bgKey];
+    setActive(active);
+  }, [bgKey]);
+
   return (
     <Main bgKey={bgKey} mounted={mounted}>
       <Row>
-        <CenterCol md={{ span: 4, offset: 4 }}>
+        <CenterCol md={{ span: 8, offset: 2 }}>
           <Heading
             color={SecondaryColor_Blk}
-            size="7vmin"
+            size="5vmin"
             weight="bold"
             align="center"
+            margin="15px 0 0 0"
           >
-            Keypoints
+            {activeTitle}
           </Heading>
         </CenterCol>
       </Row>
@@ -58,13 +71,11 @@ export default function Hightlights() {
             interval={inv}
             onSelect={(key) => {
               updateKey(key);
+              setActive(titles[key]);
             }}
           >
             <Carousel.Item className="ov_slide" id="ov_slide_1">
               <div>
-                <Heading type="h2" weight="bold" size="3vmin">
-                  Orientation to the Tool
-                </Heading>
                 <Paragraph
                   margin={MarginP}
                   color={SecondaryColor_Blk}
@@ -84,15 +95,27 @@ export default function Hightlights() {
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
                 >
-                  {highlightsContent[2]}
+                  The content provides a step-by-step assessment and treatment
+                  pathway for youth depression and is based on our &nbsp;
+                  <a
+                    className="ov_a"
+                    href="https://pubmed.ncbi.nlm.nih.gov/29697887/"
+                  >
+                    systematic review
+                  </a>
+                  &nbsp;, which found the&nbsp;
+                  <a
+                    className="ov_a"
+                    href="https://www.nice.org.uk/guidance/ng134"
+                  >
+                    NICE guidelines
+                  </a>
+                  &nbsp;to be the highest quality.
                 </Paragraph>
               </div>
             </Carousel.Item>
             <Carousel.Item className="ov_slide" id="ov_slide_3">
               <div>
-                <Heading type="h2" weight="bold" size="3vmin">
-                  Depression in Teens Overview
-                </Heading>
                 <Paragraph
                   margin={MarginP}
                   color={SecondaryColor_Blk}
@@ -125,9 +148,6 @@ export default function Hightlights() {
             </Carousel.Item>
             <Carousel.Item className="ov_slide">
               <div id="ov_slide_5">
-                <Paragraph weight={fontWeight} color={PrimaryColor}>
-                  Resource:
-                </Paragraph>
                 <Paragraph
                   margin={MarginP}
                   color={SecondaryColor_Blk}
@@ -141,7 +161,7 @@ export default function Hightlights() {
                   target="_blank"
                   download
                 >
-                  <Button primary={true} height="7vh" width="20vw" display>
+                  <Button primary={false} height="7vh" width="20vw" display>
                     Download
                   </Button>
                 </a>
@@ -152,7 +172,7 @@ export default function Hightlights() {
       </Row>
       <Row>
         <CenterCol md={{ span: 4, offset: 4 }}>
-          <Link to="/assessment">
+          <Link to="/overview/pathways">
             <Button
               primary={true}
               type="outlined"

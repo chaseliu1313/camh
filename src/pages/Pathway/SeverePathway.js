@@ -6,7 +6,7 @@ import StepCard, {
 } from '../../components/Cards/StepCard';
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import Arrow from '../../resource/arrowdown.svg';
+
 import { colorPalette, PrimaryColor } from '../../theme/resource';
 import './pathway.css';
 

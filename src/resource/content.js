@@ -13,7 +13,11 @@ export const highlightsContent = [
 ];
 
 export const assessment1 = [
-  'You may already be familiar with depression—it’s when feelings of sadness, emptiness, and irritability last longer than two weeks, affects most parts of a person’s daily life, and stops them from doing things they used to enjoy. ',
+  'You may already be familiar with depression—it’s when feelings of sadness, emptiness, and irritability:',
+  '· last longer than 2 weeks; ',
+  '· affect most parts of a person’s daily life;',
+  '· stop people from doing things they used to enjoy.',
+  'Click to review DSM-5 Criteria',
 ];
 
 export const video1 =
@@ -22,15 +26,27 @@ export const video2 =
   ' While you watch, think about what was helpful, and perhaps unhelpful, about the assessment approach. We will review afterwards. ';
 
 export const wentWell = [
-  '✔Asked about a range of symptoms (feeling sad, crying, feeling hopeless, feeling edgy or angry, lack of energy or interest in things). ',
-  '✔Asked about function in school.',
-  '✔Asked about drug and alcohol use.',
-  '✔Summarized what Tony said.',
-  '✔Asked how long he’s been feeling the way he has.',
-  '✔Asked about self-harm.',
+  'Asked about a range of symptoms (feeling sad, crying, feeling hopeless, feeling edgy or angry, lack of energy or interest in things). ',
+  'Asked about function in school.',
+  'Asked about drug and alcohol use.',
+  'Summarized what Tony said.',
+  'Asked how long he’s been feeling the way he has.',
+  'Asked about self-harm.',
 ];
 export const couldHave = [
-  '·Addressed confidentiality',
-  '·Started with more open-ended questions to improve rapport and comfSort',
-  '·Provided empathetic feedback after Tony’s responses.',
+  'Addressed confidentiality',
+  'Started with more open-ended questions to improve rapport and comfSort',
+  'Provided empathetic feedback after Tony’s responses.',
+];
+
+export const DSM = [
+  'The individual must be experiencing five or more symptoms during the same 2-week period and at least one of the symptoms should be either (1) depressed mood or (2) loss of interest or pleasure. These symptoms must cause the individual clinically significant distress or impairment in social, occupational, or other important areas of functioning. (Academic functioning should be considered in place of occupational functioning, given the developmental stage.) The symptoms must also not be a result of substance abuse or another medical condition.',
+  '1. Depressed mood most of the day, nearly every day.',
+  '2. Markedly diminished interest or pleasure in all, or almost all, activities most of the day, nearly every day.',
+  '3. Significant weight loss when not dieting or weight gain, or decrease or increase in appetite nearly every day.',
+  '4. A slowing down of thought and a reduction of physical movement (observable by others, not merely subjective feelings of restlessness or being slowed down).',
+  '5. Fatigue or loss of energy nearly every day.',
+  '6. Feelings of worthlessness or excessive or inappropriate guilt nearly every day.',
+  '7. Diminished ability to think or concentrate, or indecisiveness, nearly every day.',
+  '8. Recurrent thoughts of death, recurrent suicidal ideation without a specific plan, or a suicide attempt or a specific plan for committing suicide.',
 ];

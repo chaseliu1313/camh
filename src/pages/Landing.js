@@ -64,9 +64,10 @@ export default function Landing() {
           </Anime>
           <Anime {...animePropsLeft3}>
             <Paragraph color="white" size="2.5vmin">
-              These clinical practice guidelines were created by the clinician
-              scientists at CAMH to help family health teams understand the best
-              practices for managing youth with depression in their settings.
+              This tool was created by clinician scientists and other experts
+              from the Cundill Centre for Child and Youth Depression at CAMH to
+              help family health teams understand best practices for managing
+              youth with depression in their settings.
             </Paragraph>
             <div id="landing_sub">
               <SubText color="white">Contact: Cundill.Centre@camh.ca</SubText>

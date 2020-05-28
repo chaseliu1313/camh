@@ -1,12 +1,11 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
-import { Row, Col } from 'react-bootstrap';
+import React, { useState } from 'react';
+import Heading, { Paragraph } from '../../components/Text/Heading';
 import styled from 'styled-components';
 import './assessment.css';
 import Intro from './intro';
 import Simulation from './Simulation';
 import Button from '../../components/Buttons/Buttons';
-import { TertiaryColor_Tel } from '../../theme/resource';
+import { TertiaryColor_Tel, SecondaryColor_Blk } from '../../theme/resource';
 
 export default function Assessment() {
   const [btnAppeal, setDisplay] = useState(false);
@@ -28,8 +27,14 @@ export default function Assessment() {
 
   return (
     <Container id="assess_landing">
-      <Heading size="7vmin" weight="bold" align="center">
-        Assessment
+      <Heading
+        size="5vmin"
+        weight="bold"
+        align="center"
+        color={SecondaryColor_Blk}
+        margin="15px 0 0 0"
+      >
+        Assessment Introduction
       </Heading>
       <Intro hide={hide1} />
       <Simulation hide={hide2} />
@@ -52,7 +57,7 @@ export default function Assessment() {
           height="7vh"
           width="20vw"
           onClick={() => viewSwicher()}
-          display={true}
+          display
         >
           <Paragraph>Next</Paragraph>
         </Button>

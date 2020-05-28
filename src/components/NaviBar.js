@@ -51,7 +51,13 @@ export default function NaviBar() {
       case '/severe':
         state = [false, false, false, true, true, false];
         break;
-      case '/resource':
+      case '/tools':
+        state = [false, false, false, false, false, true];
+        break;
+      case '/help':
+        state = [false, false, false, false, false, true];
+        break;
+      case '/reference':
         state = [false, false, false, false, false, true];
         break;
       default:
@@ -124,14 +130,33 @@ export default function NaviBar() {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <NavLink
+            <NavDropdown
+              title="Resources"
+              id="navbar_dropdown"
               clicked={clicked[5]}
-              onClick={handleClick}
-              as="div"
-              className="nav-link"
             >
-              <Link to="/resource">Resources</Link>
-            </NavLink>
+              <NavDropdown.Item
+                as="div"
+                className="nav-link"
+                onClick={handleClick}
+              >
+                <Link to="/tools">Tools</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as="div"
+                className="nav-link"
+                onClick={handleClick}
+              >
+                <Link to="/help">Local Help</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as="div"
+                className="nav-link"
+                onClick={handleClick}
+              >
+                <Link to="/reference">References</Link>
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
