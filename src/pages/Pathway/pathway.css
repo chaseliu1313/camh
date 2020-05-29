@@ -40,3 +40,7 @@
 .p_row {
   animation: enter 0.5s linear;
 }
+
+#tools_views {
+  display: flex;
+}

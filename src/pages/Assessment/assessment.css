@@ -80,16 +80,25 @@
     margin-top: 10px;
   }
 }
+@media screen and (min-width: 1200px) {
+  #dsm_modal {
+    max-width: 90% !important;
+  }
+  #sev_modal {
+  }
+}
 
 .assess_intro_row2 > div {
   height: fit-content;
 }
 
-#dsm_modal > .modal-content {
+#dsm_modal > .modal-content,
+#sev_modal > .modal-content {
   background-color: #6e298d !important;
 }
 
-#dsm_header > button {
+#dsm_header > button,
+#sev_header > button {
   color: white;
 }
 
@@ -107,25 +116,44 @@
   animation: enter2 0.8s linear forwards;
   opacity: 0;
 }
-
+#pears0::first-letter {
+  font-weight: bold;
+  color: #6e298d;
+}
 #pears1 {
   animation: enter2 0.8s linear 0.8s forwards;
   opacity: 0;
+}
+#pears1::first-letter {
+  font-weight: bold;
+  color: #6e298d;
 }
 
 #pears2 {
   animation: enter2 0.8s linear 1.3s forwards;
   opacity: 0;
 }
+#pears2::first-letter {
+  font-weight: bold;
+  color: #6e298d;
+}
 #pears3 {
   animation: enter2 0.8s linear 2s forwards;
   opacity: 0;
+}
+#pears3::first-letter {
+  font-weight: bold;
+  color: #6e298d;
 }
 #pears4 {
   animation: enter2 0.8s linear 2.5s forwards;
   opacity: 0;
 }
 
+#pears4::first-letter {
+  font-weight: bold;
+  color: #6e298d;
+}
 #btn_group {
   animation: enter3 0.5s linear forwards;
   opacity: 0;
@@ -133,4 +161,18 @@
 
 .tool_card {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#serverity_group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#severity_modal > div {
+  animation: none !important;
 }

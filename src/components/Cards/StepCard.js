@@ -19,6 +19,8 @@ export default function StepCard({
   id,
   className,
   onClick,
+  onMouseOver,
+  onMouseOut,
 }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -42,6 +44,8 @@ export default function StepCard({
       id={id}
       className={className}
       onClick={onClick}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
     >
       {children}
     </CardContainer>

@@ -19,13 +19,51 @@ export const exitAni = keyframes`
 
 `;
 
+export const exitAni2 = keyframes`
+0%{
+    opacity:100%;
+    transform: translateX(0) scale(1);
+}
+
+50%{
+    opacity:70%;
+    transform: translateX(50vw) scale(0.8);
+}
+100%{
+    opacity:0%;
+    transform: translateX(100vw) scale(0);
+    display: none;
+}
+
+
+`;
+
+export const exitAni3 = keyframes`
+0%{
+    opacity:100%;
+    transform: translateX(0) scale(1);
+}
+
+50%{
+    opacity:70%;
+    transform: translateX(-50vw) scale(0.8);
+}
+100%{
+    opacity:0%;
+    transform: translateX(-100vw) scale(0);
+    display: none;
+}
+
+
+`;
+
 export const enterAni = keyframes`
 
 
 0%{
     opacity:0%;
     transform: translateY(100vh) scale(0.001);
-    display: none;
+   
 }
 50%{
     opacity:70%;
@@ -37,6 +75,49 @@ export const enterAni = keyframes`
 }
 
 
+
+
+
+
+`;
+
+export const enterAni2 = keyframes`
+
+
+0%{
+    opacity:0%;
+    transform: translateX(-100vw) scale(0);
+   
+}
+50%{
+    opacity:70%;
+    transform: translateX(-50vw) scale(0.8);
+}
+100%{
+    opacity:100%;
+    transform: translateX(0) scale(1);
+}
+
+
+
+`;
+
+export const enterAni3 = keyframes`
+
+
+0%{
+    opacity:0%;
+    transform: translateX(100vw) scale(0);
+   
+}
+50%{
+    opacity:70%;
+    transform: translateX(50vw) scale(0.8);
+}
+100%{
+    opacity:100%;
+    transform: translateX(0) scale(1);
+}
 
 
 

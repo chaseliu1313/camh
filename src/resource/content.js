@@ -26,7 +26,7 @@ export const video2 =
   ' While you watch, think about what was helpful, and perhaps unhelpful, about the assessment approach. We will review afterwards. ';
 
 export const wentWell = [
-  'Asked about a range of symptoms (feeling sad, crying, feeling hopeless, feeling edgy or angry, lack of energy or interest in things). ',
+  'Asked about a range of symptoms (e.g. feeling sad, feeling angry, lack of energy). ',
   'Asked about function in school.',
   'Asked about drug and alcohol use.',
   'Summarized what Tony said.',
@@ -35,7 +35,7 @@ export const wentWell = [
 ];
 export const couldHave = [
   'Addressed confidentiality',
-  'Started with more open-ended questions to improve rapport and comfSort',
+  'Started with more open-ended questions to improve rapport and comfort',
   'Provided empathetic feedback after Tony’s responses.',
 ];
 
@@ -76,11 +76,11 @@ export const tools = [
 
 export const Severity = [
   'Whether you use the RCADS or the MFQ, you will need to determine if the youth has mild depression or moderate/severe depression.',
-  'Follow DSM-5 definitions for “Mild”, “Moderate”, and “Severe”',
-  'Click the boxes below to reveal definitions:',
-  'Mild: Few, if any, symptoms in excess of those required to make the diagnosis are present, the intensity of the symptoms is distressing but manageable, and the symptoms result in minor impairment in social or occupational functioning.',
-  'Moderate: The number of symptoms, intensity of symptoms, and/or functional impairment are between those specified for “mild” and “severe.”',
-  'Severe: The number of symptoms is substantially in excess of that required to make the diagnosis, the intensity of the symptoms is seriously distressing and unmanageable, and the symptoms markedly interfere with social and occupational functioning. (Academic functioning should be considered in place of occupational functioning, given the developmental stage.) ',
+  'Follow DSM-5 definitions for “Mild”, “Moderate”, and “Severe”.',
+  ' Click the boxes below to reveal definitions:',
+  '  Few, if any, symptoms in excess of those required to make the diagnosis are present, the intensity of the symptoms is distressing but manageable, and the symptoms result in minor impairment in social or occupational functioning.',
+  ' The number of symptoms, intensity of symptoms, and/or functional impairment are between those specified for “mild” and “severe.”',
+  ' The number of symptoms is substantially in excess of that required to make the diagnosis, the intensity of the symptoms is seriously distressing and unmanageable, and the symptoms markedly interfere with social and occupational functioning. (Academic functioning should be considered in place of occupational functioning, given the developmental stage.) ',
 ];
 
 export const treatment =

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
-import { Row, Col, Modal, ModalBody } from 'react-bootstrap';
+import { Modal, ModalBody } from 'react-bootstrap';
 import { DSM as content } from '../../resource/content';
-import { SecondaryColor_Blk } from '../../theme/resource';
+
 import styled from 'styled-components';
 
 const DSM = (props) => {
@@ -25,7 +25,7 @@ const DSM = (props) => {
         <Heading
           type="h2"
           weight="bold"
-          size="3vmin"
+          size="2.5vmin"
           margin="0 5px 0 20px"
           color="white"
         >
@@ -36,11 +36,16 @@ const DSM = (props) => {
         <Container>
           {content.map((c, index) =>
             index === 0 ? (
-              <Paragraph color="white" weight="bold">
+              <Paragraph color="white" weight="bold" size="2vmin">
                 {c}
               </Paragraph>
             ) : (
-              <Paragraph margin={MarginP} color="white" weight={fontWeight}>
+              <Paragraph
+                margin={MarginP}
+                color="white"
+                weight={fontWeight}
+                size="2vmin"
+              >
                 {c}
               </Paragraph>
             )

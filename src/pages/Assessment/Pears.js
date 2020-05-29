@@ -17,7 +17,7 @@ const Pears = () => {
   const viewSwicher = () => {
     history.push('/assessment/tools');
   };
-  const Pmarging = '10px 0';
+  const Pmarging = '20px 0';
   let history = useHistory();
   return (
     <Container>
@@ -26,14 +26,18 @@ const Pears = () => {
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
-        margin="15px 0 0 0"
+        margin="15px 0"
         id="assess_landing"
       >
         Assessment Pears
       </Heading>
       <Card height="70vh" width="80vw" padding="20px">
         {pears.map((p, index) => (
-          <Paragraph id={'pears' + index} margin={Pmarging}>
+          <Paragraph
+            id={'pears' + index}
+            margin={Pmarging}
+            color={SecondaryColor_Blk}
+          >
             {p}
           </Paragraph>
         ))}
