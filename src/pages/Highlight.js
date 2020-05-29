@@ -155,16 +155,28 @@ export default function Hightlights() {
                 >
                   {highlightsContent[3]}
                 </Paragraph>
-                <IMG src={fs} />
-                <a
-                  href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
-                  target="_blank"
-                  download
-                >
-                  <Button primary={false} height="7vh" width="20vw" display>
-                    Download
-                  </Button>
-                </a>
+                <Row id="hightlight_inner3">
+                  <Col md={5}>
+                    <IMG src={fs} />
+                  </Col>
+                  <Col md={7}>
+                    <a
+                      href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
+                      target="_blank"
+                      download
+                    >
+                      <Button
+                        primary={false}
+                        height="7vh"
+                        width="20vw"
+                        display
+                        margin="25% 0 0 25%"
+                      >
+                        Download
+                      </Button>
+                    </a>
+                  </Col>
+                </Row>
               </div>
             </Carousel.Item>
           </Carousel>
@@ -260,7 +272,7 @@ const CenterCol = styled(Col)``;
 
 const IMG = styled.img`
   height: auto;
-  width: 15%;
+  width: 80%;
 `;
 
 /* 

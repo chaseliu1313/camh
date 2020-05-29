@@ -45,6 +45,14 @@ export default function NaviBar() {
         state = [false, false, true, false, false, false];
 
         break;
+      case '/assessment/pears':
+        state = [false, false, true, false, false, false];
+
+        break;
+      case '/assessment/tools':
+        state = [false, false, true, false, false, false];
+
+        break;
       case '/mild':
         state = [false, false, false, true, true, false];
         break;

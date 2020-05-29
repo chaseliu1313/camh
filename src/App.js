@@ -8,6 +8,8 @@ import Landing from './pages/Landing';
 import Hightlights from './pages/Highlight';
 import Pathways from './pages/Pathway/Pathways';
 import Assessment from './pages/Assessment/Assessment';
+import Pears from './pages/Assessment/Pears';
+import Tools from './pages/Assessment/Tools';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/overview" exact component={Hightlights} />
             <Route path="/overview/pathways" exact component={Pathways} />
             <Route path="/assessment" exact component={Assessment} />
+            <Route path="/assessment/pears" exact component={Pears} />
+            <Route path="/assessment/tools" exact component={Tools} />
           </Switch>
         </main>
         <footer className="App-footer">

@@ -50,3 +50,43 @@ export const DSM = [
   '7. Diminished ability to think or concentrate, or indecisiveness, nearly every day.',
   '8. Recurrent thoughts of death, recurrent suicidal ideation without a specific plan, or a suicide attempt or a specific plan for committing suicide.',
 ];
+
+export const pears = [
+  '1.Depression can be missed because irritability (persistent anger, exaggerated frustration to minor occurrences) or somatic complaints (sleep problems/fatigue) may be the primary presenting symptom (rather than sadness).',
+
+  '2.Symptoms can range from very mild (below the threshold for diagnosis)—to very severe with pronounced functional impairment.',
+
+  '3.Depression can come and go. After the first episode, subsequent episodes tend to be more severe, difficult to treat, and occur with increasing frequency.',
+
+  '4.Depression is associated with other health conditions (e.g., anxiety, substance use), increasing suffering and impairment.',
+
+  '5. Because of the risk of suicide and self-harm, always ask about current/recent or previous self-harm, suicidal thinking, and suicide attempts. Also ask about current prominent hopelessness and psychosocial supports (e.g. living alone or with others) to gauge current safety.',
+];
+
+export const tools = [
+  'Assessment tools are useful because they add objective information to support diagnosis.',
+  ' There are many assessment tools out there to support the clinical assessment of youth depression. ',
+  ' ·Two options that can be used are:',
+  'The Revised Children’s Anxiety and Depression Scale (RCADS)  ',
+  'The Mood and Feelings Questionnaire (MFQ) ',
+  ' ·Both are available for free and include parent and self-report versions.',
+  ' ·The RCADS assesses symptoms of anxiety and depression.',
+  '·The MFQ provides a screening measure for depression. ',
+];
+
+export const Severity = [
+  'Whether you use the RCADS or the MFQ, you will need to determine if the youth has mild depression or moderate/severe depression.',
+  'Follow DSM-5 definitions for “Mild”, “Moderate”, and “Severe”',
+  'Click the boxes below to reveal definitions:',
+  'Mild: Few, if any, symptoms in excess of those required to make the diagnosis are present, the intensity of the symptoms is distressing but manageable, and the symptoms result in minor impairment in social or occupational functioning.',
+  'Moderate: The number of symptoms, intensity of symptoms, and/or functional impairment are between those specified for “mild” and “severe.”',
+  'Severe: The number of symptoms is substantially in excess of that required to make the diagnosis, the intensity of the symptoms is seriously distressing and unmanageable, and the symptoms markedly interfere with social and occupational functioning. (Academic functioning should be considered in place of occupational functioning, given the developmental stage.) ',
+];
+
+export const treatment =
+  'The next part of the tool will take you through the treatment process. Click on “Mild Depression” or “Moderate/Severe Depression” to get started. You can also use the navigation bar above; click on “Treatment.”';
+
+export const toolLink1 =
+  'https://www.corc.uk.net/outcome-experience-measures/revised-childrens-anxiety-and-depression-scale-and-subscales/';
+export const toolLink2 =
+  'https://devepi.duhs.duke.edu/measures/the-mood-and-feelings-questionnaire-mfq/';

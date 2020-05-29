@@ -12,6 +12,8 @@ export default function Heading({
   margin,
   padding,
   children,
+  id,
+  className,
 }) {
   return (
     <Text
@@ -23,6 +25,8 @@ export default function Heading({
       align={align}
       margin={margin}
       padding={padding}
+      id={id}
+      className={className}
     >
       {children}
     </Text>
@@ -38,6 +42,8 @@ export function Paragraph({
   margin,
   padding,
   children,
+  id,
+  className,
 }) {
   return (
     <Text
@@ -48,6 +54,8 @@ export function Paragraph({
       align={align}
       margin={margin}
       padding={padding}
+      id={id}
+      className={className}
     >
       {children}
     </Text>
@@ -63,6 +71,8 @@ export function SubText({
   padding,
   children,
   opacity,
+  id,
+  className,
 }) {
   return (
     <SText
@@ -73,6 +83,8 @@ export function SubText({
       opacity={opacity}
       margin={margin}
       padding={padding}
+      id={id}
+      className={className}
     >
       {children}
     </SText>

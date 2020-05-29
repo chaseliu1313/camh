@@ -1,50 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
+
+import Card from '../../components/Cards/Card';
 import styled from 'styled-components';
 import './assessment.css';
-import Intro from './intro';
-import Simulation from './Simulation';
+import { pears } from '../../resource/content';
+import { SecondaryColor_Blk, TertiaryColor_Tel } from '../../theme/resource';
 import Button from '../../components/Buttons/Buttons';
-import { TertiaryColor_Tel, SecondaryColor_Blk } from '../../theme/resource';
 import { useHistory } from 'react-router-dom';
+import idea from '../../resource/idea.svg';
 
-export default function Assessment() {
-  const [btnAppeal, setDisplay] = useState(false);
-  const [hide1, setHide1] = useState(false);
-  const [hide2, setHide2] = useState(true);
-  let history = useHistory();
-  const viewSwicher = () => {
-    if (!hide2) {
-      history.push('/assessment/pears');
-    }
-
-    setHide1(true);
-    setDisplay(true);
-    setHide2(false);
-    //hide the previous btmn
-  };
-
+const Pears = () => {
   const goBack = () => {
-    setHide1(false);
-    setDisplay(false);
-    setHide2(true);
+    history.push('/assessment');
   };
-
+  const viewSwicher = () => {
+    history.push('/assessment/tools');
+  };
+  const Pmarging = '10px 0';
+  let history = useHistory();
   return (
-    <Container id="assess_landing">
+    <Container>
       <Heading
         size="5vmin"
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
         margin="15px 0 0 0"
+        id="assess_landing"
       >
-        Assessment Introduction
+        Assessment Pears
       </Heading>
-      <Intro hide={hide1} />
-      <Simulation hide={hide2} />
+      <Card height="70vh" width="80vw" padding="20px">
+        {pears.map((p, index) => (
+          <Paragraph id={'pears' + index} margin={Pmarging}>
+            {p}
+          </Paragraph>
+        ))}
+      </Card>
 
-      <BtnGroup>
+      <BtnGroup id="btn_group">
         <Button
           primary={true}
           type="outlined"
@@ -52,7 +47,7 @@ export default function Assessment() {
           width="20vw"
           onClick={() => goBack()}
           primary={false}
-          display={btnAppeal}
+          display
         >
           <Paragraph color={TertiaryColor_Tel}>Previous</Paragraph>
         </Button>
@@ -69,11 +64,19 @@ export default function Assessment() {
       </BtnGroup>
     </Container>
   );
-}
+};
 
 const Container = styled.div`
   height: auto;
   width: 100%;
+  overflow: hidden;
+
+  overflow: hidden;
+  transition: all 1s linear;
+  background-image: url(${idea});
+  background-repeat: no-repeat;
+  background-size: 75% 50%;
+  background-position: 220% 110%;
 `;
 
 const BtnGroup = styled.div`
@@ -83,3 +86,5 @@ const BtnGroup = styled.div`
   position: fixed;
   bottom: 5vmin;
 `;
+
+export default Pears;

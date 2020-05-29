@@ -236,3 +236,10 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+#hightlight_inner3 {
+  height: 30vh;
+}
+#hightlight_inner3 > div {
+  height: 100%;
+}

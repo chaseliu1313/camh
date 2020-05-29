@@ -16,6 +16,9 @@ export default function StepCard({
   background,
   radius,
   shadow,
+  id,
+  className,
+  onClick,
 }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -36,13 +39,24 @@ export default function StepCard({
       radius={radius}
       shadow={shadow}
       mounted={mounted}
+      id={id}
+      className={className}
+      onClick={onClick}
     >
       {children}
     </CardContainer>
   );
 }
 
-export function StepOptionCard({ height, width, margin, padding, children }) {
+export function StepOptionCard({
+  height,
+  width,
+  margin,
+  padding,
+  children,
+  id,
+  className,
+}) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -60,6 +74,8 @@ export function StepOptionCard({ height, width, margin, padding, children }) {
       margin={margin}
       padding={padding}
       mounted={mounted}
+      id={id}
+      className={className}
     >
       {children}
     </Container>
