@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { PrimaryColor, DarkPurple } from '../theme/resource';
 
@@ -102,7 +102,7 @@ const btn1AniReverse = keyframes`
 `;
 
 const btnAni = (index, active) => {
-  if (index == 0) {
+  if (index === 0) {
     if (active[0]) {
       return css`
         ${btn1Ani} 0.3s linear forwards;
@@ -114,7 +114,7 @@ const btnAni = (index, active) => {
     }
   }
 
-  if (index == 1) {
+  if (index === 1) {
     if (active[1]) {
       return css`
         ${btn2AniReverse} 0.3s linear forwards;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import {
   PrimaryColor,
   DarkPurple,
@@ -8,7 +8,6 @@ import {
   Error_R_Hover,
   TertiaryColor_Tel,
 } from '../../theme/resource';
-import Anime from 'react-anime';
 
 export default function Button({
   height,
@@ -127,4 +126,8 @@ display: ${display ? 'inline-flex' : 'none'};
 
   background-position: center;
   transition: background 0.8s;
+
+  @media (max-width: 425px) {
+    width: 35vw;
+  }
 `;

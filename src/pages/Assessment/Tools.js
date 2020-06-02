@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import Card from '../../components/Cards/Card';
 import StepCard from '../../components/Cards/StepCard';
@@ -142,7 +142,6 @@ const Tools = () => {
       </div>
       <BtnGroup id="btn_group">
         <Button
-          primary={true}
           type="outlined"
           height="7vh"
           width="20vw"
@@ -153,7 +152,7 @@ const Tools = () => {
           <Paragraph color={TertiaryColor_Tel}>Previous</Paragraph>
         </Button>
         <Button
-          primary={true}
+          primary
           type="outlined"
           height="7vh"
           width="20vw"

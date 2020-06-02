@@ -36,7 +36,7 @@ const DSM = (props) => {
         <Container>
           {content.map((c, index) =>
             index === 0 ? (
-              <Paragraph color="white" weight="bold" size="2vmin">
+              <Paragraph color="white" weight="bold" size="2vmin" key={index}>
                 {c}
               </Paragraph>
             ) : (
@@ -45,6 +45,7 @@ const DSM = (props) => {
                 color="white"
                 weight={fontWeight}
                 size="2vmin"
+                key={index}
               >
                 {c}
               </Paragraph>

@@ -9,17 +9,24 @@ import { enterAni, exitAni } from '../../theme/animation';
 import ReactPlayer from 'react-player';
 import { video1, video2 } from '../../resource/content';
 import { SecondaryColor_Blk } from '../../theme/resource';
+import Button from '../../components/Buttons/Buttons';
 
 export default function Simulation(props) {
+  //show page hook
   const [hide, setHide] = useState(true);
+  //show modal hook
   const [show, setShow] = useState(false);
+  //play video hook
+  const [play, setPlay] = useState(false);
 
   const videoURL = 'https://www.youtube.com/watch?v=Gm3FLGxb2ZU&t=1s';
   const MarginP = '20px 0 20px 0';
+
   useEffect(() => {
     let a = props.hide;
 
     setHide(a);
+    setPlay(!a);
 
     return () => {
       setShow(false);
@@ -29,11 +36,13 @@ export default function Simulation(props) {
   const showNotes = () => {
     if (!hide) {
       setShow(true);
+      setPlay(false);
     }
   };
 
   const hideNotes = () => {
     setShow(false);
+    setPlay(true);
   };
 
   return (
@@ -42,17 +51,16 @@ export default function Simulation(props) {
         <Col md={6} xs={12}>
           <ReactPlayer
             url={videoURL}
-            playing={!hide}
+            playing={play}
             controls={true}
             onPlay={() => {
               hideNotes();
             }}
-            volume="0.3"
             width="100%"
             onPause={() => {
               showNotes();
             }}
-            onEndede={() => {
+            onEnded={() => {
               showNotes();
             }}
           />
@@ -66,11 +74,20 @@ export default function Simulation(props) {
               <Paragraph color={SecondaryColor_Blk} margin={MarginP}>
                 {video2}
               </Paragraph>
+              <Button
+                primary
+                display
+                height="7vh"
+                width="20vw"
+                onClick={() => showNotes()}
+              >
+                Simulation Review
+              </Button>
             </div>
           </Card>
         </Col>
       </Row>
-      <SimulationNote show={show} />
+      <SimulationNote modalShow={show} hideNotes={hideNotes} />
     </Container>
   );
 }
@@ -98,10 +115,4 @@ const Container = styled.div`
 
           display: flex;
         `}
-`;
-
-const IMG = styled.img`
-  height: auto;
-  width: 15%;
-  opacity: 0.7;
 `;

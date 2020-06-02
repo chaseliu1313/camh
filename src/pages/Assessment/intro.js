@@ -62,7 +62,9 @@ export default function Intro(props) {
               onClick={() => setShowModeal(true)}
               display
             >
-              DSM-5
+              <Paragraph size="2vmin" color="white">
+                DSM-5 Criteria
+              </Paragraph>
             </Button>
           </Col>
           <Col md={4}>

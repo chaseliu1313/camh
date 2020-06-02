@@ -5,16 +5,19 @@ import { wentWell, couldHave } from '../../resource/content';
 import { SecondaryColor_Blk, Correct_G, Error_R } from '../../theme/resource';
 import styled from 'styled-components';
 
-const SimulationNote = (props) => {
+const SimulationNote = ({ modalShow, hideNotes }) => {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    hideNotes();
+  };
   const MarginP = '20px 0 20px 0';
   const fontWeight = 'normal';
 
   useEffect(() => {
-    let s = props.show;
+    let s = modalShow;
     setShow(s);
-  }, [props.show]);
+  }, [modalShow]);
 
   return (
     <Modal show={show} onHide={handleClose} size="xl" centered>
@@ -30,11 +33,12 @@ const SimulationNote = (props) => {
               <Header type="h3" weight="normal" size="3vmin">
                 What went well:
               </Header>
-              {wentWell.map((w) => (
+              {wentWell.map((w, index) => (
                 <Paragraph
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  key={index}
                 >
                   <p className="simu_marks">✔</p>
                   {w}
@@ -45,11 +49,12 @@ const SimulationNote = (props) => {
               <Header type="h3" weight="normal" size="3vmin">
                 Could Have:
               </Header>
-              {couldHave.map((c) => (
+              {couldHave.map((c, index) => (
                 <Paragraph
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  key={index}
                 >
                   <p className="simu_cross">✘</p>
                   {c}

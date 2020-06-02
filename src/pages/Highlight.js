@@ -10,7 +10,6 @@ import {
   TertiaryColor_Blu,
   TertiaryColor_Yel,
   TertiaryColor_Bro,
-  PrimaryColor,
 } from '../theme/resource';
 import { highlightsContent } from '../resource/content';
 
@@ -19,12 +18,11 @@ import bg2 from '../resource/illu2.svg';
 import bg3 from '../resource/illu3.svg';
 import bg4 from '../resource/illu4.svg';
 import bg5 from '../resource/illu5.svg';
-import bg6 from '../resource/illu6.svg';
 import fs from '../resource/factsheet.png';
 
 export default function Hightlights() {
   const [bgKey, updateKey] = useState(1);
-  const inv = 15000;
+  const inv = 5000;
   const [mounted, setMounted] = useState(false);
   const MarginP = '20px 0 20px 0';
   const fontWeight = 'normal';
@@ -33,6 +31,8 @@ export default function Hightlights() {
     'Depression in Teens Overview',
     '  Resource:',
   ];
+
+  //set active title hook
   const [activeTitle, setActive] = useState(titles[0]);
 
   useEffect(() => {
@@ -44,7 +44,6 @@ export default function Hightlights() {
   }, []);
 
   useCallback(() => {
-    console.log(active);
     let active = titles[bgKey];
     setActive(active);
   }, [bgKey]);
@@ -58,7 +57,8 @@ export default function Hightlights() {
             size="5vmin"
             weight="bold"
             align="center"
-            margin="15px 0 0 0"
+            margin="5vmin 0 -2vmin 0"
+            type="h1"
           >
             {activeTitle}
           </Heading>
@@ -95,7 +95,7 @@ export default function Hightlights() {
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
                 >
-                  The content provides a step-by-step assessment and treatment
+                  ·The content provides a step-by-step assessment and treatment
                   pathway for youth depression and is based on our &nbsp;
                   <a
                     className="ov_a"
@@ -164,6 +164,7 @@ export default function Hightlights() {
                       href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
                       target="_blank"
                       download
+                      rel="noopener noreferrer"
                     >
                       <Button
                         primary={false}
@@ -182,6 +183,7 @@ export default function Hightlights() {
           </Carousel>
         </Col>
       </Row>
+      <Row id="overView_spacing"></Row>
       <Row>
         <CenterCol md={{ span: 4, offset: 4 }}>
           <Link to="/overview/pathways">
@@ -201,24 +203,26 @@ export default function Hightlights() {
   );
 }
 
+//background changing function
+
 function switchBackground(index) {
   switch (index) {
     case 0:
       return ` background-color: ${TertiaryColor_Tel};
       background-image: url(${bg1});
       background-position: left center;`;
-      break;
+
     case 1:
       return ` background-color: ${TertiaryColor_Blu};
       background-image: url(${bg2});
       background-position: right center;`;
-      break;
+
     case 2:
       return `
       background-color: ${TertiaryColor_Bro};
       background-image: url(${bg3});
       background-position: left center;`;
-      break;
+
     case 3:
       return `
       background-color: ${TertiaryColor_Yel};
@@ -232,6 +236,7 @@ function switchBackground(index) {
   }
 }
 
+//animations
 const enterAni = keyframes`
 
 0% {
@@ -251,6 +256,7 @@ const enterAni = keyframes`
 }
 `;
 
+//component styling
 const Main = styled.div`
   height: 100%;
   width: 100%;
@@ -274,8 +280,3 @@ const IMG = styled.img`
   height: auto;
   width: 80%;
 `;
-
-/* 
-
-
-*/

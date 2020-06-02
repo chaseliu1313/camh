@@ -80,6 +80,14 @@ a {
     align-items: baseline;
   }
 }
+@media screen and (max-width: 425px) {
+  .carousel-indicators {
+    bottom: -15vmin !important;
+  }
+  #overView_spacing {
+    height: 25vmin !important;
+  }
+}
 
 .nav-link a,
 .nav-item a {
@@ -228,6 +236,10 @@ a {
   background-color: #6e298d !important;
   height: 1.2vmin !important;
   border-radius: 5px !important;
+}
+
+#overView_spacing {
+  height: 10vmin;
 }
 
 #ov_slide_5 {

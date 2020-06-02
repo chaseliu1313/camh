@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
-import Anime from 'react-anime';
+import styled from 'styled-components';
+
 import {
   Navbar as N,
   Nav,
   Container as C,
   NavDropdown as D,
 } from 'react-bootstrap';
-import { PrimaryColor, DarkPurple } from '../theme/resource';
+import { PrimaryColor } from '../theme/resource';
 import logo from '../resource/logo_w_h.svg';
 import logoV from '../resource/logo_w_v.svg';
 import { Link, useLocation } from 'react-router-dom';
@@ -22,7 +22,7 @@ export default function NaviBar() {
     false,
     false,
   ]);
-  const location = window.location.pathname;
+
   const location2 = useLocation();
 
   useEffect(() => {
@@ -73,9 +73,6 @@ export default function NaviBar() {
         break;
     }
     setClicked(state);
-    console.log(state);
-    console.log(clicked);
-    console.log(location2);
   };
 
   return (
@@ -89,11 +86,11 @@ export default function NaviBar() {
             alt="camh logo"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="navication_bar" />
         <Navbar.Collapse id="navbar_collaps">
           <Nav className="navbar_core">
             <NavLink
-              clicked={clicked[0]}
+              navclicked={clicked[0]}
               onClick={handleClick}
               as="div"
               className="nav-link"
@@ -102,7 +99,7 @@ export default function NaviBar() {
             </NavLink>
 
             <NavLink
-              clicked={clicked[1]}
+              navclicked={clicked[1]}
               onClick={handleClick}
               as="div"
               className="nav-link"
@@ -110,7 +107,7 @@ export default function NaviBar() {
               <Link to="/overview">Overview</Link>
             </NavLink>
             <NavLink
-              clicked={clicked[2]}
+              navclicked={clicked[2]}
               onClick={handleClick}
               as="div"
               className="nav-link"
@@ -120,7 +117,7 @@ export default function NaviBar() {
             <NavDropdown
               title="Treatment"
               id="navbar_dropdown"
-              clicked={clicked[3] || clicked[4]}
+              navclicked={clicked[3] || clicked[4]}
             >
               <NavDropdown.Item
                 as="div"
@@ -141,7 +138,7 @@ export default function NaviBar() {
             <NavDropdown
               title="Resources"
               id="navbar_dropdown"
-              clicked={clicked[5]}
+              navclicked={clicked[5]}
             >
               <NavDropdown.Item
                 as="div"
@@ -188,8 +185,8 @@ const IMG = styled.img`
 `;
 
 const NavLink = styled(Nav.Link)`
-  ${({ clicked }) =>
-    clicked
+  ${({ navclicked }) =>
+    navclicked
       ? ` background-color: #4a1961;
   padding: 7px 3px;
   border-radius: 10px;
@@ -200,8 +197,8 @@ const NavLink = styled(Nav.Link)`
 `;
 
 const NavDropdown = styled(D)`
-  ${({ clicked }) =>
-    clicked
+  ${({ navclicked }) =>
+    navclicked
       ? ` background-color: #4a1961;
   padding: 0.2rem 0.5rem;
   border-radius: 10px;

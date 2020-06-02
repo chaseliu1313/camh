@@ -5,12 +5,7 @@ import StepCard from '../../components/Cards/StepCard';
 import { Row, Col } from 'react-bootstrap';
 import styled, { css } from 'styled-components';
 import { Severity } from '../../resource/content';
-import {
-  SecondaryColor_Blk,
-  TertiaryColor_Tel,
-  SecondaryColor_Yel,
-  PrimaryColor,
-} from '../../theme/resource';
+import { SecondaryColor_Blk, PrimaryColor } from '../../theme/resource';
 import { enterAni2, exitAni3 } from '../../theme/animation';
 
 import { Modal, ModalBody } from 'react-bootstrap';
@@ -25,7 +20,6 @@ const SeverityCard = (props) => {
   //show page state function
   useEffect(() => {
     setShow(props.show);
-    console.log(props.show);
   }, [props.show]);
 
   //mouse over eventhandler
@@ -34,9 +28,6 @@ const SeverityCard = (props) => {
     setModalTitle(index === 3 ? 'Mild' : index === 4 ? 'Moderate' : 'Severe');
     setmodalContent(Severity[index]);
   };
-
-  //cancel mouse over handler
-  const mouseOut = (index) => {};
 
   return (
     <>
@@ -138,14 +129,6 @@ const Container = styled.div`
           animation: ${exitAni3} 0.8s linear forwards;
           flex-shrink: 2000;
         `}
-`;
-
-const BtnGroup = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  position: fixed;
-  bottom: 5vmin;
 `;
 
 const SeverityModal = (props) => {

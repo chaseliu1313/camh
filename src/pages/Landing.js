@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled, { css } from 'styled-components';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import styled from 'styled-components';
+import { Row, Col } from 'react-bootstrap';
 import Heading, { Paragraph, SubText } from '../components/Text/Heading';
 import Button from '../components/Buttons/Buttons';
 import Teens from '../resource/teens.svg';

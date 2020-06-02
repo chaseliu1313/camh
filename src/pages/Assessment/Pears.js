@@ -1,6 +1,5 @@
 import React from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
-
 import Card from '../../components/Cards/Card';
 import styled from 'styled-components';
 import './assessment.css';
@@ -11,6 +10,7 @@ import { useHistory } from 'react-router-dom';
 import idea from '../../resource/idea.svg';
 
 const Pears = () => {
+  //handlers to routes
   const goBack = () => {
     history.push('/assessment');
   };
@@ -26,10 +26,10 @@ const Pears = () => {
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
-        margin="15px 0"
+        margin="3vmin 0 -1vmin 0"
         id="assess_landing"
       >
-        Assessment Pears
+        Assessment Pearls
       </Heading>
       <Card height="70vh" width="80vw" padding="20px">
         {pears.map((p, index) => (
@@ -37,6 +37,7 @@ const Pears = () => {
             id={'pears' + index}
             margin={Pmarging}
             color={SecondaryColor_Blk}
+            key={index}
           >
             {p}
           </Paragraph>

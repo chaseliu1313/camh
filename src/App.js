@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Heading from './components/Text/Heading';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NaviBar from './components/NaviBar';
 import 'bootstrap/dist/css/bootstrap.min.css';

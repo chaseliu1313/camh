@@ -37,7 +37,8 @@ export default function Assessment() {
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
-        margin="15px 0 0 0"
+        margin="5vmin 0 -3vmin 0"
+        type="h1"
       >
         Assessment Introduction
       </Heading>
