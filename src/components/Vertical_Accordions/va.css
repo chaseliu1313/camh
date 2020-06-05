@@ -41,7 +41,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 10vmin;
+  padding: 3vmin 5vmin 5vmin 5vmin;
 }
 
 @media screen and (max-width: 2000px) {
