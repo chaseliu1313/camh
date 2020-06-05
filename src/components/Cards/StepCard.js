@@ -21,6 +21,8 @@ export default function StepCard({
   onClick,
   onMouseOver,
   onMouseOut,
+  cursor,
+  flex,
 }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -46,6 +48,8 @@ export default function StepCard({
       onClick={onClick}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}
+      cursor={cursor}
+      flex={flex}
     >
       {children}
     </CardContainer>
@@ -94,30 +98,45 @@ export function StepOptionButton({ label, color, onClick, unSelect }) {
   );
 }
 
-const enterAni = keyframes`
+const enterAni = (height) => keyframes`
 0% {
   opacity: 0;
+  height:0px;
+  
 
 }
  
 50% {
   opacity: 0.7;
+  height:${parseInt(height) / 2}vh;
  
 }
 100% {
   opacity: 1;
-
+  height:${height};
 }`;
 
 const CardContainer = styled.div`
   text-align: center;
-  ${({ height, width, margin, padding, background, radius, shadow }) => `
+  ${({
+    height,
+    width,
+    margin,
+    padding,
+    background,
+    radius,
+    shadow,
+    cursor,
+    flex,
+  }) => `
      background-color: ${background || 'green'};
      height: ${height || '13vh'};
      width: ${width || '80%'};
      margin: ${margin || 'auto'};
      padding: ${padding || '0'};
      border-radius: ${radius || '2px'};
+     cursor: ${cursor ? 'pointer' : 'auto'};
+     flex-direction: ${flex || 'row'};
      box-shadow: ${
        shadow ||
        ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'
@@ -137,6 +156,9 @@ const CardContainer = styled.div`
           animation: ${enterAni} 0.5s linear forwards;
         `
       : null};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const Container = styled.div`
   display: flex;

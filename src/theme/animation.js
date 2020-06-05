@@ -1,5 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
+//exit from bottom
 export const exitAni = keyframes`
 0%{
     opacity:100%;
@@ -19,6 +20,7 @@ export const exitAni = keyframes`
 
 `;
 
+//exit from right hand side
 export const exitAni2 = keyframes`
 0%{
     opacity:100%;
@@ -38,6 +40,7 @@ export const exitAni2 = keyframes`
 
 `;
 
+//exit from left hand side
 export const exitAni3 = keyframes`
 0%{
     opacity:100%;
@@ -57,6 +60,7 @@ export const exitAni3 = keyframes`
 
 `;
 
+//enter from bottom
 export const enterAni = keyframes`
 
 
@@ -75,11 +79,9 @@ export const enterAni = keyframes`
 }
 
 
-
-
-
-
 `;
+
+//enter from lefths
 
 export const enterAni2 = keyframes`
 
@@ -101,6 +103,8 @@ export const enterAni2 = keyframes`
 
 
 `;
+
+//enter from right
 
 export const enterAni3 = keyframes`
 

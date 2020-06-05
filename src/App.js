@@ -10,6 +10,11 @@ import Pathways from './pages/Pathway/Pathways';
 import Assessment from './pages/Assessment/Assessment';
 import Pears from './pages/Assessment/Pears';
 import Tools from './pages/Assessment/Tools';
+import Treatment from './pages/Treatment/Treatment';
+import Mild from './pages/Treatment/Mild';
+import Severe from './pages/Treatment/Severe';
+import Psychosocial from './pages/Treatment/Psychosocial';
+import Psychotherapy from './pages/Treatment/Psychotherapy';
 
 function App() {
   return (
@@ -26,6 +31,19 @@ function App() {
             <Route path="/assessment" exact component={Assessment} />
             <Route path="/assessment/pears" exact component={Pears} />
             <Route path="/assessment/tools" exact component={Tools} />
+            <Route path="/treatment" exact component={Treatment} />
+            <Route path="/treatment/mild" exact component={Mild} />
+            <Route path="/treatment/severe" exact component={Severe} />
+            <Route
+              path="/treatment/psycosocialStrategies"
+              exact
+              component={Psychosocial}
+            />
+            <Route
+              path="/treatment/psychotherapy"
+              exact
+              component={Psychotherapy}
+            />
           </Switch>
         </main>
         <footer className="App-footer">

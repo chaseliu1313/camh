@@ -23,6 +23,7 @@ export default function Button({
   type,
   href,
   display,
+  dark,
 }) {
   return (
     <Btn
@@ -38,6 +39,7 @@ export default function Button({
       onClick={onClick}
       href={href}
       display={display}
+      dark={dark}
     >
       {children}
     </Btn>
@@ -89,14 +91,21 @@ const Btn = styled.button`
     icon,
     type,
     display,
+    dark,
   }) => `
 height: ${height || '10vh'};
 width: ${width || '15vw'};
 margin: ${margin || '1em'};
 padding: ${padding || '0.25em 1em'};
-border: 1.5px solid ${colorShifter(primary, err)};
+border: 1.5px solid ${dark ? DarkPurple : colorShifter(primary, err)};
 color: ${type === 'outlined' ? colorShifter(primary, err) : 'white'};
-background-color: ${type === 'outlined' ? 'white' : colorShifter(primary, err)};
+background-color: ${
+    type === 'outlined'
+      ? 'white'
+      : dark
+      ? DarkPurple
+      : colorShifter(primary, err)
+  };
 display: ${display ? 'inline-flex' : 'none'};
 &:hover {
     border: 1.5px solid ${borderShifterHover(primary, err)[0]};

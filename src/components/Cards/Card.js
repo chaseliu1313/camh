@@ -2,9 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import { BackgroundColor } from '../../theme/resource';
 
-export default function Card({ height, width, margin, padding, children }) {
+export default function Card({
+  height,
+  width,
+  margin,
+  padding,
+  children,
+  className,
+  bgColor,
+}) {
   return (
-    <Container height={height} width={width} margin={margin} padding={padding}>
+    <Container
+      height={height}
+      width={width}
+      margin={margin}
+      padding={padding}
+      className={className}
+      bgColor={bgColor}
+    >
       {children}
     </Container>
   );
@@ -13,7 +28,6 @@ export default function Card({ height, width, margin, padding, children }) {
 const Container = styled.div`
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-  background-color: ${BackgroundColor};
 
   & > h2 {
     transition-timing-function: ease-in;
@@ -21,7 +35,8 @@ const Container = styled.div`
     text-align: center;
   }
 
-  ${({ height, width, margin, padding }) => `
+  ${({ height, width, margin, padding, bgColor }) => `
+  background-color: ${bgColor || BackgroundColor};
     height: ${height || '40vh'};
      width: ${width || '50vw'};
      margin: ${margin || 'auto'};

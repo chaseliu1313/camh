@@ -90,3 +90,101 @@ export const toolLink1 =
   'https://www.corc.uk.net/outcome-experience-measures/revised-childrens-anxiety-and-depression-scale-and-subscales/';
 export const toolLink2 =
   'https://devepi.duhs.duke.edu/measures/the-mood-and-feelings-questionnaire-mfq/';
+
+export const PSExtra =
+  'Check out our Mood Foundations resource and click on the image to download. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print, and provide to patients in your practice.';
+export const PSExtraLink =
+  'https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf';
+
+export const PsychosocialStrategies = [
+  {
+    heading: 'Exercise',
+    content: [
+      '· Moderate to vigorous activity (where the heart rate is elevated) ',
+      '· 30-60 minutes per session',
+      '· 3-7 times per week',
+    ],
+  },
+  {
+    heading: 'Sleep',
+    content: ['· Tbd '],
+  },
+  {
+    heading: 'Diet',
+    content: ['· Tbd '],
+  },
+  {
+    heading: 'Anti-bullying strategies',
+    content: [
+      '· If bullying is considered to be a factor in a young person’s depression, anti-bullying strategies should be developed.',
+      '· Visit the PREVNet website ',
+
+      '· PREVNet is a national network of leading researchers and organizations, working together to stop bullying in Canada.',
+    ],
+  },
+  {
+    heading: 'More Resource',
+    content: [PSExtra],
+    img_url: PSExtraLink,
+  },
+];
+
+export const Psychotherapy = [
+  {
+    heading: 'Individual CBT',
+
+    content: [
+      '· Short-term (12-20 sessions).',
+      '· Structured.',
+      '· Problem-focused & goal oriented.',
+      '· Target and reduce negative thoughts to improve mood.',
+      '· Need to be willing to discuss thoughts, beliefs and behaviours, participate in exercises during sessions and do homework between sessions.',
+    ],
+  },
+  {
+    heading: 'Interpersonal psychotherapy',
+    content: [
+      '· For ages 12-18.',
+      '· Delivered individually. ',
+      '· Time-limited (12-16 sessions).',
+      '· Focus is on the relationship between onset or ongoing occurrence of symptoms and relationship issues.',
+      '· Goals for adolescent: think about how mood is affected by interpersonal events or conflicts; build communication and problem-solving skills; improve social functioning; decrease symptoms of depression.',
+    ],
+  },
+  {
+    heading: 'Family therapy',
+    description:
+      'Family therapy is focused on changing the way families interact, with a goal to increase understanding and improve communication. ',
+    subHeading1: 'Attachment-based family therapy ',
+    content: [
+      '· Goal to facilitate healthy attachment experiences and improve relationships between family members.',
+      '· Focus on adolescent’s developmental need for autonomy and attachment.',
+      '· Time-limited (12-16 sessions).',
+      '· Trauma-focused.',
+      '· Process-oriented.',
+    ],
+    subHeading2: 'Systemic family therapy',
+    subContent2: [
+      '· Refers to a variety of psychological interventions that are based on systemic concepts and theory',
+      '· Goal is to alleviate distress and improve important relationships by facilitating changes in thinking, behaviour, and understanding. ',
+    ],
+  },
+  {
+    heading: 'Psychodynamic therapy',
+    content: [
+      '· In-depth form of talk therapy.',
+      '· Based on theories and principles of psychoanalysis.',
+      '· Focus is on both the client-therapist relationship and the client’s relationship with the external world.',
+      '· There is an emphasis on how past relationships affect current relationships.',
+      '· Used especially in those who find personal relationships hard, or who experience a loss of meaning in their lives.',
+      '· Goal is reduction in symptoms; client may also experience benefits like improved self-esteem and ability to develop and maintain relationships.',
+    ],
+  },
+  {
+    heading: 'Care management/problem solving',
+    content: [
+      '· May include psychoeducation around mental health.',
+      '· Suggestions re: increased activity, resource navigation, guidance around problem solving.',
+    ],
+  },
+];

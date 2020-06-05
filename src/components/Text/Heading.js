@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
+import { PrimaryColor, SecondaryColor_Blk, size } from '../../theme/resource';
 
 export default function Heading({
   color,
@@ -102,6 +102,11 @@ const Text = styled.p`
     margin: ${margin || 'auto'};
     padding: ${padding || '0'};
     text-decoration: none !important;
+
+    @media (max-width: ${size.tablet}) {
+      font-size: ${size ? parseInt(size) * 0.75 + 'vmin' : '7.5vmin'};
+
+    }
  
  `};
 `;

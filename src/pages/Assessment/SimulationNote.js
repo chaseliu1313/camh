@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header, { Paragraph } from '../../components/Text/Heading';
 import { Row, Col, Modal, ModalBody } from 'react-bootstrap';
 import { wentWell, couldHave } from '../../resource/content';
-import { SecondaryColor_Blk, Correct_G, Error_R } from '../../theme/resource';
+import { SecondaryColor_Blk } from '../../theme/resource';
 import styled from 'styled-components';
 
 const SimulationNote = ({ modalShow, hideNotes }) => {

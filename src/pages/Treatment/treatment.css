@@ -1,0 +1,50 @@
+.treatment_wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  margin: -5vh -15vw 0 0;
+}
+
+#treatment_bg {
+  position: fixed;
+  top: 0;
+  left: -70vw;
+  min-width: 250%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+#treatment_sever_container > .row {
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .treatment_card {
+    margin: 0 !important;
+    z-index: 0;
+  }
+  .treatment_col_left {
+    flex-direction: row !important;
+  }
+
+  .treatment_wraper {
+    margin: auto;
+  }
+  .treatment_btn_text {
+    font-size: 2vmin !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .treatment_btn_text {
+    font-size: 3vmin !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #treatment_sever_container > .row {
+    margin: 2vh 0 2vh 0;
+  }
+}

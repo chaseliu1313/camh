@@ -53,10 +53,10 @@ export default function NaviBar() {
         state = [false, false, true, false, false, false];
 
         break;
-      case '/mild':
+      case '/treatment/mild':
         state = [false, false, false, true, true, false];
         break;
-      case '/severe':
+      case '/treatment/severe':
         state = [false, false, false, true, true, false];
         break;
       case '/tools':
@@ -124,14 +124,14 @@ export default function NaviBar() {
                 className="nav-link"
                 onClick={handleClick}
               >
-                <Link to="/mild">Mild Depression</Link>
+                <Link to="/treatment/mild">Mild Depression</Link>
               </NavDropdown.Item>
               <NavDropdown.Item
                 as="div"
                 className="nav-link"
                 onClick={handleClick}
               >
-                <Link to="/severe">Moderate/Severe Depression</Link>
+                <Link to="/treatment/severe">Moderate/Severe Depression</Link>
               </NavDropdown.Item>
             </NavDropdown>
 
