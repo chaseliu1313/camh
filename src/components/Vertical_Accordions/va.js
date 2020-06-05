@@ -3,7 +3,7 @@ import Heading, { Paragraph, SubText } from '../Text/Heading';
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
 import './va.css';
-import fs from '../../resource/factsheet2.png';
+import fs from '../../resource/factsheet2.svg';
 
 const va = ({ length, info }) => {
   return (
@@ -33,7 +33,6 @@ export const Cards = (props) => {
       className="va_card"
       onMouseOver={() => handleHover()}
       onMouseDown={() => handleMouseDown()}
-      onTouchStart={() => handleHover()}
     >
       <div className="va_content">
         {show ? (
