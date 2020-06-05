@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import Heading from '../../components/Text/Heading';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import VA from '../../components/Vertical_Accordions/va';
 import { Row, Col, Alert } from 'react-bootstrap';
 import { PsychosocialStrategies } from '../../resource/content';
 import { SecondaryColor_Blk } from '../../theme/resource';
+import { enterAni2 } from '../../theme/animation';
 
 const Psychosocial = () => {
   const [show, setShow] = useState(false);
+
+  const [mount, setMount] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth < window.innerHeight) {
       setShow(true);
     }
+    setMount(true);
+
+    return () => {
+      setMount(false);
+    };
   }, []);
 
   return (
-    <Container>
+    <Container mount={mount}>
       <Alert
         variant="danger"
         onClose={() => setShow(false)}
@@ -56,6 +64,13 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   overflow: hidden;
-  padding: 3vmin;
+  padding: 3vmin 3vmin 5vmin 3vmin;
+
+  ${({ mount }) =>
+    mount
+      ? css`
+          animation: ${enterAni2} 0.8s linear forwards;
+        `
+      : ''}
 `;
 export default Psychosocial;

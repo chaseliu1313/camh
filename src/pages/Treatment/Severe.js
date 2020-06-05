@@ -3,38 +3,38 @@ import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
 import StepCard from '../../components/Cards/StepCard';
 import { Row as R, Col as C } from 'react-bootstrap';
 import styled from 'styled-components';
-import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import TreatmentModal from './TreatmentModal';
+
 import bg from '../../resource/path_bg.svg';
 import {
   PrimaryColor,
   SecondaryColor_Blk,
   SecondaryColor_Blu,
 } from '../../theme/resource';
+import { useHistory } from 'react-router-dom';
 
 const Severe = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [index, setIndex] = useState(0);
+
   useEffect(() => {
     //set initial default responses
-
     setRes([false, null, null, null, null]);
-    setHeight(window.innerWidth);
-    console.log(height);
   }, []);
 
+  const history = useHistory();
   const lineHeight_sm = '5vh';
   const lineHeight_lg = '10vh';
-
   const initialValue = [null, null, null, null, null];
   const [responses, setRes] = useState(initialValue);
-  const [height, setHeight] = useState(window.innerWidth);
 
   const handleResponse = (index) => {
     switch (index) {
       case 0:
-        console.log('psychosocial strategies');
+        history.push('/treatment/psycosocialStrategies');
         break;
       case 1:
-        console.log('Psychotherapy');
+        history.push('/treatment/psychotherapy');
         break;
       case 2:
         if (responses[0]) {
@@ -50,6 +50,22 @@ const Severe = () => {
           setRes([true, true, null, null, null]);
         }
         break;
+      case 4:
+        setShowModal(true);
+        setIndex(1);
+        break;
+      case 5:
+        setShowModal(true);
+        setIndex(2);
+        break;
+      case 6:
+        setShowModal(true);
+        setIndex(3);
+        break;
+      case 7:
+        setShowModal(true);
+        setIndex(4);
+        break;
       default:
         break;
     }
@@ -57,6 +73,8 @@ const Severe = () => {
 
   return (
     <Container id="treatment_sever_container">
+      <TreatmentModal show={showModal} onClose={setShowModal} index={index} />
+
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 3 }}>
           <SubContainer>
@@ -85,7 +103,6 @@ const Severe = () => {
         <C xs lg="2">
           <Heading
             type="h4"
-            weight="normal"
             size="2vmin"
             color={SecondaryColor_Blk}
             align="center"
@@ -121,7 +138,6 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              weight="normal"
               size="2vmin"
               color={SecondaryColor_Blk}
               align="center"
@@ -180,7 +196,6 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              weight="normal"
               size="2vmin"
               color={SecondaryColor_Blk}
               align="center"
@@ -196,7 +211,7 @@ const Severe = () => {
               height={lineHeight_sm}
               cursor
               width="30vw"
-              onClick={() => handleResponse(2)}
+              onClick={() => handleResponse(4)}
             >
               <Heading
                 type="h4"
@@ -214,6 +229,7 @@ const Severe = () => {
               height={lineHeight_sm}
               width="30vw"
               cursor
+              onClick={() => handleResponse(1)}
             >
               <Heading
                 type="h4"
@@ -234,7 +250,6 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              weight="normal"
               size="2vmin"
               color={SecondaryColor_Blk}
               align="center"
@@ -250,6 +265,7 @@ const Severe = () => {
               height={lineHeight_sm}
               width="90%"
               cursor
+              onClick={() => handleResponse(5)}
             >
               <Heading
                 type="h4"
@@ -271,7 +287,6 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              weight="normal"
               size="2vmin"
               color={SecondaryColor_Blk}
               align="center"
@@ -329,7 +344,6 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              weight="normal"
               size="2vmin"
               color={SecondaryColor_Blk}
               align="center"
@@ -369,7 +383,6 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              weight="normal"
               size="2vmin"
               color={SecondaryColor_Blk}
               align="center"
@@ -385,6 +398,7 @@ const Severe = () => {
               height={lineHeight_sm}
               width="90%"
               cursor
+              onClick={() => handleResponse(6)}
             >
               <Heading
                 type="h4"
@@ -406,7 +420,6 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              weight="normal"
               size="2vmin"
               color={SecondaryColor_Blk}
               align="center"
@@ -425,6 +438,7 @@ const Severe = () => {
                 cursor
                 width="30vw"
                 flex="column"
+                onClick={() => handleResponse(7)}
               >
                 <Heading
                   type="p"

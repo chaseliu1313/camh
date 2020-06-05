@@ -31,7 +31,7 @@ const Pears = () => {
       >
         Assessment Pearls
       </Heading>
-      <Card height="70vh" width="80vw" padding="20px">
+      <Card height="auto" width="80vw" padding="20px" className="pearl_card">
         {pears.map((p, index) => (
           <Paragraph
             id={'pears' + index}

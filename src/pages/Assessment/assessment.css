@@ -84,7 +84,6 @@
   #dsm_modal {
     max-width: 90% !important;
   }
- 
 }
 
 .assess_intro_row2 > div {
@@ -174,4 +173,14 @@
 
 #severity_modal > div {
   animation: none !important;
+}
+
+.pearl_card {
+  min-height: 70vh;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+  .pearl_card p {
+    font-size: 2.5vmin;
+  }
 }

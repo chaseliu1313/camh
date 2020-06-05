@@ -188,3 +188,150 @@ export const Psychotherapy = [
     ],
   },
 ];
+
+export const check6 = {
+  heading: 'Check response after 6 weeks',
+  content: [
+    {
+      subHeading: 'Assess response using:',
+      content:
+        'Clinical Judgment: has there been a reduction in symptoms or improvement in functioning? (i.e., worsening, no change, minimal, much/very much improved) See Clinical Global Impressions Scale to standardize approach. ',
+    },
+    {
+      subHeading: 'Self-report tools: ',
+      content:
+        'Using the same assessment tool you used for the initial assessment (e.g. RCADS, MFQ), check to see if the score has improved. For the MFQ, response may be a 20% improvement in the score.',
+    },
+    {
+      subHeading: 'Achievement of Personalized Treatment Goals: ',
+      content:
+        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met? (e.g., more outings, more interaction with peers)',
+    },
+    {
+      subHeading: 'Definitions: ',
+      content:
+        'Partial remission: Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
+    },
+    {
+      subHeading: 'Remission: ',
+      content:
+        'Just 1- 2 symptoms present and full functioning (i.e. attending school, social interaction and symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+    },
+  ],
+};
+
+export const check3 = {
+  heading: 'Check response after 3 months',
+  content: [
+    {
+      subHeading: 'Assess response using:',
+      content:
+        'Clinical Judgment: has there been a reduction in symptoms or improvement in functioning? (i.e., worsening, no change, minimal, much/very much improved) See Clinical Global Impressions Scale to standardize approach. ',
+    },
+    {
+      subHeading: 'Self-report tools: ',
+      content:
+        'Using the same assessment tool you used for the initial assessment (e.g. RCADS, MFQ), check to see if the score has improved. For the MFQ, response may be a 40% improvement in the score.',
+    },
+    {
+      subHeading: 'Achievement of Personalized Treatment Goals: ',
+      content:
+        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met? (e.g., youth who identified more outings or more interaction with peers as desired outcomes indicating meaningful response)',
+    },
+    {
+      subHeading: 'Definitions: ',
+      content:
+        'Partial remission: Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
+    },
+    {
+      subHeading: 'Remission: ',
+      content:
+        'Just 1- 2 symptoms present and full functioning (i.e. attending school, social interaction and symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+    },
+  ],
+};
+
+export const Flouxetine = {
+  heading: 'Fluoxetine',
+  content: [
+    {
+      subHeading: '· Start youth on fluoxetine',
+      content: '',
+    },
+    {
+      subHeading:
+        '· Do not offer medication without also offering psychotherapy',
+      content: '',
+    },
+    {
+      subHeading:
+        '· If psychotherapy is declined, medication may still be given',
+      content: '',
+    },
+    {
+      subHeading:
+        '· If youth has already had an adequate trial of fluoxetine without response, try sertraline',
+      content: '',
+    },
+  ],
+};
+
+export const FluoxetineExtra = [
+  {
+    text: 'Monitoring',
+    content: [
+      '· Monitor weekly for the first 4 weeks.',
+      '· Monitor closely for suicidal behaviour, self-harm and hostility.',
+    ],
+  },
+  {
+    text: 'Titrating',
+    content: [
+      '· Week 1: 10mg/d.',
+      '· Week 2: 20mg/d (if tolerated and clinically necessary).',
+    ],
+  },
+  {
+    text: 'Tapering',
+    content: [
+      '· If current dose is < 40mg, can be stopped abruptly.',
+      '· If current dose is > 40mg, reduce by 20mg every week until stopped.',
+    ],
+  },
+];
+
+export const Relapse = {
+  heading: 'Relapse prevention plan:',
+  content: [
+    {
+      subHeading: '',
+      content:
+        'When in remission,  review symptoms and functioning with youth regularly for 12 months (exact frequency to be agreed upon by the professional and youth and/or parents). Consider the following: ',
+    },
+    {
+      subHeading: ' ',
+      content:
+        '(1) How severe was the depression at its peak? More severe – closer follow up.',
+    },
+    {
+      subHeading: '',
+      content:
+        '(2) Were there safety risks at the height of depression? More risk -  closer follow-up.',
+    },
+    {
+      subHeading: ' ',
+      content: '(3) Are there residual symptoms? (more likely to relapse).',
+    },
+    {
+      subHeading: ' ',
+      content:
+        '(4) How solid is the communication between the youth and caregiver? Should they relapse, would they volunteer this information to their caregiver and/or seek care? ',
+    },
+  ],
+};
+
+export const RelapseExtra = [
+  '· Continue medication for 6+ months',
+  '· Relapse prevention plan',
+  '· Reduce intensity & frequency of visits',
+];
