@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
 import './va.css';
 import fs from '../../resource/factsheet2.svg';
+import Button from '../Buttons/Buttons';
 
 const va = ({ length, info }) => {
   return (
@@ -116,14 +117,25 @@ export const Cards = (props) => {
             )}
 
             {content.img_url ? (
-              <a
-                href={content.img_url}
-                target="_blank"
-                download
-                rel="noopener noreferrer"
-              >
+              <>
                 <IMG src={fs} alt="fact sheet" />
-              </a>
+                <a
+                  href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
+                  target="_blank"
+                  download
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    primary={false}
+                    height="7vh"
+                    width="10vw"
+                    display
+                    margin="25% 0 0 25%"
+                  >
+                    Download
+                  </Button>
+                </a>
+              </>
             ) : (
               ''
             )}
