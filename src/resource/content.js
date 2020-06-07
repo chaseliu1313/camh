@@ -34,13 +34,13 @@ export const wentWell = [
   'Asked about self-harm.',
 ];
 export const couldHave = [
-  'Addressed confidentiality',
-  'Started with more open-ended questions to improve rapport and comfort',
+  'Addressed confidentiality.',
+  'Started with more open-ended questions to improve rapport and comfort.',
   'Provided empathetic feedback after Tony’s responses.',
 ];
 
 export const DSM = [
-  'The individual must be experiencing five or more symptoms during the same 2-week period and at least one of the symptoms should be either (1) depressed mood or (2) loss of interest or pleasure. These symptoms must cause the individual clinically significant distress or impairment in social, occupational, or other important areas of functioning. (Academic functioning should be considered in place of occupational functioning, given the developmental stage.) The symptoms must also not be a result of substance abuse or another medical condition.',
+  'The individual must be experiencing five or more symptoms during the same 2-week period and at least one of the symptoms should be either (1) depressed mood or (2) loss of interest or pleasure. These symptoms must cause the individual clinically significant distress or impairment in social, occupational, or other important areas of functioning. Academic functioning should be considered in place of occupational functioning, given the developmental stage. The symptoms must also not be a result of substance abuse or another medical condition.',
   '1. Depressed mood most of the day, nearly every day.',
   '2. Markedly diminished interest or pleasure in all, or almost all, activities most of the day, nearly every day.',
   '3. Significant weight loss when not dieting or weight gain, or decrease or increase in appetite nearly every day.',
@@ -70,8 +70,8 @@ export const tools = [
   'The Revised Children’s Anxiety and Depression Scale (RCADS)  ',
   'The Mood and Feelings Questionnaire (MFQ) ',
   ' ·Both are available for free and include parent and self-report versions.',
-  ' ·The RCADS assesses symptoms of anxiety and depression.',
-  '·The MFQ provides a screening measure for depression. ',
+  'The RCADS assesses symptoms of anxiety and depression.',
+  'The MFQ provides a screening measure for depression. ',
 ];
 
 export const Severity = [
@@ -80,7 +80,7 @@ export const Severity = [
   ' Click the boxes below to reveal definitions:',
   '  Few, if any, symptoms in excess of those required to make the diagnosis are present, the intensity of the symptoms is distressing but manageable, and the symptoms result in minor impairment in social or occupational functioning.',
   ' The number of symptoms, intensity of symptoms, and/or functional impairment are between those specified for “mild” and “severe.”',
-  ' The number of symptoms is substantially in excess of that required to make the diagnosis, the intensity of the symptoms is seriously distressing and unmanageable, and the symptoms markedly interfere with social and occupational functioning. (Academic functioning should be considered in place of occupational functioning, given the developmental stage.) ',
+  ' The number of symptoms is substantially in excess of that required to make the diagnosis, the intensity of the symptoms is seriously distressing and unmanageable, and the symptoms markedly interfere with social and occupational functioning. Academic functioning should be considered in place of occupational functioning, given the developmental stage. ',
 ];
 
 export const treatment =
@@ -190,12 +190,16 @@ export const Psychotherapy = [
 ];
 
 export const check6 = {
-  heading: 'Check response after 6 weeks',
+  heading: 'Check Response After 6 Weeks',
   content: [
     {
-      subHeading: 'Assess response using:',
+      subHeading: 'Assess Response Using:',
+      content: '',
+    },
+    {
+      subHeading: 'Clinical Judgment:',
       content:
-        'Clinical Judgment: has there been a reduction in symptoms or improvement in functioning? (i.e., worsening, no change, minimal, much/very much improved) See Clinical Global Impressions Scale to standardize approach. ',
+        ' has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)? See Clinical Global Impressions Scale to standardize approach. ',
     },
     {
       subHeading: 'Self-report tools: ',
@@ -205,12 +209,17 @@ export const check6 = {
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
       content:
-        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met? (e.g., more outings, more interaction with peers)',
+        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
     },
     {
-      subHeading: 'Definitions: ',
+      subHeading: 'Definitions:',
+      content: '',
+    },
+
+    {
+      subHeading: 'Partial Remission:',
       content:
-        'Partial remission: Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
+        'Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
     },
     {
       subHeading: 'Remission: ',
@@ -221,12 +230,16 @@ export const check6 = {
 };
 
 export const check3 = {
-  heading: 'Check response after 3 months',
+  heading: 'Check Response After 3 Months',
   content: [
     {
-      subHeading: 'Assess response using:',
+      subHeading: 'Assess Response Using:',
+      content: '',
+    },
+    {
+      subHeading: 'Clinical Judgment: ',
       content:
-        'Clinical Judgment: has there been a reduction in symptoms or improvement in functioning? (i.e., worsening, no change, minimal, much/very much improved) See Clinical Global Impressions Scale to standardize approach. ',
+        'has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)? See Clinical Global Impressions Scale to standardize approach. ',
     },
     {
       subHeading: 'Self-report tools: ',
@@ -236,12 +249,16 @@ export const check3 = {
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
       content:
-        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met? (e.g., youth who identified more outings or more interaction with peers as desired outcomes indicating meaningful response)',
+        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., youth who identified more outings or more interaction with peers as desired outcomes indicating meaningful response)?',
     },
     {
-      subHeading: 'Definitions: ',
+      subHeading: 'Definitions:',
+      content: '',
+    },
+    {
+      subHeading: 'Partial remission:',
       content:
-        'Partial remission: Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
+        'Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
     },
     {
       subHeading: 'Remission: ',

@@ -35,6 +35,10 @@
   .treatment_btn_text {
     font-size: 2vmin !important;
   }
+
+  .treatment_steps {
+    text-align: center !important;
+  }
 }
 
 @media screen and (max-width: 425px) {

@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import Heading from '../../components/Text/Heading';
+import Heading, { Paragraph } from '../../components/Text/Heading';
 import styled, { css } from 'styled-components';
 import VA from '../../components/Vertical_Accordions/va';
 import { Row, Col, Alert } from 'react-bootstrap';
 import { PsychosocialStrategies } from '../../resource/content';
-import { SecondaryColor_Blk } from '../../theme/resource';
+import { SecondaryColor_Blk, SecondaryColor_Tel } from '../../theme/resource';
 import { enterAni2 } from '../../theme/animation';
+import { useHistory } from 'react-router-dom';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '../../components/Buttons/Buttons';
 
 const Psychosocial = () => {
   const [show, setShow] = useState(false);
 
   const [mount, setMount] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     if (window.innerWidth < window.innerHeight) {
@@ -22,6 +28,10 @@ const Psychosocial = () => {
       setMount(false);
     };
   }, []);
+
+  const goBack = () => {
+    history.goBack();
+  };
 
   return (
     <Container mount={mount}>
@@ -40,7 +50,22 @@ const Psychosocial = () => {
         </p>
       </Alert>
       <Row className="p_row">
-        <Col md={{ span: 8, offset: 2 }}>
+        <Col xs lg="2">
+          <Button
+            primary={false}
+            type="outlined"
+            height="5vmin"
+            width="5vw"
+            display
+            onClick={() => goBack()}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+            <Paragraph size="2vmin" color={SecondaryColor_Tel}>
+              Back
+            </Paragraph>
+          </Button>
+        </Col>
+        <Col md={{ span: 8, offset: 0 }}>
           <Heading
             type="h1"
             weight="normal"

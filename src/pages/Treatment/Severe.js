@@ -24,7 +24,7 @@ const Severe = () => {
 
   const history = useHistory();
   const lineHeight_sm = '5vh';
-  const lineHeight_lg = '10vh';
+  const lineHeight_lg = '12vh';
   const initialValue = [null, null, null, null, null];
   const [responses, setRes] = useState(initialValue);
 
@@ -103,11 +103,12 @@ const Severe = () => {
         <C xs lg="2">
           <Heading
             type="h4"
-            size="2vmin"
+            size="3vmin"
             color={SecondaryColor_Blk}
-            align="center"
+            align="end"
             lineHeight={lineHeight_sm}
             weight="bold"
+            className="treatment_steps"
           >
             Step 1
           </Heading>
@@ -138,11 +139,12 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              size="2vmin"
+              size="3vmin"
               color={SecondaryColor_Blk}
-              align="center"
+              align="end"
               lineHeight={lineHeight_sm}
               weight="bold"
+              className="treatment_steps"
             >
               Step 2
             </Heading>
@@ -196,11 +198,12 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              size="2vmin"
+              size="3vmin"
               color={SecondaryColor_Blk}
-              align="center"
+              align="end"
               lineHeight={lineHeight_sm}
               weight="bold"
+              className="treatment_steps"
             >
               Step 2
             </Heading>
@@ -250,11 +253,12 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              size="2vmin"
+              size="3vmin"
               color={SecondaryColor_Blk}
-              align="center"
+              align="end"
               lineHeight={lineHeight_sm}
               weight="bold"
+              className="treatment_steps"
             >
               Step 3
             </Heading>
@@ -287,11 +291,12 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              size="2vmin"
+              size="3vmin"
               color={SecondaryColor_Blk}
-              align="center"
+              align="end"
               lineHeight={lineHeight_sm}
               weight="bold"
+              className="treatment_steps"
             >
               Step 4
             </Heading>
@@ -344,11 +349,12 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              size="2vmin"
+              size="3vmin"
               color={SecondaryColor_Blk}
-              align="center"
+              align="end"
               lineHeight={lineHeight_sm}
               weight="bold"
+              className="treatment_steps"
             >
               Step 4
             </Heading>
@@ -383,11 +389,12 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              size="2vmin"
+              size="3vmin"
               color={SecondaryColor_Blk}
-              align="center"
+              align="end"
               lineHeight={lineHeight_sm}
               weight="bold"
+              className="treatment_steps"
             >
               Step 5
             </Heading>
@@ -420,11 +427,12 @@ const Severe = () => {
           <C xs lg="2">
             <Heading
               type="h4"
-              size="2vmin"
+              size="3vmin"
               color={SecondaryColor_Blk}
-              align="center"
+              align="end"
               lineHeight={lineHeight_sm}
               weight="bold"
+              className="treatment_steps"
             >
               Step 6
             </Heading>
@@ -443,7 +451,7 @@ const Severe = () => {
                 <Heading
                   type="p"
                   weight="normal"
-                  size="1.8vmin"
+                  size="2.2vmin"
                   color="white"
                   align="center"
                 >
@@ -452,7 +460,7 @@ const Severe = () => {
                 <Heading
                   type="p"
                   weight="normal"
-                  size="1.8vmin"
+                  size="2.2vmin"
                   color="white"
                   align="center"
                 >
@@ -461,7 +469,7 @@ const Severe = () => {
                 <Heading
                   type="p"
                   weight="normal"
-                  size="1.8vmin"
+                  size="2.2vmin"
                   color="white"
                   align="center"
                 >

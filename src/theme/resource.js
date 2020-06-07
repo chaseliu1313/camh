@@ -21,6 +21,16 @@ export const Correct_G_Hover = '#086972';
 export const Error_R = '#ff304f';
 export const Error_R_Hover = '#e41749';
 
+export const PrimaryGradient = [
+  PrimaryColor,
+  '#682685',
+  '#62237E',
+  '#5C2177',
+  '#561E6F',
+  '#501B68',
+  DarkPurple,
+];
+
 const colorPaletteSecondary = [
   SecondaryColor_Tel,
   SecondaryColor_Yel,

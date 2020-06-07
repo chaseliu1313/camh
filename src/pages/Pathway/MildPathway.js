@@ -7,7 +7,11 @@ import StepCard, {
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import Arrow from '../../resource/arrowdown.svg';
-import { colorPalette, PrimaryColor } from '../../theme/resource';
+import {
+  colorPalette,
+  PrimaryColor,
+  PrimaryGradient,
+} from '../../theme/resource';
 import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -44,7 +48,7 @@ export default function MildPathway() {
     <Container id="path_mild_container">
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
-          <StepCard background={colorPalette(2)} height="4vh">
+          <StepCard background={PrimaryGradient[0]} height="4vh">
             <Heading
               type="h1"
               weight="normal"
@@ -77,7 +81,7 @@ export default function MildPathway() {
               unSelect={responses[1]}
             />
             <StepCard
-              background={colorPalette(3)}
+              background={PrimaryGradient[1]}
               shadow="none"
               radius="0"
               height="4vh"
@@ -105,7 +109,7 @@ export default function MildPathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[0] ? (
-            <StepCard background={colorPalette(2)} height="4vh">
+            <StepCard background={PrimaryGradient[2]} height="4vh">
               <Heading
                 type="h1"
                 weight="normal"
@@ -120,7 +124,7 @@ export default function MildPathway() {
           ) : null}
 
           {responses[1] ? (
-            <StepCard background={colorPalette(2)} height="4vh">
+            <StepCard background={PrimaryGradient[3]} height="4vh">
               <Heading
                 type="h1"
                 weight="normal"
@@ -157,7 +161,7 @@ export default function MildPathway() {
                 unSelect={responses[3]}
               />
               <StepCard
-                background={colorPalette(3)}
+                background={PrimaryGradient[4]}
                 shadow="none"
                 radius="0"
                 height="4vh"
@@ -186,7 +190,7 @@ export default function MildPathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[2] && responses[0] ? (
-            <StepCard background={colorPalette(2)} height="4vh">
+            <StepCard background={PrimaryGradient[5]} height="4vh">
               <Heading
                 type="h1"
                 weight="normal"
@@ -201,7 +205,7 @@ export default function MildPathway() {
           ) : null}
 
           {responses[3] && responses[0] ? (
-            <StepCard background={colorPalette(2)} height="4vh">
+            <StepCard background={PrimaryGradient[6]} height="4vh">
               <Heading
                 type="h1"
                 weight="normal"

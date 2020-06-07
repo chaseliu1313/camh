@@ -234,7 +234,9 @@ a {
 .carousel-control-prev-icon {
   visibility: hidden;
 }
-
+.carousel-indicators {
+  bottom: -80px !important;
+}
 .carousel-indicators > li {
   background-color: #6e298d !important;
   height: 1.2vmin !important;

@@ -29,7 +29,7 @@ export default function Hightlights() {
   const titles = [
     'Orientation to the Tool',
     'Depression in Teens Overview',
-    '  Resource:',
+    ' Depression Fact Sheet',
   ];
 
   //set active title hook

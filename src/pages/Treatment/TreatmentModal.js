@@ -10,11 +10,7 @@ import {
   check6,
 } from '../../resource/content';
 import styled from 'styled-components';
-import {
-  PrimaryColor,
-  SecondaryColor_Blk,
-  SecondaryColor_Blu,
-} from '../../theme/resource';
+import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
 import Hightlights from '../Highlight';
 
 const TreatmentModal = (props) => {
@@ -83,13 +79,32 @@ const TreatmentModal = (props) => {
         <Container>
           {content.content.map((c) => (
             <>
-              <Heading type="h2" weight="bold" size="2.5vmin">
-                {c.subHeading}
-              </Heading>
+              {c.subHeading === 'Definitions:' ||
+              c.subHeading === 'Assess response using:' ? (
+                <Heading
+                  type="h2"
+                  weight="bold"
+                  size="2.5vmin"
+                  color={SecondaryColor_Blk}
+                  margin="10px 0 10px 0"
+                >
+                  {c.subHeading}
+                </Heading>
+              ) : (
+                <Heading
+                  type="h2"
+                  weight="bold"
+                  size="2.5vmin"
+                  color={PrimaryColor}
+                >
+                  {c.subHeading}
+                </Heading>
+              )}
               <Paragraph
                 weight="normal"
                 size="2.5vmin"
                 color={SecondaryColor_Blk}
+                margin="0 0 0 5px"
               >
                 {c.content}
               </Paragraph>
@@ -98,7 +113,6 @@ const TreatmentModal = (props) => {
 
           {content.heading === 'Fluoxetine' ? (
             <>
-              {' '}
               <Paragraph
                 weight="normal"
                 size="2vmin"
@@ -125,6 +139,7 @@ const TreatmentModal = (props) => {
                             weight="normal"
                             size="2.5vmin"
                             color={SecondaryColor_Blk}
+                            margin="0 0 0 5px"
                           >
                             {ec}
                           </Paragraph>
