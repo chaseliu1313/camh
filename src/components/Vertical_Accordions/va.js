@@ -191,7 +191,7 @@ const VaCard = styled.div`
 
 const IMG = styled.img`
   height: auto;
-  width: 10vw;
+  width: auto;
   margin: 3vh 0 0 0;
 `;
 export default va;

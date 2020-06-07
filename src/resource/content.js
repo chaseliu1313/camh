@@ -92,7 +92,7 @@ export const toolLink2 =
   'https://devepi.duhs.duke.edu/measures/the-mood-and-feelings-questionnaire-mfq/';
 
 export const PSExtra =
-  'Check out our Mood Foundations resource and click on the image to download. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print, and provide to patients in your practice.';
+  'Check out our Mood Foundations resource and click on the button to download. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print, and provide to patients in your practice.';
 export const PSExtraLink =
   'https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf';
 
