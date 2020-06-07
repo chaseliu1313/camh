@@ -80,7 +80,7 @@ const TreatmentModal = (props) => {
           {content.content.map((c) => (
             <>
               {c.subHeading === 'Definitions:' ||
-              c.subHeading === 'Assess response using:' ? (
+              c.subHeading === 'Assess Response Using:' ? (
                 <Heading
                   type="h2"
                   weight="bold"
