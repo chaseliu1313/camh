@@ -3,7 +3,7 @@ import Heading, { Paragraph } from '../Text/Heading';
 import styled from 'styled-components';
 import { SecondaryColor_Blk } from '../../theme/resource';
 import './va.css';
-import fs from '../../resource/factsheet.svg';
+import fs from '../../resource/factsheet.png';
 import Button from '../Buttons/Buttons';
 
 const va = ({ length, info }) => {
