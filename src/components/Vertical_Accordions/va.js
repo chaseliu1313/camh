@@ -114,7 +114,6 @@ export const Cards = (props) => {
 
           {content.img_url ? (
             <>
-              <IMG src={fs} />
               <a
                 href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
                 target="_blank"
@@ -123,7 +122,7 @@ export const Cards = (props) => {
               >
                 <Button
                   primary={false}
-                  height="7vh"
+                  height="5vh"
                   width="10vw"
                   display
                   margin="25% 0 0 25%"
