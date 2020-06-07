@@ -75,7 +75,7 @@ const Psycho = () => {
           </Heading>
           <Paragraph weight="normal" size="2vmin" align="center">
             Try individual CBT first if possible. Otherwise, choose another
-            psychotherapy.Click on each box to learn about each therapy.
+            psychotherapy. Hover over each box to learn about each therapy.
           </Paragraph>
         </Col>
       </Row>
