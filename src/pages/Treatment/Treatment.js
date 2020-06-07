@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { Row as R, Col as C } from 'react-bootstrap';
 import Card from '../../components/Cards/Card';
-import bg from '../../resource/treatment.svg';
+import bg from '../../resource/mental.svg';
 import { PrimaryColor, TertiaryColor_Tel, size } from '../../theme/resource';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import { treatment } from '../../resource/content';
