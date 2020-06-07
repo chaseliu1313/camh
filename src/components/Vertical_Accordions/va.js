@@ -114,7 +114,7 @@ export const Cards = (props) => {
 
           {content.img_url ? (
             <>
-              <IMG src={fs} alt="fact sheet" />
+              <IMG src={fs} />
               <a
                 href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
                 target="_blank"
