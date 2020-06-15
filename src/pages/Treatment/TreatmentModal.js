@@ -11,7 +11,6 @@ import {
 } from '../../resource/content';
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
-import Hightlights from '../Highlight';
 
 const TreatmentModal = (props) => {
   const [show, setShow] = useState(false);
@@ -22,9 +21,6 @@ const TreatmentModal = (props) => {
     setShow(false);
     props.onClose(false);
   };
-
-  const MarginP = '20px 0 20px 0';
-  const fontWeight = 'normal';
 
   useEffect(() => {
     let s = props.show;
@@ -171,14 +167,6 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   padding: 10px;
-`;
-
-const SubContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 `;
 
 export default TreatmentModal;

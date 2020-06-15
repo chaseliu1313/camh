@@ -4,8 +4,11 @@ import { Row, Col } from 'react-bootstrap';
 import Heading, { Paragraph, SubText } from '../components/Text/Heading';
 import Button from '../components/Buttons/Buttons';
 import Teens from '../resource/teens.svg';
+import MainPic from '../resource/main_1.svg';
 import Anime from 'react-anime';
 import { useHistory } from 'react-router-dom';
+import { size } from '../theme/resource';
+import { landingContent } from '../resource/content';
 
 export default function Landing() {
   let history = useHistory();
@@ -52,22 +55,19 @@ export default function Landing() {
         <LeftCol md={6} xs={12}>
           <Anime {...animePropsLeft1}>
             <Heading type="h1" weight="bold" color="white" size="5vmin">
-              Cundill Centre Online Tool for the Treatment of Youth Depression
+              {landingContent[0]}
             </Heading>
           </Anime>
           <Anime {...animePropsLeft2}>
-            <Button onClick={handleClick} width="20vw" display={true}>
-              <Paragraph color="white" size="2vw">
+            <Button onClick={handleClick} width="20vw" height="7vh" display>
+              <Paragraph color="white" size="2vh">
                 Begin
               </Paragraph>
             </Button>
           </Anime>
           <Anime {...animePropsLeft3}>
             <Paragraph color="white" size="2.5vmin">
-              This tool was created by clinician scientists and other experts
-              from the Cundill Centre for Child and Youth Depression at CAMH to
-              help family health teams understand best practices for managing
-              youth with depression in their settings.
+              {landingContent[1]}
             </Paragraph>
             <div id="landing_sub">
               <SubText color="white">Contact: Cundill.Centre@camh.ca</SubText>
@@ -78,7 +78,7 @@ export default function Landing() {
         <RightCol md={6} xs={12}>
           <Anime {...animePropsRight}>
             <IMG
-              src={Teens}
+              src={MainPic}
               className="illustrating_1"
               alt="Illustrator of a group of teenagers"
             />
@@ -91,7 +91,7 @@ export default function Landing() {
 
 const Main = styled.div`
   height: 100%;
-  widht: 100%;
+  width: 100%;
   overflow: hidden;
   padding: 10vmin;
   background: linear-gradient(
@@ -112,9 +112,28 @@ const LeftCol = styled(Col)`
 
 const RightCol = styled(Col)`
   height: 100%;
-  padding: 5vmin;
+  padding-left: 15vmin;
+
+  @media (max-width: ${size.mobileL}) {
+    padding-left: 0;
+  }
 `;
 
 const IMG = styled.img`
-  height: 30vw;
+  height: 100%;
+  width: 100%;
+  left: 100px;
+  position: relative;
+
+  @media (max-width: ${size.laptopL}) {
+    left: 0;
+    top: 30vh;
+    width: 150%;
+  }
+
+  @media (max-width: ${size.mobileL}) {
+    left: 0;
+    top: 0;
+    width: 120%;
+  }
 `;

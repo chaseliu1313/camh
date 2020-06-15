@@ -47,7 +47,6 @@ export default function Assessment() {
 
       <BtnGroup>
         <Button
-          primary={true}
           type="outlined"
           height="7vh"
           width="20vw"

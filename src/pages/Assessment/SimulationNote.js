@@ -40,7 +40,7 @@ const SimulationNote = ({ modalShow, hideNotes }) => {
                   weight={fontWeight}
                   key={index}
                 >
-                  <p className="simu_marks">✔</p>
+                  <span className="simu_marks">✔</span>
                   {w}
                 </Paragraph>
               ))}
@@ -56,7 +56,7 @@ const SimulationNote = ({ modalShow, hideNotes }) => {
                   weight={fontWeight}
                   key={index}
                 >
-                  <p className="simu_cross">✘</p>
+                  <span className="simu_cross">✘</span>
                   {c}
                 </Paragraph>
               ))}

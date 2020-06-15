@@ -1,3 +1,8 @@
+export const landingContent = [
+  'Cundill Centre Online Tool for the Treatment of Youth Depression',
+  'This tool was created by clinician scientists and other experts from the Cundill Centre for Child and Youth Depression at CAMH to help family health teams understand best practices for managing youth with depression in their settings.',
+];
+
 export const highlightsContent = [
   '·The Cundill Centre brings together experts from around the world to improve screening, prevention, and depression treatment.',
   '·This tool was created by our team to familiarize family health teams (primary care clinicians) with best care practices for managing depression in youth. ',

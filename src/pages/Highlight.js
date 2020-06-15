@@ -173,7 +173,9 @@ export default function Hightlights() {
                         display
                         margin="25% 0 0 25%"
                       >
-                        Download
+                        <Paragraph size="3vmin" color="white">
+                          Download
+                        </Paragraph>
                       </Button>
                     </a>
                   </Col>

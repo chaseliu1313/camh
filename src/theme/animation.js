@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import { keyframes, css } from 'styled-components';
 
 //exit from bottom
 export const exitAni = keyframes`

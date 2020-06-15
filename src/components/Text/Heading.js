@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor_Blk, size } from '../../theme/resource';
+import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
 
 export default function Heading({
   color,

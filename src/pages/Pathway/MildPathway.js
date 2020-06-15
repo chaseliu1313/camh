@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
+import React, { useState } from 'react';
+import Heading, { SubText } from '../../components/Text/Heading';
 import StepCard, {
   StepOptionCard,
   StepOptionButton,
 } from '../../components/Cards/StepCard';
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import Arrow from '../../resource/arrowdown.svg';
-import {
-  colorPalette,
-  PrimaryColor,
-  PrimaryGradient,
-} from '../../theme/resource';
+
+import { PrimaryColor, PrimaryGradient } from '../../theme/resource';
 import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

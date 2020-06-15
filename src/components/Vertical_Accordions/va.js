@@ -3,7 +3,7 @@ import Heading, { Paragraph } from '../Text/Heading';
 import styled from 'styled-components';
 import { SecondaryColor_Blk } from '../../theme/resource';
 import './va.css';
-import fs from '../../resource/factsheet.png';
+
 import Button from '../Buttons/Buttons';
 
 const va = ({ length, info }) => {
@@ -188,9 +188,4 @@ const VaCard = styled.div`
   }
 `;
 
-const IMG = styled.img`
-  height: auto;
-  width: auto;
-  margin: 3vh 0 0 0;
-`;
 export default va;

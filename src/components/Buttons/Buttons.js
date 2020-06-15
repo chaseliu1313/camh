@@ -38,7 +38,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       href={href}
-      display={display}
+      display={display.toString()}
       dark={dark}
     >
       {children}
@@ -106,7 +106,7 @@ background-color: ${
       ? DarkPurple
       : colorShifter(primary, err)
   };
-display: ${display ? 'inline-flex' : 'none'};
+display: ${display === 'true' ? 'inline-flex' : 'none'};
 &:hover {
     border: 1.5px solid ${borderShifterHover(primary, err)[0]};
     text-decoration: none !important;
@@ -138,5 +138,6 @@ display: ${display ? 'inline-flex' : 'none'};
 
   @media (max-width: 425px) {
     width: 35vw;
+    height: 10vh;
   }
 `;

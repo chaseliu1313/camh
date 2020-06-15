@@ -48,7 +48,7 @@ const Treatment = () => {
               className="treatment_card"
               bgColor={TertiaryColor_Tel}
             >
-              <Heading size="7vmin" weight="bold" align="center" color="white">
+              <Heading size="5vmin" weight="bold" align="center" color="white">
                 Treatment
               </Heading>
               <Paragraph margin={Pmarging} color="white">

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
+import React, { useState, Fragment } from 'react';
+import Heading from '../../components/Text/Heading';
 import StepCard, {
   StepOptionCard,
   StepOptionButton,

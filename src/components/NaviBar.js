@@ -13,14 +13,14 @@ import logoV from '../resource/logo_w_v.svg';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function NaviBar() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width] = useState(window.innerWidth);
   const [clicked, setClicked] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
+    'false',
+    'false',
+    'false',
+    'false',
+    'false',
+    'false',
   ]);
 
   const location2 = useLocation();
@@ -39,37 +39,37 @@ export default function NaviBar() {
   const handleClick = () => {
     switch (location2.pathname) {
       case '/overview':
-        state = [false, true, false, false, false, false];
+        state = ['false', 'true', 'false', 'false', 'false', 'false'];
         break;
       case '/assessment':
-        state = [false, false, true, false, false, false];
+        state = ['false', 'false', 'true', 'false', 'false', 'false'];
 
         break;
       case '/assessment/pears':
-        state = [false, false, true, false, false, false];
+        state = ['false', 'false', 'true', 'false', 'false', 'false'];
 
         break;
       case '/assessment/tools':
-        state = [false, false, true, false, false, false];
+        state = ['false', 'false', 'true', 'false', 'false', 'false'];
 
         break;
       case '/treatment/mild':
-        state = [false, false, false, true, true, false];
+        state = ['false', 'false', ' false', 'true', ' true', 'false'];
         break;
       case '/treatment/severe':
-        state = [false, false, false, true, true, false];
+        state = ['false', 'false', 'false', 'true', 'true', 'false'];
         break;
       case '/tools':
-        state = [false, false, false, false, false, true];
+        state = ['false', 'false', 'false', 'false', 'false', 'true'];
         break;
       case '/help':
-        state = [false, false, false, false, false, true];
+        state = ['false', 'false', 'false', 'false', 'false', 'true'];
         break;
       case '/reference':
-        state = [false, false, false, false, false, true];
+        state = ['false', 'false', 'false', 'false', 'false', 'true'];
         break;
       default:
-        state = [false, false, false, false, false, false];
+        state = ['false', 'false', 'false', 'false', 'false', 'false'];
         break;
     }
     setClicked(state);
@@ -186,7 +186,7 @@ const IMG = styled.img`
 
 const NavLink = styled(Nav.Link)`
   ${({ navclicked }) =>
-    navclicked
+    navclicked === 'true'
       ? ` background-color: #4a1961;
   padding: 7px 3px;
   border-radius: 10px;
@@ -198,7 +198,7 @@ const NavLink = styled(Nav.Link)`
 
 const NavDropdown = styled(D)`
   ${({ navclicked }) =>
-    navclicked
+    navclicked === 'true'
       ? ` background-color: #4a1961;
   padding: 0.2rem 0.5rem;
   border-radius: 10px;

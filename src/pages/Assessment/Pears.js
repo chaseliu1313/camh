@@ -26,7 +26,7 @@ const Pears = () => {
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
-        margin="3vmin 0 -1vmin 0"
+        margin="15px 0"
         id="assess_landing"
       >
         Assessment Pearls
@@ -46,7 +46,6 @@ const Pears = () => {
 
       <BtnGroup id="btn_group">
         <Button
-          primary={true}
           type="outlined"
           height="7vh"
           width="20vw"

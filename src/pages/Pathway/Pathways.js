@@ -3,15 +3,9 @@ import styled, { css, keyframes } from 'styled-components';
 import './pathway.css';
 import { Row, Col } from 'react-bootstrap';
 import Heading, { Paragraph } from '../../components/Text/Heading';
-import Button from '../../components/Buttons/Buttons';
+
 import JointBtnContainer, { JointBtn } from '../../components/JointBtn';
-import {
-  SecondaryColor_Blk,
-  TertiaryColor_Tel,
-  TertiaryColor_Blu,
-  TertiaryColor_Yel,
-  TertiaryColor_Bro,
-} from '../../theme/resource';
+import { SecondaryColor_Blk } from '../../theme/resource';
 
 import MildPathway from './MildPathway';
 import SeverePathway from './SeverePathway';
@@ -51,13 +45,13 @@ export default function Pathways() {
         <CenterCol md={{ span: 10, offset: 1 }}>
           <Heading
             color={SecondaryColor_Blk}
-            size="7vmin"
+            size="5vmin"
             weight="bold"
             align="center"
           >
             Pathways
           </Heading>
-          <Paragraph size="16px">
+          <Paragraph size="2.5vmin">
             Click the button below to switch between the pathways
           </Paragraph>
           <JointBtnContainer>
@@ -77,7 +71,7 @@ export default function Pathways() {
         {switchView[1] ? <SeverePathway /> : null}
         {!switchView[0] && !switchView[1] ? (
           <CenterCol md={{ span: 10, offset: 1 }}>
-            <Heading size="7vmin">⬆ Choose the Pathway ⬆</Heading>
+            <Heading size="5vmin">⬆ Choose the Pathway ⬆</Heading>
           </CenterCol>
         ) : null}
       </Row>

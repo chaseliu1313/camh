@@ -53,7 +53,7 @@ export default function Intro(props) {
             >
               {assessment1[3]}
             </Paragraph>
-            <SubText size="2vmin">{assessment1[4]}</SubText>
+            <SubText size="2.5vmin">{assessment1[4]}</SubText>
             <Button
               primary={false}
               type=" "
@@ -62,7 +62,7 @@ export default function Intro(props) {
               onClick={() => setShowModeal(true)}
               display
             >
-              <Paragraph size="2vmin" color="white">
+              <Paragraph size="3vmin" color="white">
                 DSM-5 Criteria
               </Paragraph>
             </Button>
