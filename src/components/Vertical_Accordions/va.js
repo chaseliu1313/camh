@@ -9,7 +9,9 @@ import Button from '../Buttons/Buttons';
 const va = ({ length, info }) => {
   return (
     <Container length={length}>
-      {info ? info.map((i) => <Cards content={i} />) : 'no content loaded'}
+      {info
+        ? info.map((i, index) => <Cards key={index} content={i} />)
+        : 'no content loaded'}
     </Container>
   );
 };
@@ -35,12 +37,13 @@ export const Cards = (props) => {
       <VaSub1 className="va_content">
         <>
           {!content.description ? (
-            content.content.map((c) =>
+            content.content.map((c, index) =>
               c.includes('website') ? (
                 <Paragraph
                   size="2.2vmin"
                   color={SecondaryColor_Blk}
                   margin={defaultMargin}
+                  key={index}
                 >
                   · Visit the PREVNet website &nbsp;
                   <a className="ov_a" href="https://www.prevnet.ca/">
@@ -52,6 +55,7 @@ export const Cards = (props) => {
                   size="2.2vmin"
                   color={SecondaryColor_Blk}
                   margin={defaultMargin}
+                  key={index}
                 >
                   {c}
                 </Paragraph>
@@ -78,11 +82,12 @@ export const Cards = (props) => {
               >
                 {content.subHeading1}
               </Heading>
-              {content.content.map((c) => (
+              {content.content.map((c, index) => (
                 <Paragraph
                   size="2.2vmin"
                   color={SecondaryColor_Blk}
                   margin="1vh 0 0 0"
+                  key={index}
                 >
                   {c}
                 </Paragraph>
@@ -98,11 +103,12 @@ export const Cards = (props) => {
                 {content.subHeading2}
               </Heading>
 
-              {content.subContent2.map((c2) => (
+              {content.subContent2.map((c2, index) => (
                 <Paragraph
                   size="2.2vmin"
                   color={SecondaryColor_Blk}
                   margin={defaultMargin}
+                  key={index}
                 >
                   {c2}
                 </Paragraph>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import { Modal, ModalBody, Accordion, Card } from 'react-bootstrap';
 import {
@@ -50,7 +50,7 @@ const TreatmentModal = (props) => {
     return () => {
       setShow(false);
     };
-  }, [props.show]);
+  }, [props.show, props.index]);
 
   return (
     <Modal
@@ -73,8 +73,8 @@ const TreatmentModal = (props) => {
       </Modal.Header>
       <ModalBody>
         <Container>
-          {content.content.map((c) => (
-            <>
+          {content.content.map((c, index) => (
+            <Fragment key={index}>
               {c.subHeading === 'Definitions:' ||
               c.subHeading === 'Assess Response Using:' ? (
                 <Heading
@@ -104,7 +104,7 @@ const TreatmentModal = (props) => {
               >
                 {c.content}
               </Paragraph>
-            </>
+            </Fragment>
           ))}
 
           {content.heading === 'Fluoxetine' ? (
@@ -119,7 +119,7 @@ const TreatmentModal = (props) => {
               </Paragraph>
               <Accordion id="treatment_accor">
                 {extra.map((e, index) => (
-                  <Card id="treatment_accor_card">
+                  <Card id="treatment_accor_card" key={index}>
                     <Accordion.Toggle
                       as={Card.Header}
                       eventKey={index.toString()}
@@ -130,12 +130,13 @@ const TreatmentModal = (props) => {
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey={index.toString()}>
                       <Card.Body>
-                        {e.content.map((ec) => (
+                        {e.content.map((ec, index) => (
                           <Paragraph
                             weight="normal"
                             size="2.5vmin"
                             color={SecondaryColor_Blk}
                             margin="0 0 0 5px"
+                            key={index}
                           >
                             {ec}
                           </Paragraph>
@@ -147,9 +148,9 @@ const TreatmentModal = (props) => {
               </Accordion>
             </>
           ) : content.heading === 'Relapse prevention plan:' ? (
-            extra.map((e) => (
+            extra.map((e, index) => (
               <>
-                <Heading type="h2" weight="bold" size="2.5vmin">
+                <Heading type="h2" weight="bold" size="2.5vmin" key={index}>
                   {e}
                 </Heading>
               </>

@@ -48,7 +48,7 @@ export default function StepCard({
       onClick={onClick}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}
-      cursor={cursor}
+      cursor={cursor.toString()}
       flex={flex}
     >
       {children}
@@ -135,7 +135,7 @@ const CardContainer = styled.div`
      margin: ${margin || 'auto'};
      padding: ${padding || '0'};
      border-radius: ${radius || '2px'};
-     cursor: ${cursor ? 'pointer' : 'auto'};
+     cursor: ${cursor === 'true' ? 'pointer' : 'auto'};
      flex-direction: ${flex || 'row'};
      box-shadow: ${
        shadow ||

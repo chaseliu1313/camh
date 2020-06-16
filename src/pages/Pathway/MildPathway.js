@@ -44,7 +44,7 @@ export default function MildPathway() {
     <Container id="path_mild_container">
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
-          <StepCard background={PrimaryGradient[0]} height="4vh">
+          <StepCard background={PrimaryGradient[0]} height="4vh" cursor>
             <Heading
               type="h1"
               weight="normal"
@@ -81,6 +81,7 @@ export default function MildPathway() {
               shadow="none"
               radius="0"
               height="4vh"
+              cursor
             >
               <Heading
                 type="h1"
@@ -105,7 +106,7 @@ export default function MildPathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[0] ? (
-            <StepCard background={PrimaryGradient[2]} height="4vh">
+            <StepCard background={PrimaryGradient[2]} height="4vh" cursor>
               <Heading
                 type="h1"
                 weight="normal"
@@ -120,7 +121,7 @@ export default function MildPathway() {
           ) : null}
 
           {responses[1] ? (
-            <StepCard background={PrimaryGradient[3]} height="4vh">
+            <StepCard background={PrimaryGradient[3]} height="4vh" cursor>
               <Heading
                 type="h1"
                 weight="normal"
@@ -161,6 +162,7 @@ export default function MildPathway() {
                 shadow="none"
                 radius="0"
                 height="4vh"
+                cursor
               >
                 <Heading
                   type="h1"
@@ -186,7 +188,7 @@ export default function MildPathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[2] && responses[0] ? (
-            <StepCard background={PrimaryGradient[5]} height="4vh">
+            <StepCard background={PrimaryGradient[5]} height="4vh" cursor>
               <Heading
                 type="h1"
                 weight="normal"
@@ -201,7 +203,7 @@ export default function MildPathway() {
           ) : null}
 
           {responses[3] && responses[0] ? (
-            <StepCard background={PrimaryGradient[6]} height="4vh">
+            <StepCard background={PrimaryGradient[6]} height="4vh" cursor>
               <Heading
                 type="h1"
                 weight="normal"

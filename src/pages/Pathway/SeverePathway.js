@@ -96,7 +96,7 @@ export default function SeverePathway() {
     <Container id="path_mild_container">
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
-          <StepCard background={PrimaryGradient[0]} height="4vh">
+          <StepCard background={PrimaryGradient[0]} height="4vh" cursor>
             <Heading
               type="h1"
               weight="normal"
@@ -123,6 +123,7 @@ export default function SeverePathway() {
               shadow="none"
               radius="0"
               height="4vh"
+              cursor
             >
               <Heading
                 type="h1"
@@ -153,7 +154,7 @@ export default function SeverePathway() {
                 className="arrow_d"
                 color={PrimaryColor}
               />
-              <StepCard background={PrimaryGradient[1]} height="4vh">
+              <StepCard background={PrimaryGradient[1]} height="4vh" cursor>
                 <Heading
                   type="h1"
                   weight="normal"
@@ -188,6 +189,7 @@ export default function SeverePathway() {
                   shadow="none"
                   radius="0"
                   height="4vh"
+                  cursor
                 >
                   <Heading
                     type="h1"
@@ -219,6 +221,7 @@ export default function SeverePathway() {
                   shadow="none"
                   radius="0"
                   height="4vh"
+                  cursor
                 >
                   <Heading
                     type="h1"
@@ -252,7 +255,7 @@ export default function SeverePathway() {
                 className="arrow_d"
                 color={PrimaryColor}
               />
-              <StepCard background={PrimaryGradient[3]} height="4vh">
+              <StepCard background={PrimaryGradient[3]} height="4vh" cursor>
                 <Heading
                   type="h1"
                   weight="normal"
@@ -290,6 +293,7 @@ export default function SeverePathway() {
                 shadow="none"
                 radius="0"
                 height="4vh"
+                cursor
               >
                 <Heading
                   type="h1"
@@ -326,7 +330,7 @@ export default function SeverePathway() {
                 className="arrow_d"
                 color={PrimaryColor}
               />
-              <StepCard background={PrimaryGradient[5]} height="4vh">
+              <StepCard background={PrimaryGradient[5]} height="4vh" cursor>
                 <Heading
                   type="h1"
                   weight="normal"
@@ -346,7 +350,7 @@ export default function SeverePathway() {
                 className="arrow_d"
                 color={PrimaryColor}
               />
-              <StepCard background={PrimaryGradient[5]} height="4vh">
+              <StepCard background={PrimaryGradient[5]} height="4vh" cursor>
                 <Heading
                   type="h1"
                   weight="normal"
@@ -372,7 +376,7 @@ export default function SeverePathway() {
                 className="arrow_d"
                 color={PrimaryColor}
               />
-              <StepCard background={PrimaryGradient[6]} height="4vh">
+              <StepCard background={PrimaryGradient[6]} height="4vh" cursor>
                 <Heading
                   type="h1"
                   weight="normal"
@@ -394,7 +398,7 @@ export default function SeverePathway() {
                 className="arrow_d"
                 color={PrimaryColor}
               />
-              <StepCard background={PrimaryGradient[6]} height="4vh">
+              <StepCard background={PrimaryGradient[6]} height="4vh" cursor>
                 <Heading
                   type="h1"
                   weight="normal"
@@ -414,7 +418,7 @@ export default function SeverePathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {medStreamRes[2] !== null && medStreamRes[2] === true ? (
-            <StepCard background={PrimaryGradient[6]} height="4vh">
+            <StepCard background={PrimaryGradient[6]} height="4vh" cursor>
               <Heading
                 type="h1"
                 weight="normal"
@@ -429,7 +433,7 @@ export default function SeverePathway() {
           ) : medStreamRes[2] !== null &&
             medStreamRes[2] === false &&
             medStreamRes[1] === true ? (
-            <StepCard background={PrimaryGradient[6]} height="4vh">
+            <StepCard background={PrimaryGradient[6]} height="4vh" cursor>
               <Heading
                 type="h1"
                 weight="normal"

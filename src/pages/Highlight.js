@@ -46,7 +46,7 @@ export default function Hightlights() {
   useCallback(() => {
     let active = titles[bgKey];
     setActive(active);
-  }, [bgKey]);
+  }, [bgKey, setActive, titles]);
 
   return (
     <Main bgKey={bgKey} mounted={mounted}>

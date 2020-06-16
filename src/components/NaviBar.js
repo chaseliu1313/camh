@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { useNavClicks } from '../hooks/useNavClicks';
+import { useNavLogo } from '../hooks/useNavLogo';
 
 import {
   Navbar as N,
@@ -8,79 +10,21 @@ import {
   NavDropdown as D,
 } from 'react-bootstrap';
 import { PrimaryColor } from '../theme/resource';
-import logo from '../resource/logo_w_h.svg';
-import logoV from '../resource/logo_w_v.svg';
+
 import { Link, useLocation } from 'react-router-dom';
 
 export default function NaviBar() {
-  const [width] = useState(window.innerWidth);
-  const [clicked, setClicked] = useState([
-    'false',
-    'false',
-    'false',
-    'false',
-    'false',
-    'false',
-  ]);
-
+  // get the current path
   const location2 = useLocation();
-
-  useEffect(() => {
-    handleClick();
-  }, [location2.pathname]);
-
-  const switchLogo = () => {
-    if (width < 395) {
-      return logoV;
-    } else return logo;
-  };
-  let state = [];
-
-  const handleClick = () => {
-    switch (location2.pathname) {
-      case '/overview':
-        state = ['false', 'true', 'false', 'false', 'false', 'false'];
-        break;
-      case '/assessment':
-        state = ['false', 'false', 'true', 'false', 'false', 'false'];
-
-        break;
-      case '/assessment/pears':
-        state = ['false', 'false', 'true', 'false', 'false', 'false'];
-
-        break;
-      case '/assessment/tools':
-        state = ['false', 'false', 'true', 'false', 'false', 'false'];
-
-        break;
-      case '/treatment/mild':
-        state = ['false', 'false', ' false', 'true', ' true', 'false'];
-        break;
-      case '/treatment/severe':
-        state = ['false', 'false', 'false', 'true', 'true', 'false'];
-        break;
-      case '/tools':
-        state = ['false', 'false', 'false', 'false', 'false', 'true'];
-        break;
-      case '/help':
-        state = ['false', 'false', 'false', 'false', 'false', 'true'];
-        break;
-      case '/reference':
-        state = ['false', 'false', 'false', 'false', 'false', 'true'];
-        break;
-      default:
-        state = ['false', 'false', 'false', 'false', 'false', 'false'];
-        break;
-    }
-    setClicked(state);
-  };
+  //customized hook
+  const clicked = useNavClicks(location2.pathname);
 
   return (
     <Container>
       <Navbar expand="md" variant="dark">
         <Navbar.Brand href="#home">
           <IMG
-            src={switchLogo()}
+            src={useNavLogo()}
             height="50"
             className="logo_nav"
             alt="camh logo"
@@ -89,29 +33,14 @@ export default function NaviBar() {
         <Navbar.Toggle aria-controls="navication_bar" />
         <Navbar.Collapse id="navbar_collaps">
           <Nav className="navbar_core">
-            <NavLink
-              navclicked={clicked[0]}
-              onClick={handleClick}
-              as="div"
-              className="nav-link"
-            >
+            <NavLink navclicked={clicked[0]} as="div" className="nav-link">
               <Link to="/">Home</Link>
             </NavLink>
 
-            <NavLink
-              navclicked={clicked[1]}
-              onClick={handleClick}
-              as="div"
-              className="nav-link"
-            >
+            <NavLink navclicked={clicked[1]} as="div" className="nav-link">
               <Link to="/overview">Overview</Link>
             </NavLink>
-            <NavLink
-              navclicked={clicked[2]}
-              onClick={handleClick}
-              as="div"
-              className="nav-link"
-            >
+            <NavLink navclicked={clicked[2]} as="div" className="nav-link">
               <Link to="/assessment">Assessment</Link>
             </NavLink>
             <NavDropdown
@@ -119,18 +48,10 @@ export default function NaviBar() {
               id="navbar_dropdown"
               navclicked={clicked[3] || clicked[4]}
             >
-              <NavDropdown.Item
-                as="div"
-                className="nav-link"
-                onClick={handleClick}
-              >
+              <NavDropdown.Item as="div" className="nav-link">
                 <Link to="/treatment/mild">Mild Depression</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item
-                as="div"
-                className="nav-link"
-                onClick={handleClick}
-              >
+              <NavDropdown.Item as="div" className="nav-link">
                 <Link to="/treatment/severe">Moderate/Severe Depression</Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -140,25 +61,13 @@ export default function NaviBar() {
               id="navbar_dropdown"
               navclicked={clicked[5]}
             >
-              <NavDropdown.Item
-                as="div"
-                className="nav-link"
-                onClick={handleClick}
-              >
+              <NavDropdown.Item as="div" className="nav-link">
                 <Link to="/tools">Tools</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item
-                as="div"
-                className="nav-link"
-                onClick={handleClick}
-              >
+              <NavDropdown.Item as="div" className="nav-link">
                 <Link to="/help">Local Help</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item
-                as="div"
-                className="nav-link"
-                onClick={handleClick}
-              >
+              <NavDropdown.Item as="div" className="nav-link">
                 <Link to="/reference">References</Link>
               </NavDropdown.Item>
             </NavDropdown>

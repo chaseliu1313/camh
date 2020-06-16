@@ -73,7 +73,12 @@ const Severe = () => {
 
   return (
     <Container id="treatment_sever_container">
-      <TreatmentModal show={showModal} onClose={setShowModal} index={index} />
+      <TreatmentModal
+        show={showModal}
+        onClose={setShowModal}
+        index={index}
+        key={index}
+      />
 
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 3 }}>
