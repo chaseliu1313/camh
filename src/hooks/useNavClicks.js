@@ -4,50 +4,45 @@ import { useState, useEffect, useCallback } from 'react';
 export function useNavClicks(location) {
   const [state, setClickState] = useState([]);
 
-  const stateSwitcher = useCallback(() => {
-    switch (location) {
-      case '/overview':
-        setClickState(['false', 'true', 'false', 'false', 'false', 'false']);
-        break;
-      case '/assessment':
-        setClickState(['false', 'false', 'true', 'false', 'false', 'false']);
-
-        break;
-      case '/assessment/pears':
-        setClickState(['false', 'false', 'true', 'false', 'false', 'false']);
-
-        break;
-      case '/assessment/tools':
-        setClickState(['false', 'false', 'true', 'false', 'false', 'false']);
-
-        break;
-      case '/treatment/mild':
-        setClickState(['false', 'false', ' false', 'true', ' true', 'false']);
-        break;
-      case '/treatment/severe':
-        setClickState(['false', 'false', 'false', 'true', 'true', 'false']);
-        break;
-      case '/tools':
-        setClickState(['false', 'false', 'false', 'false', 'false', 'true']);
-        break;
-      case '/help':
-        setClickState(['false', 'false', 'false', 'false', 'false', 'true']);
-        break;
-      case '/reference':
-        setClickState(['false', 'false', 'false', 'false', 'false', 'true']);
-        break;
-      default:
-        setClickState(['false', 'false', 'false', 'false', 'false', 'false']);
-        break;
-    }
-  }, [location, setClickState]);
-
   //initial value
 
+  const stateSwitcher = useCallback((arr) => {
+    switch (arr) {
+      case '/overview':
+        return ['false', 'true', 'false', 'false', 'false', 'false'];
+
+      case '/assessment':
+        return ['false', 'false', 'true', 'false', 'false', 'false'];
+
+      case '/assessment/pears':
+        return ['false', 'false', 'true', 'false', 'false', 'false'];
+
+      case '/assessment/tools':
+        return ['false', 'false', 'true', 'false', 'false', 'false'];
+
+      case '/treatment/mild':
+        return ['false', 'false', ' false', 'true', ' true', 'false'];
+
+      case '/treatment/severe':
+        return ['false', 'false', 'false', 'true', 'true', 'false'];
+
+      case '/tools':
+        return ['false', 'false', 'false', 'false', 'false', 'true'];
+
+      case '/help':
+        return ['false', 'false', 'false', 'false', 'false', 'true'];
+
+      case '/reference':
+        return ['false', 'false', 'false', 'false', 'false', 'true'];
+
+      default:
+        return ['false', 'false', 'false', 'false', 'false', 'false'];
+    }
+  }, []);
   //handle change
   useEffect(() => {
-    stateSwitcher();
-  }, [location, stateSwitcher]);
+    setClickState(stateSwitcher(location));
+  }, [location]);
 
   return state;
 }

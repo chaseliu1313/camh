@@ -1,6 +1,6 @@
 import React from 'react';
-import styled, { keyframes, css } from 'styled-components';
-import { PrimaryColor, DarkPurple } from '../theme/resource';
+import styled, { keyframes } from 'styled-components';
+import { PrimaryColor } from '../theme/resource';
 
 export default function Loading({ loading }) {
   return (

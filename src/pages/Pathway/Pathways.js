@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import './pathway.css';
 import { Row, Col } from 'react-bootstrap';
@@ -23,13 +23,13 @@ export default function Pathways() {
   const [mounted, setMounted] = useState(false);
   const [switchView, setView] = useState([false, false]);
 
-  const handleViewSwitch = (index) => {
+  const handleViewSwitch = useCallback((index) => {
     if (index === 0) {
       setView([true, false]);
     } else {
       setView([false, true]);
     }
-  };
+  }, []);
 
   useEffect(() => {
     setMounted(true);

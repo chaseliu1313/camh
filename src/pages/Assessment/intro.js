@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Paragraph, SubText } from '../../components/Text/Heading';
 import { Row, Col } from 'react-bootstrap';
 import Card from '../../components/Cards/Card';
@@ -9,15 +9,17 @@ import bg6 from '../../resource/illu6.svg';
 import { enterAni, exitAni } from '../../theme/animation';
 import { SecondaryColor_Blk } from '../../theme/resource';
 import Button from '../../components/Buttons/Buttons';
-import DSM from './DSM';
+import Loading from '../../components/Loading';
+const DSM = lazy(() => import('./DSM'));
+
 export default function Intro(props) {
   const [hide, setHide] = useState(false);
   const [showModal, setShowModeal] = useState(false);
 
   const MarginP = '20px 0 20px 0';
+
   useEffect(() => {
     let a = props.hide;
-
     setHide(a);
   }, [props.hide]);
 
@@ -73,7 +75,9 @@ export default function Intro(props) {
         </Row>
         <Row className="assess_intro_row3"></Row>
       </Card>
-      <DSM show={showModal} onClose={setShowModeal} />
+      <Suspense fallback={<Loading loading={true} />}>
+        <DSM show={showModal} onClose={setShowModeal} />
+      </Suspense>
     </Container>
   );
 }

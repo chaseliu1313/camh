@@ -7,7 +7,7 @@ import {
 } from '../../theme/resource';
 import styled, { keyframes, css } from 'styled-components';
 
-export default function StepCard({
+const StepCard = React.memo(function StepCard({
   height,
   width,
   margin,
@@ -25,6 +25,7 @@ export default function StepCard({
   flex,
 }) {
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
 
@@ -54,7 +55,9 @@ export default function StepCard({
       {children}
     </CardContainer>
   );
-}
+});
+
+export default StepCard;
 
 export function StepOptionCard({
   height,
@@ -90,13 +93,18 @@ export function StepOptionCard({
   );
 }
 
-export function StepOptionButton({ label, color, onClick, unSelect }) {
+export const StepOptionButton = React.memo(function StepOptionButton({
+  label,
+  color,
+  onClick,
+  unSelect,
+}) {
   return (
     <Button color={color} onClick={onClick} unSelect={unSelect}>
       {label}
     </Button>
   );
-}
+});
 
 const enterAni = (height) => keyframes`
 0% {

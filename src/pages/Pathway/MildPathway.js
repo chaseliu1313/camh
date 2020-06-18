@@ -11,34 +11,36 @@ import { PrimaryColor, PrimaryGradient } from '../../theme/resource';
 import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+const setResponse = (index, res) => {
+  let state = [...res];
+  state[index] = true;
+
+  switch (index) {
+    case 0:
+      state[index + 1] = false;
+
+      break;
+    case 1:
+      state[index - 1] = false;
+
+      break;
+    case 2:
+      state[index + 1] = false;
+
+      break;
+    case 3:
+      state[index - 1] = false;
+
+      break;
+    default:
+      break;
+  }
+
+  return state;
+};
+
 export default function MildPathway() {
   const [responses, setRes] = useState([false, false, false, false]);
-
-  const handleResponse = (index) => {
-    let current = [...responses];
-    current[index] = true;
-
-    switch (index) {
-      case 0:
-        current[index + 1] = false;
-        setRes(current);
-        break;
-      case 1:
-        current[index - 1] = false;
-        setRes(current);
-        break;
-      case 2:
-        current[index + 1] = false;
-        setRes(current);
-        break;
-      case 3:
-        current[index - 1] = false;
-        setRes(current);
-        break;
-      default:
-        break;
-    }
-  };
 
   return (
     <Container id="path_mild_container">
@@ -73,7 +75,7 @@ export default function MildPathway() {
           <StepOptionCard height="4vh">
             <StepOptionButton
               label="No"
-              onClick={() => handleResponse(0)}
+              onClick={() => setRes(setResponse(0, responses))}
               unSelect={responses[1]}
             />
             <StepCard
@@ -97,7 +99,7 @@ export default function MildPathway() {
             <StepOptionButton
               label="Yes"
               color="green"
-              onClick={() => handleResponse(1)}
+              onClick={() => setRes(setResponse(1, responses))}
               unSelect={responses[0]}
             />
           </StepOptionCard>
@@ -154,7 +156,7 @@ export default function MildPathway() {
             <StepOptionCard height="4vh">
               <StepOptionButton
                 label="No"
-                onClick={() => handleResponse(2)}
+                onClick={() => setRes(setResponse(2, responses))}
                 unSelect={responses[3]}
               />
               <StepCard
@@ -178,7 +180,7 @@ export default function MildPathway() {
               <StepOptionButton
                 label="Yes"
                 color="green"
-                onClick={() => handleResponse(3)}
+                onClick={() => setRes(setResponse(3, responses))}
                 unSelect={responses[2]}
               />
             </StepOptionCard>

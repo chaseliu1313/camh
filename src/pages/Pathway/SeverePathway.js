@@ -22,10 +22,6 @@ export default function SeverePathway() {
   const handleResponse = (index) => {
     let current = [...responses];
     let currentMed = [...medStreamRes];
-    console.log('current');
-    console.log(responses);
-    console.log('med');
-    console.log(medStreamRes);
 
     switch (index) {
       case 0:

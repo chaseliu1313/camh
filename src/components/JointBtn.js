@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { PrimaryColor, DarkPurple } from '../theme/resource';
 
 const JointBtnContext = React.createContext([false, true]);
 
-export default function JointBtnContainer(props) {
+function JointBtnContainer(props) {
   const [active, setActive] = useState([false, true]);
 
   const children = React.Children.map(props.children, (child, index) => {
@@ -18,21 +18,23 @@ export default function JointBtnContainer(props) {
   );
 }
 
-export function JointBtn({
+export default React.memo(JointBtnContainer);
+
+export const JointBtn = React.memo(function JointBtn({
   btn: { label, disabled, primary },
   onClick,
   index,
   setActive,
   active,
 }) {
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     onClick();
     if (index === 0) {
       setActive([true, false]);
     } else {
       setActive([false, true]);
     }
-  };
+  }, []);
 
   return (
     <Button
@@ -45,7 +47,7 @@ export function JointBtn({
       {label}
     </Button>
   );
-}
+});
 
 const btn2Ani = keyframes`
 
