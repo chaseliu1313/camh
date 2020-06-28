@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import { Modal, ModalBody } from 'react-bootstrap';
 import { DSM as content } from '../../resource/content';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense, useCallback } from 'react';
+import React, { useState, lazy, Suspense, useCallback } from 'react';
 import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
 import StepCard from '../../components/Cards/StepCard';
 import { Row as R, Col as C } from 'react-bootstrap';
@@ -54,7 +54,7 @@ const Mild = () => {
           break;
       }
     },
-    [index, setShowModal, setIndex]
+    [setShowModal, setIndex, history]
   );
 
   return (

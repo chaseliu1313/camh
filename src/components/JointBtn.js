@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { PrimaryColor, DarkPurple } from '../theme/resource';
 
@@ -34,7 +34,7 @@ export const JointBtn = React.memo(function JointBtn({
     } else {
       setActive([false, true]);
     }
-  }, []);
+  }, [onClick, setActive, index]);
 
   return (
     <Button

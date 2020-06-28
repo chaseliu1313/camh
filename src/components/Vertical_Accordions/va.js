@@ -50,6 +50,7 @@ export const Cards = (props) => {
                     className="ov_a"
                     href="https://www.prevnet.ca/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     PREVNet
                   </a>

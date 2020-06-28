@@ -76,7 +76,7 @@ const Severe = () => {
           break;
       }
     },
-    [index, setShowModal, setIndex]
+    [setShowModal, setIndex, history, responses]
   );
 
   return (

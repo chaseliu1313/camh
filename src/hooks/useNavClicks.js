@@ -42,7 +42,7 @@ export function useNavClicks(location) {
   //handle change
   useEffect(() => {
     setClickState(stateSwitcher(location));
-  }, [location]);
+  }, [location, stateSwitcher]);
 
   return state;
 }
