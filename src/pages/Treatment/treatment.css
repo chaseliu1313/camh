@@ -51,6 +51,9 @@
   #treatment_sever_container > .row {
     margin: 2vh 0 2vh 0;
   }
+  #treatment_mild_container > .row {
+    margin: 2vh 0 2vh 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -59,18 +62,9 @@
   }
 }
 
-#treatment_modal > .modal-content {
-}
-
 #treatment_header > button {
   color: white;
 }
 #treatment_header {
   background-color: #6e298d !important;
-}
-
-#treatment_accor {
-}
-
-#treatment_accor_card {
 }

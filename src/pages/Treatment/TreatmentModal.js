@@ -8,14 +8,45 @@ import {
   Flouxetine,
   check3,
   check6,
+  TeamReview,
+  TeamReviewExtra,
+  Check2,
+  Check2Extra,
+  RelapseExtra2,
 } from '../../resource/content';
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
 
+const contentSwitcher = (index) => {
+  switch (index) {
+    case 1:
+      return [Flouxetine, FluoxetineExtra];
+    case 2:
+      return [check6, ''];
+    case 3:
+      return [check3, ''];
+    case 4:
+      return [Relapse, RelapseExtra];
+    case 5:
+      return [TeamReview, TeamReviewExtra];
+    case 6:
+      return [Check2, Check2Extra];
+    case 7:
+      return [Relapse, RelapseExtra2];
+    case 8:
+      return [
+        { ...Check2, heading: 'Check response after 2 to 3 months' },
+        RelapseExtra2,
+      ];
+    default:
+      break;
+  }
+};
+
 const TreatmentModal = (props) => {
   const [show, setShow] = useState(false);
   const [content, setContent] = useState(Flouxetine);
-  const [extra, setExtra] = useState(FluoxetineExtra);
+  const [extra, setExtra] = useState(TeamReviewExtra);
 
   const handleClose = () => {
     setShow(false);
@@ -26,25 +57,10 @@ const TreatmentModal = (props) => {
     let s = props.show;
     setShow(s);
 
-    switch (props.index) {
-      case 1:
-        setContent(Flouxetine);
-        setExtra(FluoxetineExtra);
-        break;
-      case 2:
-        setContent(check6);
-        setExtra('');
-        break;
-      case 3:
-        setContent(check3);
-        setExtra('');
-        break;
-      case 4:
-        setContent(Relapse);
-        setExtra(RelapseExtra);
-        break;
-      default:
-        break;
+    if (props.index) {
+      const contentSelected = contentSwitcher(props.index);
+      setContent(contentSelected[0]);
+      setExtra(contentSelected[1]);
     }
 
     return () => {
@@ -96,14 +112,35 @@ const TreatmentModal = (props) => {
                   {c.subHeading}
                 </Heading>
               )}
-              <Paragraph
-                weight="normal"
-                size="2.5vmin"
-                color={SecondaryColor_Blk}
-                margin="0 0 0 5px"
-              >
-                {c.content}
-              </Paragraph>
+              {c.subHeading.includes('Clinical Judgment:') ? (
+                <>
+                  <Paragraph
+                    weight="normal"
+                    size="2.5vmin"
+                    color={SecondaryColor_Blk}
+                    margin="0 0 0 5px"
+                  >
+                    {c.content}
+                  </Paragraph>
+                  <a
+                    className="ov_a"
+                    href={Check2Extra.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    The Clinical Global Impressions Scale
+                  </a>
+                </>
+              ) : (
+                <Paragraph
+                  weight="normal"
+                  size="2.5vmin"
+                  color={SecondaryColor_Blk}
+                  margin="0 0 0 5px"
+                >
+                  {c.content}
+                </Paragraph>
+              )}
             </Fragment>
           ))}
 
@@ -155,6 +192,43 @@ const TreatmentModal = (props) => {
                 </Heading>
               </>
             ))
+          ) : content.heading === 'Team Review & Treatment Change:' ? (
+            <Accordion id="treatment_accor">
+              {extra.map((e, index) => (
+                <Card id="treatment_accor_card" key={e.text}>
+                  <Accordion.Toggle
+                    as={Card.Header}
+                    eventKey={index.toString()}
+                  >
+                    <Heading type="h2" weight="bold" size="2.5vmin">
+                      {e.text}
+                    </Heading>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey={index.toString()}>
+                    <Card.Body>
+                      {e.content.map((c) => (
+                        <div key={c.sh}>
+                          <Heading type="h3" weight="normal" size="2.5vmin">
+                            {c.sh}
+                          </Heading>
+                          {c.detail.map((d, index) => (
+                            <Paragraph
+                              weight="normal"
+                              size="2.5vmin"
+                              color={SecondaryColor_Blk}
+                              margin="0 0 0 5px"
+                              key={index}
+                            >
+                              {d}
+                            </Paragraph>
+                          ))}
+                        </div>
+                      ))}
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              ))}
+            </Accordion>
           ) : (
             ''
           )}

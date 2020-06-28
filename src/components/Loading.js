@@ -92,6 +92,6 @@ const Fragment = styled.div`
   top: 50%;
   width: 100%;
   height: 50vmin;
-  opacity: ${({ loading }) => (loading ? '1' : '0')};
+  opacity: ${({ loading }) => (loading === 'true' ? '1' : '0')};
   font-family: Open Sans;
 `;

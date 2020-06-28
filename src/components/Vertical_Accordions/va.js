@@ -46,7 +46,11 @@ export const Cards = (props) => {
                   key={index}
                 >
                   · Visit the PREVNet website &nbsp;
-                  <a className="ov_a" href="https://www.prevnet.ca/">
+                  <a
+                    className="ov_a"
+                    href="https://www.prevnet.ca/"
+                    target="_blank"
+                  >
                     PREVNet
                   </a>
                 </Paragraph>
@@ -61,7 +65,29 @@ export const Cards = (props) => {
                 </Paragraph>
               )
             )
-          ) : content.description ? (
+          ) : content.description === 'mild' ? (
+            <>
+              <Heading
+                type="h4"
+                weight="bold"
+                size="2vmin"
+                align="center"
+                margin={defaultMargin}
+              >
+                {content.subHeading1}
+              </Heading>
+              {content.content.map((c, index) => (
+                <Paragraph
+                  size="2.2vmin"
+                  color={SecondaryColor_Blk}
+                  margin="1vh 0 0 0"
+                  key={index}
+                >
+                  {c}
+                </Paragraph>
+              ))}
+            </>
+          ) : (
             <>
               <Heading
                 type="h4"
@@ -114,8 +140,6 @@ export const Cards = (props) => {
                 </Paragraph>
               ))}
             </>
-          ) : (
-            ''
           )}
 
           {content.img_url ? (

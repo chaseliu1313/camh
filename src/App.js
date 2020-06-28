@@ -15,6 +15,7 @@ import Mild from './pages/Treatment/Mild';
 import Severe from './pages/Treatment/Severe';
 import Psychosocial from './pages/Treatment/Psychosocial';
 import Psychotherapy from './pages/Treatment/Psychotherapy';
+import PsychoMild from './pages/Treatment/PsychotherapyMild';
 
 function App() {
   return (
@@ -43,6 +44,11 @@ function App() {
               path="/treatment/psychotherapy"
               exact
               component={Psychotherapy}
+            />
+            <Route
+              path="/treatment/psychotherapy_mild"
+              exact
+              component={PsychoMild}
             />
           </Switch>
         </main>

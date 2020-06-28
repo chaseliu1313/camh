@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense, useCallback } from 'react';
 import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
 import StepCard from '../../components/Cards/StepCard';
 import { Row as R, Col as C } from 'react-bootstrap';
 import styled from 'styled-components';
-import TreatmentModal from './TreatmentModal';
+import Loading from '../../components/Loading';
 
 import bg from '../../resource/path_bg.svg';
 import {
@@ -13,6 +13,7 @@ import {
 } from '../../theme/resource';
 import { useHistory } from 'react-router-dom';
 
+const TreatmentModal = lazy(() => import('./TreatmentModal'));
 const Severe = () => {
   const [showModal, setShowModal] = useState(false);
   const [index, setIndex] = useState(0);
@@ -28,58 +29,66 @@ const Severe = () => {
   const initialValue = [null, null, null, null, null];
   const [responses, setRes] = useState(initialValue);
 
-  const handleResponse = (index) => {
-    switch (index) {
-      case 0:
-        history.push('/treatment/psycosocialStrategies');
-        break;
-      case 1:
-        history.push('/treatment/psychotherapy');
-        break;
-      case 2:
-        if (responses[0]) {
-          setRes([false, false, null, null, null]);
-        } else {
-          setRes([true, false, null, null, null]);
-        }
-        break;
-      case 3:
-        if (responses[1]) {
-          setRes([true, false, null, null, null]);
-        } else {
-          setRes([true, true, null, null, null]);
-        }
-        break;
-      case 4:
-        setShowModal(true);
-        setIndex(1);
-        break;
-      case 5:
-        setShowModal(true);
-        setIndex(2);
-        break;
-      case 6:
-        setShowModal(true);
-        setIndex(3);
-        break;
-      case 7:
-        setShowModal(true);
-        setIndex(4);
-        break;
-      default:
-        break;
-    }
-  };
+  const handleResponse = useCallback(
+    (index) => {
+      switch (index) {
+        case 0:
+          history.push('/treatment/psycosocialStrategies');
+          break;
+        case 1:
+          history.push('/treatment/psychotherapy');
+          break;
+        case 2:
+          if (responses[0]) {
+            setRes([false, false, null, null, null]);
+          } else {
+            setRes([true, false, null, null, null]);
+          }
+          break;
+        case 3:
+          if (responses[1]) {
+            setRes([true, false, null, null, null]);
+          } else {
+            setRes([true, true, null, null, null]);
+          }
+          break;
+        case 4:
+          setShowModal(true);
+          setIndex(1);
+          break;
+        case 5:
+          setShowModal(true);
+          setIndex(2);
+          break;
+        case 6:
+          setShowModal(true);
+          setIndex(3);
+          break;
+        case 7:
+          setShowModal(true);
+          setIndex(4);
+          break;
+        case 8:
+          setShowModal(true);
+          setIndex(5);
+          break;
+        default:
+          break;
+      }
+    },
+    [index, setShowModal, setIndex]
+  );
 
   return (
     <Container id="treatment_sever_container">
-      <TreatmentModal
-        show={showModal}
-        onClose={setShowModal}
-        index={index}
-        key={index}
-      />
-
+      <Suspense fallback={<Loading loading="true" />}>
+        <TreatmentModal
+          show={showModal}
+          onClose={setShowModal}
+          index={index}
+          key={index}
+        />
+      </Suspense>
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 3 }}>
           <SubContainer>
@@ -335,6 +344,7 @@ const Severe = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
+                onClick={() => handleResponse(8)}
               >
                 <Heading
                   type="h4"
@@ -490,6 +500,7 @@ const Severe = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
+                onClick={() => handleResponse(8)}
               >
                 <Heading
                   type="h4"

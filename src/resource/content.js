@@ -112,11 +112,25 @@ export const PsychosocialStrategies = [
   },
   {
     heading: 'Sleep',
-    content: ['· Tbd '],
+    content: [
+      '· Wake up and go to sleep at the same time every day, even on weekends.',
+      '· Create a bedtime routine.',
+      '· Avoid using electronic devices before bed',
+      '· Make sure the room is the right temperature',
+      '· Do not take any naps during the day',
+      '· Avoid consuming caffeine in the evening',
+      '· See “Resources for Youth” for more tips ',
+    ],
   },
   {
     heading: 'Diet',
-    content: ['· Tbd '],
+    content: [
+      '· Balanced diet with enough protein (1/4 plate) and vegetables/fruit (1/2 plate).',
+      '· Limit unhealthy foods (like sweets, fried food, refined cereal, fast food and soft drinks) to no more than three servings per week.',
+      '· Take time to enjoy meals with other people.',
+      '· Avoid eating while watching TV, texting, studying or doing other activities.',
+      '· See “Resources for Youth” for more tips.',
+    ],
   },
   {
     heading: 'Anti-bullying strategies',
@@ -352,8 +366,185 @@ export const Relapse = {
   ],
 };
 
+export const TeamReview = {
+  heading: 'Team Review & Treatment Change:',
+  content: [
+    {
+      subHeading: 'Conduct a multidisciplinary review.',
+      content: '',
+    },
+    {
+      subHeading: 'Consider a change in treatment:',
+      content: '· A different psychotherapy (minimum 3 month duration).',
+    },
+    {
+      subHeading: '',
+      content:
+        '· Systemic family therapy (15 sessions; 1 session every 2 weeks).',
+    },
+    {
+      subHeading: ' ',
+      content: '· Psychodynamic psychotherapy (30 weekly sessions).',
+    },
+    {
+      subHeading: 'Check response again after x weeks',
+      content: ' ',
+    },
+    {
+      subHeading:
+        'If response, continue medication for 6+ months, develop a relapse prevention plan and reduce the intensity and frequency of visits.',
+      content: '',
+    },
+  ],
+};
+
+export const TeamReviewExtra = [
+  {
+    text: 'Sertraline',
+    content: [
+      {
+        sh: 'Monitoring',
+        detail: [
+          '· Monitor weekly for the first 4 weeks.',
+          '· Monitor closely for suicidal behaviour, increased anxiety and intolerance.',
+        ],
+      },
+      {
+        sh: 'Titrating',
+        detail: [
+          '· Week 1: 25mg/d.',
+          '· Week 2-3: can be adjusted flexibly to 50mg/d (if tolerated and clinically warranted).',
+          '· Can gradually increase to adult daily dose.',
+        ],
+      },
+      {
+        sh: 'Tapering',
+        detail: [
+          '· If current dose is > 100mg/d, reduce by 50mg/d every week until 50mg/d is reached, then reduce by 25mg/d a week until stopped.',
+          '· If current dose < 75mg/d, reduce by 25mg/d a week until stopped.',
+        ],
+      },
+    ],
+  },
+  {
+    text: 'Citalopram',
+    content: [
+      {
+        sh: 'Monitoring',
+        detail: [
+          '· Monitor weekly for the first 4 weeks.',
+          '· Monitor closely for suicidal behaviour and intolerance.',
+        ],
+      },
+      {
+        sh: 'Titrating',
+        detail: ['· Week 1:  ', '· Week 2:  '],
+      },
+      {
+        sh: 'Tapering',
+        detail: ['· Reduce by 10mg/d every week until stopped.'],
+      },
+    ],
+  },
+];
+
 export const RelapseExtra = [
   '· Continue medication for 6+ months',
   '· Relapse prevention plan',
   '· Reduce intensity & frequency of visits',
+];
+
+export const RelapseExtra2 = [
+  '· Relapse prevention plan',
+  '· Reduce intensity & frequency of visits',
+];
+
+export const Check2 = {
+  heading: 'Check Response After 2 Weeks',
+  content: [
+    {
+      subHeading: 'Assess Response Using:',
+      content: '',
+    },
+    {
+      subHeading: 'Clinical Judgment: ',
+      content:
+        'Clinical Judgment: has there been a reduction in symptoms or improvement in functioning? (i.e., worsening, no change, minimal, much/very much improved) See Clinical Global Impressions Scale to standardize approach.',
+    },
+    {
+      subHeading: 'Self-report tools: ',
+      content:
+        'Using the same assessment tool you used for the initial assessment (e.g. RCADS, MFQ), check to see if the score has improved.For the MFQ, response may be a 20% improvement in the score.',
+    },
+    {
+      subHeading: 'Achievement of Personalized Treatment Goals: ',
+      content:
+        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met? (e.g., more outings, more interaction with peers)',
+    },
+    {
+      subHeading: 'Definitions:',
+      content: '',
+    },
+    {
+      subHeading: 'Partial remission:',
+      content:
+        'Partial remission: Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
+    },
+    {
+      subHeading: 'Remission: ',
+      content:
+        'Just 1- 2 symptoms present and full functioning (i.e. attending school, social interaction and symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+    },
+    {
+      subHeading:
+        'Follow up with young people who do not attend the assessment.',
+      content: '',
+    },
+  ],
+};
+
+export const Check2Extra = {
+  url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2880930/',
+};
+
+export const PsychotherapyMild = [
+  {
+    heading: 'CBT(digital or group)',
+    description: 'mild',
+    subHeading1: 'Cognitive-behavioural therapy (CBT):',
+    content: [
+      '· Short-term (12-20 sessions).',
+      '· Structured.',
+      '· Problem-focused & goal oriented.',
+      '· Target and reduce negative thoughts to improve mood.',
+      '· Need to be willing to discuss thoughts, beliefs and behaviours, participate in exercises during sessions and do homework between sessions.',
+      '· Digital CBT is delivered using digital technology (e.g. computer, phone, tablet) and is also known as computerized CBT. ',
+      '· Group CBT is delivered in a group setting (example: 2 therapists and 10 youth).',
+    ],
+  },
+  {
+    heading: 'Group NDST',
+    description: 'mild',
+    subHeading1: 'Group non-directive supportive therapy (NDST)',
+    content: [
+      '· Uses psychological techniques common to many psychotherapy approaches, such as validation and listening. ',
+      '· In general, the therapist takes on a more passive approach.',
+      '· Less structured than other types of therapy.',
+      '· Requires less specific training.',
+      '· Group NDST is delivered in a group format.',
+    ],
+  },
+  {
+    heading: 'Group interpersonal therapy (IPT)',
+    subHeading1: 'Group interpersonal psychotherapy (IPT). IPT is: ',
+    description: 'mild',
+    content: [
+      '· Structured',
+      '· Time-limited (active phase is usually 12–16 weeks)',
+      '· Focused on interpersonal relationships and communication.',
+      '· Focused on here-and-now relationships.',
+      '· Aimed at improving interpersonal functioning and social support.',
+      'Group IPT is delivered in a group format.',
+    ],
+  },
 ];
