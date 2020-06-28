@@ -21,7 +21,7 @@ const StepCard = React.memo(function StepCard({
   onClick,
   onMouseOver,
   onMouseOut,
-  cursor,
+  cursor = 'true',
   flex,
 }) {
   const [mounted, setMounted] = useState(false);
