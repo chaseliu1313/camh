@@ -26,7 +26,7 @@ const contentSwitcher = (index) => {
     case 3:
       return [check3, ''];
     case 4:
-      return [Relapse, RelapseExtra];
+      return [Relapse];
     case 5:
       return [TeamReview, TeamReviewExtra];
     case 6:
@@ -184,14 +184,6 @@ const TreatmentModal = (props) => {
                 ))}
               </Accordion>
             </>
-          ) : content.heading === 'Relapse prevention plan:' ? (
-            extra.map((e, index) => (
-              <>
-                <Heading type="h2" weight="bold" size="2.5vmin" key={index}>
-                  {e}
-                </Heading>
-              </>
-            ))
           ) : content.heading === 'Team Review & Treatment Change:' ? (
             <Accordion id="treatment_accor">
               {extra.map((e, index) => (

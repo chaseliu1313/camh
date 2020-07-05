@@ -1,17 +1,31 @@
-import React, { useState, lazy, Suspense, useCallback } from 'react';
+import React, {
+  useState,
+  lazy,
+  Suspense,
+  useCallback,
+  useContext,
+} from 'react';
 import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
 import StepCard from '../../components/Cards/StepCard';
 import { Row as R, Col as C } from 'react-bootstrap';
 import styled from 'styled-components';
 import Loading from '../../components/Loading';
-
+import Button from '../../components/Buttons/Buttons';
 import bg from '../../resource/path_bg.svg';
+import { TreatmentContext } from '../../store/store';
 import {
   PrimaryColor,
   SecondaryColor_Blk,
   SecondaryColor_Blu,
+  SecondaryColor_Tel,
 } from '../../theme/resource';
 import { useHistory } from 'react-router-dom';
+import {
+  UPDATE_MILD_TREATMENT,
+  RESET_MILD_TREATMENT,
+} from '../../store/actions';
+import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const TreatmentModal = lazy(() => import('./TreatmentModal'));
 
@@ -21,7 +35,8 @@ const Mild = () => {
   const history = useHistory();
   const lineHeight_sm = '5vh';
   const lineHeight_lg = '12vh';
-  const [responses, setRes] = useState(true);
+  const { state, dispatch } = useContext(TreatmentContext);
+  const responses = state.mildState;
 
   const handleResponse = useCallback(
     (index) => {
@@ -37,7 +52,7 @@ const Mild = () => {
           setIndex(6);
           break;
         case 3:
-          setRes(false);
+          dispatch({ type: UPDATE_MILD_TREATMENT, payload: false });
           break;
         case 4:
           setShowModal(true);
@@ -54,7 +69,7 @@ const Mild = () => {
           break;
       }
     },
-    [setShowModal, setIndex, history]
+    [setShowModal, setIndex, history, dispatch]
   );
 
   return (
@@ -68,7 +83,22 @@ const Mild = () => {
         />
       </Suspense>
       <Row className="p_row">
-        <CenterCol md={{ span: 8, offset: 3 }}>
+        <C xs lg="2">
+          <Button
+            primary={false}
+            type="outlined"
+            height="5vmin"
+            width="5vw"
+            display
+            onClick={() => dispatch({ type: RESET_MILD_TREATMENT })}
+          >
+            <FontAwesomeIcon icon={faRedoAlt} />
+            <Paragraph size="2vmin" color={SecondaryColor_Tel}>
+              Reset
+            </Paragraph>
+          </Button>
+        </C>
+        <CenterCol md={{ span: 8, offset: 1 }}>
           <SubContainer>
             <Heading
               type="h1"

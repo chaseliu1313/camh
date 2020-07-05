@@ -137,7 +137,6 @@ export const PsychosocialStrategies = [
     content: [
       '· If bullying is considered to be a factor in a young person’s depression, anti-bullying strategies should be developed.',
       '· Visit the PREVNet website ',
-
       '· PREVNet is a national network of leading researchers and organizations, working together to stop bullying in Canada.',
     ],
   },
@@ -178,7 +177,6 @@ export const Psychotherapy = [
     content: [
       '· Goal to facilitate healthy attachment experiences and improve relationships between family members.',
       '· Focus on adolescent’s developmental need for autonomy and attachment.',
-      '· Time-limited (12-16 sessions).',
       '· Trauma-focused.',
       '· Process-oriented.',
     ],
@@ -374,11 +372,22 @@ export const TeamReview = {
       content: '',
     },
     {
-      subHeading: 'Consider a change in treatment:',
-      content: '· A different psychotherapy (minimum 3 month duration).',
+      subHeading: 'Consider contributing factors: ',
+      content:
+        '· co-occurring mental health condition, parental health, family conflict.',
     },
     {
-      subHeading: '',
+      subHeading:
+        'Consider additional help fro family and/or change in treatment for the young person:',
+      content: '',
+    },
+    {
+      subHeading: ' ',
+      content:
+        '· A different psychotherapy not previously tried (minimum 3 month duration).',
+    },
+    {
+      subHeading: ' ',
       content:
         '· Systemic family therapy (15 sessions; 1 session every 2 weeks).',
     },
@@ -387,7 +396,12 @@ export const TeamReview = {
       content: '· Psychodynamic psychotherapy (30 weekly sessions).',
     },
     {
-      subHeading: 'Check response again after x weeks',
+      subHeading: ' ',
+      content: '· Change in medication to sertraline or citalopram.',
+    },
+    {
+      subHeading:
+        'Check response again after 6 weeks (and every 6 weeks if no response).',
       content: ' ',
     },
     {

@@ -16,47 +16,50 @@ import Severe from './pages/Treatment/Severe';
 import Psychosocial from './pages/Treatment/Psychosocial';
 import Psychotherapy from './pages/Treatment/Psychotherapy';
 import PsychoMild from './pages/Treatment/PsychotherapyMild';
+import { TreatmentStore } from './store/store';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-          <NaviBar />
-        </header>
-        <main className="App-main">
-          <Switch>
-            <Route path="/" exact component={Landing} />
-            <Route path="/overview" exact component={Hightlights} />
-            <Route path="/overview/pathways" exact component={Pathways} />
-            <Route path="/assessment" exact component={Assessment} />
-            <Route path="/assessment/pears" exact component={Pears} />
-            <Route path="/assessment/tools" exact component={Tools} />
-            <Route path="/treatment" exact component={Treatment} />
-            <Route path="/treatment/mild" exact component={Mild} />
-            <Route path="/treatment/severe" exact component={Severe} />
-            <Route
-              path="/treatment/psycosocialStrategies"
-              exact
-              component={Psychosocial}
-            />
-            <Route
-              path="/treatment/psychotherapy"
-              exact
-              component={Psychotherapy}
-            />
-            <Route
-              path="/treatment/psychotherapy_mild"
-              exact
-              component={PsychoMild}
-            />
-          </Switch>
-        </main>
-        <footer className="App-footer">
-          Copyright © 2020 Cundill Centre for Child and Youth Depression camh
-        </footer>
-      </div>
-    </Router>
+    <TreatmentStore>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <NaviBar />
+          </header>
+          <main className="App-main">
+            <Switch>
+              <Route path="/" exact component={Landing} />
+              <Route path="/overview" exact component={Hightlights} />
+              <Route path="/overview/pathways" exact component={Pathways} />
+              <Route path="/assessment" exact component={Assessment} />
+              <Route path="/assessment/pears" exact component={Pears} />
+              <Route path="/assessment/tools" exact component={Tools} />
+              <Route path="/treatment" exact component={Treatment} />
+              <Route path="/treatment/mild" exact component={Mild} />
+              <Route path="/treatment/severe" exact component={Severe} />
+              <Route
+                path="/treatment/psycosocialStrategies"
+                exact
+                component={Psychosocial}
+              />
+              <Route
+                path="/treatment/psychotherapy"
+                exact
+                component={Psychotherapy}
+              />
+              <Route
+                path="/treatment/psychotherapy_mild"
+                exact
+                component={PsychoMild}
+              />
+            </Switch>
+          </main>
+          <footer className="App-footer">
+            Copyright © 2020 Cundill Centre for Child and Youth Depression camh
+          </footer>
+        </div>
+      </Router>
+    </TreatmentStore>
   );
 }
 
