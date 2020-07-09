@@ -106,8 +106,8 @@ export const PsychosocialStrategies = [
     heading: 'Exercise',
     content: [
       '· Moderate to vigorous activity (where the heart rate is elevated) ',
-      '· 30-60 minutes per session',
-      '· 3-7 times per week',
+      '· 30-60 minutes',
+      '· 3 times per week',
     ],
   },
   {
@@ -141,7 +141,7 @@ export const PsychosocialStrategies = [
     ],
   },
   {
-    heading: 'More Resource',
+    heading: 'Resource for Youth',
     content: [PSExtra],
     img_url: PSExtraLink,
   },
@@ -286,10 +286,16 @@ export const check3 = {
 };
 
 export const Flouxetine = {
-  heading: 'Fluoxetine',
+  heading: 'Medication',
   content: [
     {
-      subHeading: '· Start youth on fluoxetine',
+      subHeading:
+        '· Start youth on fluoxetine, which is the first-line medication',
+      content: '',
+    },
+    {
+      subHeading:
+        '· If youth has already had an adequate trial of fluoxetine without response, try sertraline or citalopram',
       content: '',
     },
     {
@@ -304,7 +310,7 @@ export const Flouxetine = {
     },
     {
       subHeading:
-        '· If youth has already had an adequate trial of fluoxetine without response, try sertraline',
+        "· Do not offer paroxetine, venlafaxine, tricyclic antidepressants or St. John's Wort",
       content: '',
     },
   ],

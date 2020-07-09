@@ -269,7 +269,7 @@ const Severe = () => {
                   color="white"
                   align="center"
                 >
-                  Fluoxetine + Psychotherapy
+                  Medication + Psychotherapy
                 </Heading>
               </StepCard>
             </SubContainer>
@@ -623,7 +623,7 @@ const Severe = () => {
                         color="white"
                         align="center"
                       >
-                        Change psychotherapy or add flouxetine
+                        Change psychotherapy or add medication
                       </Heading>
                     </StepCard>
                   </SubContainer>
@@ -662,7 +662,7 @@ const Severe = () => {
                 color="white"
                 align="center"
               >
-                Fluoxetine
+                Medication
               </Heading>
             </StepCard>
             <SubText weight="bold">+</SubText>
