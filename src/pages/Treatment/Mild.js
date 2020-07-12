@@ -26,6 +26,7 @@ import {
 } from '../../store/actions';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { NotificationModal } from '../../components/NotificationModal';
 
 const TreatmentModal = lazy(() => import('./TreatmentModal'));
 
@@ -37,6 +38,7 @@ const Mild = () => {
   const lineHeight_lg = '12vh';
   const { state, dispatch } = useContext(TreatmentContext);
   const responses = state.mildState;
+  const [showNotification, setShowNotification] = useState(false);
 
   const handleResponse = useCallback(
     (index) => {
@@ -52,6 +54,7 @@ const Mild = () => {
           setIndex(6);
           break;
         case 3:
+          history.push('/treatment/psychotherapy_mild');
           dispatch({ type: UPDATE_MILD_TREATMENT, payload: false });
           break;
         case 4:
@@ -63,7 +66,7 @@ const Mild = () => {
           setIndex(8);
           break;
         case 6:
-          history.push('/treatment/severe');
+          setShowNotification(true);
           break;
         default:
           break;
@@ -400,6 +403,15 @@ const Mild = () => {
           </Row>
         </>
       )}
+      <NotificationModal
+        isShow={showNotification}
+        setShow={setShowNotification}
+        dispatch={history}
+        type={UPDATE_MILD_TREATMENT}
+        heading="Notice"
+        content="If there has been no response, consider the moderate to severe pathway. 
+        You will now be taken to the beginning of the moderate to severe pathway."
+      />
       <img src={bg} id="treatment_bg" alt="background" />
     </Container>
   );

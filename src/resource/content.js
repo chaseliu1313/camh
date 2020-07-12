@@ -142,7 +142,10 @@ export const PsychosocialStrategies = [
   },
   {
     heading: 'Resource for Youth',
-    content: [PSExtra],
+    content: [
+      'Check out our Mood Foundations resource and click on the button to download. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print, and provide to patients in your practice.',
+      'We have also developed an animated video for youth on how food, movement and sleep can impact mood.',
+    ],
     img_url: PSExtraLink,
   },
 ];
@@ -340,6 +343,82 @@ export const FluoxetineExtra = [
   },
 ];
 
+export const MedicationExtra = [
+  {
+    text: 'Fluoxetine',
+    content: [
+      {
+        sh: 'Monitoring',
+        detail: [
+          '· Monitor weekly for the first 4 weeks.',
+          '· Monitor closely for suicidal behaviour, increased anxiety and intolerance.',
+        ],
+      },
+      {
+        sh: 'Titrating',
+        detail: [
+          '· Week 1: 10mg/d.',
+          '· Week 2: : 20mg/d (if tolerated and clinically necessary)',
+        ],
+      },
+      {
+        sh: 'Tapering',
+        detail: [
+          '· If current dose is < 40mg, can be stopped abruptly.',
+          '· If current dose is > 40mg, reduce by 20mg every week until stopped.',
+        ],
+      },
+    ],
+  },
+  {
+    text: 'Sertraline',
+    content: [
+      {
+        sh: 'Monitoring',
+        detail: [
+          '· Monitor weekly for the first 4 weeks.',
+          '· Monitor closely for suicidal behaviour and intolerance.',
+        ],
+      },
+      {
+        sh: 'Titrating',
+        detail: [
+          '· Week 1: 25mg/d.',
+          '· Week 2-3: can be adjusted flexibly to 50mg/d (if tolerated and clinically warranted).',
+          '· Can gradually increase to adult daily dose.',
+        ],
+      },
+      {
+        sh: 'Tapering',
+        detail: [
+          '· If current dose is > 100mg/d, reduce by 50mg/d every week until 50mg/d is reached, then reduce by 25mg/d a week until stopped.',
+          '· If current dose < 75mg/d, reduce by 25mg/d a week until stopped.',
+        ],
+      },
+    ],
+  },
+  {
+    text: 'Citalopram',
+    content: [
+      {
+        sh: 'Monitoring',
+        detail: [
+          '· Monitor weekly for the first 4 weeks.',
+          '· Monitor closely for suicidal behaviour and intolerance.',
+        ],
+      },
+      {
+        sh: 'Titrating',
+        detail: ['· Week 1: 10 mg/d ', '· Week 2:  20 mg/d'],
+      },
+      {
+        sh: 'Tapering',
+        detail: ['· Reduce by 10mg/d every week until stopped.'],
+      },
+    ],
+  },
+];
+
 export const Relapse = {
   heading: 'Relapse prevention plan:',
   content: [
@@ -458,7 +537,7 @@ export const TeamReviewExtra = [
       },
       {
         sh: 'Titrating',
-        detail: ['· Week 1:  ', '· Week 2:  '],
+        detail: ['· Week 1: 10 mg/d ', '· Week 2:  20 mg/d'],
       },
       {
         sh: 'Tapering',

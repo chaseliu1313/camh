@@ -1,10 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
-import { Modal, ModalBody, Accordion, Card } from 'react-bootstrap';
+import { Modal, ModalBody, Tabs, Tab } from 'react-bootstrap';
 import {
-  RelapseExtra,
   Relapse,
-  FluoxetineExtra,
   Flouxetine,
   check3,
   check6,
@@ -13,6 +11,7 @@ import {
   Check2,
   Check2Extra,
   RelapseExtra2,
+  MedicationExtra,
 } from '../../resource/content';
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
@@ -20,13 +19,13 @@ import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
 const contentSwitcher = (index) => {
   switch (index) {
     case 1:
-      return [Flouxetine, FluoxetineExtra];
+      return [Flouxetine, MedicationExtra];
     case 2:
       return [check6, ''];
     case 3:
       return [check3, ''];
     case 4:
-      return [Relapse];
+      return [Relapse, ''];
     case 5:
       return [TeamReview, TeamReviewExtra];
     case 6:
@@ -46,8 +45,9 @@ const contentSwitcher = (index) => {
 const TreatmentModal = (props) => {
   const [show, setShow] = useState(false);
   const [content, setContent] = useState(Flouxetine);
-  const [extra, setExtra] = useState(TeamReviewExtra);
-
+  const [extra, setExtra] = useState(MedicationExtra);
+  const [tabKey, setKey] = useState('Sertraline');
+  console.log();
   const handleClose = () => {
     setShow(false);
     props.onClose(false);
@@ -120,16 +120,27 @@ const TreatmentModal = (props) => {
                     color={SecondaryColor_Blk}
                     margin="0 0 0 5px"
                   >
-                    {c.content}
+                    has there been a reduction in symptoms or improvement in
+                    functioning (i.e., worsening, no change, minimal, much/very
+                    much improved)?,
                   </Paragraph>
-                  <a
-                    className="ov_a"
-                    href={Check2Extra.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Paragraph
+                    weight="normal"
+                    size="2.5vmin"
+                    color={SecondaryColor_Blk}
+                    margin="0 0 0 5px"
                   >
-                    The Clinical Global Impressions Scale
-                  </a>
+                    See &nbsp;
+                    <a
+                      className="ov_a"
+                      href={Check2Extra.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Clinical Global Impressions Scale
+                    </a>{' '}
+                    &nbsp; to standardize approach.
+                  </Paragraph>
                 </>
               ) : (
                 <Paragraph
@@ -144,60 +155,25 @@ const TreatmentModal = (props) => {
             </Fragment>
           ))}
 
-          {content.heading === 'Fluoxetine' ? (
-            <>
-              <Paragraph
-                weight="normal"
-                size="2vmin"
-                color={SecondaryColor_Blk}
-                margin="3vmin 0 3vmin 0 "
-              >
-                Click on each box to learn more.
-              </Paragraph>
-              <Accordion id="treatment_accor">
-                {extra.map((e, index) => (
-                  <Card id="treatment_accor_card" key={index}>
-                    <Accordion.Toggle
-                      as={Card.Header}
-                      eventKey={index.toString()}
-                    >
-                      <Heading type="h2" weight="bold" size="2.5vmin">
-                        {e.text}
-                      </Heading>
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey={index.toString()}>
-                      <Card.Body>
-                        {e.content.map((ec, index) => (
-                          <Paragraph
-                            weight="normal"
-                            size="2.5vmin"
-                            color={SecondaryColor_Blk}
-                            margin="0 0 0 5px"
-                            key={index}
-                          >
-                            {ec}
-                          </Paragraph>
-                        ))}
-                      </Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                ))}
-              </Accordion>
-            </>
-          ) : content.heading === 'Team Review & Treatment Change:' ? (
-            <Accordion id="treatment_accor">
-              {extra.map((e, index) => (
-                <Card id="treatment_accor_card" key={e.text}>
-                  <Accordion.Toggle
-                    as={Card.Header}
-                    eventKey={index.toString()}
-                  >
-                    <Heading type="h2" weight="bold" size="2.5vmin">
-                      {e.text}
-                    </Heading>
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey={index.toString()}>
-                    <Card.Body>
+          {extra ? (
+            content.heading === 'Medication' ||
+            content.heading === 'Team Review & Treatment Change:' ? (
+              <>
+                <Paragraph
+                  weight="normal"
+                  size="2vmin"
+                  color={SecondaryColor_Blk}
+                  margin="3vmin 0 3vmin 0 "
+                >
+                  Click on each box to learn more.
+                </Paragraph>
+                <Tabs
+                  activeKey={tabKey}
+                  id="treatment_tabs"
+                  onSelect={(k) => setKey(k)}
+                >
+                  {extra.map((e) => (
+                    <Tab eventKey={e.text} title={e.text} key={e.text}>
                       {e.content.map((c) => (
                         <div key={c.sh}>
                           <Heading type="h3" weight="normal" size="2.5vmin">
@@ -216,11 +192,22 @@ const TreatmentModal = (props) => {
                           ))}
                         </div>
                       ))}
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              ))}
-            </Accordion>
+                    </Tab>
+                  ))}
+                </Tabs>
+              </>
+            ) : content.heading === 'Relapse prevention plan:' ? (
+              <>
+                <Heading type="h3" weight="normal" size="2.5vmin">
+                  {RelapseExtra2[0]}
+                </Heading>
+                <Heading type="h3" weight="normal" size="2.5vmin">
+                  {RelapseExtra2[1]}
+                </Heading>
+              </>
+            ) : (
+              ''
+            )
           ) : (
             ''
           )}
@@ -237,5 +224,3 @@ const Container = styled.div`
 `;
 
 export default TreatmentModal;
-
-//

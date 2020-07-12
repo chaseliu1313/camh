@@ -26,11 +26,14 @@ import {
   SecondaryColor_Tel,
 } from '../../theme/resource';
 import { useHistory } from 'react-router-dom';
+import { NotificationModal } from '../../components/NotificationModal';
 
 const TreatmentModal = lazy(() => import('./TreatmentModal'));
 const Severe = () => {
   const [showModal, setShowModal] = useState(false);
   const [index, setIndex] = useState(0);
+  const [showNotification, setShowNotification] = useState(false);
+
   const { state, dispatch } = useContext(TreatmentContext);
   const history = useHistory();
   const lineHeight_sm = '5vh';
@@ -43,6 +46,7 @@ const Severe = () => {
           history.push('/treatment/psycosocialStrategies');
           break;
         case 1:
+          history.push('/treatment/psychotherapy');
           dispatch({
             type: UPDATE_SEVERE_TREATMENT,
             payload: [null, false, null, null, null, true, null, null],
@@ -119,11 +123,7 @@ const Severe = () => {
 
           break;
         case 13:
-          dispatch({
-            type: UPDATE_SEVERE_TREATMENT,
-            payload: [false, null, null, null, null, null, null, null, null],
-          });
-
+          setShowNotification(true);
           break;
         default:
           break;
@@ -430,7 +430,7 @@ const Severe = () => {
                       background={PrimaryColor}
                       height={lineHeight_sm}
                       width="100%"
-                      cursor
+                      cursor={false}
                       onClick={() => null}
                     >
                       <Heading
@@ -671,7 +671,7 @@ const Severe = () => {
               height={lineHeight_sm}
               width="30vw"
               cursor
-              onClick={() => handleResponse(1)}
+              onClick={() => handleResponse(9)}
             >
               <Heading
                 type="h4"
@@ -806,7 +806,7 @@ const Severe = () => {
                 background={PrimaryColor}
                 height={lineHeight_sm}
                 width="100%"
-                cursor
+                cursor={false}
               >
                 <Heading
                   type="h4"
@@ -943,7 +943,15 @@ const Severe = () => {
       ) : (
         ''
       )}
-
+      <NotificationModal
+        isShow={showNotification}
+        setShow={setShowNotification}
+        dispatch={dispatch}
+        type={UPDATE_SEVERE_TREATMENT}
+        heading="Notice"
+        content="If there has been no response after 6 weeks, change the psychotherapy or add medication. 
+        You will now be taken back to the beginning of the pathway to choose another option."
+      />
       <img src={bg} id="treatment_bg" alt="background" />
     </Container>
   );

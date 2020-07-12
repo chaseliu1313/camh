@@ -100,6 +100,8 @@ export default function Hightlights() {
                   <a
                     className="ov_a"
                     href="https://pubmed.ncbi.nlm.nih.gov/29697887/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     systematic review
                   </a>
@@ -107,6 +109,8 @@ export default function Hightlights() {
                   <a
                     className="ov_a"
                     href="https://www.nice.org.uk/guidance/ng134"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     NICE guidelines
                   </a>

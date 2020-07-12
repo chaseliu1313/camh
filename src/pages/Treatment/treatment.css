@@ -68,3 +68,20 @@
 #treatment_header {
   background-color: #6e298d !important;
 }
+
+#treatment_tabs-tab-Sertraline,
+#treatment_tabs-tab-Citalopram,
+#treatment_tabs-tab-Fluoxetine {
+  color: #6e298d;
+}
+
+#treatment_tabs-tab-Fluoxetine:hover {
+  color: white !important;
+}
+
+#treatment_tabs-tab-Sertraline:hover {
+  color: white !important;
+}
+#treatment_tabs-tab-Citalopram:hover {
+  color: white !important;
+}

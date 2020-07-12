@@ -45,7 +45,7 @@ export const Cards = (props) => {
                   margin={defaultMargin}
                   key={index}
                 >
-                  · Visit the PREVNet website &nbsp;
+                  · Visit the &nbsp;
                   <a
                     className="ov_a"
                     href="https://www.prevnet.ca/"
@@ -54,6 +54,7 @@ export const Cards = (props) => {
                   >
                     PREVNet
                   </a>
+                  &nbsp; website
                 </Paragraph>
               ) : (
                 <Paragraph
