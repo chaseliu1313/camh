@@ -14,7 +14,7 @@ import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function SeverePathway() {
-  const initialValue = [null, null, null, null, null, null, null];
+  const initialValue = [false, false, false, null, null, null, null];
   const [responses, setRes] = useState(initialValue);
 
   const [medStreamRes, setMedRes] = useState(initialValue);

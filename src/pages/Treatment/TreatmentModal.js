@@ -130,7 +130,7 @@ const TreatmentModal = (props) => {
                     color={SecondaryColor_Blk}
                     margin="0 0 0 5px"
                   >
-                    See &nbsp;
+                    See&nbsp;
                     <a
                       className="ov_a"
                       href={Check2Extra.url}
@@ -138,8 +138,8 @@ const TreatmentModal = (props) => {
                       rel="noopener noreferrer"
                     >
                       Clinical Global Impressions Scale
-                    </a>{' '}
-                    &nbsp; to standardize approach.
+                    </a>
+                    &nbsp;to standardize approach.
                   </Paragraph>
                 </>
               ) : (
@@ -154,6 +154,29 @@ const TreatmentModal = (props) => {
               )}
             </Fragment>
           ))}
+
+          {content.heading === 'Medication' ? (
+            <Paragraph
+              weight="normal"
+              size="2 vmin"
+              color={SecondaryColor_Blk}
+              margin="0 0 0 5px"
+            >
+              Click&nbsp;
+              <a
+                className="ov_a"
+                href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=8&fname=Medication-for-YOUth-Resource-pdf.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here
+              </a>
+              &nbsp;to download our medication handout—it was developed for
+              youth, by youth in partnership with a psychiatrist and pharmacist.
+            </Paragraph>
+          ) : (
+            ''
+          )}
 
           {extra ? (
             content.heading === 'Medication' ||
@@ -176,13 +199,13 @@ const TreatmentModal = (props) => {
                     <Tab eventKey={e.text} title={e.text} key={e.text}>
                       {e.content.map((c) => (
                         <div key={c.sh}>
-                          <Heading type="h3" weight="normal" size="2.5vmin">
+                          <Heading type="h3" weight="normal" size="2vmin">
                             {c.sh}
                           </Heading>
                           {c.detail.map((d, index) => (
                             <Paragraph
                               weight="normal"
-                              size="2.5vmin"
+                              size="2vmin"
                               color={SecondaryColor_Blk}
                               margin="0 0 0 5px"
                               key={index}
@@ -198,10 +221,10 @@ const TreatmentModal = (props) => {
               </>
             ) : content.heading === 'Relapse prevention plan:' ? (
               <>
-                <Heading type="h3" weight="normal" size="2.5vmin">
+                <Heading type="h3" weight="normal" size="2vmin">
                   {RelapseExtra2[0]}
                 </Heading>
-                <Heading type="h3" weight="normal" size="2.5vmin">
+                <Heading type="h3" weight="normal" size="2vmin">
                   {RelapseExtra2[1]}
                 </Heading>
               </>

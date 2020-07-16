@@ -106,7 +106,7 @@ export const PsychosocialStrategies = [
     heading: 'Exercise',
     content: [
       '· Moderate to vigorous activity (where the heart rate is elevated) ',
-      '· 30-60 minutes',
+      '· 45-60 minutes',
       '· 3 times per week',
     ],
   },
@@ -141,9 +141,9 @@ export const PsychosocialStrategies = [
     ],
   },
   {
-    heading: 'Resource for Youth',
+    heading: 'Resources for Youth',
     content: [
-      'Check out our Mood Foundations resource and click on the button to download. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print, and provide to patients in your practice.',
+      'Check out our Mood Foundations resource. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print and provide to youth in your practice.',
       'We have also developed an animated video for youth on how food, movement and sleep can impact mood.',
     ],
     img_url: PSExtraLink,
@@ -463,7 +463,7 @@ export const TeamReview = {
     },
     {
       subHeading:
-        'Consider additional help fro family and/or change in treatment for the young person:',
+        'Consider additional help for family and/or change in treatment for the young person:',
       content: '',
     },
     {

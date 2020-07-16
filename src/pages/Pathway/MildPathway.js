@@ -40,7 +40,7 @@ const setResponse = (index, res) => {
 };
 
 export default function MildPathway() {
-  const [responses, setRes] = useState([false, false, false, false]);
+  const [responses, setRes] = useState([true, false, true, false]);
 
   return (
     <Container id="path_mild_container">
