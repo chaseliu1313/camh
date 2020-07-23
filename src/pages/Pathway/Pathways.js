@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import './pathway.css';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Alert } from 'react-bootstrap';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 
 import JointBtnContainer, { JointBtn } from '../../components/JointBtn';
@@ -29,11 +29,16 @@ export default function Pathways() {
   };
 
   const severeBtnRef = React.useRef(null);
-
+  const [showAlert, setShowAlert] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [switchView, setView] = useState([false, false]);
 
+  const closeAlert = () => {
+    setShowAlert(false);
+  };
+
   const handleViewSwitch = useCallback((index) => {
+    setShowAlert(false);
     if (index === 0) {
       setView([true, false]);
     } else {
@@ -43,9 +48,11 @@ export default function Pathways() {
 
   useEffect(() => {
     setMounted(true);
+    setShowAlert(true);
 
     return () => {
       setMounted(false);
+      setShowAlert(false);
     };
   }, []);
 
@@ -77,9 +84,17 @@ export default function Pathways() {
           >
             Pathways
           </Heading>
-          <Paragraph size="2.5vmin">
-            Click the button below to switch between the pathways
-          </Paragraph>
+          {!showAlert ? (
+            <Paragraph size="2.5vmin" align="center">
+              This section provides an overview of the treatment pathways. Click
+              on "Mild Depression" and "Moderate/Severe Depression" to switch
+              between the pathways. Each step will be reviewed in more detail in
+              the Treatment section of this tool.
+            </Paragraph>
+          ) : (
+            ''
+          )}
+
           <JointBtnContainer>
             <JointBtn
               btn={{ ...btnData.btn1 }}
@@ -102,6 +117,40 @@ export default function Pathways() {
             </Button>
           </Link>
         </Col>
+      </Row>
+      <Row>
+        {showAlert ? (
+          <Alert
+            variant="success"
+            onClose={closeAlert}
+            dismissible
+            style={{ margin: 'auto', width: '90%' }}
+          >
+            <Alert.Heading>
+              <Heading
+                color={PrimaryColor}
+                size="3vmin"
+                weight="bold"
+                align="center"
+              >
+                About the Pathways
+              </Heading>
+            </Alert.Heading>
+            <Paragraph size="2.5vmin" align="center">
+              This section provides an overview of the treatment pathways. Click
+              on "Mild Depression" and "Moderate/Severe Depression" to switch
+              between the pathways. Each step will be reviewed in more detail in
+              the Treatment section of this tool.
+            </Paragraph>
+            <hr />
+            <Paragraph size="2.5vmin" color={PrimaryColor} align="center">
+              The pathway has been defaulted to "No" responses. Click on "Yes"
+              and "No" to change the outcomes.
+            </Paragraph>
+          </Alert>
+        ) : (
+          ''
+        )}
       </Row>
       <Row>
         {switchView[0] ? <MildPathway node={severeBtnRef.current} /> : null}
