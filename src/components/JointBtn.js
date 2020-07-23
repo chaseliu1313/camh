@@ -20,34 +20,34 @@ function JointBtnContainer(props) {
 
 export default React.memo(JointBtnContainer);
 
-export const JointBtn = React.memo(function JointBtn({
-  btn: { label, disabled, primary },
-  onClick,
-  index,
-  setActive,
-  active,
-}) {
-  const handleClick = useCallback(() => {
-    onClick();
-    if (index === 0) {
-      setActive([true, false]);
-    } else {
-      setActive([false, true]);
-    }
-  }, [onClick, setActive, index]);
+export const JointBtn = React.forwardRef(
+  (
+    { btn: { label, disabled, primary }, onClick, index, setActive, active },
+    ref
+  ) => {
+    const handleClick = useCallback(() => {
+      onClick();
+      if (index === 0) {
+        setActive([true, false]);
+      } else {
+        setActive([false, true]);
+      }
+    }, [onClick, setActive, index]);
 
-  return (
-    <Button
-      primary={primary}
-      disabled={disabled}
-      onClick={handleClick}
-      active={active}
-      index={index}
-    >
-      {label}
-    </Button>
-  );
-});
+    return (
+      <Button
+        primary={primary}
+        disabled={disabled}
+        onClick={handleClick}
+        active={active}
+        index={index}
+        ref={ref}
+      >
+        {label}
+      </Button>
+    );
+  }
+);
 
 const btn2Ani = keyframes`
 
@@ -169,6 +169,14 @@ const BtnContainer = styled.div`
   justify-content: center;
 
   @media (max-width: 1024px) {
+    width: 200%;
+  }
+
+  @media (max-width: 600px) {
+    width: 150%;
+  }
+
+  @media (max-width: 400px) {
     width: 100%;
   }
 `;

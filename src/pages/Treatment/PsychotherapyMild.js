@@ -71,7 +71,7 @@ const PsychoMild = () => {
             align="center"
             color={SecondaryColor_Blk}
           >
-            Psychotherapy
+            Mild Depression Psychotherapy
           </Heading>
           <Paragraph weight="normal" size="2vmin" align="center">
             Hover over each box to learn about each therapy.

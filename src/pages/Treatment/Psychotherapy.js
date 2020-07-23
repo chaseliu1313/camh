@@ -71,7 +71,7 @@ const Psycho = () => {
             align="center"
             color={SecondaryColor_Blk}
           >
-            Psychotherapy
+            Moderate to Severe Depression Psychotherapy
           </Heading>
           <Paragraph weight="normal" size="2vmin" align="center">
             Try individual CBT first if possible. Otherwise, choose another

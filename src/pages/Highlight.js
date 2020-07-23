@@ -96,7 +96,7 @@ export default function Hightlights() {
                   weight={fontWeight}
                 >
                   ·The content provides a step-by-step assessment and treatment
-                  pathway for youth depression and is based on our &nbsp;
+                  pathway for youth depression and is based on our&nbsp;
                   <a
                     className="ov_a"
                     href="https://pubmed.ncbi.nlm.nih.gov/29697887/"
@@ -105,7 +105,7 @@ export default function Hightlights() {
                   >
                     systematic review
                   </a>
-                  &nbsp;, which found the&nbsp;
+                  , which found the&nbsp;
                   <a
                     className="ov_a"
                     href="https://www.nice.org.uk/guidance/ng134"

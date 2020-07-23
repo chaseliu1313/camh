@@ -4,7 +4,6 @@ import { Row, Col } from 'react-bootstrap';
 import Heading, { Paragraph, SubText } from '../components/Text/Heading';
 import Button from '../components/Buttons/Buttons';
 import Teens from '../resource/teens.svg';
-import MainPic from '../resource/main_1.svg';
 import Anime from 'react-anime';
 import { useHistory } from 'react-router-dom';
 import { size } from '../theme/resource';
@@ -59,13 +58,6 @@ export default function Landing() {
             </Heading>
           </Anime>
           <Anime {...animePropsLeft2}>
-            <Button onClick={handleClick} width="20vw" height="7vh" display>
-              <Paragraph color="white" size="2vh">
-                Begin
-              </Paragraph>
-            </Button>
-          </Anime>
-          <Anime {...animePropsLeft3}>
             <Paragraph color="white" size="2.5vmin">
               {landingContent[1]}
             </Paragraph>
@@ -74,11 +66,18 @@ export default function Landing() {
               <SubText color="white">#CundillatCAMH</SubText>
             </div>
           </Anime>
+          <Anime {...animePropsLeft3}>
+            <Button onClick={handleClick} width="20vw" height="7vh" display>
+              <Paragraph color="white" size="2vh">
+                Begin
+              </Paragraph>
+            </Button>
+          </Anime>
         </LeftCol>
         <RightCol md={6} xs={12}>
           <Anime {...animePropsRight}>
             <IMG
-              src={MainPic}
+              src={Teens}
               className="illustrating_1"
               alt="Illustrator of a group of teenagers"
             />
@@ -112,28 +111,20 @@ const LeftCol = styled(Col)`
 
 const RightCol = styled(Col)`
   height: 100%;
-  padding-left: 15vmin;
 
   @media (max-width: ${size.mobileL}) {
-    padding-left: 0;
   }
 `;
 
 const IMG = styled.img`
   height: 100%;
   width: 100%;
-  left: 100px;
+
   position: relative;
 
   @media (max-width: ${size.laptopL}) {
-    left: 0;
-    top: 30vh;
-    width: 150%;
   }
 
   @media (max-width: ${size.mobileL}) {
-    left: 0;
-    top: 0;
-    width: 120%;
   }
 `;

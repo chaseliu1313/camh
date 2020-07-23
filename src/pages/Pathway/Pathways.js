@@ -5,7 +5,15 @@ import { Row, Col } from 'react-bootstrap';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 
 import JointBtnContainer, { JointBtn } from '../../components/JointBtn';
-import { SecondaryColor_Blk } from '../../theme/resource';
+import Button from '../../components/Buttons/Buttons';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  SecondaryColor_Blk,
+  SecondaryColor_Tel,
+  PrimaryColor,
+} from '../../theme/resource';
+import { Link } from 'react-router-dom';
 
 import MildPathway from './MildPathway';
 import SeverePathway from './SeverePathway';
@@ -19,6 +27,8 @@ export default function Pathways() {
       primary: true,
     },
   };
+
+  const severeBtnRef = React.useRef(null);
 
   const [mounted, setMounted] = useState(false);
   const [switchView, setView] = useState([false, false]);
@@ -42,7 +52,23 @@ export default function Pathways() {
   return (
     <Main mounted={mounted}>
       <Row>
-        <CenterCol md={{ span: 10, offset: 1 }}>
+        <Col xs lg="1">
+          <Link to="/overview">
+            <Button
+              primary={false}
+              type="outlined"
+              height="5vmin"
+              width="5vw"
+              display
+            >
+              <FontAwesomeIcon icon={faArrowLeft} />
+              <Paragraph size="2vmin" color={SecondaryColor_Tel}>
+                Back
+              </Paragraph>
+            </Button>
+          </Link>
+        </Col>
+        <CenterCol xs lg="10">
           <Heading
             color={SecondaryColor_Blk}
             size="5vmin"
@@ -62,12 +88,23 @@ export default function Pathways() {
             <JointBtn
               btn={{ ...btnData.btn2 }}
               onClick={() => handleViewSwitch(1)}
+              ref={severeBtnRef}
             />
           </JointBtnContainer>
         </CenterCol>
+        <Col xs lg="1">
+          <Link to="/assessment">
+            <Button primary type="outlined" height="5vmin" width="5vw" display>
+              <FontAwesomeIcon icon={faArrowRight} />
+              <Paragraph size="2vmin" color={PrimaryColor}>
+                Next
+              </Paragraph>
+            </Button>
+          </Link>
+        </Col>
       </Row>
       <Row>
-        {switchView[0] ? <MildPathway /> : null}
+        {switchView[0] ? <MildPathway node={severeBtnRef.current} /> : null}
         {switchView[1] ? <SeverePathway /> : null}
         {!switchView[0] && !switchView[1] ? (
           <CenterCol md={{ span: 10, offset: 1 }}>

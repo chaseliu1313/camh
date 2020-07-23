@@ -143,7 +143,7 @@ const CardContainer = styled.div`
      margin: ${margin || 'auto'};
      padding: ${padding || '0'};
      border-radius: ${radius || '2px'};
-     cursor: ${cursor === 'true' ? 'pointer' : 'auto'};
+     cursor: ${cursor === 'true' ? 'pointer' : 'default'};
      flex-direction: ${flex || 'row'};
      box-shadow: ${
        shadow ||

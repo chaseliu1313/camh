@@ -39,14 +39,14 @@ const setResponse = (index, res) => {
   return state;
 };
 
-export default function MildPathway() {
+export default function MildPathway(props) {
   const [responses, setRes] = useState([true, false, true, false]);
 
   return (
     <Container id="path_mild_container">
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
-          <StepCard background={PrimaryGradient[0]} height="4vh" cursor>
+          <StepCard background={PrimaryGradient[0]} height="4vh" cursor={false}>
             <Heading
               type="h1"
               weight="normal"
@@ -83,7 +83,7 @@ export default function MildPathway() {
               shadow="none"
               radius="0"
               height="4vh"
-              cursor
+              cursor={false}
             >
               <Heading
                 type="h1"
@@ -108,7 +108,11 @@ export default function MildPathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[0] ? (
-            <StepCard background={PrimaryGradient[2]} height="4vh" cursor>
+            <StepCard
+              background={PrimaryGradient[2]}
+              height="4vh"
+              cursor={false}
+            >
               <Heading
                 type="h1"
                 weight="normal"
@@ -123,7 +127,11 @@ export default function MildPathway() {
           ) : null}
 
           {responses[1] ? (
-            <StepCard background={PrimaryGradient[3]} height="4vh" cursor>
+            <StepCard
+              background={PrimaryGradient[3]}
+              height="4vh"
+              cursor={false}
+            >
               <Heading
                 type="h1"
                 weight="normal"
@@ -164,7 +172,7 @@ export default function MildPathway() {
                 shadow="none"
                 radius="0"
                 height="4vh"
-                cursor
+                cursor={false}
               >
                 <Heading
                   type="h1"
@@ -190,7 +198,14 @@ export default function MildPathway() {
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
           {responses[2] && responses[0] ? (
-            <StepCard background={PrimaryGradient[5]} height="4vh" cursor>
+            <StepCard
+              background={PrimaryGradient[5]}
+              height="4vh"
+              cursor
+              onClick={() => {
+                props.node.click();
+              }}
+            >
               <Heading
                 type="h1"
                 weight="normal"
@@ -205,7 +220,11 @@ export default function MildPathway() {
           ) : null}
 
           {responses[3] && responses[0] ? (
-            <StepCard background={PrimaryGradient[6]} height="4vh" cursor>
+            <StepCard
+              background={PrimaryGradient[6]}
+              height="4vh"
+              cursor={false}
+            >
               <Heading
                 type="h1"
                 weight="normal"

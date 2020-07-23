@@ -17,6 +17,7 @@ import Psychosocial from './pages/Treatment/Psychosocial';
 import Psychotherapy from './pages/Treatment/Psychotherapy';
 import PsychoMild from './pages/Treatment/PsychotherapyMild';
 import { TreatmentStore } from './store/store';
+import ReTools from './pages/Resources/tools';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
                 exact
                 component={PsychoMild}
               />
+              <Route path="/resources/tools" component={ReTools} />
             </Switch>
           </main>
           <footer className="App-footer">
