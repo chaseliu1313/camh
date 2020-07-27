@@ -86,10 +86,8 @@ export default function Pathways() {
           </Heading>
           {!showAlert ? (
             <Paragraph size="2.5vmin" align="center">
-              This section provides an overview of the treatment pathways. Click
-              on "Mild Depression" and "Moderate/Severe Depression" to switch
-              between the pathways. Each step will be reviewed in more detail in
-              the Treatment section of this tool.
+              The pathway has been defaulted to "No" responses. Click on "Yes"
+              and "No" to change the outcomes.
             </Paragraph>
           ) : (
             ''
@@ -118,13 +116,23 @@ export default function Pathways() {
           </Link>
         </Col>
       </Row>
+
+      <Row>
+        {switchView[0] ? <MildPathway node={severeBtnRef.current} /> : null}
+        {switchView[1] ? <SeverePathway /> : null}
+        {!switchView[0] && !switchView[1] ? (
+          <CenterCol md={{ span: 10, offset: 1 }}>
+            <Heading size="5vmin">⬆ Choose the Pathway ⬆</Heading>
+          </CenterCol>
+        ) : null}
+      </Row>
       <Row>
         {showAlert ? (
           <Alert
             variant="success"
             onClose={closeAlert}
             dismissible
-            style={{ margin: 'auto', width: '90%' }}
+            style={{ margin: 'auto', width: '50%' }}
           >
             <Alert.Heading>
               <Heading
@@ -135,31 +143,18 @@ export default function Pathways() {
               >
                 About the Pathways
               </Heading>
-            </Alert.Heading>
+            </Alert.Heading>{' '}
+            <hr />
             <Paragraph size="2.5vmin" align="center">
               This section provides an overview of the treatment pathways. Click
               on "Mild Depression" and "Moderate/Severe Depression" to switch
               between the pathways. Each step will be reviewed in more detail in
               the Treatment section of this tool.
             </Paragraph>
-            <hr />
-            <Paragraph size="2.5vmin" color={PrimaryColor} align="center">
-              The pathway has been defaulted to "No" responses. Click on "Yes"
-              and "No" to change the outcomes.
-            </Paragraph>
           </Alert>
         ) : (
           ''
         )}
-      </Row>
-      <Row>
-        {switchView[0] ? <MildPathway node={severeBtnRef.current} /> : null}
-        {switchView[1] ? <SeverePathway /> : null}
-        {!switchView[0] && !switchView[1] ? (
-          <CenterCol md={{ span: 10, offset: 1 }}>
-            <Heading size="5vmin">⬆ Choose the Pathway ⬆</Heading>
-          </CenterCol>
-        ) : null}
       </Row>
     </Main>
   );

@@ -11,3 +11,27 @@
   justify-content: center;
   align-items: center;
 }
+
+.help_list {
+  width: 100%;
+  padding: 0 10vmin;
+}
+
+.help_list > .list-group-item {
+  margin: 2vmin 0;
+  background-color: rgba(110, 41, 141, 0.15);
+}
+
+.help_link {
+  color: #6e298d;
+  font-weight: bold;
+}
+
+.ref_list {
+  width: 100%;
+  padding: 0 15vmin;
+}
+
+.ref_list > .list-group-item {
+  background-color: rgba(110, 41, 141, 0.15);
+}

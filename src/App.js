@@ -18,6 +18,8 @@ import Psychotherapy from './pages/Treatment/Psychotherapy';
 import PsychoMild from './pages/Treatment/PsychotherapyMild';
 import { TreatmentStore } from './store/store';
 import ReTools from './pages/Resources/tools';
+import LocalHelp from './pages/Resources/localHelp';
+import Reference from './pages/Resources/references';
 
 function App() {
   return (
@@ -54,6 +56,8 @@ function App() {
                 component={PsychoMild}
               />
               <Route path="/resources/tools" component={ReTools} />
+              <Route path="/resources/help" exact component={LocalHelp} />
+              <Route path="/resources/reference" exact component={Reference} />
             </Switch>
           </main>
           <footer className="App-footer">

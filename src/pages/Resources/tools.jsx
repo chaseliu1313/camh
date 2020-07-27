@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Row as R, Col, ListGroup } from 'react-bootstrap';
 import { Link, Switch, Route, useLocation } from 'react-router-dom';
 import {
   PrimaryColor,
-  TertiaryColor_Tel,
-  size,
   SecondaryColor_Blk,
   SecondaryColor_Tel,
   BackgroundColor,
-  SecondaryColor_Yel,
 } from '../../theme/resource';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -36,10 +33,8 @@ const path6 = ['/resources/tools/cognitive', '/resources/help'];
 const ReTools = ({ match }) => {
   const [path, setPath] = useState(['/treatment', '/resources/tools/video']);
   const location = useLocation().pathname;
-  const [curPath, setCurPath] = useState(location);
 
   useEffect(() => {
-    setCurPath(location);
     if (location === '/resources/tools') {
       setPath(path1);
     } else if (location === '/resources/tools/video') {
@@ -385,14 +380,14 @@ const AssessmentTools = () => {
             download
             rel="noopener noreferrer"
           >
-            <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
+            <Paragraph color={SecondaryColor_Blk} size="2.5vmin" align="center">
               ICHOM Standard Set for Children & Young People with Depression &
               Anxiety
             </Paragraph>
           </a>
         </ListGroup.Item>
         <ListGroup.Item>
-          <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
+          <Paragraph color={SecondaryColor_Blk} size="2.5vmin" align="center">
             Standard set of outcome measures that matter most to children and
             young people with depression and anxiety. Globally recommended.
           </Paragraph>
@@ -420,7 +415,6 @@ const Row = styled(R)`
 
 const ListRow = styled(R)`
   width: 100%;
-  margin: 0;
   padding: 0;
   overflow: hidden;
   height: auto;

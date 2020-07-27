@@ -6,6 +6,7 @@ import {
   Error_R_Hover,
 } from '../../theme/resource';
 import styled, { keyframes, css } from 'styled-components';
+import { Badge as B } from 'react-bootstrap';
 
 const StepCard = React.memo(function StepCard({
   height,
@@ -22,6 +23,7 @@ const StepCard = React.memo(function StepCard({
   onMouseOver,
   onMouseOut,
   cursor = 'true',
+  showBadge = 'false',
   flex,
 }) {
   const [mounted, setMounted] = useState(false);
@@ -51,8 +53,10 @@ const StepCard = React.memo(function StepCard({
       onMouseOut={onMouseOut}
       cursor={cursor.toString()}
       flex={flex}
+      showBadge={showBadge}
     >
       {children}
+      <Badge variant="light">more</Badge>
     </CardContainer>
   );
 });
@@ -230,4 +234,10 @@ const Button = styled.button`
         ? `2px solid ${Correct_G_Hover}`
         : `2px solid ${Error_R_Hover}`};
   }
+`;
+
+const Badge = styled(B)`
+  margin: 5px;
+  ${({ showBadge }) => `
+  `}
 `;
