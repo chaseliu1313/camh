@@ -41,13 +41,13 @@ export default function SeverePathway() {
       switch (index) {
         case 2:
           currentMed[index - 1] = false;
-          currentMed[index] = null;
+          currentMed[index] = false;
           setMedRes(currentMed);
 
           break;
         case 3:
           currentMed[index - 2] = true;
-          currentMed[index - 1] = null;
+          currentMed[index - 1] = false;
           setMedRes(currentMed);
           break;
         case 4:
@@ -65,12 +65,12 @@ export default function SeverePathway() {
       switch (index) {
         case 2:
           current[index - 1] = false;
-          current[index] = null;
+          current[index] = false;
           setRes(initialValue);
           break;
         case 3:
           current[index - 2] = true;
-          current[index - 1] = null;
+          current[index - 1] = false;
           setRes(current);
           break;
         case 4:
@@ -86,6 +86,10 @@ export default function SeverePathway() {
       }
       //go into normal stream
     }
+
+    console.log(medStreamRes);
+    console.log('res');
+    console.log(responses);
   };
 
   return (
@@ -101,7 +105,7 @@ export default function SeverePathway() {
               align="center"
               lineHeight="4vh"
             >
-              Psychosocial Strategies
+              Step1: Psychosocial Strategies
             </Heading>
           </StepCard>
         </CenterCol>
@@ -164,9 +168,9 @@ export default function SeverePathway() {
                   lineHeight="4vh"
                 >
                   {responses[0] === false
-                    ? 'Psychotherapy'
+                    ? 'Step2: Psychotherapy'
                     : responses[0] === true
-                    ? 'Fluoxetine + Psychotherapy'
+                    ? 'Step2: Medication & Psychotherapy'
                     : null}
                 </Heading>
               </StepCard>
@@ -199,7 +203,7 @@ export default function SeverePathway() {
                     align="center"
                     lineHeight="4vh"
                   >
-                    Response after 6 weeks?
+                    Step3: Check response after 6 weeks?
                   </Heading>
                 </StepCard>
                 <StepOptionButton
@@ -231,7 +235,7 @@ export default function SeverePathway() {
                     align="center"
                     lineHeight="4vh"
                   >
-                    Response after 6 weeks?
+                    Step3: Check response after 6 weeks?
                   </Heading>
                 </StepCard>
                 <StepOptionButton
@@ -246,88 +250,9 @@ export default function SeverePathway() {
         ) : null}
       </Row>
 
-      <Row className="p_row">
-        <CenterCol md={{ span: 8, offset: 2 }}>
-          {responses[1] !== null || medStreamRes[1] !== null ? (
-            <>
-              <FontAwesomeIcon
-                icon={faArrowAltCircleDown}
-                className="arrow_d"
-                color={PrimaryColor}
-              />
-              <StepCard
-                background={PrimaryGradient[3]}
-                height="4vh"
-                cursor={false}
-              >
-                <Heading
-                  type="h1"
-                  weight="normal"
-                  size="3vmin"
-                  color="white"
-                  align="center"
-                  lineHeight="4vh"
-                >
-                  {responses[1] === false || medStreamRes[1] === false
-                    ? 'Team Review'
-                    : responses[1] === true || medStreamRes[1] === true
-                    ? '3 Month Monitoring'
-                    : null}
-                </Heading>
-              </StepCard>
-            </>
-          ) : null}
-        </CenterCol>
-      </Row>
-      <Row className="p_row">
-        <CenterCol md={{ span: 8, offset: 2 }}>
-          {responses[1] !== null || medStreamRes[1] !== null ? (
-            <StepOptionCard height="4vh">
-              <StepOptionButton
-                label="No"
-                onClick={() => handleResponse(4)}
-                unSelect={
-                  responses[0]
-                    ? medStreamRes[2] !== null && medStreamRes[2]
-                    : responses[2] !== null && responses[2]
-                }
-              />
-              <StepCard
-                background={PrimaryGradient[4]}
-                shadow="none"
-                radius="0"
-                height="4vh"
-                cursor={false}
-              >
-                <Heading
-                  type="h1"
-                  weight="normal"
-                  size="3vmin"
-                  color="white"
-                  align="center"
-                  lineHeight="4vh"
-                >
-                  Response ?
-                </Heading>
-              </StepCard>
-              <StepOptionButton
-                label="Yes"
-                color="green"
-                onClick={() => handleResponse(5)}
-                unSelect={
-                  responses[0]
-                    ? medStreamRes[2] !== null && !medStreamRes[2]
-                    : responses[2] !== null && !responses[2]
-                }
-              />
-            </StepOptionCard>
-          ) : null}
-        </CenterCol>
-      </Row>
-
-      <Row className="p_row">
-        <CenterCol md={{ span: 8, offset: 2 }}>
-          {responses[2] !== null && responses[2] === false ? (
+      {responses[1] === false && !medStreamRes[0] ? (
+        <Row className="p_row">
+          <CenterCol md={{ span: 8, offset: 2 }}>
             <>
               <FontAwesomeIcon
                 icon={faArrowAltCircleDown}
@@ -347,11 +272,97 @@ export default function SeverePathway() {
                   align="center"
                   lineHeight="4vh"
                 >
-                  Team Review to consider medication
+                  Step 4: Change psychotherapy or add medication
                 </Heading>
               </StepCard>
             </>
-          ) : responses[2] !== null && responses[2] === true ? (
+          </CenterCol>
+        </Row>
+      ) : responses[1] && !medStreamRes[0] ? (
+        <>
+          <Row className="p_row">
+            <CenterCol md={{ span: 8, offset: 2 }}>
+              <>
+                <FontAwesomeIcon
+                  icon={faArrowAltCircleDown}
+                  className="arrow_d"
+                  color={PrimaryColor}
+                />
+                <StepCard
+                  background={PrimaryGradient[5]}
+                  height="4vh"
+                  cursor={false}
+                >
+                  <Heading
+                    type="h1"
+                    weight="normal"
+                    size="3vmin"
+                    color="white"
+                    align="center"
+                    lineHeight="4vh"
+                  >
+                    Step 4: Continue Treatment for 3 months
+                  </Heading>
+                </StepCard>
+              </>
+            </CenterCol>
+          </Row>
+          <Row className="p_row">
+            <CenterCol md={{ span: 8, offset: 2 }}>
+              <>
+                <FontAwesomeIcon
+                  icon={faArrowAltCircleDown}
+                  className="arrow_d"
+                  color={PrimaryColor}
+                />
+                <StepOptionCard height="4vh">
+                  <StepOptionButton
+                    label="No"
+                    onClick={() => handleResponse(4)}
+                    unSelect={
+                      responses[0]
+                        ? medStreamRes[2] !== null && medStreamRes[2]
+                        : responses[2] !== null && responses[2]
+                    }
+                  />
+                  <StepCard
+                    background={PrimaryGradient[4]}
+                    shadow="none"
+                    radius="0"
+                    height="4vh"
+                    cursor={false}
+                  >
+                    <Heading
+                      type="h1"
+                      weight="normal"
+                      size="3vmin"
+                      color="white"
+                      align="center"
+                      lineHeight="4vh"
+                    >
+                      Step 5: Check response after 3 months
+                    </Heading>
+                  </StepCard>
+                  <StepOptionButton
+                    label="Yes"
+                    color="green"
+                    onClick={() => handleResponse(5)}
+                    unSelect={
+                      responses[0]
+                        ? medStreamRes[2] !== null && !medStreamRes[2]
+                        : responses[2] !== null && !responses[2]
+                    }
+                  />
+                </StepOptionCard>
+              </>
+            </CenterCol>
+          </Row>
+        </>
+      ) : null}
+
+      {!responses[0] && responses[2] ? (
+        <Row className="p_row">
+          <CenterCol md={{ span: 8, offset: 2 }}>
             <>
               <FontAwesomeIcon
                 icon={faArrowAltCircleDown}
@@ -371,17 +382,155 @@ export default function SeverePathway() {
                   align="center"
                   lineHeight="4vh"
                 >
-                  Reduce Frequency and Intensity of Visits
+                  Step 6: Reduce intensity & frequency of visits; relapse
+                  prevention plan
                 </Heading>
               </StepCard>
             </>
-          ) : null}
-        </CenterCol>
-      </Row>
+          </CenterCol>
+        </Row>
+      ) : null}
+
+      {responses[0] && !medStreamRes[1] ? (
+        <Row className="p_row">
+          <CenterCol md={{ span: 8, offset: 2 }}>
+            <>
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                className="arrow_d"
+                color={PrimaryColor}
+              />
+              <StepCard
+                background={PrimaryGradient[5]}
+                height="4vh"
+                cursor={false}
+              >
+                <Heading
+                  type="h1"
+                  weight="normal"
+                  size="3vmin"
+                  color="white"
+                  align="center"
+                  lineHeight="4vh"
+                >
+                  Step 4: Team Review & Treatment Change prevention plan
+                </Heading>
+              </StepCard>
+            </>
+          </CenterCol>
+        </Row>
+      ) : responses[0] && medStreamRes[1] ? (
+        <>
+          <Row className="p_row">
+            <CenterCol md={{ span: 8, offset: 2 }}>
+              <>
+                <FontAwesomeIcon
+                  icon={faArrowAltCircleDown}
+                  className="arrow_d"
+                  color={PrimaryColor}
+                />
+                <StepCard
+                  background={PrimaryGradient[5]}
+                  height="4vh"
+                  cursor={false}
+                >
+                  <Heading
+                    type="h1"
+                    weight="normal"
+                    size="3vmin"
+                    color="white"
+                    align="center"
+                    lineHeight="4vh"
+                  >
+                    Step 4: Continue Treatment for 3 months
+                  </Heading>
+                </StepCard>
+              </>
+            </CenterCol>
+          </Row>
+
+          <Row className="p_row">
+            <CenterCol md={{ span: 8, offset: 2 }}>
+              <>
+                <FontAwesomeIcon
+                  icon={faArrowAltCircleDown}
+                  className="arrow_d"
+                  color={PrimaryColor}
+                />
+                <StepOptionCard height="4vh">
+                  <StepOptionButton
+                    label="No"
+                    onClick={() => handleResponse(4)}
+                    unSelect={
+                      responses[0]
+                        ? medStreamRes[2] !== null && medStreamRes[2]
+                        : responses[2] !== null && responses[2]
+                    }
+                  />
+                  <StepCard
+                    background={PrimaryGradient[4]}
+                    shadow="none"
+                    radius="0"
+                    height="4vh"
+                    cursor={false}
+                  >
+                    <Heading
+                      type="h1"
+                      weight="normal"
+                      size="3vmin"
+                      color="white"
+                      align="center"
+                      lineHeight="4vh"
+                    >
+                      Step 5: Check response after 3 months
+                    </Heading>
+                  </StepCard>
+                  <StepOptionButton
+                    label="Yes"
+                    color="green"
+                    onClick={() => handleResponse(5)}
+                    unSelect={
+                      responses[0]
+                        ? medStreamRes[2] !== null && !medStreamRes[2]
+                        : responses[2] !== null && !responses[2]
+                    }
+                  />
+                </StepOptionCard>
+              </>
+            </CenterCol>
+          </Row>
+        </>
+      ) : null}
 
       <Row className="p_row">
         <CenterCol md={{ span: 8, offset: 2 }}>
-          {medStreamRes[2] !== null && medStreamRes[2] === true ? (
+          {responses[0] && medStreamRes[2] ? (
+            <>
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                className="arrow_d"
+                color={PrimaryColor}
+              />
+              <StepCard
+                background={PrimaryGradient[6]}
+                height="10vh"
+                cursor={false}
+              >
+                <Heading
+                  type="h1"
+                  weight="normal"
+                  size="2vmin"
+                  color="white"
+                  align="center"
+                  lineHeight="4vh"
+                  align="center"
+                >
+                  Step 6: Continue medication for 6+ months; reduce intensity &
+                  frequency of visits; relapse prevention plan
+                </Heading>
+              </StepCard>
+            </>
+          ) : responses[0] && !medStreamRes[2] && medStreamRes[1] ? (
             <>
               <FontAwesomeIcon
                 icon={faArrowAltCircleDown}
@@ -401,78 +550,10 @@ export default function SeverePathway() {
                   align="center"
                   lineHeight="4vh"
                 >
-                  Continue for 6 Months with Relapse Prevention Plans
+                  Step 6: Team Review & Treatment Change
                 </Heading>
               </StepCard>
             </>
-          ) : medStreamRes[2] !== null &&
-            medStreamRes[2] === false &&
-            medStreamRes[1] === false ? (
-            <>
-              <FontAwesomeIcon
-                icon={faArrowAltCircleDown}
-                className="arrow_d"
-                color={PrimaryColor}
-              />
-              <StepCard
-                background={PrimaryGradient[6]}
-                height="4vh"
-                cursor={false}
-              >
-                <Heading
-                  type="h1"
-                  weight="normal"
-                  size="3vmin"
-                  color="white"
-                  align="center"
-                  lineHeight="4vh"
-                >
-                  Consider adjust dose.[tbd]
-                </Heading>
-              </StepCard>
-            </>
-          ) : null}
-        </CenterCol>
-      </Row>
-
-      <Row className="p_row">
-        <CenterCol md={{ span: 8, offset: 2 }}>
-          {medStreamRes[2] !== null && medStreamRes[2] === true ? (
-            <StepCard
-              background={PrimaryGradient[6]}
-              height="4vh"
-              cursor={false}
-            >
-              <Heading
-                type="h1"
-                weight="normal"
-                size="3vmin"
-                color="white"
-                align="center"
-                lineHeight="4vh"
-              >
-                Reduce Frequency and Intensity of Visits
-              </Heading>
-            </StepCard>
-          ) : medStreamRes[2] !== null &&
-            medStreamRes[2] === false &&
-            medStreamRes[1] === true ? (
-            <StepCard
-              background={PrimaryGradient[6]}
-              height="4vh"
-              cursor={false}
-            >
-              <Heading
-                type="h1"
-                weight="normal"
-                size="3vmin"
-                color="white"
-                align="center"
-                lineHeight="4vh"
-              >
-                Team Review Consider adjust dose.[tbd]
-              </Heading>
-            </StepCard>
           ) : null}
         </CenterCol>
       </Row>

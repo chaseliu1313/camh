@@ -56,7 +56,6 @@ const StepCard = React.memo(function StepCard({
       showBadge={showBadge}
     >
       {children}
-      <Badge variant="light">more</Badge>
     </CardContainer>
   );
 });

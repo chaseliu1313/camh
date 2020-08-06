@@ -67,7 +67,6 @@ export default function MildPathway(props) {
             className="arrow_d"
             color={PrimaryColor}
           />
-          <SubText>Check Response after 2 weeks</SubText>
         </CenterCol>
       </Row>
       <Row className="p_row">
@@ -93,7 +92,7 @@ export default function MildPathway(props) {
                 align="center"
                 lineHeight="4vh"
               >
-                2 Weeks Monitoring
+                Step2: Check Response after 2 weeks
               </Heading>
             </StepCard>
             <StepOptionButton
@@ -121,7 +120,7 @@ export default function MildPathway(props) {
                 align="center"
                 lineHeight="4vh"
               >
-                Step 2: Psychotherapy
+                Step 3: Psychotherapy
               </Heading>
             </StepCard>
           ) : null}
@@ -154,7 +153,6 @@ export default function MildPathway(props) {
               className="arrow_d"
               color={PrimaryColor}
             />
-            <SubText>Check Response after 2-3 months.</SubText>
           </CenterCol>
         ) : null}
       </Row>
@@ -182,7 +180,7 @@ export default function MildPathway(props) {
                   align="center"
                   lineHeight="4vh"
                 >
-                  Psychotherapy Response?
+                  Step4:Check Response after 2-3 months.
                 </Heading>
               </StepCard>
               <StepOptionButton
@@ -214,7 +212,7 @@ export default function MildPathway(props) {
                 align="center"
                 lineHeight="4vh"
               >
-                Step 3: Consider Moderate/Severe Depression
+                Step 5: Consider Moderate/Severe Depression
               </Heading>
             </StepCard>
           ) : null}
@@ -233,7 +231,7 @@ export default function MildPathway(props) {
                 align="center"
                 lineHeight="4vh"
               >
-                Step 3: Reduce Frequency and Intensity of Visits
+                Step 5: Reduce Frequency and Intensity of Visits
               </Heading>
             </StepCard>
           ) : null}
