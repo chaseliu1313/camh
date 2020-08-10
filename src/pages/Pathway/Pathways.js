@@ -5,15 +5,9 @@ import { Row, Col, Alert } from 'react-bootstrap';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 
 import JointBtnContainer, { JointBtn } from '../../components/JointBtn';
-import Button from '../../components/Buttons/Buttons';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  SecondaryColor_Blk,
-  SecondaryColor_Tel,
-  PrimaryColor,
-} from '../../theme/resource';
-import { Link } from 'react-router-dom';
+import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
+
+import { SecondaryColor_Blk, PrimaryColor } from '../../theme/resource';
 
 import MildPathway from './MildPathway';
 import SeverePathway from './SeverePathway';
@@ -59,23 +53,7 @@ export default function Pathways() {
   return (
     <Main mounted={mounted}>
       <Row>
-        <Col xs lg="1">
-          <Link to="/overview">
-            <Button
-              primary={false}
-              type="outlined"
-              height="5vmin"
-              width="5vw"
-              display
-            >
-              <FontAwesomeIcon icon={faArrowLeft} />
-              <Paragraph size="2vmin" color={SecondaryColor_Tel}>
-                Back
-              </Paragraph>
-            </Button>
-          </Link>
-        </Col>
-        <CenterCol xs lg="10">
+        <CenterCol md={{ span: 10, offset: 1 }}>
           <Heading
             color={SecondaryColor_Blk}
             size="5vmin"
@@ -105,16 +83,6 @@ export default function Pathways() {
             />
           </JointBtnContainer>
         </CenterCol>
-        <Col xs lg="1">
-          <Link to="/assessment">
-            <Button primary type="outlined" height="5vmin" width="5vw" display>
-              <FontAwesomeIcon icon={faArrowRight} />
-              <Paragraph size="2vmin" color={PrimaryColor}>
-                Next
-              </Paragraph>
-            </Button>
-          </Link>
-        </Col>
       </Row>
 
       <Row>
@@ -143,7 +111,7 @@ export default function Pathways() {
               >
                 About the Pathways
               </Heading>
-            </Alert.Heading>{' '}
+            </Alert.Heading>
             <hr />
             <Paragraph size="2.5vmin" align="center">
               This section provides an overview of the treatment pathways. Click
@@ -155,6 +123,11 @@ export default function Pathways() {
         ) : (
           ''
         )}
+      </Row>
+      <Row>
+        <CenterCol md={{ span: 10, offset: 1 }}>
+          <NaviBtnGroup backLink="/overview" forwardLink="/assessment" />
+        </CenterCol>
       </Row>
     </Main>
   );

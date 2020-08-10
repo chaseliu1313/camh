@@ -19,6 +19,7 @@ import MF from '../../resource/MoodFoundations.png';
 import PS from '../../resource/ProblemSolving.png';
 import ReactPlayer from 'react-player';
 import StepCard from '../../components/Cards/StepCard';
+import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 import './resources.css';
 const path1 = ['/treatment', '/resources/tools/video'];
 const path2 = ['/resources/tools', '/resources/tools/medhandout'];
@@ -53,23 +54,7 @@ const ReTools = ({ match }) => {
   return (
     <Container>
       <Row>
-        <Col xs lg="1">
-          <Link to={path[0]}>
-            <Button
-              primary={false}
-              type="outlined"
-              height="5vmin"
-              width="5vw"
-              display
-            >
-              <FontAwesomeIcon icon={faArrowLeft} />
-              <Paragraph size="2vmin" color={SecondaryColor_Tel}>
-                Back
-              </Paragraph>
-            </Button>
-          </Link>
-        </Col>
-        <CenterCol md={{ span: 10 }}>
+        <CenterCol md={{ span: 10, offset: 1 }}>
           <Heading
             size="5vmin"
             weight="bold"
@@ -81,16 +66,6 @@ const ReTools = ({ match }) => {
               : 'Cundill Centre Tools'}
           </Heading>
         </CenterCol>
-        <Col xs lg="1">
-          <Link to={path[1]}>
-            <Button primary type="outlined" height="5vmin" width="5vw" display>
-              <FontAwesomeIcon icon={faArrowRight} />
-              <Paragraph size="2vmin" color={PrimaryColor}>
-                Next
-              </Paragraph>
-            </Button>
-          </Link>
-        </Col>
       </Row>
       <Switch>
         <Route
@@ -159,6 +134,11 @@ const ReTools = ({ match }) => {
           render={() => AssessmentTools()}
         />
       </Switch>
+      <Row>
+        <CenterCol md={{ span: 10, offset: 1 }}>
+          <NaviBtnGroup backLink={path[0]} forwardLink={path[1]} />
+        </CenterCol>
+      </Row>
     </Container>
   );
 };
@@ -220,13 +200,13 @@ const Video = () => {
       </Heading>
       <VideoLayout>
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=Gm3FLGxb2ZU&t=1s"
+          url="https://www.youtube.com/watch?v=6xONySz9XLk&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2&t=0s"
           playing={false}
           controls={true}
           width="90%"
         />
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=Gm3FLGxb2ZU&t=1s"
+          url="https://www.youtube.com/watch?v=qMnQFTy3t30&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2s"
           playing={false}
           controls={true}
           width="90%"

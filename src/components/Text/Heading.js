@@ -66,7 +66,7 @@ export function SubText({
   color = SecondaryColor_Blk,
   lineHeight,
   weight = 200,
-  size = '1.5vmin',
+  size = '1.8vmin',
   margin,
   padding,
   children,

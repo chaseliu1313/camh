@@ -60,7 +60,7 @@ export default function MildPathway(props) {
           </StepCard>
         </CenterCol>
       </Row>
-      <Row className="p_row">
+      <Row className="p_row" style={{ margin: '5px 0' }}>
         <CenterCol md={{ span: 8, offset: 2 }} className="arrow">
           <FontAwesomeIcon
             icon={faArrowAltCircleDown}
@@ -69,8 +69,16 @@ export default function MildPathway(props) {
           />
         </CenterCol>
       </Row>
-      <Row className="p_row">
+      <Row className="p_row" style={{ margin: '5px 0' }}>
         <CenterCol md={{ span: 8, offset: 2 }}>
+          <SubContainer>
+            <SubText weight="bold" margin="0 5vmin">
+              No response
+            </SubText>
+            <SubText weight="bold" margin="0 5vmin">
+              Response
+            </SubText>
+          </SubContainer>
           <StepOptionCard height="4vh">
             <StepOptionButton
               label="No"
@@ -92,7 +100,7 @@ export default function MildPathway(props) {
                 align="center"
                 lineHeight="4vh"
               >
-                Step2: Check Response after 2 weeks
+                Step 2: Check response after 2 weeks
               </Heading>
             </StepCard>
             <StepOptionButton
@@ -139,13 +147,13 @@ export default function MildPathway(props) {
                 align="center"
                 lineHeight="4vh"
               >
-                Step 3: Reduce Frequency and Intensity of Visits
+                Step 3: Reduce frequency and intensity of visits
               </Heading>
             </StepCard>
           ) : null}
         </CenterCol>
       </Row>
-      <Row className="p_row">
+      <Row className="p_row" style={{ margin: '5px 0' }}>
         {responses[0] ? (
           <CenterCol md={{ span: 8, offset: 2 }} className="arrow">
             <FontAwesomeIcon
@@ -156,9 +164,17 @@ export default function MildPathway(props) {
           </CenterCol>
         ) : null}
       </Row>
-      <Row className="p_row">
+      <Row className="p_row" style={{ margin: '5px 0' }}>
         {responses[0] ? (
           <CenterCol md={{ span: 8, offset: 2 }}>
+            <SubContainer>
+              <SubText weight="bold" margin="0 5vmin">
+                No response
+              </SubText>
+              <SubText weight="bold" margin="0 5vmin">
+                Response
+              </SubText>
+            </SubContainer>
             <StepOptionCard height="4vh">
               <StepOptionButton
                 label="No"
@@ -180,7 +196,7 @@ export default function MildPathway(props) {
                   align="center"
                   lineHeight="4vh"
                 >
-                  Step4:Check Response after 2-3 months.
+                  Step 4: Check response after 2-3 months.
                 </Heading>
               </StepCard>
               <StepOptionButton
@@ -212,7 +228,7 @@ export default function MildPathway(props) {
                 align="center"
                 lineHeight="4vh"
               >
-                Step 5: Consider Moderate/Severe Depression
+                Step 5: Switch to moderate/severe depression pathway
               </Heading>
             </StepCard>
           ) : null}
@@ -231,7 +247,7 @@ export default function MildPathway(props) {
                 align="center"
                 lineHeight="4vh"
               >
-                Step 5: Reduce Frequency and Intensity of Visits
+                Step 5: Reduce frequency and intensity of visits
               </Heading>
             </StepCard>
           ) : null}
@@ -249,4 +265,12 @@ const Container = styled.div`
 const CenterCol = styled(Col)`
   display: flex;
   flex-direction: column;
+`;
+
+const SubContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
 `;

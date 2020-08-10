@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import Heading from '../../components/Text/Heading';
+import Heading, { SubText } from '../../components/Text/Heading';
 import StepCard, {
   StepOptionCard,
   StepOptionButton,
@@ -86,10 +86,6 @@ export default function SeverePathway() {
       }
       //go into normal stream
     }
-
-    console.log(medStreamRes);
-    console.log('res');
-    console.log(responses);
   };
 
   return (
@@ -105,7 +101,7 @@ export default function SeverePathway() {
               align="center"
               lineHeight="4vh"
             >
-              Step1: Psychosocial Strategies
+              Step 1: Psychosocial Strategies
             </Heading>
           </StepCard>
         </CenterCol>
@@ -133,7 +129,7 @@ export default function SeverePathway() {
                 align="center"
                 lineHeight="4vh"
               >
-                Agree to Medication?
+                Agree to medication?
               </Heading>
             </StepCard>
             <StepOptionButton
@@ -168,9 +164,9 @@ export default function SeverePathway() {
                   lineHeight="4vh"
                 >
                   {responses[0] === false
-                    ? 'Step2: Psychotherapy'
+                    ? 'Step 2: Psychotherapy'
                     : responses[0] === true
-                    ? 'Step2: Medication & Psychotherapy'
+                    ? 'Step 2: Medication & Psychotherapy'
                     : null}
                 </Heading>
               </StepCard>
@@ -181,6 +177,14 @@ export default function SeverePathway() {
       <Row className="p_row">
         {responses[0] !== null ? (
           <CenterCol md={{ span: 8, offset: 2 }}>
+            <SubContainer>
+              <SubText weight="bold" margin="0 5vmin">
+                No response
+              </SubText>
+              <SubText weight="bold" margin="0 5vmin">
+                Response
+              </SubText>
+            </SubContainer>
             {responses[0] ? (
               <StepOptionCard height="4vh">
                 <StepOptionButton
@@ -203,7 +207,7 @@ export default function SeverePathway() {
                     align="center"
                     lineHeight="4vh"
                   >
-                    Step3: Check response after 6 weeks?
+                    Step 3: Check response after 6 weeks
                   </Heading>
                 </StepCard>
                 <StepOptionButton
@@ -235,7 +239,7 @@ export default function SeverePathway() {
                     align="center"
                     lineHeight="4vh"
                   >
-                    Step3: Check response after 6 weeks?
+                    Step 3: Check response after 6 weeks?
                   </Heading>
                 </StepCard>
                 <StepOptionButton
@@ -301,7 +305,7 @@ export default function SeverePathway() {
                     align="center"
                     lineHeight="4vh"
                   >
-                    Step 4: Continue Treatment for 3 months
+                    Step 4: Continue treatment for 3 months
                   </Heading>
                 </StepCard>
               </>
@@ -315,6 +319,14 @@ export default function SeverePathway() {
                   className="arrow_d"
                   color={PrimaryColor}
                 />
+                <SubContainer>
+                  <SubText weight="bold" margin="0 5vmin">
+                    No response
+                  </SubText>
+                  <SubText weight="bold" margin="0 5vmin">
+                    Response
+                  </SubText>
+                </SubContainer>
                 <StepOptionCard height="4vh">
                   <StepOptionButton
                     label="No"
@@ -413,7 +425,7 @@ export default function SeverePathway() {
                   align="center"
                   lineHeight="4vh"
                 >
-                  Step 4: Team Review & Treatment Change prevention plan
+                  Step 4: Team review & Treatment change prevention plan
                 </Heading>
               </StepCard>
             </>
@@ -442,7 +454,7 @@ export default function SeverePathway() {
                     align="center"
                     lineHeight="4vh"
                   >
-                    Step 4: Continue Treatment for 3 months
+                    Step 4: Continue treatment for 3 months
                   </Heading>
                 </StepCard>
               </>
@@ -457,6 +469,14 @@ export default function SeverePathway() {
                   className="arrow_d"
                   color={PrimaryColor}
                 />
+                <SubContainer>
+                  <SubText weight="bold" margin="0 5vmin">
+                    No response
+                  </SubText>
+                  <SubText weight="bold" margin="0 5vmin">
+                    Response
+                  </SubText>
+                </SubContainer>
                 <StepOptionCard height="4vh">
                   <StepOptionButton
                     label="No"
@@ -519,7 +539,7 @@ export default function SeverePathway() {
                 <Heading
                   type="h1"
                   weight="normal"
-                  size="2vmin"
+                  size="3vmin"
                   color="white"
                   align="center"
                   lineHeight="4vh"
@@ -571,4 +591,12 @@ const CenterCol = styled(Col)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const SubContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
 `;

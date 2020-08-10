@@ -8,6 +8,7 @@ import React, {
 import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
 import Button from '../../components/Buttons/Buttons';
 import StepCard from '../../components/Cards/StepCard';
+import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 import { Row as R, Col as C } from 'react-bootstrap';
 import styled from 'styled-components';
 import Loading from '../../components/Loading';
@@ -498,7 +499,7 @@ const Severe = () => {
                   </C>
                   <CenterCol md={{ span: 8, offset: 1 }}>
                     <SubContainer>
-                      <SubText weight="bold">No Response</SubText>
+                      <SubText weight="bold">No response</SubText>
                       <StepCard
                         background={PrimaryColor}
                         height={lineHeight_sm}
@@ -608,7 +609,7 @@ const Severe = () => {
                 </C>
                 <CenterCol md={{ span: 8, offset: 1 }}>
                   <SubContainer>
-                    <SubText weight="bold">No Response</SubText>
+                    <SubText weight="bold">No response</SubText>
                     <StepCard
                       background={PrimaryColor}
                       height={lineHeight_sm}
@@ -801,7 +802,7 @@ const Severe = () => {
           </C>
           <CenterCol md={{ span: 8, offset: 1 }}>
             <SubContainer>
-              <SubText>Response</SubText>
+              <SubText weight="bold">Response</SubText>
               <StepCard
                 background={PrimaryColor}
                 height={lineHeight_sm}
@@ -943,6 +944,12 @@ const Severe = () => {
       ) : (
         ''
       )}
+      <Row>
+        <C xs lg="2"></C>
+        <CenterCol md={{ span: 8, offset: 1 }}>
+          <NaviBtnGroup backLink="/assessment" forwardLink="/resources/tools" />
+        </CenterCol>
+      </Row>
       <NotificationModal
         isShow={showNotification}
         setShow={setShowNotification}
