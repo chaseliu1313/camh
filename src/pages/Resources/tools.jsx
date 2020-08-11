@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Row as R, Col, ListGroup } from 'react-bootstrap';
-import { Link, Switch, Route, useLocation } from 'react-router-dom';
-import {
-  PrimaryColor,
-  SecondaryColor_Blk,
-  SecondaryColor_Tel,
-  BackgroundColor,
-} from '../../theme/resource';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { SecondaryColor_Blk, BackgroundColor } from '../../theme/resource';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import Button from '../../components/Buttons/Buttons';
 import ToolLayout, { VideoLayout } from './toolLayout';
@@ -18,11 +11,11 @@ import MH from '../../resource/MedicationHandout.png';
 import MF from '../../resource/MoodFoundations.png';
 import PS from '../../resource/ProblemSolving.png';
 import ReactPlayer from 'react-player';
-import StepCard from '../../components/Cards/StepCard';
+
 import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 import './resources.css';
-const path1 = ['/treatment', '/resources/tools/video'];
-const path2 = ['/resources/tools', '/resources/tools/medhandout'];
+const path1 = ['/treatment', '/resources/tools'];
+const path2 = ['/resources/tools/video', '/resources/tools/medhandout'];
 const path3 = ['/resources/tools/video', '/resources/tools/problemSolving'];
 const path4 = ['/resources/tools/medhandout', '/resources/tools/cognitive'];
 const path5 = [
@@ -32,14 +25,14 @@ const path5 = [
 const path6 = ['/resources/tools/cognitive', '/resources/help'];
 
 const ReTools = ({ match }) => {
-  const [path, setPath] = useState(['/treatment', '/resources/tools/video']);
+  const [path, setPath] = useState(['/resources/tools/video', '/treatment']);
   const location = useLocation().pathname;
 
   useEffect(() => {
     if (location === '/resources/tools') {
-      setPath(path1);
-    } else if (location === '/resources/tools/video') {
       setPath(path2);
+    } else if (location === '/resources/tools/video') {
+      setPath(path1);
     } else if (location === '/resources/tools/medhandout') {
       setPath(path3);
     } else if (location === '/resources/tools/problemSolving') {
@@ -63,7 +56,11 @@ const ReTools = ({ match }) => {
           >
             {location === '/resources/tools/assessment'
               ? 'Assessment Tools'
-              : 'Cundill Centre Tools'}
+              : location === '/resources/tools'
+              ? 'Cundill Centre Tools - Psychoeducation'
+              : location === '/resources/tools/video'
+              ? 'Cundill Centre Tools'
+              : 'Cundill Centre Tools - Treatment'}
           </Heading>
         </CenterCol>
       </Row>
@@ -213,11 +210,21 @@ const Video = () => {
         />
       </VideoLayout>
       <VideoLayout>
-        <Paragraph color={SecondaryColor_Blk} margin="2vmin" padding="2vmin">
+        <Paragraph
+          color={SecondaryColor_Blk}
+          margin="2vmin"
+          padding="2vmin"
+          size="2.5vmin"
+        >
           Mood Matters: Describing Depression
         </Paragraph>
 
-        <Paragraph color={SecondaryColor_Blk} margin="2vmin" padding="2vmin">
+        <Paragraph
+          color={SecondaryColor_Blk}
+          margin="2vmin"
+          padding="2vmin"
+          size="2.5vmin"
+        >
           Mood Matters: How Food, Movement & Sleep Can Have an Impact on You
         </Paragraph>
       </VideoLayout>

@@ -62,7 +62,7 @@ export default function NaviBar() {
               navclicked={clicked[5]}
             >
               <NavDropdown.Item as="div" className="nav-link">
-                <Link to="/resources/tools">Tools</Link>
+                <Link to="/resources/tools/video">Tools</Link>
               </NavDropdown.Item>
               <NavDropdown.Item as="div" className="nav-link">
                 <Link to="/resources/help">Local Help</Link>

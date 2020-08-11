@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row as R, Col, ListGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
 import Heading, { Paragraph } from '../../components/Text/Heading';
-import Button from '../../components/Buttons/Buttons';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SecondaryColor_Blk, SecondaryColor_Tel } from '../../theme/resource';
+import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
+import { SecondaryColor_Blk } from '../../theme/resource';
 
 const Reference = () => {
   const path = '/resources/help';
@@ -14,23 +12,7 @@ const Reference = () => {
   return (
     <Container>
       <Row>
-        <Col xs lg="1">
-          <Link to={path}>
-            <Button
-              primary={false}
-              type="outlined"
-              height="5vmin"
-              width="5vw"
-              display
-            >
-              <FontAwesomeIcon icon={faArrowLeft} />
-              <Paragraph size="2vmin" color={SecondaryColor_Tel}>
-                Back
-              </Paragraph>
-            </Button>
-          </Link>
-        </Col>
-        <CenterCol xs={8} md={10}>
+        <CenterCol md={{ span: 10, offset: 1 }}>
           <Heading
             size="5vmin"
             weight="bold"
@@ -40,9 +22,6 @@ const Reference = () => {
             References
           </Heading>
         </CenterCol>
-        <Col xs lg="1">
-          ''
-        </Col>
       </Row>
       <ListRow>
         <ListGroup className="ref_list" variant="flush">
@@ -115,6 +94,12 @@ const Reference = () => {
           </ListGroup.Item>
         </ListGroup>
       </ListRow>
+
+      <Row>
+        <CenterCol md={{ span: 10, offset: 1 }}>
+          <NaviBtnGroup backLink={path} forwardLink="" />
+        </CenterCol>
+      </Row>
     </Container>
   );
 };

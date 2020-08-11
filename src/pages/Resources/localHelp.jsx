@@ -2,16 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row as R, Col, ListGroup } from 'react-bootstrap';
 import bg from '../../resource/localHelp.svg';
-import { Link } from 'react-router-dom';
+
 import Heading, { Paragraph } from '../../components/Text/Heading';
-import Button from '../../components/Buttons/Buttons';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  PrimaryColor,
-  SecondaryColor_Blk,
-  SecondaryColor_Tel,
-} from '../../theme/resource';
+
+import { SecondaryColor_Blk } from '../../theme/resource';
+import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 
 const LocalHelp = () => {
   const paths = ['/resources/tools/assessment', '/resources/reference'];
@@ -19,23 +14,7 @@ const LocalHelp = () => {
   return (
     <Container>
       <Row>
-        <Col xs lg="1">
-          <Link to={paths[0]}>
-            <Button
-              primary={false}
-              type="outlined"
-              height="5vmin"
-              width="5vw"
-              display
-            >
-              <FontAwesomeIcon icon={faArrowLeft} />
-              <Paragraph size="2vmin" color={SecondaryColor_Tel}>
-                Back
-              </Paragraph>
-            </Button>
-          </Link>
-        </Col>
-        <CenterCol xs={8} md={10}>
+        <CenterCol md={{ span: 10, offset: 1 }}>
           <Heading
             size="5vmin"
             weight="bold"
@@ -45,16 +24,6 @@ const LocalHelp = () => {
             Local Help for Youth
           </Heading>
         </CenterCol>
-        <Col xs lg="1">
-          <Link to={paths[1]}>
-            <Button primary type="outlined" height="5vmin" width="5vw" display>
-              <FontAwesomeIcon icon={faArrowRight} />
-              <Paragraph size="2vmin" color={PrimaryColor}>
-                Next
-              </Paragraph>
-            </Button>
-          </Link>
-        </Col>
       </Row>
       <ListRow>
         <ListGroup className="help_list">
@@ -137,6 +106,11 @@ const LocalHelp = () => {
           </ListGroup.Item>
         </ListGroup>
       </ListRow>
+      <Row>
+        <CenterCol md={{ span: 10, offset: 1 }}>
+          <NaviBtnGroup backLink={paths[0]} forwardLink={paths[1]} />
+        </CenterCol>
+      </Row>
     </Container>
   );
 };
