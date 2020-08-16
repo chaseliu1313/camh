@@ -35,3 +35,11 @@
 .ref_list > .list-group-item {
   background-color: rgba(110, 41, 141, 0.15);
 }
+
+.tooltips > .tooltip-inner {
+  background-color: #00a39b;
+}
+
+.tooltips > .tooltip-arrow {
+  color: #00a39b;
+}

@@ -270,7 +270,7 @@ const Main = styled.div`
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 30%;
-  transition: all ease-in-out 1s;
+  transition: all ease-in-out 0.7s;
   ${({ mounted }) =>
     mounted
       ? css`

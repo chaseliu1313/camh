@@ -163,7 +163,7 @@ const Severe = () => {
           <SubContainer>
             <Heading
               type="h1"
-              weight="normal"
+              weight="bold"
               size="5vmin"
               align="center"
               color={SecondaryColor_Blk}
@@ -947,7 +947,10 @@ const Severe = () => {
       <Row>
         <C xs lg="2"></C>
         <CenterCol md={{ span: 8, offset: 1 }}>
-          <NaviBtnGroup backLink="/assessment" forwardLink="/resources/tools" />
+          <NaviBtnGroup
+            backLink="/treatment/mild"
+            forwardLink="/resources/tools/video"
+          />
         </CenterCol>
       </Row>
       <NotificationModal

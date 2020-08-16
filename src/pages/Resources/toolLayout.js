@@ -25,7 +25,7 @@ export const VideoLayout = (props) => {
 export default ToolLayout;
 
 const Row = styled(R)`
-  height: 60%;
+  height: 55%;
   width: 100%;
   margin: 5vmin;
   padding: 0;
@@ -33,7 +33,7 @@ const Row = styled(R)`
 `;
 
 const VRow = styled(R)`
-  height: 50%;
+  height: fit-content;
   width: 100%;
   margin: 2vmin;
   padding: 0;

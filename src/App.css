@@ -223,7 +223,7 @@ a {
 }
 .ov_carousel:hover {
   transform: scale(1.05);
-  transition: all 1s;
+  transition: all 0.7s;
 }
 .ov_a {
   color: #6e298d;

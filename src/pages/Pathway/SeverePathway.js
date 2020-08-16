@@ -543,7 +543,6 @@ export default function SeverePathway() {
                   color="white"
                   align="center"
                   lineHeight="4vh"
-                  align="center"
                 >
                   Step 6: Continue medication for 6+ months; reduce intensity &
                   frequency of visits; relapse prevention plan

@@ -13,6 +13,7 @@ import PS from '../../resource/ProblemSolving.png';
 import ReactPlayer from 'react-player';
 
 import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
+import PageIndicator from '../../components/PageIndicator';
 import './resources.css';
 const path1 = ['/treatment', '/resources/tools'];
 const path2 = ['/resources/tools/video', '/resources/tools/medhandout'];
@@ -23,6 +24,23 @@ const path5 = [
   '/resources/tools/assessment',
 ];
 const path6 = ['/resources/tools/cognitive', '/resources/help'];
+
+const routes = [
+  '/resources/tools/video',
+  '/resources/tools',
+  '/resources/tools/medhandout',
+  '/resources/tools/problemSolving',
+  '/resources/tools/cognitive',
+  '/resources/tools/assessment',
+];
+const headings = [
+  'Short Animated Videos for Youth',
+  'Mood Foundations Package for Youth',
+  'Medication Handout for Youth',
+  'Problem Solving Worksheets',
+  'Cognitive Restructuring Worksheets',
+  'Assessment Tools',
+];
 
 const ReTools = ({ match }) => {
   const [path, setPath] = useState(['/resources/tools/video', '/treatment']);
@@ -56,10 +74,9 @@ const ReTools = ({ match }) => {
           >
             {location === '/resources/tools/assessment'
               ? 'Assessment Tools'
-              : location === '/resources/tools'
+              : location === '/resources/tools' ||
+                location === '/resources/tools/video'
               ? 'Cundill Centre Tools - Psychoeducation'
-              : location === '/resources/tools/video'
-              ? 'Cundill Centre Tools'
               : 'Cundill Centre Tools - Treatment'}
           </Heading>
         </CenterCol>
@@ -75,7 +92,7 @@ const ReTools = ({ match }) => {
               </div>
               <RightCol>
                 <Heading
-                  size="5vmin"
+                  size="3vmin"
                   weight="bold"
                   align="center"
                   color={SecondaryColor_Blk}
@@ -131,6 +148,11 @@ const ReTools = ({ match }) => {
           render={() => AssessmentTools()}
         />
       </Switch>
+      <Row style={{ height: 30 }}>
+        <CenterCol md={{ span: 10, offset: 1 }}>
+          <PageIndicator routes={routes} titles={headings} />
+        </CenterCol>
+      </Row>
       <Row>
         <CenterCol md={{ span: 10, offset: 1 }}>
           <NaviBtnGroup backLink={path[0]} forwardLink={path[1]} />
@@ -148,7 +170,7 @@ const MedicalHandout = () => {
       </div>
       <RightCol>
         <Heading
-          size="5vmin"
+          size="3vmin"
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
@@ -196,37 +218,42 @@ const Video = () => {
         Short Animated Videos for Youth
       </Heading>
       <VideoLayout>
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=6xONySz9XLk&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2&t=0s"
-          playing={false}
-          controls={true}
-          width="90%"
-        />
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=qMnQFTy3t30&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2s"
-          playing={false}
-          controls={true}
-          width="90%"
-        />
-      </VideoLayout>
-      <VideoLayout>
-        <Paragraph
-          color={SecondaryColor_Blk}
-          margin="2vmin"
-          padding="2vmin"
-          size="2.5vmin"
-        >
-          Mood Matters: Describing Depression
-        </Paragraph>
-
-        <Paragraph
-          color={SecondaryColor_Blk}
-          margin="2vmin"
-          padding="2vmin"
-          size="2.5vmin"
-        >
-          Mood Matters: How Food, Movement & Sleep Can Have an Impact on You
-        </Paragraph>
+        <VideoPanel>
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=6xONySz9XLk&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2&t=0s"
+            playing={false}
+            controls={true}
+            width="90%"
+          />
+          <Paragraph
+            color={SecondaryColor_Blk}
+            margin="0.5vmin"
+            padding="0"
+            size="2vmin"
+            weight="bold"
+            align="center"
+          >
+            Mood Matters: Describing Depression
+          </Paragraph>
+        </VideoPanel>
+        <VideoPanel>
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=qMnQFTy3t30&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2s"
+            playing={false}
+            controls={true}
+            width="90%"
+          />
+          <Paragraph
+            color={SecondaryColor_Blk}
+            margin="0.5vmin"
+            padding="0"
+            size="2vmin"
+            weight="bold"
+            align="center"
+          >
+            Mood Matters: How Food, Movement & Sleep Can Have an Impact on You
+          </Paragraph>
+        </VideoPanel>
       </VideoLayout>
     </>
   );
@@ -240,7 +267,7 @@ const ProblemSolving = () => {
       </div>
       <RightCol>
         <Heading
-          size="5vmin"
+          size="3vmin"
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
@@ -283,7 +310,7 @@ const CognitiveRes = () => {
       </div>
       <RightCol>
         <Heading
-          size="5vmin"
+          size="3vmin"
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
@@ -417,16 +444,26 @@ const CenterCol = styled(Col)`
 
 const IMG = styled.img`
   height: auto;
-  width: 90%;
+  width: 80%;
 `;
 
 const RightCol = styled.div`
-  height: 70%;
+  height: fit-content;
   width: 70%;
   padding: 3vmin;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   background-color: ${BackgroundColor};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const VideoPanel = styled.div`
+  height: 100%;
+  width: 100%;
+  padding: 1vmin 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
