@@ -43,3 +43,12 @@
 .tooltips > .tooltip-arrow {
   color: #00a39b;
 }
+
+#btn_group_row {
+  position: fixed;
+  bottom: 7vmin;
+}
+#page_inde_row {
+  position: fixed;
+  bottom: 18vh;
+}

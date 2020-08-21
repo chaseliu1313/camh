@@ -6,7 +6,6 @@ import {
   Error_R_Hover,
 } from '../../theme/resource';
 import styled, { keyframes, css } from 'styled-components';
-import { Badge as B } from 'react-bootstrap';
 
 const StepCard = React.memo(function StepCard({
   height,
@@ -27,6 +26,7 @@ const StepCard = React.memo(function StepCard({
   flex,
 }) {
   const [mounted, setMounted] = useState(false);
+  const [show, setShowBadge] = useState(showBadge !== 'false');
 
   useEffect(() => {
     setMounted(true);
@@ -35,6 +35,13 @@ const StepCard = React.memo(function StepCard({
       setMounted(false);
     };
   }, []);
+
+  const handleClick = () => {
+    setShowBadge(false);
+    if (onClick) {
+      onClick();
+    }
+  };
 
   return (
     <CardContainer
@@ -48,14 +55,14 @@ const StepCard = React.memo(function StepCard({
       mounted={mounted}
       id={id}
       className={className}
-      onClick={onClick}
+      onClick={handleClick}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}
       cursor={cursor.toString()}
       flex={flex}
-      showBadge={showBadge}
     >
       {children}
+      <Badge showBadge={show}>Read More</Badge>
     </CardContainer>
   );
 });
@@ -129,6 +136,7 @@ const enterAni = (height) => keyframes`
 
 const CardContainer = styled.div`
   text-align: center;
+  position: relative;
   ${({
     height,
     width,
@@ -235,8 +243,16 @@ const Button = styled.button`
   }
 `;
 
-const Badge = styled(B)`
-  margin: 5px;
-  ${({ showBadge }) => `
-  `}
+const Badge = styled.span`
+  background-color: ${Error_R};
+  border-radius: 2px;
+  color: white;
+
+  padding: 1px 3px;
+  font-size: 10px;
+
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  ${({ showBadge }) => (!showBadge ? 'display: none;' : '')}
 `;

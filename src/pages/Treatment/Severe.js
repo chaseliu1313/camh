@@ -16,6 +16,7 @@ import { TreatmentContext } from '../../store/store';
 import {
   UPDATE_SEVERE_TREATMENT,
   RESET_SEVERE_TREATMENT,
+  SET_SEVERE_CLICKED,
 } from '../../store/actions';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,6 +41,18 @@ const Severe = () => {
   const lineHeight_sm = '5vh';
   const lineHeight_lg = '12vh';
   const responses = state.severState;
+
+  const handleClicked = useCallback(
+    (index) => {
+      const updatedClickState = [...state.severeClickState];
+
+      updatedClickState[index] = false;
+
+      dispatch({ type: SET_SEVERE_CLICKED, payload: updatedClickState });
+    },
+    [state.severeClickState, dispatch]
+  );
+
   const handleResponse = useCallback(
     (index) => {
       switch (index) {
@@ -202,7 +215,11 @@ const Severe = () => {
             height={lineHeight_sm}
             width="90%"
             cursor
-            onClick={() => handleResponse(0)}
+            showBadge={state.severeClickState[0] ? 'true' : 'false'}
+            onClick={() => {
+              handleResponse(0);
+              handleClicked(0);
+            }}
           >
             <Heading
               type="h4"
@@ -240,7 +257,11 @@ const Severe = () => {
                 height={lineHeight_lg}
                 cursor
                 width="30vw"
-                onClick={() => handleResponse(1)}
+                showBadge={state.severeClickState[1] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(1);
+                  handleClicked(1);
+                }}
               >
                 <Heading
                   type="h4"
@@ -261,7 +282,11 @@ const Severe = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
-                onClick={() => handleResponse(2)}
+                showBadge={state.severeClickState[2] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(2);
+                  handleClicked(2);
+                }}
               >
                 <Heading
                   type="h4"
@@ -298,7 +323,11 @@ const Severe = () => {
                 height={lineHeight_sm}
                 width="90%"
                 cursor
-                onClick={() => handleResponse(9)}
+                showBadge={state.severeClickState[3] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(9);
+                  handleClicked(3);
+                }}
               >
                 <Heading
                   type="h4"
@@ -332,7 +361,11 @@ const Severe = () => {
                 height={lineHeight_sm}
                 width="90%"
                 cursor
-                onClick={() => handleResponse(5)}
+                showBadge={state.severeClickState[4] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(5);
+                  handleClicked(4);
+                }}
               >
                 <Heading
                   type="h4"
@@ -371,7 +404,11 @@ const Severe = () => {
                       height={lineHeight_lg}
                       cursor
                       width="30vw"
-                      onClick={() => handleResponse(10)}
+                      showBadge={state.severeClickState[5] ? 'true' : 'false'}
+                      onClick={() => {
+                        handleResponse(10);
+                        handleClicked(5);
+                      }}
                     >
                       <Heading
                         type="h4"
@@ -392,7 +429,11 @@ const Severe = () => {
                       height={lineHeight_lg}
                       width="30vw"
                       cursor
-                      onClick={() => handleResponse(11)}
+                      showBadge={state.severeClickState[6] ? 'true' : 'false'}
+                      onClick={() => {
+                        handleResponse(11);
+                        handleClicked(6);
+                      }}
                     >
                       <Heading
                         type="h4"
@@ -468,7 +509,11 @@ const Severe = () => {
                     height={lineHeight_sm}
                     width="90%"
                     cursor
-                    onClick={() => handleResponse(6)}
+                    showBadge={state.severeClickState[7] ? 'true' : 'false'}
+                    onClick={() => {
+                      handleResponse(6);
+                      handleClicked(7);
+                    }}
                   >
                     <Heading
                       type="h4"
@@ -505,7 +550,11 @@ const Severe = () => {
                         height={lineHeight_sm}
                         width="100%"
                         cursor
-                        onClick={() => handleResponse(13)}
+                        showBadge={state.severeClickState[8] ? 'true' : 'false'}
+                        onClick={() => {
+                          handleResponse(13);
+                          handleClicked(8);
+                        }}
                       >
                         <Heading
                           type="h4"
@@ -544,7 +593,11 @@ const Severe = () => {
                         cursor
                         width="30vw"
                         flex="column"
-                        onClick={() => handleResponse(7)}
+                        showBadge={state.severeClickState[9] ? 'true' : 'false'}
+                        onClick={() => {
+                          handleResponse(7);
+                          handleClicked(9);
+                        }}
                       >
                         <Heading
                           type="p"
@@ -574,7 +627,13 @@ const Severe = () => {
                         height={lineHeight_lg}
                         width="30vw"
                         cursor
-                        onClick={() => handleResponse(12)}
+                        showBadge={
+                          state.severeClickState[10] ? 'true' : 'false'
+                        }
+                        onClick={() => {
+                          handleResponse(12);
+                          handleClicked(10);
+                        }}
                       >
                         <Heading
                           type="h4"
@@ -615,7 +674,11 @@ const Severe = () => {
                       height={lineHeight_sm}
                       width="100%"
                       cursor
-                      onClick={() => handleResponse(13)}
+                      showBadge={state.severeClickState[11] ? 'true' : 'false'}
+                      onClick={() => {
+                        handleResponse(13);
+                        handleClicked(11);
+                      }}
                     >
                       <Heading
                         type="h4"
@@ -654,7 +717,11 @@ const Severe = () => {
               height={lineHeight_sm}
               cursor
               width="30vw"
-              onClick={() => handleResponse(4)}
+              showBadge={state.severeClickState[12] ? 'true' : 'false'}
+              onClick={() => {
+                handleResponse(4);
+                handleClicked(12);
+              }}
             >
               <Heading
                 type="h4"
@@ -672,7 +739,11 @@ const Severe = () => {
               height={lineHeight_sm}
               width="30vw"
               cursor
-              onClick={() => handleResponse(9)}
+              showBadge={state.severeClickState[13] ? 'true' : 'false'}
+              onClick={() => {
+                handleResponse(9);
+                handleClicked(13);
+              }}
             >
               <Heading
                 type="h4"
@@ -709,7 +780,11 @@ const Severe = () => {
               height={lineHeight_sm}
               width="90%"
               cursor
-              onClick={() => handleResponse(5)}
+              showBadge={state.severeClickState[14] ? 'true' : 'false'}
+              onClick={() => {
+                handleResponse(5);
+                handleClicked(14);
+              }}
             >
               <Heading
                 type="h4"
@@ -749,7 +824,11 @@ const Severe = () => {
                 height={lineHeight_lg}
                 cursor
                 width="30vw"
-                onClick={() => handleResponse(3)}
+                showBadge={state.severeClickState[15] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(3);
+                  handleClicked(15);
+                }}
               >
                 <Heading
                   type="h4"
@@ -770,7 +849,11 @@ const Severe = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
-                onClick={() => handleResponse(8)}
+                showBadge={state.severeClickState[16] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(8);
+                  handleClicked(16);
+                }}
               >
                 <Heading
                   type="h4"
@@ -846,7 +929,11 @@ const Severe = () => {
               height={lineHeight_sm}
               width="90%"
               cursor
-              onClick={() => handleResponse(6)}
+              showBadge={state.severeClickState[17] ? 'true' : 'false'}
+              onClick={() => {
+                handleResponse(6);
+                handleClicked(17);
+              }}
             >
               <Heading
                 type="h4"
@@ -887,7 +974,11 @@ const Severe = () => {
                 cursor
                 width="30vw"
                 flex="column"
-                onClick={() => handleResponse(7)}
+                showBadge={state.severeClickState[18] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(7);
+                  handleClicked(18);
+                }}
               >
                 <Heading
                   type="p"
@@ -926,7 +1017,11 @@ const Severe = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
-                onClick={() => handleResponse(8)}
+                showBadge={state.severeClickState[19] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(8);
+                  handleClicked(19);
+                }}
               >
                 <Heading
                   type="h4"

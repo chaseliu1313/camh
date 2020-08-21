@@ -148,12 +148,12 @@ const ReTools = ({ match }) => {
           render={() => AssessmentTools()}
         />
       </Switch>
-      <Row style={{ height: 30 }}>
+      <Row style={{ height: 30 }} id="page_inde_row">
         <CenterCol md={{ span: 10, offset: 1 }}>
           <PageIndicator routes={routes} titles={headings} />
         </CenterCol>
       </Row>
-      <Row>
+      <Row id="btn_group_row">
         <CenterCol md={{ span: 10, offset: 1 }}>
           <NaviBtnGroup backLink={path[0]} forwardLink={path[1]} />
         </CenterCol>

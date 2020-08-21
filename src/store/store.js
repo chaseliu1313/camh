@@ -12,11 +12,40 @@ export const Sever_initial_state = [
   null,
   null,
 ];
+
+export const SeverClicked = [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+];
 export const Mild_initial_state = true;
+
+export const MildClicked = [true, true, true, true, true, true, true];
+
 export const TreatmentContext = React.createContext();
+
 export const initialState = {
   severState: Sever_initial_state,
+  severeClickState: SeverClicked,
   mildState: Mild_initial_state,
+  mildClickState: MildClicked,
 };
 
 export const TreatmentStore = (props) => {

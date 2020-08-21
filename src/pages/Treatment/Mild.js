@@ -24,6 +24,7 @@ import { useHistory } from 'react-router-dom';
 import {
   UPDATE_MILD_TREATMENT,
   RESET_MILD_TREATMENT,
+  SET_MILD_CLICKED,
 } from '../../store/actions';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,6 +41,17 @@ const Mild = () => {
   const { state, dispatch } = useContext(TreatmentContext);
   const responses = state.mildState;
   const [showNotification, setShowNotification] = useState(false);
+
+  const handleClicked = useCallback(
+    (index) => {
+      const updatedClickState = [...state.mildClickState];
+
+      updatedClickState[index] = false;
+
+      dispatch({ type: SET_MILD_CLICKED, payload: updatedClickState });
+    },
+    [state.mildClickState, dispatch]
+  );
 
   const handleResponse = useCallback(
     (index) => {
@@ -144,7 +156,11 @@ const Mild = () => {
             height={lineHeight_sm}
             width="90%"
             cursor
-            onClick={() => handleResponse(0)}
+            showBadge={state.mildClickState[0] ? 'true' : 'false'}
+            onClick={() => {
+              handleResponse(0);
+              handleClicked(0);
+            }}
           >
             <Heading
               type="h4"
@@ -178,7 +194,11 @@ const Mild = () => {
             height={lineHeight_sm}
             width="90%"
             cursor
-            onClick={() => handleResponse(2)}
+            showBadge={state.mildClickState[1] ? 'true' : 'false'}
+            onClick={() => {
+              handleClicked(1);
+              handleResponse(2);
+            }}
           >
             <Heading
               type="h4"
@@ -216,7 +236,11 @@ const Mild = () => {
                 cursor
                 width="30vw"
                 flex="column"
-                onClick={() => handleResponse(4)}
+                showBadge={state.mildClickState[2] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(4);
+                  handleClicked(2);
+                }}
               >
                 <Heading
                   type="p"
@@ -246,7 +270,11 @@ const Mild = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
-                onClick={() => handleResponse(3)}
+                showBadge={state.mildClickState[3] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(3);
+                  handleClicked(3);
+                }}
               >
                 <Heading
                   type="h4"
@@ -285,7 +313,11 @@ const Mild = () => {
                   height={lineHeight_sm}
                   width="100%"
                   cursor
-                  onClick={() => handleResponse(1)}
+                  showBadge={state.mildClickState[4] ? 'true' : 'false'}
+                  onClick={() => {
+                    handleResponse(1);
+                    handleClicked(4);
+                  }}
                 >
                   <Heading
                     type="h4"
@@ -320,7 +352,11 @@ const Mild = () => {
                 height={lineHeight_sm}
                 width="90%"
                 cursor
-                onClick={() => handleResponse(5)}
+                showBadge={state.mildClickState[5] ? 'true' : 'false'}
+                onClick={() => {
+                  handleResponse(5);
+                  handleClicked(5);
+                }}
               >
                 <Heading
                   type="h4"
@@ -357,7 +393,11 @@ const Mild = () => {
                   cursor
                   width="30vw"
                   flex="column"
-                  onClick={() => handleResponse(4)}
+                  showBadge={state.mildClickState[6] ? 'true' : 'false'}
+                  onClick={() => {
+                    handleResponse(4);
+                    handleClicked(6);
+                  }}
                 >
                   <Heading
                     type="p"
