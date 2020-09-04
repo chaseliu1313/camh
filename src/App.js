@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import NaviBar from './components/NaviBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Landing from './pages/Landing';
@@ -20,6 +20,7 @@ import { TreatmentStore } from './store/store';
 import ReTools from './pages/Resources/tools';
 import LocalHelp from './pages/Resources/localHelp';
 import Reference from './pages/Resources/references';
+import DevelopmentTeam from './pages/Contributors';
 
 function App() {
   return (
@@ -58,10 +59,17 @@ function App() {
               <Route path="/resources/tools" component={ReTools} />
               <Route path="/resources/help" exact component={LocalHelp} />
               <Route path="/resources/reference" exact component={Reference} />
+              <Route path="/devTeam" exact component={DevelopmentTeam} />
             </Switch>
           </main>
           <footer className="App-footer">
-            Copyright © 2020 Cundill Centre for Child and Youth Depression camh
+            <div>
+              Copyright © 2020 Cundill Centre for Child and Youth Depression
+              camh.{'    '}
+              <Link to="/devTeam" className="footerLink">
+                Development Team
+              </Link>
+            </div>
           </footer>
         </div>
       </Router>
