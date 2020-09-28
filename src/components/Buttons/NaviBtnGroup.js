@@ -36,7 +36,7 @@ const NaviBtnGroup = (props) => {
         onClick={goForward}
         display={props.forwardLink !== ''}
       >
-        <Paragraph>Next</Paragraph>
+        <Paragraph>Next Section</Paragraph>
       </Button>
     </BtnGroup>
   );

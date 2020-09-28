@@ -120,9 +120,9 @@ const TreatmentModal = (props) => {
                     color={SecondaryColor_Blk}
                     margin="0 0 0 5px"
                   >
-                    has there been a reduction in symptoms or improvement in
+                    Has there been a reduction in symptoms or improvement in
                     functioning (i.e., worsening, no change, minimal, much/very
-                    much improved)?,
+                    much improved)?
                   </Paragraph>
                   <Paragraph
                     weight="normal"

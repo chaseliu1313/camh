@@ -38,6 +38,7 @@ const Pears = () => {
             margin={Pmarging}
             color={SecondaryColor_Blk}
             key={index}
+            size="1.55rem"
           >
             {p}
           </Paragraph>

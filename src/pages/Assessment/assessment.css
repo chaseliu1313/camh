@@ -152,6 +152,26 @@
   font-weight: bold;
   color: #6e298d;
 }
+
+#pears5 {
+  animation: enter2 0.8s linear 2.8s forwards;
+  opacity: 0;
+}
+
+#pears5::first-letter {
+  font-weight: bold;
+  color: #6e298d;
+}
+
+#pears6 {
+  animation: enter2 0.8s linear 3.1s forwards;
+  opacity: 0;
+}
+
+#pears6::first-letter {
+  font-weight: bold;
+  color: #6e298d;
+}
 #btn_group {
   animation: enter3 0.5s linear forwards;
   opacity: 0;

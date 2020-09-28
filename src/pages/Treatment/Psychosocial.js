@@ -66,15 +66,21 @@ const Psychosocial = () => {
           </Button>
         </Col>
         <Col md={{ span: 8, offset: 0 }}>
-          <Heading
-            type="h1"
-            weight="normal"
-            size="5vmin"
-            align="center"
-            color={SecondaryColor_Blk}
-          >
-            Psychosocial Strategies
-          </Heading>
+          <VertiCol>
+            <Heading
+              type="h1"
+              weight="normal"
+              size="3.5vmin"
+              align="center"
+              color={SecondaryColor_Blk}
+            >
+              {'Lifestyle Advice & Psychosocial Strategies'}
+            </Heading>
+            <Paragraph size="16px">
+              Provide psychoeducation and help with implementation of lifestyle
+              advice and psychosocial strategies
+            </Paragraph>
+          </VertiCol>
         </Col>
       </Row>
       <VA
@@ -97,5 +103,12 @@ const Container = styled.div`
           animation: ${enterAni2} 0.8s linear forwards;
         `
       : ''}
+`;
+
+const VertiCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 export default Psychosocial;

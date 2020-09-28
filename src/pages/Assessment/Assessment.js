@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import styled from 'styled-components';
 import './assessment.css';
@@ -10,9 +10,12 @@ import { useHistory } from 'react-router-dom';
 
 export default function Assessment() {
   const [btnAppeal, setDisplay] = useState(false);
+  const [btnName, setBtnName] = useState('Next');
+
   const [hide1, setHide1] = useState(false);
   const [hide2, setHide2] = useState(true);
   let history = useHistory();
+
   const viewSwicher = () => {
     if (!hide2) {
       history.push('/assessment/pears');
@@ -40,7 +43,7 @@ export default function Assessment() {
         margin="5vmin 0 -3vmin 0"
         type="h1"
       >
-        Assessment Introduction
+        Tips for Assessing Depressed Youth
       </Heading>
       <Intro hide={hide1} />
       <Simulation hide={hide2} />

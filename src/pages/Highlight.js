@@ -22,7 +22,7 @@ import fs from '../resource/factsheet.png';
 
 export default function Hightlights() {
   const [bgKey, updateKey] = useState(1);
-  const inv = 5000;
+  const inv = 10000;
   const [mounted, setMounted] = useState(false);
   const MarginP = '20px 0 20px 0';
   const fontWeight = 'normal';
@@ -192,7 +192,7 @@ export default function Hightlights() {
       <Row id="overView_spacing"></Row>
       <Row>
         <CenterCol md={{ span: 4, offset: 4 }}>
-          <Link to="/overview/pathways">
+          <Link to="/assessment">
             <Button
               primary={true}
               type="outlined"
@@ -200,7 +200,7 @@ export default function Hightlights() {
               width="20vw"
               display={true}
             >
-              <Paragraph>Next</Paragraph>
+              <Paragraph>Next Section</Paragraph>
             </Button>
           </Link>
         </CenterCol>

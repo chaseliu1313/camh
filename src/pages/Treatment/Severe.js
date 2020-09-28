@@ -228,7 +228,7 @@ const Severe = () => {
               color="white"
               align="center"
             >
-              Psychosocial Strategies
+              {'Lifestyle Advice & Psychosocial Strategies'}
             </Heading>
           </StepCard>
         </CenterCol>
@@ -1054,8 +1054,7 @@ const Severe = () => {
         dispatch={dispatch}
         type={UPDATE_SEVERE_TREATMENT}
         heading="Notice"
-        content="If there has been no response after 6 weeks, change the psychotherapy or add medication. 
-        You will now be taken back to the beginning of the pathway to choose another option."
+        content="If there has been no response, consider the moderate to severe pathway and refer youth to specialized youth mental health services. You will now be taken to the beginning of the moderate to severe pathway."
       />
       <img src={bg} id="treatment_bg" alt="background" />
     </Container>

@@ -159,7 +159,7 @@ const Tools = () => {
           onClick={() => viewSwicher()}
           display
         >
-          <Paragraph>Next</Paragraph>
+          <Paragraph>{show ? 'Next Section' : 'Next'}</Paragraph>
         </Button>
       </BtnGroup>
     </Container>

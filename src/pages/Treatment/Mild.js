@@ -169,7 +169,7 @@ const Mild = () => {
               color="white"
               align="center"
             >
-              Psychosocial Strategies
+              {'Lifestyle Advice & Psychosocial Strategies'}
             </Heading>
           </StepCard>
         </CenterCol>

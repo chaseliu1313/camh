@@ -55,7 +55,7 @@ export default function MildPathway(props) {
               align="center"
               lineHeight="4vh"
             >
-              Step 1: Psychosocial Strategies
+              {'Lifestyle Advice & Psychosocial Strategies'}
             </Heading>
           </StepCard>
         </CenterCol>

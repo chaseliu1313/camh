@@ -1,10 +1,10 @@
 export const landingContent = [
   'Cundill Centre Online Tool for the Treatment of Youth Depression',
-  'This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH to help primary care providers and other frontline clinicians understand best practices for managing youth with depression in their settings.',
+  'This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH to provide primary care providers and other frontline clinicians with a clinical resource summarizing the best care practices for managing youth with depression.',
 ];
 
 export const highlightsContent = [
-  '·The Cundill Centre brings together clinicians, scientists and youth and family stakeholders from around the world to improve screening, prevention, and depression treatment.',
+  '·The Cundill Centre brings together clinicians, scientists, youth and family stakeholders from around the world to improve screening, prevention and depression treatment.',
   '·The purpose of this tool is to help primary care providers and other frontline clinicians understand best practices for managing youth with depression. ',
   '·The content provides a step-by-step assessment and treatment pathway for youth depression and is based on our systematic review, which found the NICE guidelines to be of the highest quality.',
   'Check out our depression fact sheet here. It was developed for youth, by youth on our team. The resource is free to download, print, and provide to patients in your practice.',
@@ -18,7 +18,7 @@ export const highlightsContent = [
 ];
 
 export const assessment1 = [
-  'You may already be familiar with depression—it’s when feelings of sadness, emptiness, and irritability:',
+  'You may already be familiar with depression—it’s when feelings of sadness, irritability, or loss of interest or pleasure: ',
   '· last longer than 2 weeks; ',
   '· affect most parts of a person’s daily life;',
   '· stop people from doing things they used to enjoy.',
@@ -26,7 +26,7 @@ export const assessment1 = [
 ];
 
 export const video1 =
-  ' Click the play button on the left to view a short video featuring Tony, an adolescent who was referred to a social worker by his medical provider, due to concerns about depression and anxiety. ';
+  ' This short video features Tony, a youth who was referred to a social worker by his medical provider, due to concerns about depression and anxiety.  ';
 export const video2 =
   ' While you watch, think about what was helpful, and perhaps unhelpful, about the assessment approach. We will review afterwards. ';
 
@@ -42,6 +42,7 @@ export const couldHave = [
   'Addressed confidentiality.',
   'Started with more open-ended questions to improve rapport and comfort.',
   'Provided empathetic feedback after Tony’s responses.',
+  'Asked about thoughts of harming others, if Tony has developed a plan, and access to means (e.g. weapons).',
 ];
 
 export const DSM = [
@@ -57,19 +58,21 @@ export const DSM = [
 ];
 
 export const pears = [
-  '1.Depression can be missed because irritability (persistent anger, exaggerated frustration to minor occurrences) or somatic complaints (sleep problems/fatigue) may be the primary presenting symptom (rather than sadness).',
+  '1. Depression can be missed because irritability (persistent anger, exaggerated frustration to minor occurrences) or somatic complaints (sleep problems/fatigue) may be the primary presenting symptom (rather than sadness).',
 
-  '2.Symptoms can range from very mild (below the threshold for diagnosis)—to very severe with pronounced functional impairment.',
+  '2. Symptoms can range from very mild (below the threshold for diagnosis)—to very severe with pronounced functional impairment.',
 
-  '3.Depression can come and go. After the first episode, subsequent episodes tend to be more severe, difficult to treat, and occur with increasing frequency.',
+  '3. Depression can come and go. After the first episode, subsequent episodes tend to be more severe, difficult to treat, and occur with increasing frequency.',
 
-  '4.Depression is associated with other health conditions (e.g., anxiety, substance use), increasing suffering and impairment.',
+  '4. Depression is associated with other health conditions (e.g., anxiety, substance use), increasing suffering and impairment. Ask youth and caregiver(s) about alcohol and drug use, as well as any experience of being bullied or abused.',
 
-  '5. Because of the risk of suicide and self-harm, always ask about current/recent or previous self-harm, suicidal thinking, and suicide attempts. Also ask about current prominent hopelessness and psychosocial supports (e.g. living alone or with others) to gauge current safety.',
+  '5. Because of the risk of self-harm and suicide, always assess safety (risk of harm to self and/or others). Ask about current/recent or previous self-harm, suicidal thinking and/or thoughts of harming others, development of a plan, access to means, prior aggression, suicide attempts.',
+  '6. A young person should be offered the opportunity to discuss issues related to their mental health in private initially.',
+  '7. The form of assessment should take into account cultural and ethnic variations in communication, family values and the young person’s role within their family.',
 ];
 
 export const tools = [
-  'Assessment tools are useful because they add objective information to support diagnosis.',
+  'Assessment tools are useful because they provide a validated, structured approach to assessing symptoms and can be used over time to track progress.',
   ' There are many assessment tools out there to support the clinical assessment of youth depression. ',
   ' ·Two options that can be used are:',
   'The Revised Children’s Anxiety and Depression Scale (RCADS)  ',
@@ -80,8 +83,8 @@ export const tools = [
 ];
 
 export const Severity = [
-  'Whether you use the RCADS or the MFQ, you will need to determine if the youth has mild depression or moderate/severe depression.',
-  'Follow DSM-5 definitions for “Mild”, “Moderate”, and “Severe”.',
+  'You will need to determine if the youth has mild depression or moderate/severe depression.',
+  'Follow DSM-5 definitions for “Mild”, “Moderate”, and “Severe”. Base your determination on the number of symptoms present, the intensity of the symptoms, and/or the presence of functional impairment. ',
   ' Click the boxes below to reveal definitions:',
   '  Few, if any, symptoms in excess of those required to make the diagnosis are present, the intensity of the symptoms is distressing but manageable, and the symptoms result in minor impairment in social or occupational functioning.',
   ' The number of symptoms, intensity of symptoms, and/or functional impairment are between those specified for “mild” and “severe.”',
@@ -94,7 +97,7 @@ export const treatment =
 export const toolLink1 =
   'https://www.corc.uk.net/outcome-experience-measures/revised-childrens-anxiety-and-depression-scale-and-subscales/';
 export const toolLink2 =
-  'https://devepi.duhs.duke.edu/measures/the-mood-and-feelings-questionnaire-mfq/';
+  'https://www.corc.uk.net/outcome-experience-measures/mood-and-feelings-questionnaire/ ';
 
 export const PSExtra =
   'Check out our Mood Foundations resource and click on the button to download. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print, and provide to patients in your practice.';
@@ -219,7 +222,7 @@ export const check6 = {
     {
       subHeading: 'Clinical Judgment:',
       content:
-        ' has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)? See Clinical Global Impressions Scale to standardize approach. ',
+        ' Has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)? See Clinical Global Impressions Scale to standardize approach. ',
     },
     {
       subHeading: 'Self-report tools: ',
@@ -259,7 +262,7 @@ export const check3 = {
     {
       subHeading: 'Clinical Judgment: ',
       content:
-        'has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)? See Clinical Global Impressions Scale to standardize approach. ',
+        'Has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)? See Clinical Global Impressions Scale to standardize approach. ',
     },
     {
       subHeading: 'Self-report tools: ',
@@ -553,10 +556,7 @@ export const RelapseExtra = [
   '· Reduce intensity & frequency of visits',
 ];
 
-export const RelapseExtra2 = [
-  '· Relapse prevention plan',
-  '· Reduce intensity & frequency of visits',
-];
+export const RelapseExtra2 = [' ', ' '];
 
 export const Check2 = {
   heading: 'Check Response After 2 Weeks',
@@ -573,12 +573,12 @@ export const Check2 = {
     {
       subHeading: 'Self-report tools: ',
       content:
-        'Using the same assessment tool you used for the initial assessment (e.g. RCADS, MFQ), check to see if the score has improved.For the MFQ, response may be a 20% improvement in the score.',
+        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score increase that indicates a response is limited; for the MFQ, a 20% improvement in the score can be used as a guide. ',
     },
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
       content:
-        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met? (e.g., more outings, more interaction with peers)',
+        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met? (e.g., more outings, more interaction with peers)?',
     },
     {
       subHeading: 'Definitions:',
@@ -592,11 +592,11 @@ export const Check2 = {
     {
       subHeading: 'Remission: ',
       content:
-        'Just 1- 2 symptoms present and full functioning (i.e. attending school, social interaction and symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+        'Just 1- 2 symptoms present and return to full functioning (i.e., attending school, social interaction and symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
     },
     {
       subHeading:
-        'Follow up with young people who do not attend the assessment.',
+        'Follow up with young people who miss appointments or stop engaging in care.',
       content: '',
     },
   ],

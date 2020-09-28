@@ -162,7 +162,7 @@ const SeverityModal = (props) => {
           margin={MarginP}
           color="white"
           weight={fontWeight}
-          size="2vmin"
+          size="2.5vmin"
         >
           {props.content}
         </Paragraph>
