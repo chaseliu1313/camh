@@ -90,7 +90,7 @@ export const Cards = (props) => {
                   >
                     animated videos
                   </a>
-                  &nbsp;for youth on how food, movement and sleep can impact
+                  &nbsp; for youth on how food, movement and sleep can impact
                   mood.
                 </Paragraph>
               ) : (
