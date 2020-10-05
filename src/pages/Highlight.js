@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Row, Col, Carousel } from 'react-bootstrap';
-import Heading, { Paragraph } from '../components/Text/Heading';
+import Heading, { Paragraph, SubText } from '../components/Text/Heading';
 import Button from '../components/Buttons/Buttons';
 import {
   SecondaryColor_Blk,
@@ -116,6 +116,7 @@ export default function Hightlights() {
                   </a>
                   &nbsp;to be the highest quality.
                 </Paragraph>
+                <SubText className="slide-footnote">1/3</SubText>
               </div>
             </Carousel.Item>
             <Carousel.Item className="ov_slide" id="ov_slide_3">
@@ -148,6 +149,7 @@ export default function Hightlights() {
                 >
                   {highlightsContent[10]}
                 </Paragraph>
+                <SubText className="slide-footnote">2/3</SubText>
               </div>
             </Carousel.Item>
             <Carousel.Item className="ov_slide">
@@ -185,6 +187,7 @@ export default function Hightlights() {
                   </Col>
                 </Row>
               </div>
+              <SubText className="slide-footnote">3/3</SubText>
             </Carousel.Item>
           </Carousel>
         </Col>

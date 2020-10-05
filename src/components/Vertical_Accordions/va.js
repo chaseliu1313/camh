@@ -56,6 +56,43 @@ export const Cards = (props) => {
                   </a>
                   &nbsp; website
                 </Paragraph>
+              ) : c.includes('· See “Resources for Youth” for more tips') ? (
+                <Paragraph
+                  size="2.2vmin"
+                  color={SecondaryColor_Blk}
+                  margin={defaultMargin}
+                  key={index}
+                >
+                  See our&nbsp;
+                  <a
+                    className="ov_a"
+                    href="resources/tools/video"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Psychoeducation Tools
+                  </a>
+                  &nbsp;for more tips
+                </Paragraph>
+              ) : c.includes('We have developed animated videos for youth') ? (
+                <Paragraph
+                  size="2.2vmin"
+                  color={SecondaryColor_Blk}
+                  margin={defaultMargin}
+                  key={index}
+                >
+                  We have developed&nbsp;
+                  <a
+                    className="ov_a"
+                    href="resources/tools/video"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    animated videos
+                  </a>
+                  &nbsp;for youth on how food, movement and sleep can impact
+                  mood.
+                </Paragraph>
               ) : (
                 <Paragraph
                   size="2.2vmin"

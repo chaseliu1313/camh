@@ -146,8 +146,8 @@ export const PsychosocialStrategies = [
   {
     heading: 'Resources for Youth',
     content: [
-      'Check out our Mood Foundations resource. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print and provide to youth in your practice.',
-      'We have also developed an animated video for youth on how food, movement and sleep can impact mood.',
+      'We have developed animated videos for youth on how food, movement and sleep can impact mood.',
+      'You can also check out our Mood Foundations resource. The handout includes tip on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print and provide to youth in your practice.',
     ],
     img_url: PSExtraLink,
   },
@@ -162,7 +162,7 @@ export const Psychotherapy = [
       '· Structured.',
       '· Problem-focused & goal oriented.',
       '· Target and reduce negative thoughts to improve mood.',
-      '· Need to be willing to discuss thoughts, beliefs and behaviours, participate in exercises during sessions and do homework between sessions.',
+      '· Need to be willing and able to discuss thoughts, beliefs and behaviours, participate in exercises during sessions and do homework between sessions.',
     ],
   },
   {
@@ -183,12 +183,11 @@ export const Psychotherapy = [
     content: [
       '· Goal to facilitate healthy attachment experiences and improve relationships between family members.',
       '· Focus on adolescent’s developmental need for autonomy and attachment.',
-      '· Trauma-focused.',
-      '· Process-oriented.',
+      '· Therapy can be trauma-focused.',
     ],
     subHeading2: 'Systemic family therapy',
     subContent2: [
-      '· Refers to a variety of psychological interventions that are based on systemic concepts and theory',
+      '· Refers to a variety of psychological interventions that are based on on family systems concepts and theories',
       '· Goal is to alleviate distress and improve important relationships by facilitating changes in thinking, behaviour, and understanding. ',
     ],
   },
@@ -213,7 +212,7 @@ export const Psychotherapy = [
 ];
 
 export const check6 = {
-  heading: 'Check Response After 6 Weeks',
+  heading: 'Check Response After 4-6 Weeks',
   content: [
     {
       subHeading: 'Assess Response Using:',
@@ -235,19 +234,51 @@ export const check6 = {
         'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
     },
     {
+      subHeading: ' ',
+      content:
+        '· Follow up with young people who miss appointments or stop engaging in care.',
+    },
+    {
       subHeading: 'Definitions:',
       content: '',
     },
-
     {
-      subHeading: 'Partial Remission:',
-      content:
-        'Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
+      subHeading: 'Response:',
+      content: 'The point at which partial remission begins.',
     },
     {
-      subHeading: 'Remission: ',
+      subHeading: 'Partial remission:',
       content:
-        'Just 1- 2 symptoms present and full functioning (i.e. attending school, social interaction and symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+        'A period during which a significant improvement is observed. Youth undergoing treatment is no longer fully symptomatic but continues to display more than minimal symptoms.',
+    },
+    {
+      subHeading: 'DSM-5 Definition:',
+      content:
+        'Full criteria for depression is not met or <8 weeks without any significant symptoms present.',
+    },
+    {
+      subHeading: 'Full Remission: ',
+      content:
+        'No longer meets criteria for the disorder and has no more than minimal symptoms.',
+    },
+    {
+      subHeading: 'DSM-5 Definition:',
+      content:
+        'At least 8 weeks with no significant signs or symptoms of depression present (i.e., any symptoms present do not cause distress or functional impairment).',
+    },
+    {
+      subHeading:
+        'Relapse (occurs during partial or full remission but before recovery): ',
+      content:
+        'Relapse can represent a change from either partial or full remission to meeting full criteria for the disorder.',
+    },
+    {
+      subHeading: 'Recovery:',
+      content: 'Remission lasting >8 weeks.',
+    },
+    {
+      subHeading: 'Recurrence (occurs following recovery):',
+      content: 'Appearance of a new episode of depression.',
     },
   ],
 };
@@ -262,12 +293,12 @@ export const check3 = {
     {
       subHeading: 'Clinical Judgment: ',
       content:
-        'Has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)? See Clinical Global Impressions Scale to standardize approach. ',
+        'Has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)?  ',
     },
     {
       subHeading: 'Self-report tools: ',
       content:
-        'Using the same assessment tool you used for the initial assessment (e.g. RCADS, MFQ), check to see if the score has improved. For the MFQ, response may be a 40% improvement in the score.',
+        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score increase that indicates a response is limited; for the MFQ, a 20% improvement in the score can be used as a guide. ',
     },
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
@@ -275,18 +306,61 @@ export const check3 = {
         'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., youth who identified more outings or more interaction with peers as desired outcomes indicating meaningful response)?',
     },
     {
+      subHeading: ' ',
+      content:
+        '· Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
+    },
+    {
+      subHeading: ' ',
+      content:
+        '· Just 1-2 symptoms present and return to full functioning (i.e., attending school, social interaction, symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+    },
+    {
+      subHeading: ' ',
+      content:
+        '· Follow up with young people who miss appointments or stop engaging in care.',
+    },
+    {
       subHeading: 'Definitions:',
       content: '',
     },
     {
-      subHeading: 'Partial remission:',
-      content:
-        'Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
+      subHeading: 'Response:',
+      content: 'The point at which partial remission begins.',
     },
     {
-      subHeading: 'Remission: ',
+      subHeading: 'Partial remission:',
       content:
-        'Just 1- 2 symptoms present and full functioning (i.e. attending school, social interaction and symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+        'A period during which a significant improvement is observed. Youth undergoing treatment is no longer fully symptomatic but continues to display more than minimal symptoms.',
+    },
+    {
+      subHeading: 'DSM-5 Definition:',
+      content:
+        'Full criteria for depression is not met or <8 weeks without any significant symptoms present.',
+    },
+    {
+      subHeading: 'Full Remission: ',
+      content:
+        'No longer meets criteria for the disorder and has no more than minimal symptoms.',
+    },
+    {
+      subHeading: 'DSM-5 Definition:',
+      content:
+        'At least 8 weeks with no significant signs or symptoms of depression present (i.e., any symptoms present do not cause distress or functional impairment).',
+    },
+    {
+      subHeading:
+        'Relapse (occurs during partial or full remission but before recovery): ',
+      content:
+        'Relapse can represent a change from either partial or full remission to meeting full criteria for the disorder.',
+    },
+    {
+      subHeading: 'Recovery:',
+      content: 'Remission lasting >8 weeks.',
+    },
+    {
+      subHeading: 'Recurrence (occurs following recovery):',
+      content: 'Appearance of a new episode of depression.',
     },
   ],
 };
@@ -311,7 +385,7 @@ export const Flouxetine = {
     },
     {
       subHeading:
-        '· If psychotherapy is declined, medication may still be given',
+        '· If psychotherapy is declined,youth should still be offered medication treatment',
       content: '',
     },
     {
@@ -324,17 +398,17 @@ export const Flouxetine = {
 
 export const FluoxetineExtra = [
   {
-    text: 'Monitoring',
-    content: [
-      '· Monitor weekly for the first 4 weeks.',
-      '· Monitor closely for suicidal behaviour, self-harm and hostility.',
-    ],
-  },
-  {
     text: 'Titrating',
     content: [
       '· Week 1: 10mg/d.',
       '· Week 2: 20mg/d (if tolerated and clinically necessary).',
+    ],
+  },
+  {
+    text: 'Monitoring',
+    content: [
+      '· Monitor weekly for the first 4 weeks.',
+      '· Monitor closely for suicidal behaviour, self-harm and hostility.',
     ],
   },
   {
@@ -351,19 +425,23 @@ export const MedicationExtra = [
     text: 'Fluoxetine',
     content: [
       {
+        sh: 'Titrating',
+        detail: [
+          '· Week 1: 10 mg/day',
+          '· Week 2: Increase to 20mg/day',
+          '· Week 4: Assess response; continue fluoxetine at 20mg/day or consider increase to 30mg/day',
+          '· Week 6: Assess response; consider increase to 40mg/day',
+          '· Week 8 or 12: Assess response; if sufficient, continue fluoxetine at 20-40mg/day. If some response but significant symptoms/impairments remain, consider increase to 60mg/day (if medication tolerated and youth agrees). If insufficient response, switch to another SSRI.',
+        ],
+      },
+      {
         sh: 'Monitoring',
         detail: [
           '· Monitor weekly for the first 4 weeks.',
           '· Monitor closely for suicidal behaviour, increased anxiety and intolerance.',
         ],
       },
-      {
-        sh: 'Titrating',
-        detail: [
-          '· Week 1: 10mg/d.',
-          '· Week 2: : 20mg/d (if tolerated and clinically necessary)',
-        ],
-      },
+
       {
         sh: 'Tapering',
         detail: [
@@ -377,20 +455,23 @@ export const MedicationExtra = [
     text: 'Sertraline',
     content: [
       {
+        sh: 'Titrating',
+        detail: [
+          '· Week 1: 25 mg/day',
+          '· Week 2: Increase to 50mg/day',
+          '· Week 4: Assess response; continue sertraline at 50mg/day or consider increase to 100mg/day',
+          '· Week 6: Assess response; consider increase to 150mg/day',
+          '· Week 8 or 12: Assess response; if sufficient, continue sertraline at 50-150mg/day. If some response but significant symptoms/impairments remain, consider increase to 200mg/day (if medication tolerated and youth agrees). If insufficient response, switch to another SSRI.',
+        ],
+      },
+      {
         sh: 'Monitoring',
         detail: [
           '· Monitor weekly for the first 4 weeks.',
           '· Monitor closely for suicidal behaviour and intolerance.',
         ],
       },
-      {
-        sh: 'Titrating',
-        detail: [
-          '· Week 1: 25mg/d.',
-          '· Week 2-3: can be adjusted flexibly to 50mg/d (if tolerated and clinically warranted).',
-          '· Can gradually increase to adult daily dose.',
-        ],
-      },
+
       {
         sh: 'Tapering',
         detail: [
@@ -404,16 +485,21 @@ export const MedicationExtra = [
     text: 'Citalopram',
     content: [
       {
+        sh: 'Titrating',
+        detail: [
+          '· Week 1: 10 mg/day',
+          '· Week 2: Increase to 20mg/day',
+          '· Week 4: Assess response; continue citalopram at 20mg/day (maximum daily dose)',
+        ],
+      },
+      {
         sh: 'Monitoring',
         detail: [
           '· Monitor weekly for the first 4 weeks.',
           '· Monitor closely for suicidal behaviour and intolerance.',
         ],
       },
-      {
-        sh: 'Titrating',
-        detail: ['· Week 1: 10 mg/d ', '· Week 2:  20 mg/d'],
-      },
+
       {
         sh: 'Tapering',
         detail: ['· Reduce by 10mg/d every week until stopped.'],
@@ -456,7 +542,8 @@ export const TeamReview = {
   heading: 'Team Review & Treatment Change:',
   content: [
     {
-      subHeading: 'Conduct a multidisciplinary review.',
+      subHeading:
+        'Conduct a multidisciplinary review, including MDs (primary care physician & psychiatrist, if involved in care), other specialist mental health provider/clinician involved in care, youth and caregiver).',
       content: '',
     },
     {
@@ -485,7 +572,8 @@ export const TeamReview = {
     },
     {
       subHeading: ' ',
-      content: '· Change in medication to sertraline or citalopram.',
+      content:
+        '· Change in medication to sertraline or citalopram (if has not responded to fluoxetine).',
     },
     {
       subHeading:
@@ -505,20 +593,23 @@ export const TeamReviewExtra = [
     text: 'Sertraline',
     content: [
       {
+        sh: 'Titrating',
+        detail: [
+          '· Week 1: 25 mg/day',
+          '· Week 2: Increase to 50mg/day',
+          '· Week 4: Assess response; continue sertraline at 50mg/day or consider increase to 100mg/day',
+          '· Week 6: Assess response; consider increase to 150mg/day',
+          '· Week 8 or 12: Assess response; if sufficient, continue sertraline at 50-150mg/day. If some response but significant symptoms/impairments remain, consider increase to 200mg/day (if medication tolerated and youth agrees). If insufficient response, switch to another SSRI.',
+        ],
+      },
+      {
         sh: 'Monitoring',
         detail: [
           '· Monitor weekly for the first 4 weeks.',
           '· Monitor closely for suicidal behaviour, increased anxiety and intolerance.',
         ],
       },
-      {
-        sh: 'Titrating',
-        detail: [
-          '· Week 1: 25mg/d.',
-          '· Week 2-3: can be adjusted flexibly to 50mg/d (if tolerated and clinically warranted).',
-          '· Can gradually increase to adult daily dose.',
-        ],
-      },
+
       {
         sh: 'Tapering',
         detail: [
@@ -532,16 +623,18 @@ export const TeamReviewExtra = [
     text: 'Citalopram',
     content: [
       {
-        sh: 'Monitoring',
-        detail: [
-          '· Monitor weekly for the first 4 weeks.',
-          '· Monitor closely for suicidal behaviour and intolerance.',
-        ],
-      },
-      {
         sh: 'Titrating',
         detail: ['· Week 1: 10 mg/d ', '· Week 2:  20 mg/d'],
       },
+      {
+        sh: 'Monitoring',
+        detail: [
+          '· Week 1: 10 mg/day',
+          '· Week 2: Increase to 20mg/day',
+          '· Week 4: Assess response; continue citalopram at 20mg/day (maximum daily dose)',
+        ],
+      },
+
       {
         sh: 'Tapering',
         detail: ['· Reduce by 10mg/d every week until stopped.'],
@@ -576,28 +669,62 @@ export const Check2 = {
         'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score increase that indicates a response is limited; for the MFQ, a 20% improvement in the score can be used as a guide. ',
     },
     {
-      subHeading: 'Achievement of Personalized Treatment Goals: ',
+      subHeading: ' ',
       content:
-        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met? (e.g., more outings, more interaction with peers)?',
+        '· Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
     },
+    {
+      subHeading: ' ',
+      content:
+        '· Just 1-2 symptoms present and return to full functioning (i.e., attending school, social interaction, symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+    },
+    {
+      subHeading: ' ',
+      content:
+        '· Follow up with young people who miss appointments or stop engaging in care.',
+    },
+
     {
       subHeading: 'Definitions:',
       content: '',
     },
     {
-      subHeading: 'Partial remission:',
-      content:
-        'Partial remission: Full criteria for depression is not met or less than two months with return to full functioning and just 1-2 symptoms present.',
+      subHeading: 'Response:',
+      content: 'The point at which partial remission begins.',
     },
     {
-      subHeading: 'Remission: ',
+      subHeading: 'Partial remission:',
       content:
-        'Just 1- 2 symptoms present and return to full functioning (i.e., attending school, social interaction and symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
+        'A period during which a significant improvement is observed. Youth undergoing treatment is no longer fully symptomatic but continues to display more than minimal symptoms.',
+    },
+    {
+      subHeading: 'DSM-5 Definition:',
+      content:
+        'Full criteria for depression is not met or <8 weeks without any significant symptoms present.',
+    },
+    {
+      subHeading: 'Full Remission: ',
+      content:
+        'No longer meets criteria for the disorder and has no more than minimal symptoms.',
+    },
+    {
+      subHeading: 'DSM-5 Definition:',
+      content:
+        'At least 8 weeks with no significant signs or symptoms of depression present (i.e., any symptoms present do not cause distress or functional impairment).',
     },
     {
       subHeading:
-        'Follow up with young people who miss appointments or stop engaging in care.',
-      content: '',
+        'Relapse (occurs during partial or full remission but before recovery): ',
+      content:
+        'Relapse can represent a change from either partial or full remission to meeting full criteria for the disorder.',
+    },
+    {
+      subHeading: 'Recovery:',
+      content: 'Remission lasting >8 weeks.',
+    },
+    {
+      subHeading: 'Recurrence (occurs following recovery):',
+      content: 'Appearance of a new episode of depression.',
     },
   ],
 };
@@ -616,7 +743,7 @@ export const PsychotherapyMild = [
       '· Structured.',
       '· Problem-focused & goal oriented.',
       '· Target and reduce negative thoughts to improve mood.',
-      '· Need to be willing to discuss thoughts, beliefs and behaviours, participate in exercises during sessions and do homework between sessions.',
+      '· Need to be willing and able to discuss thoughts, beliefs and behaviours, participate in exercises during sessions and do homework between sessions.',
       '· Digital CBT is delivered using digital technology (e.g. computer, phone, tablet) and is also known as computerized CBT. ',
       '· Group CBT is delivered in a group setting (example: 2 therapists and 10 youth).',
     ],

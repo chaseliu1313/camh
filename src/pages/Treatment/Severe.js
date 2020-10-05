@@ -55,9 +55,14 @@ const Severe = () => {
 
   const handleResponse = useCallback(
     (index) => {
+      console.log(state.severState);
       switch (index) {
         case 0:
           history.push('/treatment/psycosocialStrategies');
+          dispatch({
+            type: UPDATE_SEVERE_TREATMENT,
+            payload: [null, null, null, null, null, null, null, null],
+          });
           break;
         case 1:
           history.push('/treatment/psychotherapy');
@@ -189,7 +194,9 @@ const Severe = () => {
               align="center"
               color={SecondaryColor_Blu}
             >
-              Click on each box to learn more.
+              {state.severState[1] !== null || state.severState[0] === null
+                ? 'Consider referral to or consultation with youth mental health specialist'
+                : 'Click on each box to learn more.'}
             </Paragraph>
           </SubContainer>
         </CenterCol>
@@ -563,7 +570,7 @@ const Severe = () => {
                           color="white"
                           align="center"
                         >
-                          Change psychotherapy or add flouxetine
+                          Change psychotherapy or add fluoxetine
                         </Heading>
                       </StepCard>
                     </SubContainer>

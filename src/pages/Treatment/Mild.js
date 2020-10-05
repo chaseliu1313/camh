@@ -459,8 +459,7 @@ const Mild = () => {
         dispatch={history}
         type={UPDATE_MILD_TREATMENT}
         heading="Notice"
-        content="If there has been no response, consider the moderate to severe pathway. 
-        You will now be taken to the beginning of the moderate to severe pathway."
+        content="If there has been no response, consider the moderate to severe pathway and refer youth to specialized youth mental health services. You will now be taken to the beginning of the moderate to severe pathway."
       />
       <img src={bg} id="treatment_bg" alt="background" />
     </Container>

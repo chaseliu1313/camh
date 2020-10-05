@@ -3,12 +3,10 @@ import styled from 'styled-components';
 import { Row as R, Col, ListGroup } from 'react-bootstrap';
 
 import Heading, { Paragraph } from '../../components/Text/Heading';
-import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
+
 import { SecondaryColor_Blk } from '../../theme/resource';
 
 const Reference = () => {
-  const path = '/resources/help';
-
   return (
     <Container>
       <Row>

@@ -47,7 +47,9 @@ const TreatmentModal = (props) => {
   const [content, setContent] = useState(Flouxetine);
   const [extra, setExtra] = useState(MedicationExtra);
   const [tabKey, setKey] = useState('Sertraline');
-  console.log();
+  const [upperTabKey, setUpperTabKey] = useState('Assess Response Using:');
+  const paraSize = '1rem';
+  const headingSize = '1.125rem';
   const handleClose = () => {
     setShow(false);
     props.onClose(false);
@@ -68,6 +70,10 @@ const TreatmentModal = (props) => {
     };
   }, [props.show, props.index]);
 
+  const subIndex2 = content.content.findIndex(
+    (sub2) => sub2.subHeading === 'Definitions:'
+  );
+
   return (
     <Modal
       show={show}
@@ -80,7 +86,7 @@ const TreatmentModal = (props) => {
         <Heading
           type="h2"
           weight="bold"
-          size="2.5vmin"
+          size="2.2vmin"
           margin="0 5px 0 20px"
           color="white"
         >
@@ -89,76 +95,174 @@ const TreatmentModal = (props) => {
       </Modal.Header>
       <ModalBody>
         <Container>
-          {content.content.map((c, index) => (
-            <Fragment key={index}>
-              {c.subHeading === 'Definitions:' ||
-              c.subHeading === 'Assess Response Using:' ? (
-                <Heading
-                  type="h2"
-                  weight="bold"
-                  size="2.5vmin"
-                  color={SecondaryColor_Blk}
-                  margin="10px 0 10px 0"
-                >
-                  {c.subHeading}
-                </Heading>
-              ) : (
-                <Heading
-                  type="h2"
-                  weight="bold"
-                  size="2.5vmin"
-                  color={PrimaryColor}
-                >
-                  {c.subHeading}
-                </Heading>
-              )}
-              {c.subHeading.includes('Clinical Judgment:') ? (
-                <>
-                  <Paragraph
-                    weight="normal"
-                    size="2.5vmin"
+          {content.heading.toLowerCase().includes('check response') && (
+            <Tabs
+              activeKey={upperTabKey}
+              id="treatment_tabs"
+              onSelect={(k) => setUpperTabKey(k)}
+            >
+              <Tab
+                eventKey="Assess Response Using:"
+                title="Assess Response Using:"
+                key="Assess Response Using:"
+              >
+                {content.content
+                  .filter((i, index) => index !== 0 && index < subIndex2)
+                  .map((c, index) => (
+                    <Fragment key={index}>
+                      <Heading
+                        type="h2"
+                        weight="bold"
+                        size={headingSize}
+                        color={PrimaryColor}
+                      >
+                        {c.subHeading}
+                      </Heading>
+                      {c.subHeading.includes('Clinical Judgment:') ? (
+                        <>
+                          <Paragraph
+                            weight="normal"
+                            size={paraSize}
+                            color={SecondaryColor_Blk}
+                            margin="0 0 0 5px"
+                          >
+                            Has there been a reduction in symptoms or
+                            improvement in functioning (i.e., worsening, no
+                            change, minimal, much/very much improved)?
+                          </Paragraph>
+                          <Paragraph
+                            weight="normal"
+                            size={paraSize}
+                            color={SecondaryColor_Blk}
+                            margin="0 0 0 5px"
+                          >
+                            See&nbsp;
+                            <a
+                              className="ov_a"
+                              href={Check2Extra.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Clinical Global Impressions Scale
+                            </a>
+                            &nbsp;to standardize approach.
+                          </Paragraph>
+                        </>
+                      ) : (
+                        <Paragraph
+                          weight="normal"
+                          size={paraSize}
+                          color={SecondaryColor_Blk}
+                          margin="0 0 0 5px"
+                        >
+                          {c.content}
+                        </Paragraph>
+                      )}
+                    </Fragment>
+                  ))}
+              </Tab>
+              <Tab
+                eventKey="Definitions:"
+                title="Definitions:"
+                key="Definitions:"
+              >
+                {content.content
+                  .filter((i, index) => index > subIndex2)
+                  .map((c, index) => (
+                    <Fragment key={index}>
+                      <Heading
+                        type="h2"
+                        weight="bold"
+                        size={headingSize}
+                        color={PrimaryColor}
+                      >
+                        {c.subHeading}
+                      </Heading>
+                      <Paragraph
+                        weight="normal"
+                        size={paraSize}
+                        color={SecondaryColor_Blk}
+                        margin="0 0 0 5px"
+                      >
+                        {c.content}
+                      </Paragraph>
+                    </Fragment>
+                  ))}
+              </Tab>
+            </Tabs>
+          )}
+
+          {!content.heading.toLowerCase().includes('check response') &&
+            content.content.map((c, index) => (
+              <Fragment key={index}>
+                {c.subHeading === 'Definitions:' ||
+                c.subHeading === 'Assess Response Using:' ? (
+                  <Heading
+                    type="h2"
+                    weight="bold"
+                    size="2.2vmin"
                     color={SecondaryColor_Blk}
-                    margin="0 0 0 5px"
+                    margin="10px 0 10px 0"
                   >
-                    Has there been a reduction in symptoms or improvement in
-                    functioning (i.e., worsening, no change, minimal, much/very
-                    much improved)?
-                  </Paragraph>
-                  <Paragraph
-                    weight="normal"
-                    size="2.5vmin"
-                    color={SecondaryColor_Blk}
-                    margin="0 0 0 5px"
+                    {c.subHeading}
+                  </Heading>
+                ) : (
+                  <Heading
+                    type="h2"
+                    weight="bold"
+                    size={headingSize}
+                    color={PrimaryColor}
                   >
-                    See&nbsp;
-                    <a
-                      className="ov_a"
-                      href={Check2Extra.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    {c.subHeading}
+                  </Heading>
+                )}
+                {c.subHeading.includes('Clinical Judgment:') ? (
+                  <>
+                    <Paragraph
+                      weight="normal"
+                      size={paraSize}
+                      color={SecondaryColor_Blk}
+                      margin="0 0 0 5px"
                     >
-                      Clinical Global Impressions Scale
-                    </a>
-                    &nbsp;to standardize approach.
+                      Has there been a reduction in symptoms or improvement in
+                      functioning (i.e., worsening, no change, minimal,
+                      much/very much improved)?
+                    </Paragraph>
+                    <Paragraph
+                      weight="normal"
+                      size={paraSize}
+                      color={SecondaryColor_Blk}
+                      margin="0 0 0 5px"
+                    >
+                      See&nbsp;
+                      <a
+                        className="ov_a"
+                        href={Check2Extra.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Clinical Global Impressions Scale
+                      </a>
+                      &nbsp;to standardize approach.
+                    </Paragraph>
+                  </>
+                ) : (
+                  <Paragraph
+                    weight="normal"
+                    size={paraSize}
+                    color={SecondaryColor_Blk}
+                    margin="0 0 0 5px"
+                  >
+                    {c.content}
                   </Paragraph>
-                </>
-              ) : (
-                <Paragraph
-                  weight="normal"
-                  size="2.5vmin"
-                  color={SecondaryColor_Blk}
-                  margin="0 0 0 5px"
-                >
-                  {c.content}
-                </Paragraph>
-              )}
-            </Fragment>
-          ))}
+                )}
+              </Fragment>
+            ))}
 
           {content.heading === 'Medication' ? (
             <Paragraph
               weight="normal"
-              size="2 vmin"
+              size={paraSize}
               color={SecondaryColor_Blk}
               margin="0 0 0 5px"
             >
@@ -184,7 +288,7 @@ const TreatmentModal = (props) => {
               <>
                 <Paragraph
                   weight="normal"
-                  size="2vmin"
+                  size={paraSize}
                   color={SecondaryColor_Blk}
                   margin="3vmin 0 3vmin 0 "
                 >
@@ -199,13 +303,13 @@ const TreatmentModal = (props) => {
                     <Tab eventKey={e.text} title={e.text} key={e.text}>
                       {e.content.map((c) => (
                         <div key={c.sh}>
-                          <Heading type="h3" weight="normal" size="2vmin">
+                          <Heading type="h3" weight="normal" size={headingSize}>
                             {c.sh}
                           </Heading>
                           {c.detail.map((d, index) => (
                             <Paragraph
                               weight="normal"
-                              size="2vmin"
+                              size={paraSize}
                               color={SecondaryColor_Blk}
                               margin="0 0 0 5px"
                               key={index}
@@ -221,10 +325,10 @@ const TreatmentModal = (props) => {
               </>
             ) : content.heading === 'Relapse prevention plan:' ? (
               <>
-                <Heading type="h3" weight="normal" size="2vmin">
+                <Heading type="h3" weight="normal" size={headingSize}>
                   {RelapseExtra2[0]}
                 </Heading>
-                <Heading type="h3" weight="normal" size="2vmin">
+                <Heading type="h3" weight="normal" size={headingSize}>
                   {RelapseExtra2[1]}
                 </Heading>
               </>
