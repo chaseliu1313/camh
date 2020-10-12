@@ -1,11 +1,11 @@
 export const landingContent = [
   'Cundill Centre Online Tool for the Treatment of Youth Depression',
-  'This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH to provide primary care providers and other frontline clinicians with a clinical resource summarizing the best care practices for managing youth with depression.',
+  'This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH to provide primary care providers and other frontline clinicians with a clinical resource summarizing the best care practices for supporting youth as they manage their depression.',
 ];
 
 export const highlightsContent = [
   '·The Cundill Centre brings together clinicians, scientists, youth and family stakeholders from around the world to improve screening, prevention and depression treatment.',
-  '·The purpose of this tool is to help primary care providers and other frontline clinicians understand best practices for managing youth with depression. ',
+  '·The purpose of this tool is to help primary care providers and other frontline clinicians understand best practices for supporting youth as they manage their depression. ',
   '·The content provides a step-by-step assessment and treatment pathway for youth depression and is based on our systematic review, which found the NICE guidelines to be of the highest quality.',
   'Check out our depression fact sheet here. It was developed for youth, by youth on our team. The resource is free to download, print, and provide to patients in your practice.',
   '·We have taken those guidelines and created a treatment pathway, which we will take you through step-by-step.',
@@ -45,16 +45,25 @@ export const couldHave = [
   'Asked about thoughts of harming others, if Tony has developed a plan, and access to means (e.g. weapons).',
 ];
 
-export const DSM = [
-  'The individual must be experiencing five or more symptoms during the same 2-week period and at least one of the symptoms should be either (1) depressed mood or (2) loss of interest or pleasure. These symptoms must cause the individual clinically significant distress or impairment in social, occupational, or other important areas of functioning. Academic functioning should be considered in place of occupational functioning, given the developmental stage. The symptoms must also not be a result of substance abuse or another medical condition.',
-  '1. Depressed mood most of the day, nearly every day.',
-  '2. Markedly diminished interest or pleasure in all, or almost all, activities most of the day, nearly every day.',
-  '3. Significant weight loss when not dieting or weight gain, or decrease or increase in appetite nearly every day.',
-  '4. A slowing down of thought and a reduction of physical movement (observable by others, not merely subjective feelings of restlessness or being slowed down).',
-  '5. Fatigue or loss of energy nearly every day.',
-  '6. Feelings of worthlessness or excessive or inappropriate guilt nearly every day.',
-  '7. Diminished ability to think or concentrate, or indecisiveness, nearly every day.',
-  '8. Recurrent thoughts of death, recurrent suicidal ideation without a specific plan, or a suicide attempt or a specific plan for committing suicide.',
+export const DSMContent = [
+  'A. Five (or more) of the following symptoms have been present during the same 2-week period and represent a change from previous functioning; at least one of the symptoms is either (1) depressed mood or (2) loss of interest or pleasure. ',
+  'Do not include symptoms that are clearly attributable to another medical condition. ',
+  {
+    subContent: [
+      '1. Depressed mood most of the day, nearly every day, as indicated by either subjective report (e.g., feels sad, empty, hopeless) or observation made by others (e.g., appears tearful). ',
+      '2. Markedly diminished interest or pleasure in all, or almost all, activities most of the day, nearly every day (as indicated by either subjective account or observation). ',
+      '3. Significant weight loss when not dieting or weight gain (e.g., a change of more than 5% of body weight in a month), or decrease or increase in appetite nearly every day.',
+      '4. Insomnia or hypersomnia nearly every day.',
+      '5. Psychomotor agitation or retardation nearly every day (observable by others, not merely subjective feelings of restlessness or being slowed down).',
+      '6. Fatigue or loss of energy nearly every day.',
+      '7. Feelings of worthlessness or excessive or inappropriate guilt (which may be delusional) nearly every day (not merely self-reproach or guilt about being sick).',
+      '8. Diminished ability to think or concentrate, or indecisiveness, nearly every day (either by subjective account or as observed by others).',
+      '9. Recurrent thoughts of death (not just fear of dying), recurrent suicidal ideation without a specific plan, or a suicide attempt or a specific plan for committing suicide. ',
+    ],
+  },
+  'B. The symptoms cause clinically significant distress or impairment in social, occupational, or other important areas of functioning.',
+  'C. The episode is not attributable to the physiological effects of a substance or to another medical condition.',
+  '* Information is taken from the Diagnostic and Statistical Manual of Mental Disorders (5th ed.; DSM-5; American Psychiatric Association, 2013).',
 ];
 
 export const pears = [
@@ -74,10 +83,10 @@ export const pears = [
 export const tools = [
   'Assessment tools are useful because they provide a validated, structured approach to assessing symptoms and can be used over time to track progress.',
   ' There are many assessment tools out there to support the clinical assessment of youth depression. ',
-  ' ·Two options that can be used are:',
+  '',
   'The Revised Children’s Anxiety and Depression Scale (RCADS)  ',
   'The Mood and Feelings Questionnaire (MFQ) ',
-  ' ·Both are available for free and include parent and self-report versions.',
+  '',
   'The RCADS assesses symptoms of anxiety and depression.',
   'The MFQ provides a screening measure for depression. ',
 ];
@@ -771,6 +780,31 @@ export const PsychotherapyMild = [
       '· Focused on here-and-now relationships.',
       '· Aimed at improving interpersonal functioning and social support.',
       'Group IPT is delivered in a group format.',
+    ],
+  },
+];
+
+export const Assessment3 = [
+  {
+    title:
+      '· Assess youth’s social network (and factors that make the youth’s depression better or worse)',
+    content: [],
+  },
+  {
+    title:
+      '· Work with youth to identify desired treatment outcomes and personal treatment goals (e.g., more outings, more interaction with peers)',
+    content: [],
+  },
+  {
+    title:
+      '· Refer to specialized youth mental health services if youth or family has requested a referral, or if youth has:',
+    content: [
+      '· Moderate or severe depression',
+      '· Active suicidal thinking or high risk of recurrent self-harm',
+      '· Recurrence of depression in youth previously recovered',
+      '· Parent or sibling with a history of significant depression or other complex mental health histories',
+      '· Mild depression with no response following 2-3 months of treatment',
+      '· Other complicating factors (e.g., psychotic thinking, poor supports, school refusal, substance use, multiple diagnoses)',
     ],
   },
 ];

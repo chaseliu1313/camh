@@ -4,32 +4,44 @@ import styled from 'styled-components';
 import './assessment.css';
 import Intro from './intro';
 import Simulation from './Simulation';
+import SocialNetworks from './SocialNetwork';
 import Button from '../../components/Buttons/Buttons';
 import { TertiaryColor_Tel, SecondaryColor_Blk } from '../../theme/resource';
 import { useHistory } from 'react-router-dom';
 
 export default function Assessment() {
+  const initialState = [false, true, true];
   const [btnAppeal, setDisplay] = useState(false);
-
-  const [hide1, setHide1] = useState(false);
-  const [hide2, setHide2] = useState(true);
+  const [pageState, setPageState] = useState(initialState);
   let history = useHistory();
 
   const viewSwicher = () => {
-    if (!hide2) {
+    if (!pageState[2]) {
       history.push('/assessment/pears');
+      return;
     }
 
-    setHide1(true);
-    setDisplay(true);
-    setHide2(false);
-    //hide the previous btmn
+    const copyState = [...pageState];
+    const index = copyState.indexOf(false);
+    copyState[index] = !copyState[index];
+    copyState[index + 1] = !copyState[index + 1];
+
+    setPageState(copyState);
+
+    setDisplay(copyState[0]);
   };
 
   const goBack = () => {
-    setHide1(false);
-    setDisplay(false);
-    setHide2(true);
+    const copyState = [...pageState];
+    const index = copyState.indexOf(false);
+    copyState[index] = !copyState[index];
+    if (index > 0) {
+      copyState[index - 1] = !copyState[index - 1];
+    }
+
+    setPageState(copyState);
+
+    setDisplay(copyState[0]);
   };
 
   return (
@@ -44,8 +56,9 @@ export default function Assessment() {
       >
         Tips for Assessing Depressed Youth
       </Heading>
-      <Intro hide={hide1} />
-      <Simulation hide={hide2} />
+      <Intro hide={pageState[0]} />
+      <Simulation hide={pageState[1]} />
+      <SocialNetworks hide={pageState[2]} />
 
       <BtnGroup>
         <Button

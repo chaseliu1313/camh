@@ -46,7 +46,7 @@ const TreatmentModal = (props) => {
   const [show, setShow] = useState(false);
   const [content, setContent] = useState(Flouxetine);
   const [extra, setExtra] = useState(MedicationExtra);
-  const [tabKey, setKey] = useState('Sertraline');
+  const [tabKey, setKey] = useState('Fluoxetine');
   const [upperTabKey, setUpperTabKey] = useState('Assess Response Using:');
   const paraSize = '1rem';
   const headingSize = '1.125rem';

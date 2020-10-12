@@ -57,9 +57,6 @@ export default function Simulation(props) {
               hideNotes();
             }}
             width="100%"
-            onPause={() => {
-              showNotes();
-            }}
             onEnded={() => {
               showNotes();
             }}

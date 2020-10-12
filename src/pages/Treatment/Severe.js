@@ -17,6 +17,7 @@ import {
   UPDATE_SEVERE_TREATMENT,
   RESET_SEVERE_TREATMENT,
   SET_SEVERE_CLICKED,
+  SET_MILD_CLICKED,
 } from '../../store/actions';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -45,8 +46,16 @@ const Severe = () => {
   const handleClicked = useCallback(
     (index) => {
       const updatedClickState = [...state.severeClickState];
-
+      const updatedMildClickState = [...state.mildClickState];
       updatedClickState[index] = false;
+
+      if (index === 0) {
+        updatedMildClickState[0] = false;
+        dispatch({
+          type: SET_MILD_CLICKED,
+          payload: updatedMildClickState,
+        });
+      }
 
       dispatch({ type: SET_SEVERE_CLICKED, payload: updatedClickState });
     },

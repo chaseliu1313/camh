@@ -93,6 +93,7 @@
 #dsm_modal > .modal-content,
 #sev_modal > .modal-content {
   background-color: #6e298d !important;
+  height: 90vh !important;
 }
 
 #dsm_header > button,
@@ -108,6 +109,15 @@
 .simu_cross {
   color: #ff304f;
   display: inline;
+}
+#dsm-popover > .popover-body {
+  background-color: #f7f7f7 !important;
+}
+#dsm-popover > .popover-header {
+  background-color: #f7f7f7 !important;
+}
+#dsm-popover {
+  min-width: 400px;
 }
 
 #pears0 {
