@@ -68,6 +68,9 @@ export default function NaviBar() {
                 <Link to="/resources/help">Local Help</Link>
               </NavDropdown.Item>
               <NavDropdown.Item as="div" className="nav-link">
+                <Link to="/resources/crisisLines">Crisis Lines</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item as="div" className="nav-link">
                 <Link to="/resources/reference">References</Link>
               </NavDropdown.Item>
             </NavDropdown>

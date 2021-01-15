@@ -19,6 +19,7 @@ import PsychoMild from './pages/Treatment/PsychotherapyMild';
 import { TreatmentStore } from './store/store';
 import ReTools from './pages/Resources/tools';
 import LocalHelp from './pages/Resources/localHelp';
+import CrisisLines from './pages/Resources/crisisLines';
 import Reference from './pages/Resources/references';
 import DevelopmentTeam from './pages/Contributors';
 
@@ -59,6 +60,11 @@ function App() {
               <Route path="/resources/tools" component={ReTools} />
               <Route path="/resources/help" exact component={LocalHelp} />
               <Route path="/resources/reference" exact component={Reference} />
+              <Route
+                path="/resources/crisisLines"
+                exact
+                component={CrisisLines}
+              />
               <Route path="/devTeam" exact component={DevelopmentTeam} />
             </Switch>
           </main>

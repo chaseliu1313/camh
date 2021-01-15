@@ -17,18 +17,29 @@ import PageIndicator from '../../components/PageIndicator';
 import './resources.css';
 const path1 = ['/treatment', '/resources/tools'];
 const path2 = ['/resources/tools/video', '/resources/tools/medhandout'];
-const path3 = ['/resources/tools/video', '/resources/tools/problemSolving'];
-const path4 = ['/resources/tools/medhandout', '/resources/tools/cognitive'];
+const path3 = [
+  '/resources/tools/video',
+  '/resources/tools/problemSolvingVideo',
+];
+const path4 = [
+  '/resources/tools/problemSolvingVideo',
+  '/resources/tools/cognitive',
+];
 const path5 = [
   '/resources/tools/problemSolving',
   '/resources/tools/assessment',
 ];
 const path6 = ['/resources/tools/cognitive', '/resources/help'];
+const path7 = [
+  '/resources/tools/medhandout',
+  '/resources/tools/problemSolving',
+];
 
 const routes = [
   '/resources/tools/video',
   '/resources/tools',
   '/resources/tools/medhandout',
+  '/resources/tools/problemSolvingVideo',
   '/resources/tools/problemSolving',
   '/resources/tools/cognitive',
   '/resources/tools/assessment',
@@ -51,6 +62,8 @@ const ReTools = ({ match }) => {
       setPath(path2);
     } else if (location === '/resources/tools/video') {
       setPath(path1);
+    } else if (location === '/resources/tools/problemSolvingVideo') {
+      setPath(path7);
     } else if (location === '/resources/tools/medhandout') {
       setPath(path3);
     } else if (location === '/resources/tools/problemSolving') {
@@ -131,6 +144,11 @@ const ReTools = ({ match }) => {
           exact
           path={match.path + '/medhandout'}
           render={() => MedicalHandout()}
+        />
+        <Route
+          exact
+          path={match.path + '/problemSolvingVideo'}
+          render={() => NewToolVideo()}
         />
         <Route
           exact
@@ -302,6 +320,35 @@ const ProblemSolving = () => {
   );
 };
 
+const NewToolVideo = () => {
+  return (
+    <VideoLayout>
+      <VideoPanel>
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=DWHyJ4Q77Ws"
+          playing={false}
+          controls={true}
+          width="95%"
+        />
+      </VideoPanel>
+      <RightVideoCol>
+        <Heading
+          size="3vmin"
+          weight="bold"
+          align="center"
+          color={SecondaryColor_Blk}
+        >
+          How can problem solving help youth with depression?
+        </Heading>
+        <Paragraph color={SecondaryColor_Blk}>
+          This video for youth describes how problem solving can be one
+          important ingredient in tackling depression.
+        </Paragraph>
+      </RightVideoCol>
+    </VideoLayout>
+  );
+};
+
 const CognitiveRes = () => {
   return (
     <ToolLayout>
@@ -451,6 +498,20 @@ const RightCol = styled.div`
   height: fit-content;
   width: 70%;
   padding: 3vmin;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: ${BackgroundColor};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const RightVideoCol = styled.div`
+  height: fit-content;
+  width: 60%;
+  padding: 3vmin;
+  margin: auto;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   background-color: ${BackgroundColor};
