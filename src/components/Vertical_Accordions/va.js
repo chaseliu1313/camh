@@ -93,6 +93,24 @@ export const Cards = (props) => {
                   &nbsp; for youth on how food, movement and sleep can impact
                   mood.
                 </Paragraph>
+              ) : c.includes('Psychoeducation Tools') ? (
+                <Paragraph
+                  size="2.2vmin"
+                  color={SecondaryColor_Blk}
+                  margin={defaultMargin}
+                  key={index}
+                >
+                  See our&nbsp;
+                  <a
+                    className="ov_a"
+                    href="resources/tools/video"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Psychoeducation Tools
+                  </a>
+                  &nbsp; for more tips
+                </Paragraph>
               ) : (
                 <Paragraph
                   size="2.2vmin"
@@ -184,7 +202,7 @@ export const Cards = (props) => {
           {content.img_url ? (
             <>
               <a
-                href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
+                href="https://www.camh.ca/-/media/files/mood-foundations-package-youth-pdf.pdf"
                 target="_blank"
                 download
                 rel="noopener noreferrer"

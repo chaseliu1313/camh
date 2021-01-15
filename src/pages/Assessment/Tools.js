@@ -79,7 +79,7 @@ const Tools = () => {
             <Paragraph
               margin={Pmarging}
               color={SecondaryColor_Blk}
-              weight="bold"
+              weight="normal"
             >
               {tools[0] + tools[1]}
             </Paragraph>

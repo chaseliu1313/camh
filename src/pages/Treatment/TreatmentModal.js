@@ -34,7 +34,7 @@ const contentSwitcher = (index) => {
       return [Relapse, RelapseExtra2];
     case 8:
       return [
-        { ...Check2, heading: 'Check response after 2 to 3 months' },
+        { ...check3, heading: 'Check response after 2 to 3 months' },
         RelapseExtra2,
       ];
     default:

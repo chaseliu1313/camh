@@ -203,9 +203,11 @@ const Severe = () => {
               align="center"
               color={SecondaryColor_Blu}
             >
-              {state.severState[1] !== null || state.severState[0] === null
-                ? 'Consider referral to or consultation with youth mental health specialist'
-                : 'Click on each box to learn more.'}
+              {
+                //state.severState[1] !== null || state.severState[0] === null
+
+                'Consider referral to or consultation with youth mental health specialist'
+              }
             </Paragraph>
           </SubContainer>
         </CenterCol>
@@ -249,7 +251,11 @@ const Severe = () => {
           </StepCard>
         </CenterCol>
       </Row>
-
+      <Row className="short_row">
+        <CenterCol md={{ span: 4, offset: 5 }}>
+          <SubText weight="bold">+</SubText>
+        </CenterCol>
+      </Row>
       {!responses[0] && !responses[5] ? (
         <Row className="p_row">
           <C xs lg="2">

@@ -16,6 +16,10 @@
   z-index: -1;
 }
 
+.short_row {
+  height: 10px;
+}
+
 #treatment_sever_container > .row {
   z-index: 1;
 }

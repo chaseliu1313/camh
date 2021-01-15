@@ -48,60 +48,62 @@ const LocalHelp = () => {
           </ListGroup.Item>
           <ListGroup.Item action variant="Success">
             <Paragraph color={SecondaryColor_Blk} size="3vmin">
-              Call the{' '}
+              Find your local{' '}
               <a
-                href="https://kidshelpphone.ca/"
+                href="https://youthhubs.ca/en/sites/"
                 target="_blank"
                 download
                 rel="noopener noreferrer"
                 className="help_link"
               >
-                Kids Help Phone
+                Youth Wellness Hubs Ontario
               </a>{' '}
-              at{' '}
-              <a href="tel:18006686868" className="help_link">
-                1-800-668-6868
+              site.
+            </Paragraph>
+          </ListGroup.Item>
+          <ListGroup.Item action variant="Success">
+            <Paragraph color={SecondaryColor_Blk} size="3vmin">
+              Access{' '}
+              <a
+                href="https://www.camh.ca/-/media/files/community-resource-sheets/crisis-resources-pdf.pdf?la=en&hash=2C7E1485B24425C845B5C6CE6D96926DC7E63D51"
+                target="_blank"
+                download
+                rel="noopener noreferrer"
+                className="help_link"
+              >
+                crisis services
               </a>
-              or text them at CONNECT 686868.
+              .
             </Paragraph>
           </ListGroup.Item>
           <ListGroup.Item action variant="Success">
             <Paragraph color={SecondaryColor_Blk} size="3vmin">
-              Call the{' '}
+              Access{' '}
               <a
-                href="https://www.hopeforwellness.ca/"
+                href="https://www.camh.ca/-/media/files/community-resource-sheets/drop-in-counselling-pdf.pdf?la=en&hash=43B3100ED292625E480814F178A4891A51ECA764"
                 target="_blank"
                 download
                 rel="noopener noreferrer"
                 className="help_link"
               >
-                First Nations and Inuit Hope for Wellness Helpline
-              </a>{' '}
-              toll free at{' '}
-              <a href="tel:18552423310" className="help_link">
-                1-855-242-3310
-              </a>{' '}
-              or use the chat box on their website to connect with a counsellor
-              online.
+                drop-in counselling services
+              </a>
+              .
             </Paragraph>
           </ListGroup.Item>
           <ListGroup.Item action variant="Success">
             <Paragraph color={SecondaryColor_Blk} size="3vmin">
-              Call the{' '}
+              Access{' '}
               <a
-                href="https://www.thetrevorproject.org/"
+                href="http://www.camh.ca/en/suicide-prevention/get-help"
                 target="_blank"
                 download
                 rel="noopener noreferrer"
                 className="help_link"
               >
-                Trevor Project
-              </a>{' '}
-              at{' '}
-              <a href="tel:18664887386" className="help_link">
-                1-866-488-7386
-              </a>{' '}
-              or text START to 678-678 (resource for LGBTQ youth).
+                suicide prevention resources
+              </a>
+              .
             </Paragraph>
           </ListGroup.Item>
         </ListGroup>

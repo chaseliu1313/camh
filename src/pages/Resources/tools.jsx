@@ -105,7 +105,7 @@ const ReTools = ({ match }) => {
                   print.
                 </Paragraph>
                 <a
-                  href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
+                  href="https://www.camh.ca/-/media/files/mood-foundations-package-youth-pdf.pdf"
                   target="_blank"
                   download
                   rel="noopener noreferrer"
@@ -184,7 +184,7 @@ const MedicalHandout = () => {
           and print.
         </Paragraph>
         <a
-          href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=8&fname=Medication-for-YOUth-Resource-pdf.pdf"
+          href="https://www.camh.ca/-/media/files/medication-for-youth-resource-pdf.pdf"
           target="_blank"
           download
           rel="noopener noreferrer"
@@ -280,7 +280,7 @@ const ProblemSolving = () => {
           care providers. Free to download and print.
         </Paragraph>
         <a
-          href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=5&fname=Problem-Solving-Worksheets-Youth-pdf.pdf"
+          href="https://www.camh.ca/-/media/files/problem-solving-worksheets-youth-pdf.pdf"
           target="_blank"
           download
           rel="noopener noreferrer"
@@ -323,7 +323,7 @@ const CognitiveRes = () => {
           print.
         </Paragraph>
         <a
-          href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=6&fname=Cognitive-Restructuring-Worksheets-Youth-pdf.pdf"
+          href="https://www.camh.ca/-/media/files/cognitive-restructuring-worksheets-youth-pdf.pdf"
           target="_blank"
           download
           rel="noopener noreferrer"
@@ -351,7 +351,7 @@ const AssessmentTools = () => {
       <ListGroup horizontal="lg" className="at_list">
         <ListGroup.Item action variant="info">
           <a
-            href="https://devepi.duhs.duke.edu/measures/the-mood-and-feelings-questionnaire-mfq/"
+            href="https://www.corc.uk.net/outcome-experience-measures/mood-and-feelings-questionnaire/"
             target="_blank"
             download
             rel="noopener noreferrer"

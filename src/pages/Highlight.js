@@ -167,7 +167,7 @@ export default function Hightlights() {
                   </Col>
                   <Col md={7}>
                     <a
-                      href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf"
+                      href="https://www.camh.ca/-/media/files/mood-foundations-package-youth-pdf.pdf"
                       target="_blank"
                       download
                       rel="noopener noreferrer"

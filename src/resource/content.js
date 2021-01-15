@@ -81,8 +81,8 @@ export const pears = [
 ];
 
 export const tools = [
-  'Assessment tools are useful because they provide a validated, structured approach to assessing symptoms and can be used over time to track progress.',
-  ' There are many assessment tools out there to support the clinical assessment of youth depression. ',
+  '“Assessment tools are useful because they provide a structured approach to assessing symptoms and can help you measure symptom change over time.',
+  ' There are many assessment tools out there to support the clinical assessment of youth depression. Below are two recommended tools, which are especially helpful in measuring symptom change.',
   '',
   'The Revised Children’s Anxiety and Depression Scale (RCADS)  ',
   'The Mood and Feelings Questionnaire (MFQ) ',
@@ -111,7 +111,7 @@ export const toolLink2 =
 export const PSExtra =
   'Check out our Mood Foundations resource and click on the button to download. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print, and provide to patients in your practice.';
 export const PSExtraLink =
-  'https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=4&fname=Mood-Foundations-Package-Youth-pdf.pdf';
+  'https://www.camh.ca/-/media/files/mood-foundations-package-youth-pdf.pdf';
 
 export const PsychosocialStrategies = [
   {
@@ -120,13 +120,14 @@ export const PsychosocialStrategies = [
       '· Moderate to vigorous activity (where the heart rate is elevated) ',
       '· 45-60 minutes',
       '· 3 times per week',
+      '· See our Psychoeducation Tools for more tips',
     ],
   },
   {
     heading: 'Sleep',
     content: [
-      '· Wake up and go to sleep at the same time every day, even on weekends.',
-      '· Create a bedtime routine.',
+      '· Wake up and go to sleep at the same time every day, even on weekends',
+      '· Create a bedtime routine',
       '· Avoid using electronic devices before bed',
       '· Make sure the room is the right temperature',
       '· Do not take any naps during the day',
@@ -137,11 +138,11 @@ export const PsychosocialStrategies = [
   {
     heading: 'Diet',
     content: [
-      '· Balanced diet with enough protein (1/4 plate) and vegetables/fruit (1/2 plate).',
-      '· Limit unhealthy foods (like sweets, fried food, refined cereal, fast food and soft drinks) to no more than three servings per week.',
-      '· Take time to enjoy meals with other people.',
-      '· Avoid eating while watching TV, texting, studying or doing other activities.',
-      '· See “Resources for Youth” for more tips.',
+      '· Balanced diet with enough protein (1/4 plate) and vegetables/fruit (1/2 plate)',
+      '· Limit unhealthy foods (like sweets, fried food, refined cereal, fast food and soft drinks) to no more than three servings per week',
+      '· Take time to enjoy meals with other people',
+      '· Avoid eating while watching TV, texting, studying or doing other activities',
+      '· See “Resources for Youth” for more tips',
     ],
   },
   {
@@ -191,7 +192,7 @@ export const Psychotherapy = [
     subHeading1: 'Attachment-based family therapy ',
     content: [
       '· Goal to facilitate healthy attachment experiences and improve relationships between family members.',
-      '· Focus on adolescent’s developmental need for autonomy and attachment.',
+      '· Focus on youth’s developmental need for autonomy and attachment.',
       '· Therapy can be trauma-focused.',
     ],
     subHeading2: 'Systemic family therapy',
@@ -233,9 +234,9 @@ export const check6 = {
         ' Has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)? See Clinical Global Impressions Scale to standardize approach. ',
     },
     {
-      subHeading: 'Self-report tools: ',
+      subHeading: 'Self-Report Tools: ',
       content:
-        'Using the same assessment tool you used for the initial assessment (e.g. RCADS, MFQ), check to see if the score has improved. For the MFQ, response may be a 20% improvement in the score.',
+        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score change that indicates a response is limited; for the MFQ, a > 20% improvement in the score since the last treatment change can be used as a guide.',
     },
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
@@ -243,9 +244,9 @@ export const check6 = {
         'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
     },
     {
-      subHeading: ' ',
-      content:
-        '· Follow up with young people who miss appointments or stop engaging in care.',
+      subHeading:
+        'Follow up with young people who miss appointments or stop engaging in care.',
+      content: '',
     },
     {
       subHeading: 'Definitions:',
@@ -305,9 +306,9 @@ export const check3 = {
         'Has there been a reduction in symptoms or improvement in functioning (i.e., worsening, no change, minimal, much/very much improved)?  ',
     },
     {
-      subHeading: 'Self-report tools: ',
+      subHeading: 'Self-Report Tools: ',
       content:
-        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score increase that indicates a response is limited; for the MFQ, a 20% improvement in the score can be used as a guide. ',
+        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score change that indicates a response is limited; for the MFQ, a > 40% improvement in the score since the last treatment change can be used as a guide.',
     },
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
@@ -325,9 +326,9 @@ export const check3 = {
         '· Just 1-2 symptoms present and return to full functioning (i.e., attending school, social interaction, symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
     },
     {
-      subHeading: ' ',
-      content:
-        '· Follow up with young people who miss appointments or stop engaging in care.',
+      subHeading:
+        'Follow up with young people who miss appointments or stop engaging in care.',
+      content: '',
     },
     {
       subHeading: 'Definitions:',
@@ -454,8 +455,8 @@ export const MedicationExtra = [
       {
         sh: 'Tapering',
         detail: [
-          '· If current dose is < 40mg, can be stopped abruptly.',
-          '· If current dose is > 40mg, reduce by 20mg every week until stopped.',
+          '· If current dose is < 40mg/d, can be stopped abruptly.',
+          '· If current dose is ≥ 40mg/d, reduce by 20mg every week until stopped.',
         ],
       },
     ],
@@ -485,7 +486,7 @@ export const MedicationExtra = [
         sh: 'Tapering',
         detail: [
           '· If current dose is > 100mg/d, reduce by 50mg/d every week until 50mg/d is reached, then reduce by 25mg/d a week until stopped.',
-          '· If current dose < 75mg/d, reduce by 25mg/d a week until stopped.',
+          '· If current dose ≤ 75mg/d, reduce by 25mg/d a week until stopped.',
         ],
       },
     ],
@@ -673,9 +674,9 @@ export const Check2 = {
         'Clinical Judgment: has there been a reduction in symptoms or improvement in functioning? (i.e., worsening, no change, minimal, much/very much improved) See Clinical Global Impressions Scale to standardize approach.',
     },
     {
-      subHeading: 'Self-report tools: ',
+      subHeading: 'Achievement of Personalized Treatment Goals: ',
       content:
-        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score increase that indicates a response is limited; for the MFQ, a 20% improvement in the score can be used as a guide. ',
+        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
     },
     {
       subHeading: ' ',
@@ -688,9 +689,9 @@ export const Check2 = {
         '· Just 1-2 symptoms present and return to full functioning (i.e., attending school, social interaction, symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
     },
     {
-      subHeading: ' ',
-      content:
-        '· Follow up with young people who miss appointments or stop engaging in care.',
+      subHeading:
+        'Follow up with young people who miss appointments or stop engaging in care.',
+      content: '',
     },
 
     {

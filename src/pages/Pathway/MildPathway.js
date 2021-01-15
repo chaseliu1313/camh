@@ -196,7 +196,7 @@ export default function MildPathway(props) {
                   align="center"
                   lineHeight="4vh"
                 >
-                  Step 4: Check response after 2-3 months.
+                  Step 4: Check response after 2-3 months?.
                 </Heading>
               </StepCard>
               <StepOptionButton

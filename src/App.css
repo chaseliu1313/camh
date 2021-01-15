@@ -235,6 +235,7 @@ a {
 }
 .ov_a {
   color: #6e298d;
+  font-weight: bold;
 }
 .carousel-control-next-icon {
   visibility: hidden;
