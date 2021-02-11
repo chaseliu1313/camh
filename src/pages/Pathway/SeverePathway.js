@@ -207,7 +207,7 @@ export default function SeverePathway() {
                     align="center"
                     lineHeight="4vh"
                   >
-                    Step 3: Check response after 6 weeks
+                    Step 3: Check response after 4-6 weeks
                   </Heading>
                 </StepCard>
                 <StepOptionButton
@@ -239,7 +239,7 @@ export default function SeverePathway() {
                     align="center"
                     lineHeight="4vh"
                   >
-                    Step 3: Check response after 6 weeks?
+                    Step 3: Check response after 4-6 weeks?
                   </Heading>
                 </StepCard>
                 <StepOptionButton

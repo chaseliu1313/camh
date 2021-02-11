@@ -269,7 +269,7 @@ const TreatmentModal = (props) => {
               Click&nbsp;
               <a
                 className="ov_a"
-                href="https://edc.camhx.ca/redcap/surveys/?s=FFCNLCMXEM&what=8&fname=Medication-for-YOUth-Resource-pdf.pdf"
+                href="https://www.camh.ca/-/media/files/medication-for-youth-resource-pdf.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -277,6 +277,8 @@ const TreatmentModal = (props) => {
               </a>
               &nbsp;to download our medication handout—it was developed for
               youth, by youth in partnership with a psychiatrist and pharmacist.
+              It includes information on when youth might see benefits and what
+              side effects, if any, can occur.
             </Paragraph>
           ) : (
             ''

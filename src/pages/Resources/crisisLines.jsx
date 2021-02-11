@@ -33,7 +33,7 @@ const CrisisLines = () => {
               <a href="tel:18006686868" className="help_link">
                 1-800-668-6868
               </a>{' '}
-              or text them at CONNECT{' '}
+              or text CONNECT to{' '}
               <a href="sms://686868" className="help_link">
                 686-868
               </a>{' '}

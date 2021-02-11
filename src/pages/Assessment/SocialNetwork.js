@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { Assessment3 } from '../../resource/content';
 import { SecondaryColor_Blk } from '../../theme/resource';
-import { Paragraph, SubText } from '../../components/Text/Heading';
+import { Paragraph } from '../../components/Text/Heading';
 import { enterAni, exitAni } from '../../theme/animation';
 import Card from '../../components/Cards/Card';
 

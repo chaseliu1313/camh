@@ -396,7 +396,7 @@ const Severe = () => {
                   color="white"
                   align="center"
                 >
-                  Check response after 6 weeks
+                  Check response after 4-6 weeks
                 </Heading>
               </StepCard>
             </CenterCol>
@@ -815,7 +815,7 @@ const Severe = () => {
                 color="white"
                 align="center"
               >
-                Check response after 6 weeks
+                Check response after 4-6 weeks
               </Heading>
             </StepCard>
           </CenterCol>

@@ -209,6 +209,10 @@
   min-height: 70vh;
 }
 
+.pearl_card .carousel-indicators {
+  bottom: 100px !important;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1920px) {
   .pearl_card p {
     font-size: 2.5vmin;

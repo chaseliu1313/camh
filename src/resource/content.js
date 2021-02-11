@@ -67,21 +67,21 @@ export const DSMContent = [
 ];
 
 export const pears = [
-  '1. Depression can be missed because irritability (persistent anger, exaggerated frustration to minor occurrences) or somatic complaints (sleep problems/fatigue) may be the primary presenting symptom (rather than sadness).',
+  '· Depression can be missed because irritability (persistent anger, exaggerated frustration to minor occurrences) or somatic complaints (sleep problems/fatigue) may be the primary presenting symptom (rather than sadness).',
 
-  '2. Symptoms can range from very mild (below the threshold for diagnosis)—to very severe with pronounced functional impairment.',
+  '· Symptoms can range from very mild (below the threshold for diagnosis)—to very severe with pronounced functional impairment.',
 
-  '3. Depression can come and go. After the first episode, subsequent episodes tend to be more severe, difficult to treat, and occur with increasing frequency.',
+  '· Depression can come and go. After the first episode, subsequent episodes tend to be more severe, difficult to treat, and occur with increasing frequency.',
 
-  '4. Depression is associated with other health conditions (e.g., anxiety, substance use), increasing suffering and impairment. Ask youth and caregiver(s) about alcohol and drug use, as well as any experience of being bullied or abused.',
+  '· Depression is associated with other health conditions (e.g., anxiety, substance use), increasing suffering and impairment. Ask youth and caregiver(s) about alcohol and drug use, as well as any experience of being bullied or abused.',
 
-  '5. Because of the risk of self-harm and suicide, always assess safety (risk of harm to self and/or others). Ask about current/recent or previous self-harm, suicidal thinking and/or thoughts of harming others, development of a plan, access to means, prior aggression, suicide attempts.',
-  '6. A young person should be offered the opportunity to discuss issues related to their mental health in private initially.',
-  '7. The form of assessment should take into account cultural and ethnic variations in communication, family values and the young person’s role within their family.',
+  '· Because of the risk of self-harm and suicide, always assess safety (risk of harm to self and/or others). Ask about current/recent or previous self-harm, suicidal thinking and/or thoughts of harming others, development of a plan, access to means, prior aggression, suicide attempts.',
+  '· A young person should be offered the opportunity to discuss issues related to their mental health in private initially.',
+  '· The form of assessment should take into account cultural and ethnic variations in communication, family values and the young person’s role within their family.',
 ];
 
 export const tools = [
-  '“Assessment tools are useful because they provide a structured approach to assessing symptoms and can help you measure symptom change over time.',
+  'Assessment tools are useful because they provide a structured approach to assessing symptoms and can help you measure symptom change over time.',
   ' There are many assessment tools out there to support the clinical assessment of youth depression. Below are two recommended tools, which are especially helpful in measuring symptom change.',
   '',
   'The Revised Children’s Anxiety and Depression Scale (RCADS)  ',
@@ -236,7 +236,7 @@ export const check6 = {
     {
       subHeading: 'Self-Report Tools: ',
       content:
-        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score change that indicates a response is limited; for the MFQ, a > 20% improvement in the score since the last treatment change can be used as a guide.',
+        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score change that indicates a response is limited; for the MFQ, a ≥ 20% improvement in the score since the last treatment change can be used as a guide.',
     },
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
@@ -308,23 +308,14 @@ export const check3 = {
     {
       subHeading: 'Self-Report Tools: ',
       content:
-        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score change that indicates a response is limited; for the MFQ, a > 40% improvement in the score since the last treatment change can be used as a guide.',
+        'Using the same assessment tool you used for the initial assessment (e.g., RCADS, MFQ), check to see if the score has improved. Evidence for the exact score change that indicates a response is limited; for the MFQ, a ≥ 40% improvement in the score since the last treatment change can be used as a guide.',
     },
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
       content:
         'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., youth who identified more outings or more interaction with peers as desired outcomes indicating meaningful response)?',
     },
-    {
-      subHeading: ' ',
-      content:
-        '· Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
-    },
-    {
-      subHeading: ' ',
-      content:
-        '· Just 1-2 symptoms present and return to full functioning (i.e., attending school, social interaction, symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
-    },
+
     {
       subHeading:
         'Follow up with young people who miss appointments or stop engaging in care.',
@@ -678,19 +669,10 @@ export const Check2 = {
       content:
         'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
     },
-    {
-      subHeading: ' ',
-      content:
-        '· Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
-    },
-    {
-      subHeading: ' ',
-      content:
-        '· Just 1-2 symptoms present and return to full functioning (i.e., attending school, social interaction, symptoms present are only mild and do not cause functional impairment) for 8 weeks.',
-    },
+
     {
       subHeading:
-        'Follow up with young people who miss appointments or stop engaging in care.',
+        'Follow up with young people who miss appointments or stop engaging in cresponse is limited; for the MFQ,are.',
       content: '',
     },
 

@@ -38,7 +38,7 @@ const LocalHelp = () => {
                 className="help_link"
               >
                 Canadian Mental Health Association (CMHA)
-              </a>
+              </a>{' '}
               or call{' '}
               <a href="tel:18334564566" className="help_link">
                 1-833-456-4566
