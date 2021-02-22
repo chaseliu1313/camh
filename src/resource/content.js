@@ -67,7 +67,7 @@ export const DSMContent = [
 ];
 
 export const pears = [
-  '· Depression can be missed because irritability (persistent anger, exaggerated frustration to minor occurrences) or somatic complaints (sleep problems/fatigue) may be the primary presenting symptom (rather than sadness).',
+  '· Irritability (persistent anger, exaggerated frustration to minor occurrences) or somatic complaints (sleep problems/fatigue) may be the primary presenting symptom (rather than sadness).',
 
   '· Symptoms can range from very mild (below the threshold for diagnosis)—to very severe with pronounced functional impairment.',
 
@@ -313,7 +313,7 @@ export const check3 = {
     {
       subHeading: 'Achievement of Personalized Treatment Goals: ',
       content:
-        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., youth who identified more outings or more interaction with peers as desired outcomes indicating meaningful response)?',
+        'Refer back to desired outcomes for treatment identified by/with youth at outset. Have personal goals for treatment been met (e.g., more outings, more interaction with peers)?',
     },
 
     {
@@ -672,7 +672,7 @@ export const Check2 = {
 
     {
       subHeading:
-        'Follow up with young people who miss appointments or stop engaging in cresponse is limited; for the MFQ,are.',
+        'Follow up with young people who miss appointments or stop engaging in care.',
       content: '',
     },
 

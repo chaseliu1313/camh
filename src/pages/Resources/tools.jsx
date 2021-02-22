@@ -256,7 +256,7 @@ const Video = () => {
         </VideoPanel>
         <VideoPanel>
           <ReactPlayer
-            url="https://www.youtube.com/watch?v=qMnQFTy3t30&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2s"
+            url="https://www.youtube.com/watch?v=qMnQFTy3t30&amp%3Blist=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&amp%3Bindex=2"
             playing={false}
             controls={true}
             width="90%"
