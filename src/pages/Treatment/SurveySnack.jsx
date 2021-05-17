@@ -7,7 +7,6 @@ import Heading, { Paragraph } from '../../components/Text/Heading';
 import { InputGroup } from 'react-bootstrap';
 const SurveySnackBar = () => {
   const [motion, setMotion] = useState(false);
-  const [selection, setSelection] = useState(false);
   const [checkboxesState, setCheckboxesState] = useState([false, false]);
   const AnimatedContainer = animated(Container);
 

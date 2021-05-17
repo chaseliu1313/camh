@@ -30,7 +30,7 @@ import {
 } from '../../theme/resource';
 import { useHistory } from 'react-router-dom';
 import { NotificationModal } from '../../components/NotificationModal';
-
+import SurveySnackBar from './SurveySnack';
 const TreatmentModal = lazy(() => import('./TreatmentModal'));
 const Severe = () => {
   const [showModal, setShowModal] = useState(false);
@@ -1078,6 +1078,7 @@ const Severe = () => {
         heading="Notice"
         content="If there has been no response, consider the moderate to severe pathway and refer youth to specialized youth mental health services. You will now be taken to the beginning of the moderate to severe pathway."
       />
+      <SurveySnackBar />
       <img src={bg} id="treatment_bg" alt="background" />
     </Container>
   );

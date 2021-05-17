@@ -4,7 +4,6 @@ import React, {
   Suspense,
   useCallback,
   useContext,
-  useEffect,
 } from 'react';
 import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
 import StepCard from '../../components/Cards/StepCard';
@@ -26,13 +25,11 @@ import {
   RESET_MILD_TREATMENT,
   SET_MILD_CLICKED,
   SET_SEVERE_CLICKED,
-  SET_SEEN_SURVEY,
 } from '../../store/actions';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NotificationModal } from '../../components/NotificationModal';
 import { useHistory } from 'react-router-dom';
-import SurveyModal from './Survey';
 import SurveySnackBar from './SurveySnack';
 
 const TreatmentModal = lazy(() => import('./TreatmentModal'));
