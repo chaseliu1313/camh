@@ -222,7 +222,7 @@ const Reference = () => {
 export default Reference;
 
 const Container = styled.div`
-  height: 100%;
+  height: 120%;
   width: 100%;
   overflow-y: hidden;
 `;

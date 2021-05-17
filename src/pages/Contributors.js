@@ -28,16 +28,18 @@ const DevelopmentTeam = () => {
         </CenterCol>
       </Row>
       <ListRow>
-        <Heading
-          size="3vmin"
-          weight="bold"
-          align="center"
-          color={SecondaryColor_Blk}
-          margin="0"
-        >
-          Cundill Centre for Child and Youth Depression, CAMH
-        </Heading>
-        <ListGroup variant="flush" borderColor={PrimaryColor}>
+        <ListGroup variant="flush" bordercolor={PrimaryColor}>
+          <ListGroupItem>
+            <Heading
+              size="3vmin"
+              weight="bold"
+              align="start"
+              color={SecondaryColor_Blk}
+              margin="0"
+            >
+              Cundill Centre for Child and Youth Depression, CAMH
+            </Heading>
+          </ListGroupItem>
           <ListGroupItem>
             <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
               Renira Narrandes, Knowledge Translation Specialist
@@ -71,16 +73,18 @@ const DevelopmentTeam = () => {
         </ListGroup>
       </ListRow>
       <ListRow>
-        <Heading
-          size="3vmin"
-          weight="bold"
-          align="center"
-          color={SecondaryColor_Blk}
-          margin="0"
-        >
-          Provincial System Support Program, CAMH
-        </Heading>
-        <ListGroup variant="flush" borderColor={SecondaryColor_Blu}>
+        <ListGroup variant="flush" bordercolor={SecondaryColor_Blu}>
+          <ListGroupItem>
+            <Heading
+              size="3vmin"
+              weight="bold"
+              align="start"
+              color={SecondaryColor_Blk}
+              margin="0"
+            >
+              Provincial System Support Program, CAMH
+            </Heading>
+          </ListGroupItem>
           <ListGroupItem>
             <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
               Mahfuz Hassan, BCBA, Instructional Designer
@@ -100,7 +104,7 @@ const DevelopmentTeam = () => {
         </ListGroup>
       </ListRow>
       <ListRow>
-        <ListGroup variant="flush" borderColor={SecondaryColor_Yel}>
+        <ListGroup variant="flush" bordercolor={SecondaryColor_Yel}>
           <ListGroupItem>
             <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
               Youth Engagement Initiative, supported by the Margaret and Wallace
@@ -111,10 +115,21 @@ const DevelopmentTeam = () => {
         </ListGroup>
       </ListRow>
       <ListRow>
-        <ListGroup variant="flush" borderColor={SecondaryColor_Tel}>
+        <ListGroup variant="flush" bordercolor={SecondaryColor_Tel}>
+          <ListGroupItem>
+            <Heading
+              size="3vmin"
+              weight="bold"
+              align="start"
+              color={SecondaryColor_Blk}
+              margin="0"
+            >
+              Design
+            </Heading>
+          </ListGroupItem>
           <ListGroupItem>
             <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
-              Chase Shuyang Liu, Web Developer
+              Chase, Shuyang Liu, Web Developer/Designer
             </Paragraph>
           </ListGroupItem>
         </ListGroup>
@@ -126,7 +141,7 @@ const DevelopmentTeam = () => {
 export default DevelopmentTeam;
 
 const Container = styled.div`
-  height: auto;
+  height: 130%;
   width: 100%;
   overflow: auto;
   padding: 5vmin 0;
@@ -147,7 +162,7 @@ const ListRow = styled(R)`
   padding: 0;
   overflow: hidden;
   height: fit-content;
-  margin: 2vmin auto;
+  margin: 3vmin auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -164,7 +179,7 @@ const CenterCol = styled(Col)`
 const ListGroup = styled(LG)`
   width: 50%;
   text-align: center;
-  ${({ borderColor }) => `
-  border-left: 5px solid ${borderColor};
+  ${({ bordercolor }) => `
+  border-left: 5px solid ${bordercolor};
   `}
 `;

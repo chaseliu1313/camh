@@ -5,6 +5,7 @@ import {
   RESET_MILD_TREATMENT,
   SET_MILD_CLICKED,
   SET_SEVERE_CLICKED,
+  SET_SEEN_SURVEY,
 } from './actions';
 import { Mild_initial_state, Sever_initial_state } from './store';
 
@@ -24,7 +25,9 @@ export const treatmentReducer = (state, action) => {
     case SET_SEVERE_CLICKED: {
       return { ...state, severeClickState: action.payload };
     }
-
+    case SET_SEEN_SURVEY: {
+      return { ...state, hasSeenSurvey: action.payload };
+    }
     default:
       return state;
   }

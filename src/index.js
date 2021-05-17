@@ -7,9 +7,8 @@ import * as serviceWorker from './serviceWorker';
 require('typeface-open-sans');
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
+
   document.getElementById('root')
 );
 

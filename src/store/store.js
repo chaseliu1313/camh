@@ -46,6 +46,7 @@ export const initialState = {
   severeClickState: SeverClicked,
   mildState: Mild_initial_state,
   mildClickState: MildClicked,
+  hasSeenSurvey: false,
 };
 
 export const TreatmentStore = (props) => {

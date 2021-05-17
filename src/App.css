@@ -3,7 +3,7 @@
   font-family: 'Open Sans', sans-serif;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .App-header {
@@ -248,7 +248,9 @@ a {
 }
 .carousel-indicators > li {
   background-color: #6e298d !important;
-  height: 1.2vmin !important;
+  height: 10px !important;
+  width: 30px !important;
+  margin: 0px 5px;
   border-radius: 5px !important;
 }
 
@@ -282,4 +284,12 @@ a {
 .slide-footnote {
   margin-left: 50%;
   text-align: center !important;
+}
+
+button.close {
+  background-color: rgba(202, 106, 214, 0.01);
+  border: none;
+  height: 40px;
+  width: 40px;
+  font-size: 30px;
 }

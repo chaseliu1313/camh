@@ -102,6 +102,7 @@ const NavLink = styled(Nav.Link)`
       ? ` background-color: #4a1961;
   padding: 7px 3px;
   border-radius: 10px;
+  height: 7vh;
   
   
   `

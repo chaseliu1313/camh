@@ -66,6 +66,15 @@
   }
 }
 
+#survey_modal {
+  min-width: 600px !important;
+}
+
+#survey_modal .modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
 #treatment_header > button {
   color: white;
 }

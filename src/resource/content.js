@@ -26,9 +26,9 @@ export const assessment1 = [
 ];
 
 export const video1 =
-  ' This short video features Tony, a youth who was referred to a social worker by his medical provider, due to concerns about depression and anxiety.  ';
+  ' Assessing for Depression in a Virtual Primary Care Appointment with a Young Person';
 export const video2 =
-  ' While you watch, think about what was helpful, and perhaps unhelpful, about the assessment approach. We will review afterwards. ';
+  ' Watch this short simulated video appointment, which demonstrates how a primary care provider can assess for depression in a young person. ';
 
 export const wentWell = [
   'Asked about a range of symptoms (e.g. feeling sad, feeling angry, lack of energy). ',
@@ -789,5 +789,30 @@ export const Assessment3 = [
       '· Mild depression with no response following 2-3 months of treatment',
       '· Other complicating factors (e.g., psychotic thinking, poor supports, school refusal, substance use, multiple diagnoses)',
     ],
+  },
+];
+
+export const ToolVideo1 = [
+  {
+    url: 'https://www.youtube.com/watch?v=6xONySz9XLk&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2&t=0s',
+    description: 'Mood Matters: Describing Depression',
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=qMnQFTy3t30&amp%3Blist=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&amp%3Bindex=2',
+    description:
+      'Mood Matters: How Food, Movement & Sleep Can Have an Impact on You',
+  },
+];
+
+export const ToolVideo2 = [
+  {
+    url: 'https://www.youtube.com/watch?v=XjYIqJ0jrLU',
+    description:
+      'Monitoring Mental Health: Using measurement tools to inform care for youth',
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=3B-kS49Bhw4',
+    description:
+      'Monitoring Mental Health: Using the Revised Children’s Anxiety and Depression Scale',
   },
 ];

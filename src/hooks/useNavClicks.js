@@ -26,13 +26,16 @@ export function useNavClicks(location) {
       case '/treatment/severe':
         return ['false', 'false', 'false', 'true', 'true', 'false'];
 
-      case '/tools':
+      case '/tools/video':
         return ['false', 'false', 'false', 'false', 'false', 'true'];
 
-      case '/help':
+      case '/resources/help':
         return ['false', 'false', 'false', 'false', 'false', 'true'];
 
-      case '/reference':
+      case '/resources/reference':
+        return ['false', 'false', 'false', 'false', 'false', 'true'];
+
+      case '/resources/crisisLines':
         return ['false', 'false', 'false', 'false', 'false', 'true'];
 
       default:

@@ -59,12 +59,12 @@ const Severe = () => {
 
       dispatch({ type: SET_SEVERE_CLICKED, payload: updatedClickState });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [state.severeClickState, dispatch]
   );
 
   const handleResponse = useCallback(
     (index) => {
-      console.log(state.severState);
       switch (index) {
         case 0:
           history.push('/treatment/psycosocialStrategies');

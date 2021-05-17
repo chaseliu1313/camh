@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Row as R, Col, ListGroup } from 'react-bootstrap';
 import { Switch, Route, useLocation } from 'react-router-dom';
@@ -10,69 +10,22 @@ import CR from '../../resource/CognitiveRestructuring.png';
 import MH from '../../resource/MedicationHandout.png';
 import MF from '../../resource/MoodFoundations.png';
 import PS from '../../resource/ProblemSolving.png';
+import RCADS from '../../resource/RCADSIntro.png';
 import ReactPlayer from 'react-player';
-
+import { ToolVideo1, ToolVideo2 } from '../../resource/content';
+import { routes, headings, useToolsPath } from '../../hooks/useToolsPath';
 import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 import PageIndicator from '../../components/PageIndicator';
+import ToolsVideo from './toolsVideo';
 import './resources.css';
-const path1 = ['/treatment', '/resources/tools'];
-const path2 = ['/resources/tools/video', '/resources/tools/medhandout'];
-const path3 = [
-  '/resources/tools/video',
-  '/resources/tools/problemSolvingVideo',
-];
-const path4 = [
-  '/resources/tools/problemSolvingVideo',
-  '/resources/tools/cognitive',
-];
-const path5 = [
-  '/resources/tools/problemSolving',
-  '/resources/tools/assessment',
-];
-const path6 = ['/resources/tools/cognitive', '/resources/help'];
-const path7 = [
-  '/resources/tools/medhandout',
-  '/resources/tools/problemSolving',
-];
-
-const routes = [
-  '/resources/tools/video',
-  '/resources/tools',
-  '/resources/tools/medhandout',
-  '/resources/tools/problemSolvingVideo',
-  '/resources/tools/problemSolving',
-  '/resources/tools/cognitive',
-  '/resources/tools/assessment',
-];
-const headings = [
-  'Short Animated Videos for Youth',
-  'Mood Foundations Package for Youth',
-  'Medication Handout for Youth',
-  'Problem Solving Worksheets',
-  'Cognitive Restructuring Worksheets',
-  'Assessment Tools',
-];
 
 const ReTools = ({ match }) => {
-  const [path, setPath] = useState(['/resources/tools/video', '/treatment']);
+  const { path, getPath, getHeading } = useToolsPath();
   const location = useLocation().pathname;
 
   useEffect(() => {
-    if (location === '/resources/tools') {
-      setPath(path2);
-    } else if (location === '/resources/tools/video') {
-      setPath(path1);
-    } else if (location === '/resources/tools/problemSolvingVideo') {
-      setPath(path7);
-    } else if (location === '/resources/tools/medhandout') {
-      setPath(path3);
-    } else if (location === '/resources/tools/problemSolving') {
-      setPath(path4);
-    } else if (location === '/resources/tools/cognitive') {
-      setPath(path5);
-    } else {
-      setPath(path6);
-    }
+    getPath(location);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   return (
@@ -85,12 +38,7 @@ const ReTools = ({ match }) => {
             align="center"
             color={SecondaryColor_Blk}
           >
-            {location === '/resources/tools/assessment'
-              ? 'Assessment Tools'
-              : location === '/resources/tools' ||
-                location === '/resources/tools/video'
-              ? 'Cundill Centre Tools - Psychoeducation'
-              : 'Cundill Centre Tools - Treatment'}
+            {getHeading(location)}
           </Heading>
         </CenterCol>
       </Row>
@@ -103,7 +51,7 @@ const ReTools = ({ match }) => {
               <div>
                 <IMG src={MF} alt="Mood Foundations Depression Fact Sheet" />
               </div>
-              <RightCol>
+              <RightCol position="center">
                 <Heading
                   size="3vmin"
                   weight="bold"
@@ -125,7 +73,7 @@ const ReTools = ({ match }) => {
                 >
                   <Button
                     primary={false}
-                    height="7vh"
+                    height="5vh"
                     width="20vw"
                     display
                     margin="25% 0 0 25%"
@@ -139,7 +87,16 @@ const ReTools = ({ match }) => {
             </ToolLayout>
           )}
         />
-        <Route exact path={match.path + '/video'} render={() => Video()} />
+        <Route
+          exact
+          path={match.path + '/video'}
+          render={() => (
+            <ToolsVideo
+              title="Short Animated Videos for Youth"
+              videoContent={ToolVideo1}
+            />
+          )}
+        />
         <Route
           exact
           path={match.path + '/medhandout'}
@@ -162,13 +119,28 @@ const ReTools = ({ match }) => {
         />
         <Route
           exact
+          path={match.path + '/assessment/animateVideos'}
+          render={() => (
+            <ToolsVideo
+              title="Short Animated Videos for Primary Care Providers"
+              videoContent={ToolVideo2}
+            />
+          )}
+        />
+        <Route
+          exact
+          path={match.path + '/assessment/RCADS'}
+          render={() => IntroRCADS()}
+        />
+        <Route
+          exact
           path={match.path + '/assessment'}
           render={() => AssessmentTools()}
         />
       </Switch>
       <Row style={{ height: 30 }} id="page_inde_row">
         <CenterCol md={{ span: 10, offset: 1 }}>
-          <PageIndicator routes={routes} titles={headings} />
+          <PageIndicator routes={routes.slice(1)} titles={headings} />
         </CenterCol>
       </Row>
       <Row id="btn_group_row">
@@ -184,9 +156,16 @@ const MedicalHandout = () => {
   return (
     <ToolLayout>
       <div>
-        <IMG src={MH} alt="Medication Handout for Youth" />
+        <a
+          href="https://www.camh.ca/-/media/files/medication-for-youth-resource-pdf.pdf"
+          target="_blank"
+          download
+          rel="noopener noreferrer"
+        >
+          <IMG src={MH} alt="Medication Handout for Youth" />
+        </a>
       </div>
-      <RightCol>
+      <RightCol position="center">
         <Heading
           size="3vmin"
           weight="bold"
@@ -209,7 +188,7 @@ const MedicalHandout = () => {
         >
           <Button
             primary={false}
-            height="7vh"
+            height="5vh"
             width="20vw"
             display
             margin="25% 0 0 25%"
@@ -224,66 +203,20 @@ const MedicalHandout = () => {
   );
 };
 
-const Video = () => {
-  return (
-    <>
-      <Heading
-        size="3vmin"
-        weight="bold"
-        align="center"
-        color={SecondaryColor_Blk}
-      >
-        Short Animated Videos for Youth
-      </Heading>
-      <VideoLayout>
-        <VideoPanel>
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=6xONySz9XLk&list=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&index=2&t=0s"
-            playing={false}
-            controls={true}
-            width="90%"
-          />
-          <Paragraph
-            color={SecondaryColor_Blk}
-            margin="0.5vmin"
-            padding="0"
-            size="2vmin"
-            weight="bold"
-            align="center"
-          >
-            Mood Matters: Describing Depression
-          </Paragraph>
-        </VideoPanel>
-        <VideoPanel>
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=qMnQFTy3t30&amp%3Blist=PL575uOcSFCuG88LZulnRfTchiDb6_HZUP&amp%3Bindex=2"
-            playing={false}
-            controls={true}
-            width="90%"
-          />
-          <Paragraph
-            color={SecondaryColor_Blk}
-            margin="0.5vmin"
-            padding="0"
-            size="2vmin"
-            weight="bold"
-            align="center"
-          >
-            Mood Matters: How Food, Movement & Sleep Can Have an Impact on You
-          </Paragraph>
-        </VideoPanel>
-      </VideoLayout>
-    </>
-  );
-};
-
 const ProblemSolving = () => {
   return (
     <ToolLayout>
       <div>
-        <IMG src={PS} alt="Problem Solving Worksheets" />
+        <a
+          href="https://www.camh.ca/-/media/files/problem-solving-worksheets-youth-pdf.pdf"
+          target="_blank"
+          download
+          rel="noopener noreferrer"
+        >
+          <IMG src={PS} alt="Problem Solving Worksheets" />
+        </a>
       </div>
-      <RightCol>
+      <RightCol position="center">
         <Heading
           size="3vmin"
           weight="bold"
@@ -305,7 +238,7 @@ const ProblemSolving = () => {
         >
           <Button
             primary={false}
-            height="7vh"
+            height="5vh"
             width="20vw"
             display
             margin="25% 0 0 25%"
@@ -353,9 +286,16 @@ const CognitiveRes = () => {
   return (
     <ToolLayout>
       <div>
-        <IMG src={CR} alt="Cognitive Restructuring Worksheets" />
+        <a
+          href="https://www.camh.ca/-/media/files/cognitive-restructuring-worksheets-youth-pdf.pdf"
+          target="_blank"
+          download
+          rel="noopener noreferrer"
+        >
+          <IMG src={CR} alt="Cognitive Restructuring Worksheets" />
+        </a>
       </div>
-      <RightCol>
+      <RightCol position="center">
         <Heading
           size="3vmin"
           weight="bold"
@@ -377,7 +317,7 @@ const CognitiveRes = () => {
         >
           <Button
             primary={false}
-            height="7vh"
+            height="5vh"
             width="20vw"
             display
             margin="25% 0 0 25%"
@@ -392,13 +332,68 @@ const CognitiveRes = () => {
   );
 };
 
+const IntroRCADS = () => {
+  return (
+    <ToolLayout>
+      <div>
+        <a
+          href="https://www.camh.ca/-/media/files/rcads-quick-guide-pdf.pdf"
+          target="_blank"
+          download
+          rel="noopener noreferrer"
+        >
+          <IMG
+            src={RCADS}
+            alt="Quick Guide to the Revised Children’s Anxiety and Depression Scale (RCADS)"
+          />
+        </a>
+      </div>
+      <RightCol>
+        <Heading
+          size="3vmin"
+          weight="bold"
+          align="center"
+          color={SecondaryColor_Blk}
+        >
+          Quick Guide to the Revised Children’s Anxiety and Depression Scale
+        </Heading>
+        <Paragraph color={SecondaryColor_Blk}>
+          Learn more about the Revised Children’s Anxiety and Depression Scale
+          (RCADS) in our Quick Guide, which outlines how the questionnaire is
+          administered and scored. This tool also proposes a way of using RCADS
+          scores to calculate indicators of change, such as response, remission,
+          recovery, relapse, and recurrence.
+        </Paragraph>
+
+        <a
+          href="https://www.camh.ca/-/media/files/rcads-quick-guide-pdf.pdf"
+          target="_blank"
+          download
+          rel="noopener noreferrer"
+        >
+          <Button
+            primary={false}
+            height="5vh"
+            width="20vw"
+            display
+            margin="25% 0 0 25%"
+          >
+            <Paragraph size="3vmin" color="white">
+              Download
+            </Paragraph>
+          </Button>
+        </a>
+      </RightCol>
+    </ToolLayout>
+  );
+};
 const AssessmentTools = () => {
   return (
     <ListRow>
       <ListGroup horizontal="lg" className="at_list">
         <ListGroup.Item action variant="info">
           <a
-            href="https://www.corc.uk.net/outcome-experience-measures/mood-and-feelings-questionnaire/"
+            href="https://devepi.duhs.duke.edu/measures/the-mood-and-feelings-questionnaire-mfq/"
             target="_blank"
             download
             rel="noopener noreferrer"
@@ -417,7 +412,7 @@ const AssessmentTools = () => {
       <ListGroup horizontal="lg" className="at_list">
         <ListGroup.Item action variant="info">
           <a
-            href="https://www.corc.uk.net/outcome-experience-measures/revised-childrens-anxiety-and-depression-scale-and-subscales/"
+            href="https://www.childfirst.ucla.edu/resources/"
             target="_blank"
             download
             rel="noopener noreferrer"
@@ -463,7 +458,7 @@ export default ReTools;
 const Container = styled.div`
   height: 100%;
   width: 100%;
-  overflow-y: hidden;
+  padding-top: 25px;
 `;
 
 const Row = styled(R)`
@@ -495,16 +490,22 @@ const IMG = styled.img`
 `;
 
 const RightCol = styled.div`
-  height: fit-content;
+  height: 90%;
   width: 70%;
-  padding: 3vmin;
+  padding: 20px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   background-color: ${BackgroundColor};
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  ${({ position }) =>
+    position === 'center'
+      ? `justify-content: center;`
+      : `justify-content: flex-start;`}
   align-items: center;
+  & > p {
+    margin: 0 0 25px 0;
+  }
 `;
 
 const RightVideoCol = styled.div`

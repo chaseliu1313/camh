@@ -19,18 +19,18 @@ import bg3 from '../resource/illu3.svg';
 import bg4 from '../resource/illu4.svg';
 import bg5 from '../resource/illu5.svg';
 import fs from '../resource/factsheet.png';
+const MarginP = '20px 0 20px 0';
+const fontWeight = 'normal';
+const titles = [
+  'Orientation to the Tool',
+  'Depression in Teens Overview',
+  ' Depression Fact Sheet',
+];
 
 export default function Hightlights() {
   const [bgKey, updateKey] = useState(1);
   const inv = 10000;
   const [mounted, setMounted] = useState(false);
-  const MarginP = '20px 0 20px 0';
-  const fontWeight = 'normal';
-  const titles = [
-    'Orientation to the Tool',
-    'Depression in Teens Overview',
-    ' Depression Fact Sheet',
-  ];
 
   //set active title hook
   const [activeTitle, setActive] = useState(titles[0]);
@@ -46,7 +46,7 @@ export default function Hightlights() {
   useCallback(() => {
     let active = titles[bgKey];
     setActive(active);
-  }, [bgKey, setActive, titles]);
+  }, [bgKey, setActive]);
 
   return (
     <Main bgKey={bgKey} mounted={mounted}>

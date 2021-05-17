@@ -11,14 +11,13 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 const PageIndicator = (props) => {
   const { routes, titles } = props;
   const location = useLocation().pathname;
-  console.log(location);
 
   return (
     <Container>
       {routes.map((route, index) => (
         <OverlayTrigger
           placement="top"
-          key={titles[index]}
+          key={index}
           delay={{ show: 250, hide: 400 }}
           overlay={
             <Tooltip
@@ -30,7 +29,10 @@ const PageIndicator = (props) => {
             </Tooltip>
           }
         >
-          <Link to={route} current={route === location}></Link>
+          <Link
+            to={route}
+            current={route === location ? 'true' : 'false'}
+          ></Link>
         </OverlayTrigger>
       ))}
     </Container>
@@ -58,8 +60,10 @@ const Link = styled(L)`
     background-color: ${PrimaryColor};
   }
   ${({ current }) => `
-  width: ${current ? '20px' : '15px'};
-  height: ${current ? '20px' : '15px'};
-  background-color:  ${current ? SecondaryColor_Tel : TertiaryColor_Tel};;
+  width: ${current === 'true' ? '20px' : '15px'};
+  height: ${current === 'true' ? '20px' : '15px'};
+  background-color:  ${
+    current === 'true' ? SecondaryColor_Tel : TertiaryColor_Tel
+  };;
   `}
 `;

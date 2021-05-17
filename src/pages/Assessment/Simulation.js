@@ -19,7 +19,8 @@ export default function Simulation(props) {
   //play video hook
   const [play, setPlay] = useState(false);
 
-  const videoURL = 'https://www.youtube.com/watch?v=Gm3FLGxb2ZU&t=1s';
+  const videoURL = 'https://www.youtube.com/watch?v=NRKvtacOVfw';
+
   const MarginP = '20px 0 20px 0';
 
   useEffect(() => {
@@ -56,6 +57,7 @@ export default function Simulation(props) {
             onPlay={() => {
               hideNotes();
             }}
+            height="100%"
             width="100%"
             onEnded={() => {
               showNotes();
@@ -63,7 +65,7 @@ export default function Simulation(props) {
           />
         </Col>
         <Col md={6} xs={12}>
-          <Card height="50vh" width="auto" padding="20px">
+          <Card height="35vh" width="auto" padding="20px">
             <div className="assess_simu_side">
               <Paragraph color={SecondaryColor_Blk} margin={MarginP}>
                 {video1}
@@ -73,7 +75,7 @@ export default function Simulation(props) {
               </Paragraph>
               <Button
                 primary
-                display
+                display={false}
                 height="7vh"
                 width="20vw"
                 onClick={() => showNotes()}
@@ -90,10 +92,11 @@ export default function Simulation(props) {
 }
 
 const Container = styled.div`
-  height: auto;
+  height: 50vh;
   width: 100%;
   overflow: hidden;
   padding: 6vmin 6vmin 2vmin 6vmin;
+  margin-top: 10vmin;
   overflow: hidden;
   transition: all 1s linear;
   justify-content: center;
