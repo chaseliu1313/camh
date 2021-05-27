@@ -8,7 +8,7 @@
 
 .App-header {
   background-color: #6e298d;
-  min-height: 8vh;
+  height: 75px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,13 +82,20 @@ a {
     width: 80vw !important;
   }
   .App-header {
-    height: auto;
+    height: 60px;
+  }
+  .navbar-collapse.show {
+    background-color: #6e298d;
+    width: 100vw;
+  }
+  .navbar-nav {
+    background-color: #6e298d;
   }
 }
 
 @media screen and (min-width: 768px) {
   .navbar_core {
-    align-items: baseline;
+    align-items: center;
   }
 }
 @media screen and (max-width: 425px) {
@@ -104,25 +111,40 @@ a {
 .nav-item a {
   color: white !important;
   text-decoration: none !important;
-  font-size: 2.5vh;
+  font-size: 24px;
   text-transform: uppercase;
   font-weight: 100;
+  display: unset;
 }
+
+.nav-dropdown-item.dropdown-item:hover {
+  background-color: #6e298d;
+}
+
 .dropdown-menu {
   background-color: #4a1961 !important;
 }
-
-.nav-link:hover,
-.nav-link:active,
-.navbar_dropdown:hover {
+.dropdown.nav-item {
   padding: 7px 3px;
+  margin: 0 10px;
+}
+
+.nav-link {
+  padding: 7px 3px;
+  margin: 0 10px;
+}
+.nav-link:hover,
+.nav-link:active {
   border-radius: 10px;
   background-color: #4a1961 !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .nav-item:hover {
   border-radius: 10px;
   background-color: #4a1961;
+}
+#navbar_dropdown {
+  padding: 0.2rem 0.2rem;
+  margin: 0 10px;
 }
 
 .nav-item {
@@ -218,7 +240,7 @@ a {
 }
 
 .ov_slide {
-  height: 65vh;
+  height: 60vh;
   width: 100%;
   border-radius: 10px;
   padding: 30px;
@@ -226,9 +248,15 @@ a {
   text-align: center;
   cursor: pointer;
   background-color: #f7f7f7;
-  overflow-y: auto;
+  overflow: hidden;
   transition: all ease-in-out 2s;
 }
+@media screen and (max-width: 768px) {
+  .ov_slide {
+    overflow-y: auto;
+  }
+}
+
 .ov_carousel:hover {
   transform: scale(1.05);
   transition: all 0.7s;
@@ -271,6 +299,7 @@ a {
 
 #hightlight_inner3 {
   height: 30vh;
+  margin-top: 100px;
 }
 #hightlight_inner3 > div {
   height: 100%;
@@ -284,6 +313,7 @@ a {
 .slide-footnote {
   margin-left: 50%;
   text-align: center !important;
+  margin-top: 20% !important;
 }
 
 button.close {
@@ -292,4 +322,8 @@ button.close {
   height: 40px;
   width: 40px;
   font-size: 30px;
+}
+
+#checkbox_no:checked {
+  color: red !important;
 }

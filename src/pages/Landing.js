@@ -8,6 +8,7 @@ import Anime from 'react-anime';
 import { useHistory } from 'react-router-dom';
 import { size } from '../theme/resource';
 import { landingContent } from '../resource/content';
+import { fontSize, margin } from '../theme/resource';
 
 export default function Landing() {
   let history = useHistory();
@@ -53,12 +54,21 @@ export default function Landing() {
       <Row>
         <LeftCol md={6} xs={12}>
           <Anime {...animePropsLeft1}>
-            <Heading type="h1" weight="bold" color="white" size="5vmin">
+            <Heading
+              type="h1"
+              weight="bold"
+              color="white"
+              size={fontSize.title}
+            >
               {landingContent[0]}
             </Heading>
           </Anime>
           <Anime {...animePropsLeft2}>
-            <Paragraph color="white" size="2.5vmin">
+            <Paragraph
+              color="white"
+              size={fontSize.subTitle}
+              margin={`${margin}px 0`}
+            >
               {landingContent[1]}
             </Paragraph>
             <div id="landing_sub">

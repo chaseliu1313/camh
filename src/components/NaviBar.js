@@ -48,10 +48,10 @@ export default function NaviBar() {
               id="navbar_dropdown"
               navclicked={clicked[3] || clicked[4]}
             >
-              <NavDropdown.Item as="div" className="nav-link">
+              <NavDropdown.Item as="div" className="nav-dropdown-item">
                 <Link to="/treatment/mild">Mild Depression</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-link">
+              <NavDropdown.Item as="div" className="nav-dropdown-item">
                 <Link to="/treatment/severe">Moderate/Severe Depression</Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -61,16 +61,16 @@ export default function NaviBar() {
               id="navbar_dropdown"
               navclicked={clicked[5]}
             >
-              <NavDropdown.Item as="div" className="nav-link">
+              <NavDropdown.Item as="div" className="nav-dropdown-item">
                 <Link to="/resources/tools/video">Tools</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-link">
+              <NavDropdown.Item as="div" className="nav-dropdown-item">
                 <Link to="/resources/help">Local Help</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-link">
+              <NavDropdown.Item as="div" className="nav-dropdown-item">
                 <Link to="/resources/crisisLines">Crisis Lines</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-link">
+              <NavDropdown.Item as="div" className="nav-dropdown-item">
                 <Link to="/resources/reference">References</Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -83,11 +83,11 @@ export default function NaviBar() {
 
 const Container = styled(C)`
   width: 100%;
-  height: 8vh;
+  height: 75px;
   margin: 0;
   @media (max-width: 768px) {
     height: auto;
-    min-height: 8vh;
+    min-height: 60px;
   }
   top: 0;
   position: fixed;
@@ -100,11 +100,11 @@ const NavLink = styled(Nav.Link)`
   ${({ navclicked }) =>
     navclicked === 'true'
       ? ` background-color: #4a1961;
-  padding: 7px 3px;
   border-radius: 10px;
-  height: 7vh;
+  height: 80%;
   
-  
+   
+   
   `
       : ``}
 `;
@@ -113,8 +113,9 @@ const NavDropdown = styled(D)`
   ${({ navclicked }) =>
     navclicked === 'true'
       ? ` background-color: #4a1961;
-  padding: 0.2rem 0.5rem;
+ 
   border-radius: 10px;
+  height: 80%;
   
   
   `
@@ -124,10 +125,10 @@ const NavDropdown = styled(D)`
 const Navbar = styled(N)`
   width: 100%;
   background-color: ${PrimaryColor};
-  height: 8vh;
+  height: 75px;
   
   @media (max-width: 768px) {
-    height: auto;
+    height: 60px;
     
   }
 

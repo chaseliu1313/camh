@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor_Blk } from '../../theme/resource';
+import {
+  PrimaryColor,
+  SecondaryColor_Blk,
+  fontSize,
+} from '../../theme/resource';
 
 export default function Heading({
   color,
@@ -37,7 +41,7 @@ export function Paragraph({
   color,
   lineHeight,
   weight = 300,
-  size = '3vmin',
+  size = fontSize.p,
   align,
   margin,
   padding,
@@ -66,7 +70,7 @@ export function SubText({
   color = SecondaryColor_Blk,
   lineHeight,
   weight = 200,
-  size = '1.8vmin',
+  size = fontSize.subtext,
   margin,
   padding,
   children,
@@ -96,7 +100,7 @@ const Text = styled.p`
   ${({ color, lineHeight, weight, size, align, margin, padding }) => `
     text-align: ${align || 'start'};
     color: ${color || PrimaryColor};
-    font-size: ${size || '10vmin'};
+    font-size: ${size || fontSize.title};
     line-height: ${lineHeight || 1.5};
     font-weight: ${weight || 'normal'};
     margin: ${margin || 'auto'};

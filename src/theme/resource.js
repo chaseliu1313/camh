@@ -31,6 +31,14 @@ export const PrimaryGradient = [
   DarkPurple,
 ];
 
+export const fontSize = {
+  subtext2: '14px',
+  subtext: '18px',
+  p: '21px',
+  subTitle: '23px',
+  title: '46px',
+};
+
 const colorPaletteSecondary = [
   SecondaryColor_Tel,
   SecondaryColor_Yel,
@@ -59,6 +67,8 @@ export const colorPalette = (plate) => {
     return all[r];
   }
 };
+
+export const margin = 16;
 
 //media queries
 export const size = {

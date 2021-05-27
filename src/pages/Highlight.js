@@ -12,6 +12,7 @@ import {
   TertiaryColor_Bro,
 } from '../theme/resource';
 import { highlightsContent } from '../resource/content';
+import { fontSize, margin } from '../theme/resource';
 
 import bg1 from '../resource/illu1.svg';
 import bg2 from '../resource/illu2.svg';
@@ -19,7 +20,7 @@ import bg3 from '../resource/illu3.svg';
 import bg4 from '../resource/illu4.svg';
 import bg5 from '../resource/illu5.svg';
 import fs from '../resource/factsheet.png';
-const MarginP = '20px 0 20px 0';
+const MarginP = '40px 0';
 const fontWeight = 'normal';
 const titles = [
   'Orientation to the Tool',
@@ -54,10 +55,10 @@ export default function Hightlights() {
         <CenterCol md={{ span: 8, offset: 2 }}>
           <Heading
             color={SecondaryColor_Blk}
-            size="5vmin"
+            size={fontSize.title}
             weight="bold"
             align="center"
-            margin="5vmin 0 -2vmin 0"
+            margin={`${margin}px 0`}
             type="h1"
           >
             {activeTitle}
@@ -80,6 +81,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  size={fontSize.subTitle}
                 >
                   {highlightsContent[0]}
                 </Paragraph>
@@ -87,6 +89,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  size={fontSize.subTitle}
                 >
                   {highlightsContent[1]}
                 </Paragraph>
@@ -94,6 +97,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  size={fontSize.subTitle}
                 >
                   ·The content provides a step-by-step assessment and treatment
                   pathway for youth depression and is based on our&nbsp;
@@ -125,6 +129,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  size={fontSize.subTitle}
                 >
                   {highlightsContent[7]}
                 </Paragraph>
@@ -132,6 +137,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  size={fontSize.subTitle}
                 >
                   {highlightsContent[8]}
                 </Paragraph>
@@ -139,6 +145,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  size={fontSize.subTitle}
                 >
                   {highlightsContent[9]}
                 </Paragraph>
@@ -146,6 +153,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  size={fontSize.subTitle}
                 >
                   {highlightsContent[10]}
                 </Paragraph>
@@ -158,6 +166,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
+                  size={fontSize.subTitle}
                 >
                   {highlightsContent[3]}
                 </Paragraph>
