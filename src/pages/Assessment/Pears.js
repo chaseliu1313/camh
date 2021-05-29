@@ -8,6 +8,7 @@ import { SecondaryColor_Blk, TertiaryColor_Tel } from '../../theme/resource';
 import Button from '../../components/Buttons/Buttons';
 import { useHistory } from 'react-router-dom';
 import idea from '../../resource/idea.svg';
+import { fontSize, margin } from '../../theme/resource';
 
 const Pears = () => {
   //handlers to routes
@@ -24,20 +25,20 @@ const Pears = () => {
   return (
     <Container>
       <Heading
-        size="5vmin"
+        size={fontSize.title}
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
-        margin="15px 0"
+        margin={`${margin}px 0 ${margin * 1.5}px 0`}
         id="assess_landing"
       >
         Assessment Pearls
       </Heading>
       <Col lg={{ span: 8, offset: 2 }}>
         <Carousel className="pearl_card" interval={inv}>
-          <Carousel.Item className="ov_slide" id="pearl_slide">
+          <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="0">
             <Heading
-              size="3vmin"
+              size={fontSize.title2}
               weight="bold"
               align="center"
               color={SecondaryColor_Blk}
@@ -61,9 +62,9 @@ const Pears = () => {
               {pears[6]}
             </Paragraph>
           </Carousel.Item>
-          <Carousel.Item className="ov_slide" id="pearl_slide">
+          <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="1">
             <Heading
-              size="3vmin"
+              size={fontSize.title2}
               weight="bold"
               align="center"
               color={SecondaryColor_Blk}
@@ -94,9 +95,9 @@ const Pears = () => {
               {pears[2]}
             </Paragraph>
           </Carousel.Item>
-          <Carousel.Item className="ov_slide" id="pearl_slide">
+          <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="2">
             <Heading
-              size="3vmin"
+              size={fontSize.title2}
               weight="bold"
               align="center"
               color={SecondaryColor_Blk}

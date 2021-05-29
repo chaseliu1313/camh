@@ -18,6 +18,7 @@ export default function Heading({
   children,
   id,
   className,
+  tabIndex = 0,
 }) {
   return (
     <Text
@@ -31,6 +32,7 @@ export default function Heading({
       padding={padding}
       id={id}
       className={className}
+      tabIndex={tabIndex}
     >
       {children}
     </Text>
@@ -48,6 +50,7 @@ export function Paragraph({
   children,
   id,
   className,
+  tabIndex = 0,
 }) {
   return (
     <Text
@@ -60,6 +63,7 @@ export function Paragraph({
       padding={padding}
       id={id}
       className={className}
+      tabIndex={tabIndex}
     >
       {children}
     </Text>
@@ -77,6 +81,7 @@ export function SubText({
   opacity,
   id,
   className,
+  tabIndex = 0,
 }) {
   return (
     <SText
@@ -89,6 +94,7 @@ export function SubText({
       padding={padding}
       id={id}
       className={className}
+      tabIndex={tabIndex}
     >
       {children}
     </SText>

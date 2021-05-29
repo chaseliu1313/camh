@@ -36,6 +36,7 @@ export const fontSize = {
   subtext: '18px',
   p: '21px',
   subTitle: '23px',
+  title2: '28px',
   title: '46px',
 };
 

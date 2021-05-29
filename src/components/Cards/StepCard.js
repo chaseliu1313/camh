@@ -24,6 +24,8 @@ const StepCard = React.memo(function StepCard({
   cursor = 'true',
   showBadge = 'false',
   flex,
+  onKeyPress,
+  tabIndex = 0,
 }) {
   const [mounted, setMounted] = useState(false);
   const [show, setShowBadge] = useState(showBadge !== 'false');
@@ -59,7 +61,9 @@ const StepCard = React.memo(function StepCard({
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}
       cursor={cursor.toString()}
+      onKeyPress={onKeyPress}
       flex={flex}
+      tabIndex={tabIndex}
     >
       {children}
       <Badge showBadge={show}>Read More</Badge>
@@ -228,6 +232,20 @@ const Button = styled.button`
       : `2px solid ${Error_R}`};
 
   &:hover {
+    background: ${(props) =>
+      props.unSelect === true
+        ? 'grey'
+        : props.color === 'green'
+        ? Correct_G_Hover
+        : Error_R_Hover};
+    border: ${(props) =>
+      props.unSelect === true
+        ? 'grey'
+        : props.color === 'green'
+        ? `2px solid ${Correct_G_Hover}`
+        : `2px solid ${Error_R_Hover}`};
+  }
+  &:focus {
     background: ${(props) =>
       props.unSelect === true
         ? 'grey'

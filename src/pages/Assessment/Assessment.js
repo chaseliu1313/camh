@@ -8,7 +8,7 @@ import SocialNetworks from './SocialNetwork';
 import Button from '../../components/Buttons/Buttons';
 import { TertiaryColor_Tel, SecondaryColor_Blk } from '../../theme/resource';
 import { useHistory } from 'react-router-dom';
-
+import { fontSize, margin } from '../../theme/resource';
 export default function Assessment() {
   const initialState = [false, true, true];
   const [btnAppeal, setDisplay] = useState(false);
@@ -47,11 +47,11 @@ export default function Assessment() {
   return (
     <Container id="assess_landing">
       <Heading
-        size="5vmin"
+        size={fontSize.title}
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
-        margin="s5vmin 0 -3vmin 0"
+        margin={`${margin}px 0`}
         type="h1"
       >
         Tips for Assessing Depressed Youth

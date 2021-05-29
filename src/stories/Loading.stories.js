@@ -9,4 +9,4 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-export const Default = () => <Loading loading={true}></Loading>;
+export const Default = () => <Loading loading={'true'}></Loading>;

@@ -10,6 +10,7 @@ import { enterAni, exitAni } from '../../theme/animation';
 import { SecondaryColor_Blk } from '../../theme/resource';
 import Button from '../../components/Buttons/Buttons';
 import Loading from '../../components/Loading';
+import { fontSize, margin } from '../../theme/resource';
 const DSM = lazy(() => import('./DSM'));
 
 export default function Intro(props) {
@@ -26,14 +27,18 @@ export default function Intro(props) {
   return (
     <Container id="assess_intro" hide={hide}>
       <Card height="60vh" width="80vw" padding="50px">
-        <Paragraph weight="bold" size="3vmin" color={SecondaryColor_Blk}>
+        <Paragraph
+          weight="bold"
+          size={fontSize.title2}
+          color={SecondaryColor_Blk}
+        >
           {assessment1[0]}
         </Paragraph>
         <Row className="assess_intro_row2">
           <Col md={8}>
             <Paragraph
               weight="normal"
-              size="3vmin"
+              size={fontSize.subTitle}
               color={SecondaryColor_Blk}
               margin={MarginP}
             >
@@ -41,7 +46,7 @@ export default function Intro(props) {
             </Paragraph>
             <Paragraph
               weight="normal"
-              size="3vmin"
+              size={fontSize.subTitle}
               color={SecondaryColor_Blk}
               margin={MarginP}
             >
@@ -49,13 +54,15 @@ export default function Intro(props) {
             </Paragraph>
             <Paragraph
               weight="normal"
-              size="3vmin"
+              size={fontSize.subTitle}
               color={SecondaryColor_Blk}
               margin={MarginP}
             >
               {assessment1[3]}
             </Paragraph>
-            <SubText size="2.5vmin">{assessment1[4]}</SubText>
+            <SubText margin={`${margin * 4}px 0 0 0`} size="2.5vmin">
+              {assessment1[4]}
+            </SubText>
             <Button
               primary={false}
               type=" "
@@ -75,7 +82,7 @@ export default function Intro(props) {
         </Row>
         <Row className="assess_intro_row3"></Row>
       </Card>
-      <Suspense fallback={<Loading loading={true} />}>
+      <Suspense fallback={<Loading loading={'true'} />}>
         <DSM show={showModal} onClose={setShowModeal} />
       </Suspense>
     </Container>
@@ -86,7 +93,7 @@ const Container = styled.div`
   height: auto;
   width: 100%;
   overflow: hidden;
-  padding: 6vmin 6vmin 2vmin 6vmin;
+  padding: 3vmin 6vmin 2vmin 6vmin;
   overflow: hidden;
   transition: all 1s linear;
   ${({ hide }) =>
@@ -99,7 +106,7 @@ const Container = styled.div`
       : css`
           animation: ${enterAni} 0.5s linear;
           animation-fill-mode: forwards;
-          diplay: flex;
+          display: flex;
         `}
 `;
 

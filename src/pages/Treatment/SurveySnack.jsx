@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { PrimaryColor, BackgroundColor } from '../../theme/resource';
-import surveyImg from '../../resource/customer_survey.svg';
+import surveyImg from '../../resource/survey.svg';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import { InputGroup } from 'react-bootstrap';
 const SurveySnackBar = () => {
@@ -68,7 +68,15 @@ const SurveySnackBar = () => {
           <Paragraph size="16px">No</Paragraph>
         </Checkboxes>
         <Paragraph weight="normal" size="2vmin">
-          Tell us more? Complete our 5 minute survey
+          Tell us more? Complete our{' '}
+          <a
+            className="ov_a"
+            href="https://edc.camhx.ca/redcap/surveys/?s=7JHE89NFRF"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            5-minute survey.
+          </a>
         </Paragraph>
       </Left>
 

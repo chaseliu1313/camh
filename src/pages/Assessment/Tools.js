@@ -6,7 +6,7 @@ import { Row, Col } from 'react-bootstrap';
 import styled, { css } from 'styled-components';
 import { exitAni2, enterAni3 } from '../../theme/animation';
 import SeverityCard from './Severity';
-
+import { fontSize, margin } from '../../theme/resource';
 import { tools, toolLink1, toolLink2 } from '../../resource/content';
 import {
   SecondaryColor_Blk,
@@ -65,17 +65,17 @@ const Tools = () => {
   return (
     <Container id="assess_landing">
       <Heading
-        size="5vmin"
+        size={fontSize.title}
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
-        margin="15px 0 "
+        mmargin={`${margin}px 0 ${margin * 1.5}px 0`}
       >
         {show ? 'Assessing Depression Severity' : 'Assessment Tools'}
       </Heading>
-      <div id="tools_views">
+      <div id="tools_views" tabIndex="0">
         <SubContainer show={!show}>
-          <Card height="70vh" width="80vw" padding="50px 20px">
+          <Card height="50vh" width="80vw" padding="50px 20px">
             <Paragraph
               margin={Pmarging}
               color={SecondaryColor_Blk}
@@ -83,7 +83,10 @@ const Tools = () => {
             >
               {tools[0] + tools[1]}
             </Paragraph>
-            <Paragraph margin={Pmarging} color={SecondaryColor_Blk}>
+            <Paragraph
+              margin={`${margin}px 0 ${margin * 2.5}px 0`}
+              color={SecondaryColor_Blk}
+            >
               {tools[2]}
             </Paragraph>
             <Row>
@@ -97,11 +100,15 @@ const Tools = () => {
                   }}
                   onMouseOver={() => mouseOver(0)}
                   onMouseOut={() => mouseOut(0)}
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter') mouseOver(0);
+                  }}
+                  tabIndex="0"
                 >
                   <Heading
                     type="h1"
                     weight="normal"
-                    size="3vmin"
+                    size={fontSize.title2}
                     color="white"
                     align="center"
                   >
@@ -120,11 +127,15 @@ const Tools = () => {
                   }}
                   onMouseOver={() => mouseOver(1)}
                   onMouseOut={() => mouseOut(1)}
+                  tabIndex="1"
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter') mouseOver(1);
+                  }}
                 >
                   <Heading
                     type="h1"
                     weight="normal"
-                    size="3vmin"
+                    size={fontSize.title2}
                     color="white"
                     align="center"
                   >
@@ -179,7 +190,6 @@ const SubContainer = styled.div`
   height: 100%;
   width: 100%;
   overflow: hidden;
-
   transition: all 1s linear;
 
   ${({ show }) =>

@@ -10,6 +10,7 @@ export default function Card({
   children,
   className,
   bgColor,
+  tabIndex = 0,
 }) {
   return (
     <Container
@@ -19,6 +20,7 @@ export default function Card({
       padding={padding}
       className={className}
       bgColor={bgColor}
+      tabIndex={tabIndex}
     >
       {children}
     </Container>

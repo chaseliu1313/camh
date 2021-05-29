@@ -76,7 +76,7 @@ export default function Hightlights() {
             }}
           >
             <Carousel.Item className="ov_slide" id="ov_slide_1">
-              <div>
+              <div tabIndex="0">
                 <Paragraph
                   margin={MarginP}
                   color={SecondaryColor_Blk}
@@ -124,7 +124,7 @@ export default function Hightlights() {
               </div>
             </Carousel.Item>
             <Carousel.Item className="ov_slide" id="ov_slide_3">
-              <div>
+              <div tabIndex="1">
                 <Paragraph
                   margin={MarginP}
                   color={SecondaryColor_Blk}
@@ -160,7 +160,7 @@ export default function Hightlights() {
                 <SubText className="slide-footnote">2/3</SubText>
               </div>
             </Carousel.Item>
-            <Carousel.Item className="ov_slide">
+            <Carousel.Item className="ov_slide" tabIndex="2">
               <div id="ov_slide_5">
                 <Paragraph
                   margin={MarginP}

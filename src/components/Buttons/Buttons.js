@@ -40,6 +40,7 @@ export default function Button({
       href={href}
       display={display.toString()}
       dark={dark}
+      tabIndex={primary ? 0 : 1}
     >
       {children}
     </Btn>
@@ -78,7 +79,9 @@ const Btn = styled.button`
   min-width: 64px;
   text-align: center;
   outline: none;
-  font-size: 0.875rem;
+  > p {
+    font-size: 21px !important;
+  }
   box-shadow: 0 0 4px #999;
   ${({
     height,

@@ -52,7 +52,7 @@ export default function Landing() {
   return (
     <Main>
       <Row>
-        <LeftCol md={6} xs={12}>
+        <LeftCol md={6} xs={12} tabIndex="0">
           <Anime {...animePropsLeft1}>
             <Heading
               type="h1"
@@ -84,7 +84,7 @@ export default function Landing() {
             </Button>
           </Anime>
         </LeftCol>
-        <RightCol md={6} xs={12}>
+        <RightCol md={6} xs={12} tabIndex="1">
           <Anime {...animePropsRight}>
             <IMG
               src={Teens}
