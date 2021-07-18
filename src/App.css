@@ -240,7 +240,7 @@ a {
 }
 
 .ov_slide {
-  height: 60vh;
+  height: 100%;
   width: 100%;
   border-radius: 10px;
   padding: 30px;
@@ -255,7 +255,10 @@ a {
   .ov_slide {
     overflow-y: auto;
   }
+  
 }
+
+
 
 .ov_carousel:hover {
   transform: scale(1.05);
@@ -305,6 +308,8 @@ a {
   height: 100%;
 }
 
+
+
 .spacing {
   width: 100%;
   height: 100%;
@@ -314,6 +319,26 @@ a {
   margin-left: 50%;
   text-align: center !important;
   margin-top: 20% !important;
+}
+
+@media screen and (max-height: 800px) {
+  .ov_carousel {
+    height: 55vh;
+   
+  }
+  .ov_slide {
+    overflow-y: auto;
+    height: 55vh;
+  }
+  #hightlight_inner3 {
+    margin-top: 5%;
+  }
+  .slide-footnote {
+    margin-left: 50%;
+    text-align: center !important;
+    margin-top: 5px !important;
+  }
+  
 }
 
 button.close {

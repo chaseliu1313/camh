@@ -8,8 +8,9 @@ import './assessment.css';
 import { enterAni, exitAni } from '../../theme/animation';
 import ReactPlayer from 'react-player';
 import { video1, video2 } from '../../resource/content';
-import { SecondaryColor_Blk } from '../../theme/resource';
+import { fontSize, SecondaryColor_Blk } from '../../theme/resource';
 import Button from '../../components/Buttons/Buttons';
+import { useWindowResize } from '../../hooks/useWindowResize';
 
 export default function Simulation(props) {
   //show page hook
@@ -19,6 +20,7 @@ export default function Simulation(props) {
   //play video hook
   const [play, setPlay] = useState(false);
 
+  const { size } = useWindowResize();
   const videoURL = 'https://www.youtube.com/watch?v=NRKvtacOVfw';
 
   const MarginP = '20px 0 20px 0';
@@ -65,9 +67,18 @@ export default function Simulation(props) {
           />
         </Col>
         <Col md={6} xs={12}>
-          <Card height="35vh" width="auto" padding="20px">
+          <Card
+            height="35vh"
+            width="auto"
+            padding={size.height < 800 ? '0px 10px' : '20px'}
+          >
             <div className="assess_simu_side">
-              <Paragraph color={SecondaryColor_Blk} margin={MarginP}>
+              <Paragraph
+                color={SecondaryColor_Blk}
+                margin={MarginP}
+                size={fontSize.subTitle}
+                weight={600}
+              >
                 {video1}
               </Paragraph>
               <Paragraph color={SecondaryColor_Blk} margin={MarginP}>

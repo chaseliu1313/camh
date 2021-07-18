@@ -6,10 +6,12 @@ import { Paragraph } from '../../components/Text/Heading';
 import { enterAni, exitAni } from '../../theme/animation';
 import { fontSize, margin } from '../../theme/resource';
 import Card from '../../components/Cards/Card';
+import { useWindowResize } from '../../hooks/useWindowResize';
 
 export default function SocialNetworks(props) {
   const [hide, setHide] = useState(false);
-  const PaddingP = '10px 15px';
+  const { size } = useWindowResize();
+  const PaddingP = size.height < 800 ? '0' : '10px 15px';
   const MarginP = '5px 0';
   useEffect(() => {
     let a = props.hide;
@@ -18,7 +20,11 @@ export default function SocialNetworks(props) {
 
   return (
     <Container id="assess_intro" hide={hide}>
-      <Card height="60vh" width="80vw" padding="20px 50px">
+      <Card
+        height="60vh"
+        width="80vw"
+        padding={size.height < 800 ? '5px 10px' : '20px 50px'}
+      >
         <Paragraph
           weight="bold"
           size={fontSize.subTitle}

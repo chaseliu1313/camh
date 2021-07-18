@@ -9,9 +9,11 @@ import { useHistory } from 'react-router-dom';
 import { size } from '../theme/resource';
 import { landingContent } from '../resource/content';
 import { fontSize, margin } from '../theme/resource';
+import { useWindowResize } from '../hooks/useWindowResize';
 
 export default function Landing() {
-  let history = useHistory();
+  const history = useHistory();
+  const { size } = useWindowResize();
 
   let animePropsRight = {
     translateX: ['200vw', 0],
@@ -58,7 +60,7 @@ export default function Landing() {
               type="h1"
               weight="bold"
               color="white"
-              size={fontSize.title}
+              size={size.height < 800 ? fontSize.title2 : fontSize.title}
             >
               {landingContent[0]}
             </Heading>
@@ -66,7 +68,7 @@ export default function Landing() {
           <Anime {...animePropsLeft2}>
             <Paragraph
               color="white"
-              size={fontSize.subTitle}
+              size={size.height < 800 ? fontSize.p : fontSize.subTitle}
               margin={`${margin}px 0`}
             >
               {landingContent[1]}

@@ -81,7 +81,11 @@ const Tools = () => {
               color={SecondaryColor_Blk}
               weight="normal"
             >
-              {tools[0] + tools[1]}
+              {tools[0] + ' Learn more in our '}
+              <a href="/resources/tools/assessment/animateVideos">
+                short animated videos.
+              </a>
+              {tools[1]}
             </Paragraph>
             <Paragraph
               margin={`${margin}px 0 ${margin * 2.5}px 0`}

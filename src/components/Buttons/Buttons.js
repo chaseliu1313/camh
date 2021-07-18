@@ -80,7 +80,7 @@ const Btn = styled.button`
   text-align: center;
   outline: none;
   > p {
-    font-size: 21px !important;
+    font-size: 21px;
   }
   box-shadow: 0 0 4px #999;
   ${({

@@ -1,6 +1,6 @@
 export const landingContent = [
   'Cundill Centre Online Tool for the Treatment of Youth Depression',
-  'This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH to provide primary care providers and other frontline clinicians with a clinical resource summarizing the best care practices for supporting youth as they manage their depression.',
+  'This evidence-based clinical resource is meant for primary care providers and other frontline clinicians. It summarizes best care practices for supporting youth as they manage their depression. This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH.',
 ];
 
 export const highlightsContent = [
@@ -103,10 +103,9 @@ export const Severity = [
 export const treatment =
   'The next part of the tool will take you through the treatment process. Click on “Mild Depression” or “Moderate/Severe Depression” to get started. You can also use the navigation bar above; click on “Treatment.”';
 
-export const toolLink1 =
-  'https://www.corc.uk.net/outcome-experience-measures/revised-childrens-anxiety-and-depression-scale-and-subscales/';
+export const toolLink1 = 'https://www.childfirst.ucla.edu/resources/';
 export const toolLink2 =
-  'https://www.corc.uk.net/outcome-experience-measures/mood-and-feelings-questionnaire/ ';
+  'https://devepi.duhs.duke.edu/measures/the-mood-and-feelings-questionnaire-mfq/ ';
 
 export const PSExtra =
   'Check out our Mood Foundations resource and click on the button to download. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print, and provide to patients in your practice.';

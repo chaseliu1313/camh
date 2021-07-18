@@ -85,7 +85,11 @@ const DSM = (props) => {
             >
               Important Notes:
             </Paragraph>
-            <OverlayTrigger trigger="hover" placement="left" overlay={popover}>
+            <OverlayTrigger
+              trigger={['hover', 'focus']}
+              placement="left"
+              overlay={popover}
+            >
               <FontAwesomeIcon
                 icon={faStickyNote}
                 className="arrow_d"

@@ -11,13 +11,14 @@ import { SecondaryColor_Blk } from '../../theme/resource';
 import Button from '../../components/Buttons/Buttons';
 import Loading from '../../components/Loading';
 import { fontSize, margin } from '../../theme/resource';
+import { useWindowResize } from '../../hooks/useWindowResize';
 const DSM = lazy(() => import('./DSM'));
 
 export default function Intro(props) {
   const [hide, setHide] = useState(false);
   const [showModal, setShowModeal] = useState(false);
-
-  const MarginP = '20px 0 20px 0';
+  const { size } = useWindowResize();
+  const MarginP = size.height < 800 ? '10px 0 10px 0' : '20px 0 20px 0';
 
   useEffect(() => {
     let a = props.hide;
@@ -60,21 +61,43 @@ export default function Intro(props) {
             >
               {assessment1[3]}
             </Paragraph>
-            <SubText margin={`${margin * 4}px 0 0 0`} size="2.5vmin">
-              {assessment1[4]}
-            </SubText>
-            <Button
-              primary={false}
-              type=" "
-              height="7vh"
-              width="20vw"
-              onClick={() => setShowModeal(true)}
-              display
-            >
-              <Paragraph size="3vmin" color="white">
-                DSM-5 Criteria
-              </Paragraph>
-            </Button>
+            {size.height < 800 ? (
+              <RowDiv>
+                <SubText margin={`${margin}px 0 0 0`} size="2.5vmin">
+                  {assessment1[4]}
+                </SubText>
+                <Button
+                  primary={false}
+                  type=" "
+                  height="7vh"
+                  width="20vw"
+                  onClick={() => setShowModeal(true)}
+                  display
+                >
+                  <Paragraph size="3vmin" color="white">
+                    DSM-5 Criteria
+                  </Paragraph>
+                </Button>
+              </RowDiv>
+            ) : (
+              <>
+                <SubText margin={`${margin * 4}px 0 0 0`} size="2.5vmin">
+                  {assessment1[4]}
+                </SubText>
+                <Button
+                  primary={false}
+                  type=" "
+                  height="7vh"
+                  width="20vw"
+                  onClick={() => setShowModeal(true)}
+                  display
+                >
+                  <Paragraph size="3vmin" color="white">
+                    DSM-5 Criteria
+                  </Paragraph>
+                </Button>
+              </>
+            )}
           </Col>
           <Col md={4}>
             <IMG src={bg6} />
@@ -114,4 +137,12 @@ const IMG = styled.img`
   height: 40%;
   width: auto;
   opacity: 0.7;
+`;
+
+const RowDiv = styled.div`
+height: 100%,
+width: 100%,
+display: flex;
+justify-content: center;
+align-items: center;
 `;

@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Row as R, Col, ListGroup } from 'react-bootstrap';
 import { Switch, Route, useLocation } from 'react-router-dom';
-import { SecondaryColor_Blk, BackgroundColor } from '../../theme/resource';
+import {
+  SecondaryColor_Blk,
+  BackgroundColor,
+  fontSize,
+} from '../../theme/resource';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import Button from '../../components/Buttons/Buttons';
 import ToolLayout, { VideoLayout } from './toolLayout';
@@ -18,10 +22,13 @@ import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 import PageIndicator from '../../components/PageIndicator';
 import ToolsVideo from './toolsVideo';
 import './resources.css';
+import { useWindowResize } from '../../hooks/useWindowResize';
 
 const ReTools = ({ match }) => {
   const { path, getPath, getHeading } = useToolsPath();
   const location = useLocation().pathname;
+
+  const { size } = useWindowResize();
 
   useEffect(() => {
     getPath(location);
@@ -57,10 +64,14 @@ const ReTools = ({ match }) => {
                   weight="bold"
                   align="center"
                   color={SecondaryColor_Blk}
+                  margin={size.height < 800 ? '0' : '0 0 25px 0'}
                 >
                   Mood Foundations Package for Youth
                 </Heading>
-                <Paragraph color={SecondaryColor_Blk}>
+                <Paragraph
+                  color={SecondaryColor_Blk}
+                  margin={size.height < 800 ? '0' : '0 0 25px 0'}
+                >
                   Fact sheet on depression; tips on sleep, exercise and healthy
                   eating. Co-developed by youth, for youth. Free to download and
                   print.
@@ -76,9 +87,16 @@ const ReTools = ({ match }) => {
                     height="5vh"
                     width="20vw"
                     display
-                    margin="25% 0 0 25%"
+                    margin={size.height < 800 ? '0' : '25% 0 0 25%'}
                   >
-                    <Paragraph size="3vmin" color="white">
+                    <Paragraph
+                      size={
+                        size.height < 800
+                          ? `${fontSize.subtext} !important`
+                          : '3vmin'
+                      }
+                      color="white"
+                    >
                       Download
                     </Paragraph>
                   </Button>
@@ -100,22 +118,22 @@ const ReTools = ({ match }) => {
         <Route
           exact
           path={match.path + '/medhandout'}
-          render={() => MedicalHandout()}
+          render={() => MedicalHandout(size)}
         />
         <Route
           exact
           path={match.path + '/problemSolvingVideo'}
-          render={() => NewToolVideo()}
+          render={() => NewToolVideo(size)}
         />
         <Route
           exact
           path={match.path + '/problemSolving'}
-          render={() => ProblemSolving()}
+          render={() => ProblemSolving(size)}
         />
         <Route
           exact
           path={match.path + '/cognitive'}
-          render={() => CognitiveRes()}
+          render={() => CognitiveRes(size)}
         />
         <Route
           exact
@@ -130,12 +148,12 @@ const ReTools = ({ match }) => {
         <Route
           exact
           path={match.path + '/assessment/RCADS'}
-          render={() => IntroRCADS()}
+          render={() => IntroRCADS(size)}
         />
         <Route
           exact
           path={match.path + '/assessment'}
-          render={() => AssessmentTools()}
+          render={() => AssessmentTools(size)}
         />
       </Switch>
       <Row style={{ height: 30 }} id="page_inde_row">
@@ -152,7 +170,7 @@ const ReTools = ({ match }) => {
   );
 };
 
-const MedicalHandout = () => {
+const MedicalHandout = (size) => {
   return (
     <ToolLayout>
       <div>
@@ -171,10 +189,14 @@ const MedicalHandout = () => {
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
+          margin={size.height < 800 ? '0' : '0 0 25px 0'}
         >
           Medication Handout for Youth
         </Heading>
-        <Paragraph color={SecondaryColor_Blk}>
+        <Paragraph
+          color={SecondaryColor_Blk}
+          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+        >
           Explains, in simple language, what SSRIs are, when youth might see
           benefits and what side effects, if any, can occur. Developed by youth
           in partnership with a psychiatrist and pharmacist. Free to download
@@ -193,7 +215,12 @@ const MedicalHandout = () => {
             display
             margin="25% 0 0 25%"
           >
-            <Paragraph size="3vmin" color="white">
+            <Paragraph
+              size={
+                size.height < 800 ? `${fontSize.subtext} !important` : '3vmin'
+              }
+              color="white"
+            >
               Download
             </Paragraph>
           </Button>
@@ -203,7 +230,7 @@ const MedicalHandout = () => {
   );
 };
 
-const ProblemSolving = () => {
+const ProblemSolving = (size) => {
   return (
     <ToolLayout>
       <div>
@@ -221,11 +248,15 @@ const ProblemSolving = () => {
           size="3vmin"
           weight="bold"
           align="center"
+          margin={size.height < 800 ? '0' : '0 0 25px 0'}
           color={SecondaryColor_Blk}
         >
           Problem Solving Worksheets
         </Heading>
-        <Paragraph color={SecondaryColor_Blk}>
+        <Paragraph
+          color={SecondaryColor_Blk}
+          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+        >
           Helps youth think through their problems by prompting them to describe
           the situation, emotions and needs. Co-developed by youth, for health
           care providers. Free to download and print.
@@ -243,7 +274,12 @@ const ProblemSolving = () => {
             display
             margin="25% 0 0 25%"
           >
-            <Paragraph size="3vmin" color="white">
+            <Paragraph
+              size={
+                size.height < 800 ? `${fontSize.subtext} !important` : '3vmin'
+              }
+              color="white"
+            >
               Download
             </Paragraph>
           </Button>
@@ -282,7 +318,7 @@ const NewToolVideo = () => {
   );
 };
 
-const CognitiveRes = () => {
+const CognitiveRes = (size) => {
   return (
     <ToolLayout>
       <div>
@@ -301,10 +337,14 @@ const CognitiveRes = () => {
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
+          margin={size.height < 800 ? '0' : '0 0 25px 0'}
         >
           Cognitive Restructuring Worksheets
         </Heading>
-        <Paragraph color={SecondaryColor_Blk}>
+        <Paragraph
+          color={SecondaryColor_Blk}
+          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+        >
           Helps youth examine thoughts that may not be helpful to them.
           Co-developed by youth, for health care providers. Free to download and
           print.
@@ -322,7 +362,12 @@ const CognitiveRes = () => {
             display
             margin="25% 0 0 25%"
           >
-            <Paragraph size="3vmin" color="white">
+            <Paragraph
+              size={
+                size.height < 800 ? `${fontSize.subtext} !important` : '3vmin'
+              }
+              color="white"
+            >
               Download
             </Paragraph>
           </Button>
@@ -332,7 +377,7 @@ const CognitiveRes = () => {
   );
 };
 
-const IntroRCADS = () => {
+const IntroRCADS = (size) => {
   return (
     <ToolLayout>
       <div>
@@ -350,14 +395,18 @@ const IntroRCADS = () => {
       </div>
       <RightCol>
         <Heading
-          size="3vmin"
+          size="2.5vmin"
           weight="bold"
           align="center"
+          margin={size.height < 800 ? '0' : '0 0 25px 0'}
           color={SecondaryColor_Blk}
         >
           Quick Guide to the Revised Children’s Anxiety and Depression Scale
         </Heading>
-        <Paragraph color={SecondaryColor_Blk}>
+        <Paragraph
+          color={SecondaryColor_Blk}
+          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+        >
           Learn more about the Revised Children’s Anxiety and Depression Scale
           (RCADS) in our Quick Guide, which outlines how the questionnaire is
           administered and scored. This tool also proposes a way of using RCADS
@@ -378,7 +427,12 @@ const IntroRCADS = () => {
             display
             margin="25% 0 0 25%"
           >
-            <Paragraph size="3vmin" color="white">
+            <Paragraph
+              size={
+                size.height < 800 ? `${fontSize.subtext} !important` : '3vmin'
+              }
+              color="white"
+            >
               Download
             </Paragraph>
           </Button>
@@ -503,9 +557,6 @@ const RightCol = styled.div`
       ? `justify-content: center;`
       : `justify-content: flex-start;`}
   align-items: center;
-  & > p {
-    margin: 0 0 25px 0;
-  }
 `;
 
 const RightVideoCol = styled.div`
