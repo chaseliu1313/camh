@@ -225,6 +225,7 @@ const Container = styled.div`
   height: 120%;
   width: 100%;
   overflow-y: hidden;
+  padding-top: 25px;
 `;
 
 const Row = styled(R)`

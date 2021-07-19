@@ -83,6 +83,7 @@ const Container = styled.div`
   overflow-y: hidden;
   background: url(${bg}) no-repeat fixed left bottom;
   background-size: 30%;
+  padding-top: 25px;
 `;
 
 const Row = styled(R)`

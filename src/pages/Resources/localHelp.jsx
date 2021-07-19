@@ -9,7 +9,7 @@ import { SecondaryColor_Blk } from '../../theme/resource';
 import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 
 const LocalHelp = () => {
-  const paths = ['/resources/tools/assessment', '/resources/crisisLines'];
+  const paths = ['/resources/tools/cognitive', '/resources/crisisLines'];
 
   return (
     <Container>
@@ -125,6 +125,7 @@ const Container = styled.div`
   overflow-y: hidden;
   background: url(${bg}) no-repeat fixed right bottom;
   background-size: 30%;
+  padding-top: 25px;
 `;
 
 const Row = styled(R)`
