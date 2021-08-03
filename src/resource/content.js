@@ -156,7 +156,7 @@ export const PsychosocialStrategies = [
     heading: 'Resources for Youth',
     content: [
       'We have developed animated videos for youth on how food, movement and sleep can impact mood.',
-      'You can also check out our Mood Foundations resource. The handout includes tip on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print and provide to youth in your practice.',
+      'You can also check out our Mood Foundations resource. The handout includes tips on sleep, exercise and healthy eating and was co-developed by youth on our team. The resource is free to download, print and provide to youth in your practice.',
     ],
     img_url: PSExtraLink,
   },
