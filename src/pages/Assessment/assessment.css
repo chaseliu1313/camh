@@ -101,6 +101,9 @@
 #sev_header > button {
   color: white;
 }
+#sev_header > button > .sr-only {
+  display: none !important;
+}
 
 .simu_marks {
   color: #17b978;

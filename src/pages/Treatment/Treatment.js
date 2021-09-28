@@ -39,7 +39,12 @@ const Treatment = () => {
   return (
     <Container>
       <Row>
-        <ColLeft md={6} sm={12} className="treatment_col_left" mount={mount}>
+        <ColLeft
+          md={6}
+          sm={12}
+          className="treatment_col_left"
+          mount={mount.toString()}
+        >
           <div className="treatment_wraper">
             <Card
               height="auto"
@@ -95,7 +100,7 @@ const Treatment = () => {
           md={6}
           sm={'12'}
           className="treatment_col_right"
-          mount={mount}
+          mount={mount.toString()}
         ></ColRight>
       </Row>
     </Container>
@@ -124,10 +129,10 @@ const ColLeft = styled(C)`
   justify-content: center;
   align-items: center;
   padding: 5vmin;
-  z-index:2;
+  z-index: 2;
 
   ${({ mount }) =>
-    mount
+    mount === 'true'
       ? css`
           animation: ${enterAni2} 0.8s linear forwards;
         `
@@ -162,18 +167,15 @@ const ColRight = styled(C)`
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80% 80%;
- 
 
   ${({ mount }) =>
-    mount
+    mount === 'true'
       ? css`
           animation: ${enterAni3} 0.8s linear forwards;
         `
       : css`
           animation: ${exitAni2} 0.8s linear forwards;
         `}
-
-
 
   @media (max-width: ${size.mobileL}) {
     display: none !important;

@@ -32,7 +32,7 @@ const Psycho = () => {
   }, []);
 
   return (
-    <Container mount={mount}>
+    <Container mount={mount.toString()}>
       <Alert
         variant="danger"
         onClose={() => setShow(false)}
@@ -91,7 +91,7 @@ const Container = styled.div`
   padding: 1vmin 3vmin 5vmin 3vmin;
 
   ${({ mount }) =>
-    mount
+    mount === 'true'
       ? css`
           animation: ${enterAni2} 0.8s linear forwards;
         `
