@@ -60,17 +60,18 @@ const ReTools = ({ match }) => {
               </div>
               <RightCol position="center">
                 <Heading
-                  size="3vmin"
+                  size={size.height <= 1024 ? '2.5vmin' : '3vmin'}
                   weight="bold"
                   align="center"
                   color={SecondaryColor_Blk}
-                  margin={size.height < 800 ? '0' : '0 0 25px 0'}
+                  margin={size.height <= 1024 ? '0' : '0 0 25px 0'}
                 >
                   Mood Foundations Package for Youth
                 </Heading>
                 <Paragraph
                   color={SecondaryColor_Blk}
-                  margin={size.height < 800 ? '0' : '0 0 25px 0'}
+                  margin="0 0 25px 0"
+                  size={size.width <= 1024 ? fontSize.subtext : fontSize.p}
                 >
                   Fact sheet on depression; tips on sleep, exercise and healthy
                   eating. Co-developed by youth, for youth. Free to download and
@@ -91,9 +92,7 @@ const ReTools = ({ match }) => {
                   >
                     <Paragraph
                       size={
-                        size.height < 800
-                          ? `${fontSize.subtext} !important`
-                          : '3vmin'
+                        size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'
                       }
                       color="white"
                     >
@@ -185,17 +184,18 @@ const MedicalHandout = (size) => {
       </div>
       <RightCol position="center">
         <Heading
-          size="3vmin"
+          size={size.height <= 1024 ? '2.5vmin' : '3vmin'}
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
-          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+          margin={size.height <= 1024 ? '0' : '0 0 25px 0'}
         >
           Medication Handout for Youth
         </Heading>
         <Paragraph
           color={SecondaryColor_Blk}
-          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+          margin="0 0 25px 0"
+          size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
         >
           Explains, in simple language, what SSRIs are, when youth might see
           benefits and what side effects, if any, can occur. Developed by youth
@@ -216,9 +216,7 @@ const MedicalHandout = (size) => {
             margin="25% 0 0 25%"
           >
             <Paragraph
-              size={
-                size.height < 800 ? `${fontSize.subtext} !important` : '3vmin'
-              }
+              size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
               color="white"
             >
               Download
@@ -245,17 +243,18 @@ const ProblemSolving = (size) => {
       </div>
       <RightCol position="center">
         <Heading
-          size="3vmin"
+          size={size.height <= 1024 ? '2.5vmin' : '3vmin'}
           weight="bold"
           align="center"
-          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+          margin={size.height <= 1024 ? '0' : '0 0 25px 0'}
           color={SecondaryColor_Blk}
         >
           Problem Solving Worksheets
         </Heading>
         <Paragraph
           color={SecondaryColor_Blk}
-          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+          margin="0 0 25px 0"
+          size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
         >
           Helps youth think through their problems by prompting them to describe
           the situation, emotions and needs. Co-developed by youth, for health
@@ -275,9 +274,7 @@ const ProblemSolving = (size) => {
             margin="25% 0 0 25%"
           >
             <Paragraph
-              size={
-                size.height < 800 ? `${fontSize.subtext} !important` : '3vmin'
-              }
+              size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
               color="white"
             >
               Download
@@ -289,7 +286,7 @@ const ProblemSolving = (size) => {
   );
 };
 
-const NewToolVideo = () => {
+const NewToolVideo = (size) => {
   return (
     <VideoLayout>
       <VideoPanel>
@@ -302,7 +299,7 @@ const NewToolVideo = () => {
       </VideoPanel>
       <RightVideoCol>
         <Heading
-          size="3vmin"
+          size={size.height <= 1024 ? '2.5vmin' : '3vmin'}
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
@@ -333,17 +330,18 @@ const CognitiveRes = (size) => {
       </div>
       <RightCol position="center">
         <Heading
-          size="3vmin"
+          size={size.height <= 1024 ? '2.5vmin' : '3vmin'}
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
-          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+          margin={size.height <= 1024 ? '0' : '0 0 25px 0'}
         >
           Cognitive Restructuring Worksheets
         </Heading>
         <Paragraph
           color={SecondaryColor_Blk}
-          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+          margin="0 0 25px 0"
+          size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
         >
           Helps youth examine thoughts that may not be helpful to them.
           Co-developed by youth, for health care providers. Free to download and
@@ -363,9 +361,7 @@ const CognitiveRes = (size) => {
             margin="25% 0 0 25%"
           >
             <Paragraph
-              size={
-                size.height < 800 ? `${fontSize.subtext} !important` : '3vmin'
-              }
+              size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
               color="white"
             >
               Download
@@ -395,17 +391,18 @@ const IntroRCADS = (size) => {
       </div>
       <RightCol>
         <Heading
-          size="2.5vmin"
+          size={size.height <= 1024 ? '2.5vmin' : '3vmin'}
           weight="bold"
           align="center"
-          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+          margin={size.height <= 1024 ? '0' : '0 0 25px 0'}
           color={SecondaryColor_Blk}
         >
           Quick Guide to the Revised Children’s Anxiety and Depression Scale
         </Heading>
         <Paragraph
           color={SecondaryColor_Blk}
-          margin={size.height < 800 ? '0' : '0 0 25px 0'}
+          margin="0 0 25px 0"
+          size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
         >
           Learn more about the Revised Children’s Anxiety and Depression Scale
           (RCADS) in our Quick Guide, which outlines how the questionnaire is
@@ -428,9 +425,7 @@ const IntroRCADS = (size) => {
             margin="25% 0 0 25%"
           >
             <Paragraph
-              size={
-                size.height < 800 ? `${fontSize.subtext} !important` : '3vmin'
-              }
+              size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
               color="white"
             >
               Download
@@ -561,7 +556,7 @@ const RightCol = styled.div`
 
 const RightVideoCol = styled.div`
   height: fit-content;
-  width: 60%;
+  width: 70%;
   padding: 3vmin;
   margin: auto;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),

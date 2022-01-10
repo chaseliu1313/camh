@@ -30,13 +30,14 @@ import {
 } from '../../theme/resource';
 import { useHistory } from 'react-router-dom';
 import { NotificationModal } from '../../components/NotificationModal';
+import { useWindowResize } from '../../hooks/useWindowResize';
 import SurveySnackBar from './SurveySnack';
 const TreatmentModal = lazy(() => import('./TreatmentModal'));
 const Severe = () => {
   const [showModal, setShowModal] = useState(false);
   const [index, setIndex] = useState(0);
   const [showNotification, setShowNotification] = useState(false);
-
+  const { size } = useWindowResize();
   const { state, dispatch } = useContext(TreatmentContext);
   const history = useHistory();
   const lineHeight_sm = '5vh';
@@ -161,7 +162,11 @@ const Severe = () => {
   );
 
   return (
-    <Container id="treatment_sever_container">
+    <Container
+      id="treatment_sever_container"
+      height={size.height <= 1024 ? '65%' : '100%'}
+      overflow={size.height <= 1024 ? 'auto' : 'hidden'}
+    >
       <Suspense fallback={<Loading loading="true" />}>
         <TreatmentModal
           show={showModal}
@@ -180,7 +185,10 @@ const Severe = () => {
             display
             onClick={() => dispatch({ type: RESET_SEVERE_TREATMENT })}
           >
-            <FontAwesomeIcon icon={faRedoAlt} />
+            <FontAwesomeIcon
+              icon={faRedoAlt}
+              style={{ height: 12, marginRight: 2 }}
+            />
             <Paragraph size="2vmin" color={SecondaryColor_Tel}>
               Reset
             </Paragraph>
@@ -1087,10 +1095,13 @@ const Severe = () => {
 export default Severe;
 
 const Container = styled.div`
-  height: 100%;
   width: 100%;
-  overflow: hidden;
   padding: 10px;
+  overflow-x: hidden;
+  ${({ height, overflow }) => `
+  overflow-y: ${overflow};
+   height: ${height};
+  `}
 `;
 
 const CenterCol = styled(C)`

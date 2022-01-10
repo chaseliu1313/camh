@@ -5,11 +5,12 @@ import { DSMContent } from '../../resource/content';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
 import { Error_R, DarkPurple } from '../../theme/resource';
-
+import { useWindowResize } from '../../hooks/useWindowResize';
 import styled from 'styled-components';
 
 const DSM = (props) => {
   const [show, setShow] = useState(false);
+  const { size } = useWindowResize();
   const handleClose = () => {
     setShow(false);
     props.onClose(false);
@@ -101,7 +102,7 @@ const DSM = (props) => {
         </HeaderContainer>
       </Modal.Header>
       <ModalBody>
-        <Container>
+        <Container height={size.height}>
           <Paragraph color="white" weight="bold" size="2vmin" margin={MarginP}>
             {DSMContent[0]}Note: {DSMContent[1]}
           </Paragraph>
@@ -138,7 +139,10 @@ const DSM = (props) => {
 };
 
 const Container = styled.div`
-  height: 100%;
+  height: 80%;
+  max-height: ${(props) => props.height * 0.9}px;
+  margin-top: 2%;
+  overflow: auto !important;
   width: 100%;
   padding: 10px;
 `;
@@ -157,6 +161,7 @@ const HeaderSubContainer = styled.div`
   width: 15%;
   justify-content: center;
   align-items: center;
+  padding-right: 5%;
 `;
 
 export default DSM;

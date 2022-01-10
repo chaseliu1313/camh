@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SimulationNote from './SimulationNote';
 import { Paragraph } from '../../components/Text/Heading';
 import { Row, Col } from 'react-bootstrap';
 import Card from '../../components/Cards/Card';
@@ -15,8 +14,7 @@ import { useWindowResize } from '../../hooks/useWindowResize';
 export default function Simulation(props) {
   //show page hook
   const [hide, setHide] = useState(true);
-  //show modal hook
-  const [show, setShow] = useState(false);
+
   //play video hook
   const [play, setPlay] = useState(false);
 
@@ -30,21 +28,15 @@ export default function Simulation(props) {
 
     setHide(a);
     setPlay(!a);
-
-    return () => {
-      setShow(false);
-    };
   }, [props.hide]);
 
   const showNotes = () => {
     if (!hide) {
-      setShow(true);
       setPlay(false);
     }
   };
 
   const hideNotes = () => {
-    setShow(false);
     setPlay(true);
   };
 
@@ -97,7 +89,6 @@ export default function Simulation(props) {
           </Card>
         </Col>
       </Row>
-      <SimulationNote modalShow={show} hideNotes={hideNotes} />
     </Container>
   );
 }

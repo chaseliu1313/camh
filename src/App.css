@@ -73,7 +73,7 @@ a {
     height: 30px;
   }
   .nav-item {
-    margin-top: 12px !important;
+    /* margin-top: 12px !important; */
   }
 }
 
@@ -255,10 +255,7 @@ a {
   .ov_slide {
     overflow-y: auto;
   }
-  
 }
-
-
 
 .ov_carousel:hover {
   transform: scale(1.05);
@@ -308,8 +305,6 @@ a {
   height: 100%;
 }
 
-
-
 .spacing {
   width: 100%;
   height: 100%;
@@ -324,7 +319,6 @@ a {
 @media screen and (max-height: 800px) {
   .ov_carousel {
     height: 55vh;
-   
   }
   .ov_slide {
     overflow-y: auto;
@@ -338,7 +332,6 @@ a {
     text-align: center !important;
     margin-top: 5px !important;
   }
-  
 }
 
 button.close {

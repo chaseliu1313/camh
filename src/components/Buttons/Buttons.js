@@ -8,6 +8,7 @@ import {
   Error_R_Hover,
   TertiaryColor_Tel,
 } from '../../theme/resource';
+import { useWindowResize } from '../../hooks/useWindowResize';
 
 export default function Button({
   height,
@@ -25,6 +26,7 @@ export default function Button({
   display,
   dark,
 }) {
+  const { size } = useWindowResize();
   return (
     <Btn
       height={height}
@@ -41,6 +43,7 @@ export default function Button({
       display={display.toString()}
       dark={dark}
       tabIndex={primary ? 0 : 1}
+      windowSize={size}
     >
       {children}
     </Btn>
@@ -79,9 +82,7 @@ const Btn = styled.button`
   min-width: 64px;
   text-align: center;
   outline: none;
-  > p {
-    font-size: 21px;
-  }
+
   box-shadow: 0 0 4px #999;
   ${({
     height,
@@ -95,7 +96,11 @@ const Btn = styled.button`
     type,
     display,
     dark,
+    windowSize,
   }) => `
+  > p {
+    font-size: ${windowSize.width <= 1024 ? '12px' : '18px'}
+  }
 height: ${height || '10vh'};
 width: ${width || '15vw'};
 margin: ${margin || '1em'};

@@ -54,9 +54,15 @@
 }
 
 @media screen and (max-width: 1024px) {
+  #va_Sleep {
+    padding-left: 130px !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
   .va_card:hover .va_content {
     width: 75vw !important;
-    padding: 10vmin;
+    padding: 20px;
   }
 
   .va_card:first-of-type:hover p {

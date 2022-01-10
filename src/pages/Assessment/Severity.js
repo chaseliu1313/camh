@@ -145,7 +145,7 @@ const SeverityModal = (props) => {
   const MarginP = '20px 0 20px 0';
   const fontWeight = 'normal';
   return (
-    <Modal show={mshow} onHide={handleClose} size="lg" centered id="sev_modal">
+    <Modal show={mshow} onHide={handleClose} size="md" centered id="sev_modal">
       <Modal.Header closeButton id="sev_header">
         <Heading
           type="h2"

@@ -34,7 +34,7 @@ export const Cards = (props) => {
           Hover to see detail on&nbsp; {content.heading}
         </Heading>
       </VaSub2>
-      <VaSub1 className="va_content">
+      <VaSub1 className="va_content" id={`va_${content.heading}`}>
         <>
           {!content.description ? (
             content.content.map((c, index) =>

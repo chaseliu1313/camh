@@ -68,7 +68,6 @@
 .assess_simu_side {
   height: 100%;
   width: 100%;
-  padding: 5% 5%;
 }
 
 .modal-header {
@@ -90,9 +89,10 @@
 .assess_intro_row2 > div {
   height: fit-content;
 }
-
-#dsm_modal > .modal-content,
 #sev_modal > .modal-content {
+  background-color: #6e298d !important;
+}
+#dsm_modal > .modal-content {
   background-color: #6e298d !important;
   height: 90vh !important;
 }

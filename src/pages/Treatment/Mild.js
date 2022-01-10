@@ -14,7 +14,9 @@ import Button from '../../components/Buttons/Buttons';
 import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 import bg from '../../resource/path_bg.svg';
 import { TreatmentContext } from '../../store/store';
+import { useWindowResize } from '../../hooks/useWindowResize';
 import {
+  fontSize,
   PrimaryColor,
   SecondaryColor_Blk,
   SecondaryColor_Blu,
@@ -36,7 +38,7 @@ const TreatmentModal = lazy(() => import('./TreatmentModal'));
 
 const Mild = () => {
   const [showModal, setShowModal] = useState(false);
-
+  const { size } = useWindowResize();
   const [index, setIndex] = useState(0);
   const history = useHistory();
   const lineHeight_sm = '5vh';
@@ -102,7 +104,11 @@ const Mild = () => {
   );
 
   return (
-    <Container id="treatment_mild_container">
+    <Container
+      id="treatment_mild_container"
+      height={size.height <= 1024 ? '65%' : '100%'}
+      overflow={size.height <= 1024 ? 'auto' : 'hidden'}
+    >
       <Suspense fallback={<Loading loading="true" />}>
         <TreatmentModal
           show={showModal}
@@ -121,8 +127,11 @@ const Mild = () => {
             display
             onClick={() => dispatch({ type: RESET_MILD_TREATMENT })}
           >
-            <FontAwesomeIcon icon={faRedoAlt} />
-            <Paragraph size="2vmin" color={SecondaryColor_Tel}>
+            <FontAwesomeIcon
+              icon={faRedoAlt}
+              style={{ height: 12, marginRight: 2 }}
+            />
+            <Paragraph size={fontSize.subtext} color={SecondaryColor_Tel}>
               Reset
             </Paragraph>
           </Button>
@@ -484,10 +493,13 @@ const Mild = () => {
 export default Mild;
 
 const Container = styled.div`
-  height: 100%;
   width: 100%;
-  overflow: hidden;
   padding: 10px;
+  overflow-x: hidden;
+  ${({ height, overflow }) => `
+  overflow-y: ${overflow};
+   height: ${height};
+  `}
 `;
 
 const CenterCol = styled(C)`

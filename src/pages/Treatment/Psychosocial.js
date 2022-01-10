@@ -59,7 +59,10 @@ const Psychosocial = () => {
             display
             onClick={() => goBack()}
           >
-            <FontAwesomeIcon icon={faArrowLeft} />
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              style={{ height: 12, marginRight: 2 }}
+            />
             <Paragraph size="2vmin" color={SecondaryColor_Tel}>
               Back
             </Paragraph>

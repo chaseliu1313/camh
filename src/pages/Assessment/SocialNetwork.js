@@ -23,7 +23,7 @@ export default function SocialNetworks(props) {
       <Card
         height="60vh"
         width="80vw"
-        padding={size.height < 800 ? '5px 10px' : '20px 50px'}
+        padding={size.width < 1280 ? '5px 10px' : '20px 50px'}
       >
         <Paragraph
           weight="bold"

@@ -60,7 +60,7 @@ export default function Landing() {
               type="h1"
               weight="bold"
               color="white"
-              size={size.height < 800 ? fontSize.title2 : fontSize.title}
+              size={size.width < 1280 ? fontSize.titleSm : fontSize.title}
             >
               {landingContent[0]}
             </Heading>
@@ -68,7 +68,7 @@ export default function Landing() {
           <Anime {...animePropsLeft2}>
             <Paragraph
               color="white"
-              size={size.height < 800 ? fontSize.p : fontSize.subTitle}
+              size={size.width < 1280 ? fontSize.p : fontSize.subTitle}
               margin={`${margin}px 0`}
             >
               {landingContent[1]}
