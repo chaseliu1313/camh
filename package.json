@@ -2,7 +2,7 @@
   "name": "camh_frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://chaseliu1313.github.io/camh",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
@@ -37,6 +37,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "dev": "nodemon app.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -63,6 +64,7 @@
     "@storybook/addon-links": "^6.2.9",
     "@storybook/addons": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
-    "@storybook/react": "^6.2.9"
+    "@storybook/react": "^6.2.9",
+    "gh-pages": "^3.2.3"
   }
 }
