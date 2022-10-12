@@ -1,6 +1,6 @@
 export const landingContent = [
   'Cundill Centre Online Tool for the Treatment of Youth Depression',
-  'This evidence-based clinical resource is meant for primary care providers and other frontline clinicians. It summarizes best care practices for supporting youth as they manage their depression. This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH.',
+  'This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH in Toronto, Canada.',
 ];
 
 export const highlightsContent = [
