@@ -122,7 +122,7 @@ const Main = styled.div`
   animation: ${enterAni} 0.8s linear;
   transition: all ease-in-out 0.7s;
   ${({ height }) =>
-    height >= 900 ? ` padding: 1% 10% 5% 10%;` : 'padding: 15% 20%;'}
+    height < 800 ? 'padding: 15% 20%;' : `padding: 1% 10% 5% 10%;`}
 `;
 
 const ContentBox = styled.div`
