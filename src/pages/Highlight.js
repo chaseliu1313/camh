@@ -68,12 +68,21 @@ export default function Hightlights() {
         </CenterCol>
       </Row>
       <Row>
-        <Col lg={{ span: 8, offset: 2 }} className="carousel_row">
+        <div
+          className="carousel_row"
+          style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <Carousel
             className="ov_carousel"
             interval={inv}
             onSelect={(key) => {
               updateKey(key);
+
               setActive(titles[key]);
             }}
           >
@@ -222,7 +231,7 @@ export default function Hightlights() {
               <SubText className="slide-footnote">3/3</SubText>
             </Carousel.Item>
           </Carousel>
-        </Col>
+        </div>
       </Row>
       <Row id="overView_spacing"></Row>
       <Row>

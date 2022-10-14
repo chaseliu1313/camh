@@ -241,7 +241,7 @@ a {
 
 .ov_slide {
   height: 100%;
-  width: 100%;
+  width: 70%;
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -256,8 +256,10 @@ a {
     overflow-y: auto;
   }
 }
+
 .carousel-inner {
   height: 100%;
+  width: 70% !important;
 }
 .ov_carousel:hover {
   transform: scale(1.05);
@@ -267,19 +269,27 @@ a {
   color: #6e298d;
   font-weight: bold;
 }
-.carousel-control-next-icon {
+.carousel-control-prev>.sr-only{
   visibility: hidden;
 }
-.carousel-control-next {
-    display: none;
-}
-.carousel-control-prev-icon {
+.carousel-control-next>.sr-only{
   visibility: hidden;
-  display: none;
 }
-.carousel-control-prev {
-  visibility: hidden;
-  display: none;
+.carousel-control-next>.carousel-control-next-icon{
+  
+ z-index: 1000;
+ width: 100%;
+ height: 100%;
+}
+.carousel-control-prev>.carousel-control-prev-icon{
+ 
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+}
+.ov_carousel{
+  display: flex;
+  justify-content: center;
 }
 .carousel-indicators {
   bottom: -80px !important;
