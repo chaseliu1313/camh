@@ -11,13 +11,14 @@ import {
 } from 'react-bootstrap';
 import { PrimaryColor } from '../theme/resource';
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 
 export default function NaviBar() {
   // get the current path
   const location2 = useLocation();
   //customized hook
   const clicked = useNavClicks(location2.pathname);
+  const history = useHistory();
 
   return (
     <Container>
@@ -33,14 +34,57 @@ export default function NaviBar() {
         <Navbar.Toggle aria-controls="navication_bar" />
         <Navbar.Collapse id="navbar_collaps">
           <Nav className="navbar_core">
-            <NavLink navclicked={clicked[0]} as="div" className="nav-link">
+            <NavLink
+              navclicked={clicked[0]}
+              as="div"
+              className="nav-link"
+              style={{ width: '100%', cursor: 'pointer' }}
+              onClick={() => {
+                history.push('/');
+              }}
+            >
               <Link to="/">Home</Link>
             </NavLink>
+            <NavDropdown
+              title="Overview"
+              avclicked={clicked[1] || clicked[6]}
+              id="navbar_dropdown"
+            >
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/orientation');
+                }}
+              >
+                <Link to="/orientation" style={{ width: '100%' }}>
+                  Orientaion To the tool
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/overview');
+                }}
+              >
+                <Link to="/overview" style={{ width: '100%' }}>
+                  Depression Facts
+                </Link>
+              </NavDropdown.Item>
+            </NavDropdown>
 
-            <NavLink navclicked={clicked[1]} as="div" className="nav-link">
-              <Link to="/overview">Overview</Link>
-            </NavLink>
-            <NavLink navclicked={clicked[2]} as="div" className="nav-link">
+            <NavLink
+              navclicked={clicked[2]}
+              as="div"
+              className="nav-link"
+              style={{ width: '100%', cursor: 'pointer' }}
+              onClick={() => {
+                history.push('/assessment');
+              }}
+            >
               <Link to="/assessment">Assessment</Link>
             </NavLink>
             <NavDropdown
@@ -48,11 +92,29 @@ export default function NaviBar() {
               id="navbar_dropdown"
               navclicked={clicked[3] || clicked[4]}
             >
-              <NavDropdown.Item as="div" className="nav-dropdown-item">
-                <Link to="/treatment/mild">Mild Depression</Link>
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/treatment/mild');
+                }}
+              >
+                <Link to="/treatment/mild" style={{ width: '100%' }}>
+                  Mild Depression
+                </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-dropdown-item">
-                <Link to="/treatment/severe">Moderate/Severe Depression</Link>
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/treatment/severe');
+                }}
+              >
+                <Link to="/treatment/severe" style={{ width: '100%' }}>
+                  Moderate/Severe Depression
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
 
@@ -61,17 +123,65 @@ export default function NaviBar() {
               id="navbar_dropdown"
               navclicked={clicked[5]}
             >
-              <NavDropdown.Item as="div" className="nav-dropdown-item">
-                <Link to="/resources/tools/video">Tools</Link>
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/resources/tools');
+                }}
+              >
+                <Link to="/resources/tools" style={{ width: '100%' }}>
+                  Tools
+                </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-dropdown-item">
-                <Link to="/resources/help">Local Help</Link>
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/resources/help');
+                }}
+              >
+                <Link to="/resources/help" style={{ width: '100%' }}>
+                  Local Help
+                </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-dropdown-item">
-                <Link to="/resources/crisisLines">Crisis Lines</Link>
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/resources/faq');
+                }}
+              >
+                <Link to="/resources/faq" style={{ width: '100%' }}>
+                  FAQ
+                </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="nav-dropdown-item">
-                <Link to="/resources/reference">References</Link>
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/resources/crisisLines');
+                }}
+              >
+                <Link to="/resources/crisisLines" style={{ width: '100%' }}>
+                  Crisis Lines
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as="div"
+                className="nav-dropdown-item"
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={() => {
+                  history.push('/resources/reference');
+                }}
+              >
+                <Link to="/resources/reference" style={{ width: '100%' }}>
+                  References
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
@@ -131,7 +241,5 @@ const Navbar = styled(N)`
     height: 60px;
     
   }
-
-
   }
 `;

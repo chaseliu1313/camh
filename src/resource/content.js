@@ -1,10 +1,10 @@
 export const landingContent = [
   'Cundill Centre Online Tool for the Treatment of Youth Depression',
-  'This evidence-based clinical resource is meant for primary care providers and other frontline clinicians. It summarizes best care practices for supporting youth as they manage their depression. This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH.',
+  'This tool was created by clinician scientists, youth and other experts from the Cundill Centre for Child and Youth Depression at CAMH in Toronto, Canada.',
 ];
 
 export const highlightsContent = [
-  '·The Cundill Centre brings together clinicians, scientists, youth and family stakeholders from around the world to improve screening, prevention and depression treatment.',
+  'brings together clinicians, scientists, youth and family stakeholders from around the world to improve screening, prevention and depression treatment.',
   '·The purpose of this tool is to help primary care providers and other frontline clinicians understand best practices for supporting youth as they manage their depression. ',
   '·The content provides a step-by-step assessment and treatment pathway for youth depression and is based on our systematic review, which found the NICE guidelines to be of the highest quality.',
   'Check out our depression fact sheet here. It was developed for youth, by youth on our team. The resource is free to download, print, and provide to patients in your practice.',
@@ -16,6 +16,34 @@ export const highlightsContent = [
   '·Depression can be missed because irritability or somatic complaints (problems with sleep or fatigue) may be the primary presenting symptom (rather than sadness).',
   '·Depression is a serious illness and can lead to suicide, a leading cause of death in 15 to 29 years-olds.',
 ];
+
+export const guide = {
+  title: 'Guide to the Tool',
+  description:
+    'There are four main sections in this tool. Use the PREVIOUS and NEXT buttons at the bottom of the page to navigate through the content. You can also use the purple taskbar at the top to quickly navigate between the sections. It will take approximately 20 minutes to complete the tool, not including time spent viewing additional resources.',
+  content: [
+    {
+      title: 'Overview',
+      description:
+        'Learn about the purpose and origins of the tool, gain an overview of depression in teens, and access our depression fact sheet.',
+    },
+    {
+      title: 'Assessment',
+      description:
+        'Review the diagnostic criteria for depression, obtain tips to assess for depression, identify valid assessment questionnaires, and obtain guidance on determining depression severity.',
+    },
+    {
+      title: 'Treatment',
+      description:
+        'Access two evidence-informed care pathways—one for mild depression; one for moderate/severe depression. Click on the interactive boxes to learn more about lifestyle advice and psychosocial strategies, psychotherapy and medication recommendations, and options when there is no response to treatment.',
+    },
+    {
+      title: 'Resources',
+      description:
+        'Access additional information, including practical tools for youth and clinicians, links to local services and crisis lines in Canada, frequently asked questions (FAQ), and references.',
+    },
+  ],
+};
 
 export const assessment1 = [
   'You may already be familiar with depression—it’s when feelings of sadness, irritability, or loss of interest or pleasure: ',

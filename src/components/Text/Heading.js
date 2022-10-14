@@ -51,6 +51,7 @@ export function Paragraph({
   id,
   className,
   tabIndex = 0,
+  style,
 }) {
   return (
     <Text
@@ -64,6 +65,7 @@ export function Paragraph({
       id={id}
       className={className}
       tabIndex={tabIndex}
+      style={{ ...style }}
     >
       {children}
     </Text>
@@ -109,7 +111,7 @@ const Text = styled.p`
     font-size: ${size || fontSize.title};
     line-height: ${lineHeight || 1.5};
     font-weight: ${weight || 'normal'};
-    margin: ${margin || 'auto'};
+    margin: ${margin === undefined ? 'auto' : margin};
     padding: ${padding || '0'};
     text-decoration: none !important;
 

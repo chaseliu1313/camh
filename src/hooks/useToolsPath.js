@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 // custom hook for setting page routes in the resources/tools page
 
 export const headings = [
+  'Tools',
   'Short Animated Videos for Youth',
   'Mood Foundations Package for Youth',
   'Medication Handout for Youth',
@@ -11,14 +12,16 @@ export const headings = [
   'Short Animated Videos for Primary Care Providers',
   'Quick Guide to the RCADS',
   'Assessment Tools',
+  'Special Populations and Considerations',
 ];
 //default
-const pathDefault = ['/treatment', '/resources/tools'];
+const pathDefault = ['/treatment', '/resources/tools/video'];
 
 export const routes = [
   '/treatment',
-  '/resources/tools/video',
   '/resources/tools',
+  '/resources/tools/video',
+  '/resources/tools/psychoeducation',
   '/resources/tools/assessment/animateVideos',
   '/resources/tools/assessment/RCADS',
   '/resources/tools/assessment',
@@ -26,6 +29,7 @@ export const routes = [
   '/resources/tools/problemSolvingVideo',
   '/resources/tools/problemSolving',
   '/resources/tools/cognitive',
+  '/resources/tools/specialPopulation',
 ];
 
 export function useToolsPath() {
@@ -61,10 +65,14 @@ export function useToolsPath() {
   const getHeading = (path) => {
     const index = routes.findIndex((r) => r === path);
     if (index > 0) {
-      if (index <= 2) return 'Cundill Centre Tools - Psychoeducation';
-      else if (index > 2 && index <= 4)
+      if (index === 1) return 'Tools';
+      if (index > 1 && index <= 3)
+        return 'Cundill Centre Tools - Psychoeducation';
+      else if (index > 3 && index <= 5)
         return 'Cundill Centre Tools - Assessment';
-      else if (index === 5) return 'Assessment Tools';
+      else if (index === 6) return 'Assessment Tools';
+      else if (index === routes.length - 1)
+        return 'Special Populations and Considerations';
       else return 'Cundill Centre Tools - Treatment';
     } else return '';
   };

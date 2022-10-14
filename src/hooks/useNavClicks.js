@@ -8,38 +8,44 @@ export function useNavClicks(location) {
 
   const stateSwitcher = useCallback((arr) => {
     switch (arr) {
-      case '/overview':
-        return ['false', 'true', 'false', 'false', 'false', 'false'];
+      case '/overview': //0
+        return ['false', 'true', 'false', 'false', 'false', 'false', 'false'];
 
-      case '/assessment':
-        return ['false', 'false', 'true', 'false', 'false', 'false'];
+      case '/assessment': //1
+        return ['false', 'false', 'true', 'false', 'false', 'false', 'false'];
 
-      case '/assessment/pears':
-        return ['false', 'false', 'true', 'false', 'false', 'false'];
+      case '/assessment/pears': //2
+        return ['false', 'false', 'true', 'false', 'false', 'false', 'false'];
 
-      case '/assessment/tools':
-        return ['false', 'false', 'true', 'false', 'false', 'false'];
+      case '/assessment/tools': //3
+        return ['false', 'false', 'true', 'false', 'false', 'false', 'false'];
 
-      case '/treatment/mild':
-        return ['false', 'false', ' false', 'true', ' true', 'false'];
+      case '/treatment/mild': //4
+        return ['false', 'false', ' false', 'true', ' true', 'false', 'false'];
 
-      case '/treatment/severe':
-        return ['false', 'false', 'false', 'true', 'true', 'false'];
+      case '/treatment/severe': //5
+        return ['false', 'false', 'false', 'true', 'true', 'false', 'false'];
 
-      case '/tools/video':
-        return ['false', 'false', 'false', 'false', 'false', 'true'];
+      case '/resources/tools/video': //6
+        return ['false', 'false', 'false', 'false', 'false', 'true', 'false'];
 
-      case '/resources/help':
-        return ['false', 'false', 'false', 'false', 'false', 'true'];
+      case '/resources/help': //7
+        return ['false', 'false', 'false', 'false', 'false', 'true', 'false'];
 
-      case '/resources/reference':
-        return ['false', 'false', 'false', 'false', 'false', 'true'];
+      case '/resources/reference': //8
+        return ['false', 'false', 'false', 'false', 'false', 'true', 'false'];
 
-      case '/resources/crisisLines':
-        return ['false', 'false', 'false', 'false', 'false', 'true'];
+      case '/resources/crisisLines': //9
+        return ['false', 'false', 'false', 'false', 'false', 'true', 'false'];
 
-      default:
-        return ['false', 'false', 'false', 'false', 'false', 'false'];
+      case '/orientation': //10
+        return ['false', 'false', 'false', 'false', 'false', 'false', 'true'];
+
+      case '/resources/faq': //11
+        return ['false', 'false', 'false', 'false', 'false', 'true', 'false'];
+
+      default: //default
+        return ['false', 'false', 'false', 'false', 'false', 'false', 'false'];
     }
   }, []);
   //handle change

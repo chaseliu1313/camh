@@ -103,7 +103,7 @@ a {
     bottom: -15vmin !important;
   }
   #overView_spacing {
-    height: 20vmin !important;
+    height: 8vmin !important;
   }
 }
 
@@ -256,7 +256,9 @@ a {
     overflow-y: auto;
   }
 }
-
+.carousel-inner {
+  height: 100%;
+}
 .ov_carousel:hover {
   transform: scale(1.05);
   transition: all 0.7s;
@@ -268,11 +270,20 @@ a {
 .carousel-control-next-icon {
   visibility: hidden;
 }
+.carousel-control-next {
+    display: none;
+}
 .carousel-control-prev-icon {
   visibility: hidden;
+  display: none;
+}
+.carousel-control-prev {
+  visibility: hidden;
+  display: none;
 }
 .carousel-indicators {
   bottom: -80px !important;
+  visibility: hidden;
 }
 .carousel-indicators > li {
   background-color: #6e298d !important;
@@ -299,7 +310,7 @@ a {
 
 #hightlight_inner3 {
   height: 30vh;
-  margin-top: 100px;
+  margin-top:20px;
 }
 #hightlight_inner3 > div {
   height: 100%;

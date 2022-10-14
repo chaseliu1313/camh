@@ -22,12 +22,13 @@ export default function Simulation(props) {
   const videoURL = 'https://www.youtube.com/watch?v=NRKvtacOVfw';
 
   const MarginP = '20px 0 20px 0';
-
+  console.log(props.hide);
   useEffect(() => {
     let a = props.hide;
 
     setHide(a);
-    setPlay(!a);
+
+    if (props.hide) setPlay(false);
   }, [props.hide]);
 
   const showNotes = () => {

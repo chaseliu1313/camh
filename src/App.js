@@ -22,7 +22,8 @@ import LocalHelp from './pages/Resources/localHelp';
 import CrisisLines from './pages/Resources/crisisLines';
 import Reference from './pages/Resources/references';
 import DevelopmentTeam from './pages/Contributors';
-
+import Guide from './pages/Guide';
+import Faq from './pages/Resources/faq';
 function App() {
   return (
     <TreatmentStore>
@@ -42,6 +43,7 @@ function App() {
               <Route path="/treatment" exact component={Treatment} />
               <Route path="/treatment/mild" exact component={Mild} />
               <Route path="/treatment/severe" exact component={Severe} />
+              <Route path="/orientation" exact component={Guide} />
               <Route
                 path="/treatment/psycosocialStrategies"
                 exact
@@ -66,6 +68,7 @@ function App() {
                 component={CrisisLines}
               />
               <Route path="/devTeam" exact component={DevelopmentTeam} />
+              <Route path="/resources/faq" exact component={Faq} />
             </Switch>
           </main>
           <footer className="App-footer">
