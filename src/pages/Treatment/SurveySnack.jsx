@@ -5,16 +5,18 @@ import { PrimaryColor, BackgroundColor } from '../../theme/resource';
 import surveyImg from '../../resource/survey.svg';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import { InputGroup } from 'react-bootstrap';
-const SurveySnackBar = () => {
-  const [motion, setMotion] = useState(false);
+import { useWindowResize } from '../../hooks/useWindowResize';
+const SurveySnackBar = ({ persist }) => {
+  const [motion, setMotion] = useState(persist);
   const [checkboxesState, setCheckboxesState] = useState([false, false]);
   const AnimatedContainer = animated(Container);
-
+  const { size } = useWindowResize();
+  console.log(persist);
   const animation = useSpring({
-    height: motion ? '250px' : '100px',
+    height: motion ? '200px' : '100px',
     transform: motion
       ? 'translate3d(450px, 0px, 0px)'
-      : 'translate3d(0px, 0px, 0px)',
+      : `translate3d(250px, 0px, 0px)`,
   });
 
   const handleCheckbox = (id) => {
@@ -35,12 +37,18 @@ const SurveySnackBar = () => {
   };
   return (
     <AnimatedContainer
-      onMouseOver={() => setMotion(true)}
-      onMouseLeave={() => setMotion(false)}
+      onMouseOver={() => {
+        console.log('setting true');
+        if (!persist) setMotion(true);
+      }}
+      onMouseLeave={() => {
+        if (!persist) setMotion(false);
+      }}
       style={{
         boxShadow: animation.boxShadow,
         height: animation.height,
         transform: animation.transform,
+        width: size.width <= 776 ? size.width * 0.8 : 350,
       }}
     >
       <Left>
@@ -90,7 +98,7 @@ const SurveySnackBar = () => {
 export default SurveySnackBar;
 const Container = styled.div`
   height: 250px;
-  width: 500px;
+
   z-index: 50;
   position: absolute;
   padding: 10px;
@@ -102,6 +110,7 @@ const Container = styled.div`
   align-items: center;
   border-radius: 5px;
   border: 2px solid ${PrimaryColor};
+  overflow: auto;
 `;
 
 const Checkboxes = styled.div`
@@ -126,7 +135,7 @@ const Right = styled.div`
 `;
 
 const IMG = styled.img`
-  width: 60px;
+  width: 50px;
 
   ${({ isOpen }) =>
     isOpen === 'true' ? ' margin-right: 0px;' : ' margin-right: -25px;'}
