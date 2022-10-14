@@ -1279,8 +1279,8 @@ const CatelogueContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 2px 0;
-  ${({ size }) => (size.width <= 776 ? ` width: 85%;` : 'width: 55%;')}
+  margin: 5px 0;
+  ${({ size }) => (size.width <= 776 ? ` width: 85%;` : 'width: 75%;')}
 `;
 
 const CatelogueOuterContainer = styled.div`

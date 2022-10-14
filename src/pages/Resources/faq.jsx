@@ -24,7 +24,7 @@ const Faq = () => {
         </CenterCol>
       </Row>
       <ContentContainer size={size}>
-        <ContentRow>
+        <ContentRow style={{ marginTop: 0 }}>
           <Paragraph weight={'bold'} style={{ marginRight: 'auto' }} margin={0}>
             Q. Do the recommendations in this tool apply to youth with
             neurodevelopmental disorders (e.g., Autism spectrum disorder,
@@ -37,10 +37,17 @@ const Faq = () => {
           >
             The recommendations in this tool apply to youth with
             neurodevelopmental disorders.{' '}
-            <b style={{ fontWeight: 700 }}>The Depression in Autism</b> resource
-            outlines some additional considerations when prescribing medications
-            (e.g., slower titration schedule due to higher risk of side
-            effects).
+            <a
+              href="https://www.camh.ca/-/media/files/cundill-centre/depression-and-autism-full-pdf.pdf"
+              target="_blank"
+              download
+              rel="noopener noreferrer"
+            >
+              The Depression in Autism
+            </a>{' '}
+            resource outlines some additional considerations when prescribing
+            medications (e.g., slower titration schedule due to higher risk of
+            side effects).
           </Paragraph>
         </ContentRow>
         <ContentRow>
@@ -76,10 +83,15 @@ const Faq = () => {
             guidance in this tool can be incorporated as part of this
             individualized care plan and to target symptoms of depression. For
             more information, see the NICE Guideline{' '}
-            <b style={{ fontWeight: 700 }}>
+            <a
+              href="https://www.nice.org.uk/guidance/ng58/chapter/Recommendations"
+              target="_blank"
+              download
+              rel="noopener noreferrer"
+            >
               Coexisting severe mental illness and substance misuse: community
               health and social care services.
-            </b>
+            </a>
           </Paragraph>
         </ContentRow>
         <ContentRow>
@@ -227,5 +239,5 @@ const ContentRow = styled.div`
   align-items: center;
   flex-direction: column;
   align-self: flex-start;
-  margin: 5px 0;
+  margin: 25px 0;
 `;

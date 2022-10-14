@@ -45,36 +45,17 @@ export default function NaviBar() {
             >
               <Link to="/">Home</Link>
             </NavLink>
-            <NavDropdown
-              title="Overview"
-              avclicked={clicked[1] || clicked[6]}
-              id="navbar_dropdown"
+            <NavLink
+              navclicked={clicked[1] || clicked[6]}
+              as="div"
+              className="nav-link"
+              style={{ width: '100%', cursor: 'pointer' }}
+              onClick={() => {
+                history.push('/orientation');
+              }}
             >
-              <NavDropdown.Item
-                as="div"
-                className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
-                onClick={() => {
-                  history.push('/orientation');
-                }}
-              >
-                <Link to="/orientation" style={{ width: '100%' }}>
-                  Orientaion To the tool
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as="div"
-                className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
-                onClick={() => {
-                  history.push('/overview');
-                }}
-              >
-                <Link to="/overview" style={{ width: '100%' }}>
-                  Depression Facts
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+              <Link to="/orientation">Overview</Link>
+            </NavLink>
 
             <NavLink
               navclicked={clicked[2]}

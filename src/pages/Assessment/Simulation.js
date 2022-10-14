@@ -22,7 +22,7 @@ export default function Simulation(props) {
   const videoURL = 'https://www.youtube.com/watch?v=NRKvtacOVfw';
 
   const MarginP = '20px 0 20px 0';
-  console.log(props.hide);
+
   useEffect(() => {
     let a = props.hide;
 

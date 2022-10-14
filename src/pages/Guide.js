@@ -33,7 +33,7 @@ export default function Guide() {
         color={SecondaryColor_Blk}
         weight={fontWeight}
         size={size.height < 900 ? fontSize.subtext : fontSize.subTitle}
-        align="center"
+        align="left"
         margin={0}
       >
         {guide.description}
