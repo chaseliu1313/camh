@@ -1,22 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Row as R, Col as C } from 'react-bootstrap';
-
+import { useWindowResize } from '../../hooks/useWindowResize';
 const ToolLayout = (props) => {
-  return (
-    <Row>
-      {React.Children.map(props.children, (child, index) => (
-        <Col md={index === 0 ? 4 : 8}>{child}</Col>
-      ))}
-    </Row>
-  );
+  const { size } = useWindowResize();
+  return <RowContainer size={size}>{props.children}</RowContainer>;
 };
 
 export const VideoLayout = (props) => {
+  const { size } = useWindowResize();
   return (
-    <VRow>
+    <VRow size={size}>
       {React.Children.map(props.children, (child, index) => (
-        <VCol md={6}>{child}</VCol>
+        <VCol md={6} size={size}>
+          {child}
+        </VCol>
       ))}
     </VRow>
   );
@@ -24,29 +22,60 @@ export const VideoLayout = (props) => {
 
 export default ToolLayout;
 
-const Row = styled(R)`
-  height: 55%;
+//animations
+const enterAni = keyframes`
+
+0% {
+  opacity: 0;
+ 
+
+
+}
+50%{
+  opacity:0.5;
+ 
+}
+ 
+100%{
+  opacity:1;
+  
+}
+`;
+
+const RowContainer = styled.div`
   width: 100%;
-  margin: 5vmin;
-  padding: 0;
-  overflow: hidden;
+
+  display: flex;
+  ${({ size }) =>
+    size.width <= 776
+      ? 'flex-direction: column;  height: 120%;'
+      : 'flex-direction: row;  height: 85%;'}
+
+  align-items: center;
+  justify-content: center;
+  animation: ${enterAni} 0.8s linear;
+  transition: all ease-in-out 0.7s;
 `;
 
 const VRow = styled(R)`
-  height: fit-content;
   width: 100%;
   margin: 2vmin;
   padding: 0;
-  overflow: hidden;
+  animation: ${enterAni} 0.8s linear;
+  transition: all ease-in-out 0.7s;
+  ${({ size }) =>
+    size.width <= 776
+      ? 'overflow: auto;  height: 150%;'
+      : 'overflow: hidden;  height: fit-content;'}
 `;
 
-const Col = styled(C)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 const VCol = styled(C)`
   display: flex;
   top: 2vmin;
+
+  align-items: center;
+  ${({ size }) =>
+    size.width <= 776
+      ? 'flex-direction: column;  justify-content: flex-start;'
+      : 'flex-direction:row;  justify-content: center;'}
 `;

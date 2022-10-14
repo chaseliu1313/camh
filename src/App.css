@@ -103,7 +103,7 @@ a {
     bottom: -15vmin !important;
   }
   #overView_spacing {
-    height: 20vmin !important;
+    height: 8vmin !important;
   }
 }
 
@@ -283,6 +283,7 @@ a {
 }
 .carousel-indicators {
   bottom: -80px !important;
+  visibility: hidden;
 }
 .carousel-indicators > li {
   background-color: #6e298d !important;
@@ -309,7 +310,7 @@ a {
 
 #hightlight_inner3 {
   height: 30vh;
-  margin-top: 100px;
+  margin-top:20px;
 }
 #hightlight_inner3 > div {
   height: 100%;

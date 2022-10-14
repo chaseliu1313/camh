@@ -9,7 +9,7 @@ import { SecondaryColor_Blk } from '../../theme/resource';
 import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 
 const CrisisLines = () => {
-  const paths = ['/resources/help', '/resources/reference'];
+  const paths = ['/resources/faq', '/resources/reference'];
 
   return (
     <Container>

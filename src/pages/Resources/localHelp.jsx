@@ -9,7 +9,7 @@ import { SecondaryColor_Blk } from '../../theme/resource';
 import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
 
 const LocalHelp = () => {
-  const paths = ['/resources/tools/cognitive', '/resources/crisisLines'];
+  const paths = ['/resources/tools/specialPopulation', '/resources/faq'];
 
   return (
     <Container>

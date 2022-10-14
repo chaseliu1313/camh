@@ -146,6 +146,6 @@ display: ${display === 'true' ? 'inline-flex' : 'none'};
 
   @media (max-width: 425px) {
     width: 35vw;
-    height: 10vh;
+    height: 5vh;
   }
 `;

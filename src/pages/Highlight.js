@@ -13,7 +13,7 @@ import {
 } from '../theme/resource';
 import { highlightsContent } from '../resource/content';
 import { fontSize, margin } from '../theme/resource';
-import {useWindowResize} from '../hooks/useWindowResize';
+import { useWindowResize } from '../hooks/useWindowResize';
 import bg1 from '../resource/illu1.svg';
 import bg2 from '../resource/illu2.svg';
 import bg3 from '../resource/illu3.svg';
@@ -32,29 +32,27 @@ export default function Hightlights() {
   const [bgKey, updateKey] = useState(1);
   const inv = 10000;
   const [mounted, setMounted] = useState(false);
- const {size} = useWindowResize();
+  const { size } = useWindowResize();
   //set active title hook
   const [activeTitle, setActive] = useState(titles[0]);
 
   useEffect(() => {
     setMounted(true);
-    
 
     return () => {
       setMounted(false);
     };
   }, []);
 
-   
-  const MarginP = size.height<800? '10px 0':'40px 0';
-
+  const MarginP = size.height < 800 ? '10px 0' : '40px 0';
+  const MarginFirstRow = size.height < 800 ? '0 0 10px 0' : '0 0 40px 0';
   useCallback(() => {
     let active = titles[bgKey];
     setActive(active);
   }, [bgKey, setActive]);
 
   return (
-    <Main bgKey={bgKey} mounted={mounted} >
+    <Main bgKey={bgKey} mounted={mounted}>
       <Row>
         <CenterCol md={{ span: 8, offset: 2 }}>
           <Heading
@@ -79,21 +77,30 @@ export default function Hightlights() {
               setActive(titles[key]);
             }}
           >
-            <Carousel.Item className="ov_slide" id="ov_slide_1" >
+            <Carousel.Item className="ov_slide" id="ov_slide_1">
               <div>
                 <Paragraph
-                  margin={MarginP}
+                  margin={MarginFirstRow}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
-                  size={size.height< 800? fontSize.p: fontSize.subTitle}
+                  size={size.height < 800 ? fontSize.p : fontSize.subTitle}
                 >
-                  {highlightsContent[0]}
+                  ·
+                  <a
+                    className="ov_a"
+                    href="https://www.camh.ca/en/science-and-research/institutes-and-centres/cundill-centre-for-child-and-youth-depression"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    The Cundill Centre
+                  </a>
+                  {' ' + highlightsContent[0]}
                 </Paragraph>
                 <Paragraph
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
-                  size={size.height< 800? fontSize.p: fontSize.subTitle}
+                  size={size.height < 800 ? fontSize.p : fontSize.subTitle}
                 >
                   {highlightsContent[1]}
                 </Paragraph>
@@ -101,7 +108,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
-                  size={size.height< 800? fontSize.p: fontSize.subTitle}
+                  size={size.height < 800 ? fontSize.p : fontSize.subTitle}
                 >
                   ·The content provides a step-by-step assessment and treatment
                   pathway for youth depression and is based on our&nbsp;
@@ -130,10 +137,10 @@ export default function Hightlights() {
             <Carousel.Item className="ov_slide" id="ov_slide_3">
               <div tabIndex="1">
                 <Paragraph
-                  margin={MarginP}
+                  margin={MarginFirstRow}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
-                  size={size.height< 800? fontSize.p: fontSize.subTitle}
+                  size={size.height < 800 ? fontSize.p : fontSize.subTitle}
                 >
                   {highlightsContent[7]}
                 </Paragraph>
@@ -141,7 +148,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
-                  size={size.height< 800? fontSize.p: fontSize.subTitle}
+                  size={size.height < 800 ? fontSize.p : fontSize.subTitle}
                 >
                   {highlightsContent[8]}
                 </Paragraph>
@@ -149,7 +156,7 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
-                  size={size.height< 800? fontSize.p: fontSize.subTitle}
+                  size={size.height < 800 ? fontSize.p : fontSize.subTitle}
                 >
                   {highlightsContent[9]}
                 </Paragraph>
@@ -157,23 +164,25 @@ export default function Hightlights() {
                   margin={MarginP}
                   color={SecondaryColor_Blk}
                   weight={fontWeight}
-                  size={size.height< 800? fontSize.p: fontSize.subTitle}
+                  size={size.height < 800 ? fontSize.p : fontSize.subTitle}
                 >
                   {highlightsContent[10]}
                 </Paragraph>
                 <SubText className="slide-footnote">2/3</SubText>
               </div>
             </Carousel.Item>
-            <Carousel.Item className="ov_slide" tabIndex="2" >
+            <Carousel.Item className="ov_slide" tabIndex="2">
               <div id="ov_slide_5">
-                {size.height> 800 && <Paragraph
-                  margin={MarginP}
-                  color={SecondaryColor_Blk}
-                  weight={fontWeight}
-                  size={fontSize.subTitle}
-                >
-                  {highlightsContent[3]}
-                </Paragraph>}
+                {size.height > 800 && (
+                  <Paragraph
+                    margin={MarginP}
+                    color={SecondaryColor_Blk}
+                    weight={fontWeight}
+                    size={fontSize.subTitle}
+                  >
+                    {highlightsContent[3]}
+                  </Paragraph>
+                )}
                 <Row id="hightlight_inner3">
                   <Col md={5}>
                     <IMG src={fs} />
@@ -185,14 +194,16 @@ export default function Hightlights() {
                       download
                       rel="noopener noreferrer"
                     >
-                      {size.height<800 && <Paragraph
-                  margin={MarginP}
-                  color={SecondaryColor_Blk}
-                  weight={fontWeight}
-                  size={fontSize.subtext}
-                >
-                  {highlightsContent[3]}
-                </Paragraph>}
+                      {size.height < 800 && (
+                        <Paragraph
+                          margin={MarginP}
+                          color={SecondaryColor_Blk}
+                          weight={fontWeight}
+                          size={fontSize.subtext}
+                        >
+                          {highlightsContent[3]}
+                        </Paragraph>
+                      )}
                       <Button
                         primary={false}
                         height="7vh"
@@ -295,7 +306,7 @@ const Main = styled.div`
   background-repeat: no-repeat;
   background-size: 30%;
   transition: all ease-in-out 0.7s;
-  @media only screen and (max-height: 800px){
+  @media only screen and (max-height: 800px) {
     overflow-x: auto;
   }
   ${({ mounted }) =>
@@ -307,8 +318,7 @@ const Main = styled.div`
   ${({ bgKey }) => switchBackground(bgKey)};
 `;
 
-const CenterCol = styled(Col)`
- `;
+const CenterCol = styled(Col)``;
 
 const IMG = styled.img`
   height: auto;

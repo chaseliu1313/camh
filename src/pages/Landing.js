@@ -47,7 +47,7 @@ export default function Landing() {
   };
 
   const handleClick = () => {
-    history.push('/overview');
+    history.push('/orientation');
     setTimeout(() => {}, 1600);
   };
 
