@@ -43,7 +43,7 @@ const Faq = () => {
               download
               rel="noopener noreferrer"
             >
-              The Depression in Autism
+              Depression and Autism
             </a>{' '}
             resource outlines some additional considerations when prescribing
             medications (e.g., slower titration schedule due to higher risk of

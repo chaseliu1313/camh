@@ -1075,7 +1075,7 @@ const Severe = () => {
         <CenterCol md={{ span: 8, offset: 1 }}>
           <NaviBtnGroup
             backLink="/treatment/mild"
-            forwardLink="/resources/tools/video"
+            forwardLink="/resources/tools"
           />
         </CenterCol>
       </Row>
