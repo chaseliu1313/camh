@@ -260,31 +260,44 @@ a {
   height: 100%;
   width: 70% !important;
 }
-.ov_carousel:hover {
+.carousel-inner:hover {
   transform: scale(1.05);
-  transition: all 0.7s;
+  transition: all ease-in-out 0.7s;
 }
 .ov_a {
   color: #6e298d;
   font-weight: bold;
 }
 .carousel-control-prev>.sr-only{
-  visibility: hidden;
+  min-width: 75px;
+  min-height: 50px;
+  clip: unset !important;
+  color: #FFFFFF;
+  background-color: #4a1961;
+  border: 2px solid #6e298d;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .carousel-control-next>.sr-only{
-  visibility: hidden;
+  min-width: 75px;
+  min-height: 50px;
+  clip: unset !important;
+  color: #FFFFFF;
+  border: 2px solid #6e298d;
+  background-color: #4a1961;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .carousel-control-next>.carousel-control-next-icon{
-  
- z-index: 1000;
- width: 100%;
- height: 100%;
+visibility: hidden;
 }
 .carousel-control-prev>.carousel-control-prev-icon{
+ visibility: hidden;
  
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
 }
 .ov_carousel{
   display: flex;
