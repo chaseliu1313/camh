@@ -79,7 +79,24 @@
   .assess_simu_side {
     margin-top: 10px;
   }
+ 
 }
+
+@media screen and (max-width: 768px) {
+  .pageTitle {
+    font-size: 23px !important;
+  }
+  #pearl_slide {
+    overflow: auto;
+    max-height: 60vh;
+  }
+  .page_subtitle {
+    font-size: 21px !important;
+  }
+  
+}
+
+
 @media screen and (min-width: 1200px) {
   #dsm_modal {
     max-width: 90% !important;
@@ -172,6 +189,8 @@
   opacity: 0;
 }
 
+.pageTitle {}
+
 #pears5::first-letter {
   font-weight: bold;
   color: #6e298d;
@@ -211,6 +230,9 @@
 
 .pearl_card {
   min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pearl_card .carousel-indicators {

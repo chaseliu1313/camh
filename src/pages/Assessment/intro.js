@@ -32,6 +32,7 @@ export default function Intro(props) {
           weight="bold"
           size={fontSize.title2}
           color={SecondaryColor_Blk}
+          className="page_subtitle"
         >
           {assessment1[0]}
         </Paragraph>

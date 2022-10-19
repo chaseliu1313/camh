@@ -69,6 +69,7 @@ const Tools = () => {
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
+        className="pageTitle"
         mmargin={`${margin}px 0 ${margin * 1.5}px 0`}
       >
         {show ? 'Assessing Depression Severity' : 'Assessment Tools'}

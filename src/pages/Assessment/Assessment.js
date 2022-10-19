@@ -53,6 +53,7 @@ export default function Assessment() {
         color={SecondaryColor_Blk}
         margin={`${margin}px 0`}
         type="h1"
+        className="pageTitle"
       >
         Tips for Assessing Depressed Youth
       </Heading>

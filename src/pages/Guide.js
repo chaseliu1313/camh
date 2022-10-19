@@ -18,10 +18,14 @@ export default function Guide() {
   const history = useHistory();
 
   return (
-    <Main height={size.height}>
+    <Main width={size.width}>
       <Heading
         color={SecondaryColor_Blk}
-        size={size.height < 900 ? fontSize.subTitle : fontSize.title}
+        size={
+          size.height < 900 || size.width < 450
+            ? fontSize.subTitle
+            : fontSize.title
+        }
         weight="bold"
         align="center"
         margin={`${margin}px 0`}
@@ -32,7 +36,11 @@ export default function Guide() {
       <Paragraph
         color={SecondaryColor_Blk}
         weight={fontWeight}
-        size={size.height < 900 ? fontSize.subtext : fontSize.subTitle}
+        size={
+          size.height < 900 || size.width < 450
+            ? fontSize.subtext
+            : fontSize.subTitle
+        }
         align="left"
         margin={0}
       >
@@ -113,7 +121,6 @@ const enterAni = keyframes`
 const Main = styled.div`
   height: 100%;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -121,8 +128,8 @@ const Main = styled.div`
   overflow: auto;
   animation: ${enterAni} 0.8s linear;
   transition: all ease-in-out 0.7s;
-  ${({ height }) =>
-    height < 800 ? 'padding: 15% 20%;' : `padding: 1% 10% 5% 10%;`}
+  ${({ width }) =>
+    width < 768 ? 'padding: 15% 20%;' : `padding: 1% 10% 5% 10%;`}
 `;
 
 const ContentBox = styled.div`

@@ -2,7 +2,7 @@ import React from 'react';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import styled from 'styled-components';
 import './assessment.css';
-import { Col, Carousel } from 'react-bootstrap';
+import { Col, Carousel, Row } from 'react-bootstrap';
 import { pears } from '../../resource/content';
 import { SecondaryColor_Blk, TertiaryColor_Tel } from '../../theme/resource';
 import Button from '../../components/Buttons/Buttons';
@@ -31,98 +31,109 @@ const Pears = () => {
         color={SecondaryColor_Blk}
         margin={`${margin}px 0 ${margin * 1.5}px 0`}
         id="assess_landing"
+        className="pageTitle"
       >
         Assessment Pearls
       </Heading>
-      <Col lg={{ span: 8, offset: 2 }}>
-        <Carousel className="pearl_card" interval={inv}>
-          <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="0">
-            <Heading
-              size={fontSize.title2}
-              weight="bold"
-              align="center"
-              color={SecondaryColor_Blk}
-              margin="35px 0"
-              id="assess_seconday"
-            >
-              Setting up a comfortable environment
-            </Heading>
-            <Paragraph
-              margin={Pmarging}
-              color={SecondaryColor_Blk}
-              weight={fontWeight}
-            >
-              {pears[5]}
-            </Paragraph>
-            <Paragraph
-              margin={Pmarging}
-              color={SecondaryColor_Blk}
-              weight={fontWeight}
-            >
-              {pears[6]}
-            </Paragraph>
-          </Carousel.Item>
-          <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="1">
-            <Heading
-              size={fontSize.title2}
-              weight="bold"
-              align="center"
-              color={SecondaryColor_Blk}
-              margin="35px 0"
-              id="assess_seconday"
-            >
-              Depression in teens can be missed because:
-            </Heading>
-            <Paragraph
-              margin={Pmarging}
-              color={SecondaryColor_Blk}
-              weight={fontWeight}
-            >
-              {pears[0]}
-            </Paragraph>
-            <Paragraph
-              margin={Pmarging}
-              color={SecondaryColor_Blk}
-              weight={fontWeight}
-            >
-              {pears[1]}
-            </Paragraph>
-            <Paragraph
-              margin={Pmarging}
-              color={SecondaryColor_Blk}
-              weight={fontWeight}
-            >
-              {pears[2]}
-            </Paragraph>
-          </Carousel.Item>
-          <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="2">
-            <Heading
-              size={fontSize.title2}
-              weight="bold"
-              align="center"
-              color={SecondaryColor_Blk}
-              margin="35px 0"
-              id="assess_seconday"
-            >
-              Assess for complexity and risk
-            </Heading>
-            <Paragraph
-              margin={Pmarging}
-              color={SecondaryColor_Blk}
-              weight={fontWeight}
-            >
-              {pears[3]}
-            </Paragraph>
-            <Paragraph
-              margin={Pmarging}
-              color={SecondaryColor_Blk}
-              weight={fontWeight}
-            >
-              {pears[4]}
-            </Paragraph>
-          </Carousel.Item>
-        </Carousel>
-      </Col>
+      <Row>
+        <div
+          className="carousel_row"
+          style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Carousel className="pearl_card" interval={inv}>
+            <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="0">
+              <Heading
+                size={fontSize.title2}
+                weight="bold"
+                align="center"
+                color={SecondaryColor_Blk}
+                margin="35px 0"
+                id="assess_seconday"
+              >
+                Setting up a comfortable environment
+              </Heading>
+              <Paragraph
+                margin={Pmarging}
+                color={SecondaryColor_Blk}
+                weight={fontWeight}
+              >
+                {pears[5]}
+              </Paragraph>
+              <Paragraph
+                margin={Pmarging}
+                color={SecondaryColor_Blk}
+                weight={fontWeight}
+              >
+                {pears[6]}
+              </Paragraph>
+            </Carousel.Item>
+            <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="1">
+              <Heading
+                size={fontSize.title2}
+                weight="bold"
+                align="center"
+                color={SecondaryColor_Blk}
+                margin="35px 0"
+                id="assess_seconday"
+              >
+                Depression in teens can be missed because:
+              </Heading>
+              <Paragraph
+                margin={Pmarging}
+                color={SecondaryColor_Blk}
+                weight={fontWeight}
+              >
+                {pears[0]}
+              </Paragraph>
+              <Paragraph
+                margin={Pmarging}
+                color={SecondaryColor_Blk}
+                weight={fontWeight}
+              >
+                {pears[1]}
+              </Paragraph>
+              <Paragraph
+                margin={Pmarging}
+                color={SecondaryColor_Blk}
+                weight={fontWeight}
+              >
+                {pears[2]}
+              </Paragraph>
+            </Carousel.Item>
+            <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="2">
+              <Heading
+                size={fontSize.title2}
+                weight="bold"
+                align="center"
+                color={SecondaryColor_Blk}
+                margin="35px 0"
+                id="assess_seconday"
+              >
+                Assess for complexity and risk
+              </Heading>
+              <Paragraph
+                margin={Pmarging}
+                color={SecondaryColor_Blk}
+                weight={fontWeight}
+              >
+                {pears[3]}
+              </Paragraph>
+              <Paragraph
+                margin={Pmarging}
+                color={SecondaryColor_Blk}
+                weight={fontWeight}
+              >
+                {pears[4]}
+              </Paragraph>
+            </Carousel.Item>
+          </Carousel>
+        </div>
+      </Row>
       <BtnGroup id="btn_group">
         <Button
           type="outlined"

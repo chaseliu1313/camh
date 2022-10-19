@@ -62,6 +62,7 @@ export default function Hightlights() {
             align="center"
             margin={`${margin}px 0`}
             type="h1"
+            className="pageTitle"
           >
             {activeTitle}
           </Heading>
