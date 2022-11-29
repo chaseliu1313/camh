@@ -63,7 +63,7 @@ export default function Simulation(props) {
           <Card
             height="35vh"
             width="auto"
-            padding={size.height < 800 ? '0px 10px' : '20px'}
+            padding={size.height < 800 ? '0px 10px' : '7% 2%'}
           >
             <div className="assess_simu_side">
               <Paragraph

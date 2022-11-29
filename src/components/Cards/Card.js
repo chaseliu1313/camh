@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BackgroundColor } from '../../theme/resource';
-
+import { useWindowResize } from '../../hooks/useWindowResize';
 export default function Card({
   height,
   width,
@@ -12,6 +12,7 @@ export default function Card({
   bgColor,
   tabIndex = 0,
 }) {
+  const { size } = useWindowResize();
   return (
     <Container
       height={height}
@@ -21,6 +22,7 @@ export default function Card({
       className={className}
       bgColor={bgColor}
       tabIndex={tabIndex}
+      size={size}
     >
       {children}
     </Container>
@@ -39,12 +41,13 @@ const Container = styled.div`
     text-align: center;
   }
 
-  ${({ height, width, margin, padding, bgColor }) => `
+  ${({ height, width, margin, padding, bgColor, size }) => `
   background-color: ${bgColor || BackgroundColor};
     height: ${height || '40vh'};
      width: ${width || '50vw'};
      margin: ${margin || 'auto'};
      padding: ${padding || '10px'};
+     overflow: ${size.height < 800 || size.width < 900 ? 'auto' : 'hidden'}
 
 `}
 `;

@@ -89,6 +89,7 @@
   #pearl_slide {
     overflow: auto;
     max-height: 60vh;
+    min-height: 500px  !important;
   }
   .page_subtitle {
     font-size: 21px !important;
