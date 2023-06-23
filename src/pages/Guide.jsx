@@ -1,24 +1,24 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { useHistory } from 'react-router-dom';
-import { guide } from '../resource/content';
-import Button from '../components/Buttons/Buttons';
-import Heading, { Paragraph } from '../components/Text/Heading';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import { useHistory } from "react-router-dom";
+import { guide } from "../resource/content";
+import Button from "../components/Buttons/Buttons";
+import Heading, { Paragraph } from "../components/Text/Heading";
 import {
   SecondaryColor_Blk,
   fontSize,
   margin,
   PrimaryColor,
-} from '../theme/resource';
+} from "../theme/resource";
 
-import { useWindowResize } from '../hooks/useWindowResize';
+import { useWindowResize } from "../hooks/useWindowResize";
 export default function Guide() {
   const { size } = useWindowResize();
-  const fontWeight = 'normal';
+  const fontWeight = "normal";
   const history = useHistory();
 
   return (
-    <Main width={size.width}>
+    <Main width={size.width} className="orientation">
       <Heading
         color={SecondaryColor_Blk}
         size={
@@ -36,49 +36,48 @@ export default function Guide() {
       <Paragraph
         color={SecondaryColor_Blk}
         weight={fontWeight}
-        size={
-          size.height < 900 || size.width < 450
-            ? fontSize.subtext
-            : fontSize.subTitle
-        }
+        size={size.height < 900 || size.width < 450 ? 18 : fontSize.subTitle}
         align="left"
         margin={0}
       >
         {guide.description}
       </Paragraph>
-      {guide.content.map((g, i) => (
-        <ContentBox
-          key={g.title}
-          border={
-            i === guide.content.length - 1
-              ? `1px solid ${PrimaryColor}`
-              : `none`
-          }
-        >
-          <TitleBox>
-            <Heading
-              color="#FFFFFF"
-              size={size.height < 900 ? fontSize.subtext : fontSize.subTitle}
-              weight="bold"
-              align="center"
-              type="h4"
-              margin={0}
-            >
-              {g.title}
-            </Heading>
-          </TitleBox>
-          <DescriptionBox>
-            <Paragraph
-              size={size.width < 900 ? fontSize.subtext2 : fontSize.subtext}
-              color="black"
-              lineHeight={size.width < 900 ? 1.3 : 1.5}
-              margin={0}
-            >
-              {g.description}
-            </Paragraph>
-          </DescriptionBox>
-        </ContentBox>
-      ))}
+      <div style={{ paddingTop: 16 }}>
+        {guide.content.map((g, i) => (
+          <ContentBox
+            key={g.title}
+            border={
+              i === guide.content.length - 1
+                ? `1px solid ${PrimaryColor}`
+                : `none`
+            }
+          >
+            <TitleBox>
+              <Heading
+                color="#FFFFFF"
+                size={size.height < 900 ? fontSize.subtext : fontSize.subTitle}
+                weight="bold"
+                align="center"
+                type="h4"
+                margin={0}
+              >
+                {g.title}
+              </Heading>
+            </TitleBox>
+            <DescriptionBox>
+              <Paragraph
+                size={size.width < 900 ? fontSize.subtext2 : fontSize.subtext}
+                color="black"
+                lineHeight={size.width < 900 ? 1.3 : 1.5}
+                margin={0}
+                style={{ height: "100%" }}
+              >
+                {g.description}
+              </Paragraph>
+            </DescriptionBox>
+          </ContentBox>
+        ))}
+      </div>
       <ButtonContainer>
         <Button
           primary={true}
@@ -87,7 +86,7 @@ export default function Guide() {
           width="20vw"
           display={true}
           onClick={() => {
-            history.push('/overview');
+            history.push("/overview");
           }}
         >
           <Paragraph>Next Section</Paragraph>
@@ -119,7 +118,6 @@ const enterAni = keyframes`
 
 //component styling
 const Main = styled.div`
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -129,11 +127,11 @@ const Main = styled.div`
   animation: ${enterAni} 0.8s linear;
   transition: all ease-in-out 0.7s;
   ${({ width }) =>
-    width < 768 ? 'padding: 15% 20%;' : `padding: 1% 10% 5% 10%;`}
+    width < 768 ? "padding: 5% 5%;" : `padding: 1% 10% 5% 10%;`}
 `;
 
 const ContentBox = styled.div`
-  height: 15%;
+  height: 100px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -142,6 +140,7 @@ const ContentBox = styled.div`
   border-top: 1px solid ${PrimaryColor};
   border-right: 1px solid ${PrimaryColor};
   box-sizing: border-box;
+
   ${({ border }) => `border-bottom: ${border}; `}
 `;
 
@@ -165,10 +164,11 @@ const DescriptionBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   align-self: flex-start;
-  padding: 8px;
+  padding: 16px 8px;
   overflow: auto;
 `;
 
 const ButtonContainer = styled.div`
   width: 100%;
+  height: 150px;
 `;

@@ -1,44 +1,44 @@
-export const PrimaryColor = '#6E298D';
+export const PrimaryColor = "#6E298D";
+export const PrimaryLight = "#be78de";
+export const SecondaryColor_Bro = "#AB8876";
+export const SecondaryColor_Yel = "#FFB652";
+export const SecondaryColor_Blu = "#63B1E5";
+export const SecondaryColor_Tel = "#00A39B";
 
-export const SecondaryColor_Bro = '#AB8876';
-export const SecondaryColor_Yel = '#FFB652';
-export const SecondaryColor_Blu = '#63B1E5';
-export const SecondaryColor_Tel = '#00A39B';
+export const SecondaryColor_Blk = "#1E1E1E";
 
-export const SecondaryColor_Blk = '#1E1E1E';
+export const TertiaryColor_Bro = "#d2c1b7";
+export const TertiaryColor_Yel = "#ffd6a2";
+export const TertiaryColor_Blu = "#b5d3eb";
+export const TertiaryColor_Tel = "#7ac3cc";
 
-export const TertiaryColor_Bro = '#d2c1b7';
-export const TertiaryColor_Yel = '#ffd6a2';
-export const TertiaryColor_Blu = '#b5d3eb';
-export const TertiaryColor_Tel = '#7ac3cc';
+export const BackgroundColor = "#F7F7F7";
 
-export const BackgroundColor = '#F7F7F7';
+export const DarkPurple = "#4A1961";
 
-export const DarkPurple = '#4A1961';
-
-export const Correct_G = '#17b978';
-export const Correct_G_Hover = '#086972';
-export const Error_R = '#ff304f';
-export const Error_R_Hover = '#e41749';
+export const Correct_G = "#17b978";
+export const Correct_G_Hover = "#086972";
+export const Error_R = "#ff304f";
+export const Error_R_Hover = "#e41749";
 
 export const PrimaryGradient = [
   PrimaryColor,
-  '#682685',
-  '#62237E',
-  '#5C2177',
-  '#561E6F',
-  '#501B68',
+  "#682685",
+  "#62237E",
+  "#5C2177",
+  "#561E6F",
+  "#501B68",
   DarkPurple,
 ];
 
 export const fontSize = {
-  subtext2: '14px',
-  subtext: '18px',
-  p: '21px',
-  subTitle: '23px',
-  titleSm: '25px',
-  title2: '28px',
-  title: '46px',
+  subtext2: "14px",
+  subtext: "18px",
+  p: "21px",
+  subTitle: "23px",
+  titleSm: "25px",
+  title2: "28px",
+  title: "46px",
 };
 
 const colorPaletteSecondary = [
@@ -74,13 +74,13 @@ export const margin = 16;
 
 //media queries
 export const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px',
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
 };
 
 export const device = {
