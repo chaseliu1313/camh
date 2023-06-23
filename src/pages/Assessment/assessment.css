@@ -19,6 +19,7 @@
 
 #assess_landing {
   animation: enter 0.5s linear;
+  position: relative;
 }
 
 @keyframes enter2 {
@@ -94,6 +95,9 @@
   .page_subtitle {
     font-size: 21px !important;
   }
+  .breadcrumb {
+    display: none !important;
+  }
   
 }
 
@@ -112,7 +116,7 @@
 }
 #dsm_modal > .modal-content {
   background-color: #6e298d !important;
-  height: 90vh !important;
+  height: 80vh !important;
 }
 
 #dsm_header > button,
@@ -190,7 +194,9 @@
   opacity: 0;
 }
 
-.pageTitle {}
+.pageTitle {
+  padding-top: 8px !important;
+}
 
 #pears5::first-letter {
   font-weight: bold;
@@ -244,4 +250,9 @@
   .pearl_card p {
     font-size: 2.5vmin;
   }
+}
+
+.btn-close {
+  color: white !important;
+  background-color: white;
 }

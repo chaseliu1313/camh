@@ -47,9 +47,9 @@ const Treatment = () => {
         >
           <div className="treatment_wraper">
             <Card
-              height="auto"
+              height="95%"
               width="45vw"
-              padding="5vmin"
+              padding={'8px'}
               className="treatment_card"
               bgColor={TertiaryColor_Tel}
             >
@@ -64,7 +64,7 @@ const Treatment = () => {
               <Button
                 primary
                 display
-                height="20vh"
+                height="10vh"
                 width="20vw"
                 onClick={() => viewSwicher(1)}
               >
@@ -80,7 +80,7 @@ const Treatment = () => {
                 dark
                 primary
                 display
-                height="20vh"
+                height="10vh"
                 width="20vw"
                 onClick={() => viewSwicher(2)}
               >

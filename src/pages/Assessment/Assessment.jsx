@@ -42,16 +42,44 @@ export default function Assessment() {
     setPageState(copyState);
 
     setDisplay(copyState[0]);
+
+   
   };
 
+  const getRouteName = ()=>{
+    if(pageState[0] === true && pageState[1]===false && pageState[2]===true){
+      return 'Simulation Video'
+    }
+    if(pageState[0] === true && pageState[1]===true && pageState[2]===false){
+      return 'Tips for Assessing Depressed youth'
+    }
+  }
+
+ 
+
+ 
+ 
   return (
     <Container id="assess_landing">
+      <div className="breadcrumb" style={{height: 20, position: 'absolute', top: 0, left: 0, paddingLeft: 10, display:'flex', boxSizing: 'border-box' }}>
+        <p style={{fontSize: 14, cursor: 'pointer', color:'black'}} onClick={()=>{
+      history.push('/')
+        }}>Home</p>
+        <p style={{fontSize: 14 , color:'black', marginLeft: 3, marginRight: 3}}>{' >> '}</p>
+        <p style={{fontSize: 14, cursor: 'pointer', color:'black'}}   onClick={()=>{
+          console.log('click')
+          setPageState([false, true, true])
+        }}>Assessment</p>
+        {pageState[0]===true && <p style={{fontSize: 14 , color:'black', marginLeft: 3, marginRight: 3}}>{' >> '}</p>}
+            <p style={{fontSize: 14 , color:'black'}}>{getRouteName()}</p>
+      </div>
       <Heading
         size={fontSize.title}
         weight="bold"
         align="center"
         color={SecondaryColor_Blk}
         margin={`${margin}px 0`}
+        
         type="h1"
         className="pageTitle"
       >

@@ -194,7 +194,7 @@ const Catalogue = ({ size }) => {
   return (
     <CatelogueOuterContainer
       style={{
-        paddingBottom: size.height <= 900 ? '35%' : '10%',
+        paddingBottom: 150,
       }}
     >
       <div style={{ width: '85%' }}>

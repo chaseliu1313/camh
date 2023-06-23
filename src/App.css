@@ -294,11 +294,14 @@ a {
   align-items: center;
 }
 .carousel-control-next>.carousel-control-next-icon{
-visibility: hidden;
+background-color: #6e298d;
+  border-radius: 2px;
+ 
 }
 .carousel-control-prev>.carousel-control-prev-icon{
- visibility: hidden;
  
+  background-color: #6e298d;
+  border-radius: 2px;
 }
 .ov_carousel{
   display: flex;

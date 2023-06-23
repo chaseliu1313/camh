@@ -24,6 +24,17 @@ const Pears = () => {
   let history = useHistory();
   return (
     <Container>
+         <div className="breadcrumb" style={{height: 20, position: 'absolute', top: 10, left: 0, paddingLeft: 10, display:'flex', boxSizing: 'border-box' }}>
+        <p style={{fontSize: 14, cursor: 'pointer', color:'black'}} onClick={()=>{
+      history.push('/')
+        }}>Home</p>
+        <p style={{fontSize: 14 , color:'black', marginLeft: 3, marginRight: 3}}>{' >> '}</p>
+        <p style={{fontSize: 14, cursor: 'pointer', color:'black'}}   onClick={()=>{
+       history.push('/Assessment')
+        }}>Assessment</p>
+       <p style={{fontSize: 14 , color:'black', marginLeft: 3, marginRight: 3}}>{' >> '}</p>
+            <p style={{fontSize: 14 , color:'black'}}>Assessment Pearls</p>
+      </div>
       <Heading
         size={fontSize.title}
         weight="bold"
@@ -45,7 +56,7 @@ const Pears = () => {
             alignItems: 'center',
           }}
         >
-          <Carousel className="pearl_card" interval={inv}>
+          <Carousel className="pearl_card" interval={inv} slide='false'>
             <Carousel.Item className="ov_slide" id="pearl_slide" tabIndex="0">
               <Heading
                 size={fontSize.title2}
@@ -164,7 +175,7 @@ const Container = styled.div`
   height: auto;
   width: 100%;
   overflow: hidden;
-
+  position: relative;
   overflow: hidden;
   transition: all 1s linear;
   background-image: url(${idea});

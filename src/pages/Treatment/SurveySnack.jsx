@@ -6,6 +6,7 @@ import surveyImg from '../../resource/survey.svg';
 import Heading, { Paragraph } from '../../components/Text/Heading';
 import { InputGroup } from 'react-bootstrap';
 import { useWindowResize } from '../../hooks/useWindowResize';
+
 const SurveySnackBar = ({ persist }) => {
   const [motion, setMotion] = useState(persist);
   const [checkboxesState, setCheckboxesState] = useState([false, false]);

@@ -224,7 +224,7 @@ export default Reference;
 const Container = styled.div`
   height: 120%;
   width: 100%;
-  overflow-y: hidden;
+ 
   padding-top: 25px;
 `;
 
@@ -239,7 +239,6 @@ const Row = styled(R)`
 const ListRow = styled(R)`
   width: 100%;
   padding: 0;
-  overflow: hidden;
   height: 100%;
   margin: 2vmin auto;
 `;

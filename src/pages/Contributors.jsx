@@ -147,6 +147,7 @@ const Container = styled.div`
   padding: 5vmin 0;
   background: url(${teams}) no-repeat fixed left bottom;
   background-size: 30%;
+  padding-bottom: 10%;
 `;
 
 const Row = styled(R)`
@@ -167,6 +168,7 @@ const ListRow = styled(R)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  
 `;
 
 const CenterCol = styled(Col)`

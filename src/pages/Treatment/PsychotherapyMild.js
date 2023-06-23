@@ -55,6 +55,7 @@ const PsychoMild = () => {
             height="5vmin"
             width="5vw"
             display
+                  className='backBtn'
             onClick={() => goBack()}
           >
             <FontAwesomeIcon

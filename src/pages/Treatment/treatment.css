@@ -5,6 +5,7 @@
   align-items: center;
   z-index: 2;
   margin: -5vh -15vw 0 0;
+  height: 50%;
 }
 
 #treatment_bg {
@@ -34,7 +35,8 @@
   }
 
   .treatment_wraper {
-    margin: auto;
+    margin: unset;
+    height: 90%;
   }
   .treatment_btn_text {
     font-size: 2vmin !important;
@@ -42,6 +44,10 @@
 
   .treatment_steps {
     text-align: center !important;
+  }
+  .backBtn {
+    border: none !important;
+    box-shadow: none !important;
   }
 }
 

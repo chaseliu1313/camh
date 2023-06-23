@@ -1087,7 +1087,7 @@ const Severe = () => {
         heading="Notice"
         content="If there has been no response, consider the moderate to severe pathway and refer youth to specialized youth mental health services. You will now be taken to the beginning of the moderate to severe pathway."
       />
-      <SurveySnackBar persist={size.width <= 776 ? false : true} />
+   
       <img src={bg} id="treatment_bg" alt="background" />
     </Container>
   );

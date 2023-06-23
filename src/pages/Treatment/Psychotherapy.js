@@ -54,6 +54,7 @@ const Psycho = () => {
             type="outlined"
             height="5vmin"
             width="5vw"
+            className='backBtn'
             display
             onClick={() => goBack()}
           >

@@ -76,7 +76,7 @@ export default function Intro(props) {
                   display
                 >
                   <Paragraph size="3vmin" color="white">
-                    DSM-5 Criteria
+                    ICD-11 Criteria
                   </Paragraph>
                 </Button>
               </RowDiv>
@@ -94,7 +94,7 @@ export default function Intro(props) {
                   display
                 >
                   <Paragraph size="3vmin" color="white">
-                    DSM-5 Criteria
+                    ICD-11 Criteria
                   </Paragraph>
                 </Button>
               </>

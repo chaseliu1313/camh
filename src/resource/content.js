@@ -50,7 +50,7 @@ export const assessment1 = [
   '· last longer than 2 weeks; ',
   '· affect most parts of a person’s daily life;',
   '· stop people from doing things they used to enjoy.',
-  'Click to review DSM-5 Criteria',
+  'Click to review ICD-11 Criteria',
 ];
 
 export const video1 =
@@ -74,24 +74,24 @@ export const couldHave = [
 ];
 
 export const DSMContent = [
-  'A. Five (or more) of the following symptoms have been present during the same 2-week period and represent a change from previous functioning; at least one of the symptoms is either (1) depressed mood or (2) loss of interest or pleasure. ',
-  'Do not include symptoms that are clearly attributable to another medical condition. ',
+  'A depressive episode is characterized by the concurrent presence of at least five out of a list of ten symptoms which must occur most of the day, nearly every day, for at least 2 weeks. One of these symptoms must be a depressed mood or markedly diminished interest or pleasure in activities. ',
+  'Symptoms:',
   {
     subContent: [
-      '1. Depressed mood most of the day, nearly every day, as indicated by either subjective report (e.g., feels sad, empty, hopeless) or observation made by others (e.g., appears tearful). ',
-      '2. Markedly diminished interest or pleasure in all, or almost all, activities most of the day, nearly every day (as indicated by either subjective account or observation). ',
-      '3. Significant weight loss when not dieting or weight gain (e.g., a change of more than 5% of body weight in a month), or decrease or increase in appetite nearly every day.',
-      '4. Insomnia or hypersomnia nearly every day.',
-      '5. Psychomotor agitation or retardation nearly every day (observable by others, not merely subjective feelings of restlessness or being slowed down).',
-      '6. Fatigue or loss of energy nearly every day.',
-      '7. Feelings of worthlessness or excessive or inappropriate guilt (which may be delusional) nearly every day (not merely self-reproach or guilt about being sick).',
-      '8. Diminished ability to think or concentrate, or indecisiveness, nearly every day (either by subjective account or as observed by others).',
-      '9. Recurrent thoughts of death (not just fear of dying), recurrent suicidal ideation without a specific plan, or a suicide attempt or a specific plan for committing suicide. ',
+      '· depressed mood ',
+      '· markedly diminished interest or pleasure in activities',
+      '· difficulty concentrating',
+      '· feelings of worthlessness or excessive or inappropriate guilt',
+      '· hopelessness',
+      '· recurrent thoughts of death or suicide',
+      '· changes in appetite or weight',
+      '· significantly disturbed sleep or excessive sleep',
+      '· psychomotor agitation or retardation',
+      '· reduced energy or fatigue.'
     ],
   },
-  'B. The symptoms cause clinically significant distress or impairment in social, occupational, or other important areas of functioning.',
-  'C. The episode is not attributable to the physiological effects of a substance or to another medical condition.',
-  '* Information is taken from the Diagnostic and Statistical Manual of Mental Disorders (5th ed.; DSM-5; American Psychiatric Association, 2013).',
+  'Information taken from: International Classification of Diseases Eleventh Revision (ICD-11). Geneva: World Health Organization; 2022. License: ',
+
 ];
 
 export const pears = [

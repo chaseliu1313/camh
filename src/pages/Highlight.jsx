@@ -30,7 +30,7 @@ const titles = [
 
 export default function Hightlights() {
   const [bgKey, updateKey] = useState(1);
-  const inv = 10000;
+  const inv = 5000;
   const [mounted, setMounted] = useState(false);
   const { size } = useWindowResize();
   //set active title hook
@@ -80,10 +80,10 @@ export default function Hightlights() {
         >
           <Carousel
             className="ov_carousel"
+            slide={false}
             interval={inv}
             onSelect={(key) => {
               updateKey(key);
-
               setActive(titles[key]);
             }}
           >

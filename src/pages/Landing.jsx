@@ -28,6 +28,7 @@ export default function Landing() {
     easing: 'easeInOutQuad',
     opacity: [0, 1],
     delay: 0,
+ 
   };
 
   let animePropsLeft2 = {
