@@ -32,7 +32,7 @@ import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NotificationModal } from '../../components/NotificationModal';
 import { useHistory } from 'react-router-dom';
-import SurveySnackBar from './SurveySnack';
+import { SurveySnackBar } from './SurveySnack';
 
 const TreatmentModal = lazy(() => import('./TreatmentModal'));
 
@@ -484,7 +484,7 @@ const Mild = () => {
         content="If there has been no response, consider the moderate to severe pathway and refer youth to specialized youth mental health services. You will now be taken to the beginning of the moderate to severe pathway."
       />
 
-   
+      <SurveySnackBar persist={size.width <= 776 ? false : true} />
       <img src={bg} id="treatment_bg" alt="background" />
     </Container>
   );

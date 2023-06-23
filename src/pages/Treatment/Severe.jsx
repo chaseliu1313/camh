@@ -31,7 +31,7 @@ import {
 import { useHistory } from 'react-router-dom';
 import { NotificationModal } from '../../components/NotificationModal';
 import { useWindowResize } from '../../hooks/useWindowResize';
-import SurveySnackBar from './SurveySnack';
+import { SurveySnackBar } from './SurveySnack';
 
 const TreatmentModal = lazy(() => import('./TreatmentModal'));
 const Severe = () => {

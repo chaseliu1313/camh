@@ -7,12 +7,12 @@ import Heading, { Paragraph } from '../../components/Text/Heading';
 import { InputGroup } from 'react-bootstrap';
 import { useWindowResize } from '../../hooks/useWindowResize';
 
-const SurveySnackBar = ({ persist }) => {
+export const SurveySnackBar = ({ persist }) => {
   const [motion, setMotion] = useState(persist);
   const [checkboxesState, setCheckboxesState] = useState([false, false]);
   const AnimatedContainer = animated(Container);
   const { size } = useWindowResize();
-  console.log(persist);
+
   const animation = useSpring({
     height: motion ? '200px' : '100px',
     transform: motion
@@ -57,23 +57,23 @@ const SurveySnackBar = ({ persist }) => {
           Will you implement any new practices based on this tool?
         </Heading>
         <Checkboxes>
-          <InputGroup.Prepend>
+          <InputGroup style={{width: 'fit-content'}}>
             <InputGroup.Checkbox
               aria-label="Yes"
               id="checkbox_yes"
               checked={checkboxesState[0]}
               onChange={(e) => handleCheckbox(e.currentTarget.id)}
             />
-          </InputGroup.Prepend>
+          </InputGroup>
           <Paragraph size="16px">Yes</Paragraph>
-          <InputGroup.Prepend>
+          <InputGroup style={{width: 'fit-content'}}>
             <InputGroup.Checkbox
               aria-label="No"
               id="checkbox_no"
               checked={checkboxesState[1]}
               onChange={(e) => handleCheckbox(e.currentTarget.id)}
             />
-          </InputGroup.Prepend>
+          </InputGroup>
           <Paragraph size="16px">No</Paragraph>
         </Checkboxes>
         <Paragraph weight="normal" size="2vmin">
@@ -96,10 +96,10 @@ const SurveySnackBar = ({ persist }) => {
   );
 };
 
-export default SurveySnackBar;
+ 
+
 const Container = styled.div`
   height: 250px;
-
   z-index: 50;
   position: absolute;
   padding: 10px;
