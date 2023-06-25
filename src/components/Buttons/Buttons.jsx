@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import {
   PrimaryColor,
   DarkPurple,
@@ -7,8 +7,8 @@ import {
   SecondaryColor_Tel,
   Error_R_Hover,
   TertiaryColor_Tel,
-} from '../../theme/resource';
-import { useWindowResize } from '../../hooks/useWindowResize';
+} from "../../theme/resource";
+import { useWindowResize } from "../../hooks/useWindowResize";
 
 export default function Button({
   height,
@@ -25,10 +25,12 @@ export default function Button({
   href,
   display,
   dark,
+  className,
 }) {
   const { size } = useWindowResize();
   return (
     <Btn
+      className={className}
       height={height}
       width={width}
       maring={margin}
@@ -62,11 +64,11 @@ const colorShifter = (p, e) => {
 
 const borderShifterHover = (p, e) => {
   if (p) {
-    return [DarkPurple, 'rgba(74, 25, 97, 0.2)'];
+    return [DarkPurple, "rgba(74, 25, 97, 0.2)"];
   } else if (e) {
-    return [Error_R_Hover, 'rgba(228, 23, 73, 0.2)'];
+    return [Error_R_Hover, "rgba(228, 23, 73, 0.2)"];
   } else if (!p) {
-    return [TertiaryColor_Tel, 'rgba(122, 195, 204, 0.3)'];
+    return [TertiaryColor_Tel, "rgba(122, 195, 204, 0.3)"];
   }
 };
 
@@ -99,28 +101,28 @@ const Btn = styled.button`
     windowSize,
   }) => `
   > p {
-    font-size: ${windowSize.width <= 1024 ? '12px' : '18px'}
+    font-size: ${windowSize.width <= 1024 ? "12px" : "18px"}
   }
-height: ${height || '10vh'};
-width: ${width || '15vw'};
-margin: ${margin || '1em'};
-padding: ${padding || '0.25em 1em'};
+height: ${height || "10vh"};
+width: ${width || "15vw"};
+margin: ${margin || "1em"};
+padding: ${padding || "0.25em 1em"};
 border: 1.5px solid ${dark ? DarkPurple : colorShifter(primary, err)};
-color: ${type === 'outlined' ? colorShifter(primary, err) : 'white'};
+color: ${type === "outlined" ? colorShifter(primary, err) : "white"};
 background-color: ${
-    type === 'outlined'
-      ? 'white'
+    type === "outlined"
+      ? "white"
       : dark
       ? DarkPurple
       : colorShifter(primary, err)
   };
-display: ${display === 'true' ? 'inline-flex' : 'none'};
+display: ${display === "true" ? "inline-flex" : "none"};
 &:hover {
     border: 1.5px solid ${borderShifterHover(primary, err)[0]};
     text-decoration: none !important;
     background: ${
-      type === 'outlined'
-        ? '#f2f2f2 radial-gradient(circle, transparent 1%, #f2f2f2 1%) center/15000%'
+      type === "outlined"
+        ? "#f2f2f2 radial-gradient(circle, transparent 1%, #f2f2f2 1%) center/15000%"
         : borderShifterHover(primary, err)[0]
     }
  

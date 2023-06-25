@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useNavClicks } from '../hooks/useNavClicks';
-import { useNavLogo } from '../hooks/useNavLogo';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { useNavClicks } from "../hooks/useNavClicks";
+import { useNavLogo } from "../hooks/useNavLogo";
 
 import {
   Navbar as N,
   Nav,
   Container as C,
   NavDropdown as D,
-} from 'react-bootstrap';
-import { PrimaryColor } from '../theme/resource';
+} from "react-bootstrap";
+import { PrimaryColor } from "../theme/resource";
 
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation, useHistory } from "react-router-dom";
 
 export default function NaviBar() {
   // get the current path
@@ -19,10 +19,18 @@ export default function NaviBar() {
   //customized hook
   const clicked = useNavClicks(location2.pathname);
   const history = useHistory();
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <Container>
-      <Navbar expand="md" variant="dark">
+      <Navbar
+        expand="md"
+        variant="dark"
+        onToggle={(v) => {
+          setExpanded(v);
+        }}
+        expanded={expanded}
+      >
         <Navbar.Brand href="#home">
           <IMG
             src={useNavLogo()}
@@ -38,9 +46,10 @@ export default function NaviBar() {
               navclicked={clicked[0]}
               as="div"
               className="nav-link"
-              style={{ width: '100%', cursor: 'pointer' }}
+              style={{ width: "100%", cursor: "pointer" }}
               onClick={() => {
-                history.push('/');
+                history.push("/");
+                setExpanded(false);
               }}
             >
               <Link to="/">Home</Link>
@@ -49,9 +58,10 @@ export default function NaviBar() {
               navclicked={clicked[1] || clicked[6]}
               as="div"
               className="nav-link"
-              style={{ width: '100%', cursor: 'pointer' }}
+              style={{ width: "100%", cursor: "pointer" }}
               onClick={() => {
-                history.push('/orientation');
+                history.push("/orientation");
+                setExpanded(false);
               }}
             >
               <Link to="/orientation">Overview</Link>
@@ -61,9 +71,10 @@ export default function NaviBar() {
               navclicked={clicked[2]}
               as="div"
               className="nav-link"
-              style={{ width: '100%', cursor: 'pointer' }}
+              style={{ width: "100%", cursor: "pointer" }}
               onClick={() => {
-                history.push('/assessment');
+                history.push("/assessment");
+                setExpanded(false);
               }}
             >
               <Link to="/assessment">Assessment</Link>
@@ -76,24 +87,26 @@ export default function NaviBar() {
               <NavDropdown.Item
                 as="div"
                 className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
+                style={{ width: "100%", cursor: "pointer" }}
                 onClick={() => {
-                  history.push('/treatment/mild');
+                  history.push("/treatment/mild");
+                  setExpanded(false);
                 }}
               >
-                <Link to="/treatment/mild" style={{ width: '100%' }}>
+                <Link to="/treatment/mild" style={{ width: "100%" }}>
                   Mild Depression
                 </Link>
               </NavDropdown.Item>
               <NavDropdown.Item
                 as="div"
                 className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
+                style={{ width: "100%", cursor: "pointer" }}
                 onClick={() => {
-                  history.push('/treatment/severe');
+                  history.push("/treatment/severe");
+                  setExpanded(false);
                 }}
               >
-                <Link to="/treatment/severe" style={{ width: '100%' }}>
+                <Link to="/treatment/severe" style={{ width: "100%" }}>
                   Moderate/Severe Depression
                 </Link>
               </NavDropdown.Item>
@@ -107,60 +120,65 @@ export default function NaviBar() {
               <NavDropdown.Item
                 as="div"
                 className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
+                style={{ width: "100%", cursor: "pointer" }}
                 onClick={() => {
-                  history.push('/resources/tools');
+                  history.push("/resources/tools");
+                  setExpanded(false);
                 }}
               >
-                <Link to="/resources/tools" style={{ width: '100%' }}>
+                <Link to="/resources/tools" style={{ width: "100%" }}>
                   Tools
                 </Link>
               </NavDropdown.Item>
               <NavDropdown.Item
                 as="div"
                 className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
+                style={{ width: "100%", cursor: "pointer" }}
                 onClick={() => {
-                  history.push('/resources/help');
+                  history.push("/resources/help");
+                  setExpanded(false);
                 }}
               >
-                <Link to="/resources/help" style={{ width: '100%' }}>
+                <Link to="/resources/help" style={{ width: "100%" }}>
                   Local Help
                 </Link>
               </NavDropdown.Item>
               <NavDropdown.Item
                 as="div"
                 className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
+                style={{ width: "100%", cursor: "pointer" }}
                 onClick={() => {
-                  history.push('/resources/faq');
+                  history.push("/resources/faq");
+                  setExpanded(false);
                 }}
               >
-                <Link to="/resources/faq" style={{ width: '100%' }}>
+                <Link to="/resources/faq" style={{ width: "100%" }}>
                   FAQ
                 </Link>
               </NavDropdown.Item>
               <NavDropdown.Item
                 as="div"
                 className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
+                style={{ width: "100%", cursor: "pointer" }}
                 onClick={() => {
-                  history.push('/resources/crisisLines');
+                  history.push("/resources/crisisLines");
+                  setExpanded(false);
                 }}
               >
-                <Link to="/resources/crisisLines" style={{ width: '100%' }}>
+                <Link to="/resources/crisisLines" style={{ width: "100%" }}>
                   Crisis Lines
                 </Link>
               </NavDropdown.Item>
               <NavDropdown.Item
                 as="div"
                 className="nav-dropdown-item"
-                style={{ width: '100%', cursor: 'pointer' }}
+                style={{ width: "100%", cursor: "pointer" }}
                 onClick={() => {
-                  history.push('/resources/reference');
+                  history.push("/resources/reference");
+                  setExpanded(false);
                 }}
               >
-                <Link to="/resources/reference" style={{ width: '100%' }}>
+                <Link to="/resources/reference" style={{ width: "100%" }}>
                   References
                 </Link>
               </NavDropdown.Item>
@@ -189,7 +207,7 @@ const IMG = styled.img`
 
 const NavLink = styled(Nav.Link)`
   ${({ navclicked }) =>
-    navclicked === 'true'
+    navclicked === "true"
       ? ` background-color: #4a1961;
   border-radius: 10px;
   height: 80%;
@@ -202,7 +220,7 @@ const NavLink = styled(Nav.Link)`
 
 const NavDropdown = styled(D)`
   ${({ navclicked }) =>
-    navclicked === 'true'
+    navclicked === "true"
       ? ` background-color: #4a1961;
  
   border-radius: 10px;

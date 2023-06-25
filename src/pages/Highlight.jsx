@@ -223,7 +223,10 @@ export default function Hightlights() {
                   >
                     {highlightsContent[3]}
                   </MobileP>
-                  <IMG src={fs} style={{ height: 150, width: "50%" }} />
+                  <IMG
+                    src={fs}
+                    style={{ height: 150, width: "50%", maxWidth: 120 }}
+                  />
                   <a
                     href="https://www.camh.ca/-/media/files/mood-foundations-package-youth-pdf.pdf"
                     target="_blank"
@@ -339,7 +342,275 @@ export default function Hightlights() {
           </Link>
         </div>
       ) : (
-        <div>11</div>
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          <MBreadCrumContainer>
+            <MBreadCrumb>Current Section: Overview</MBreadCrumb>
+          </MBreadCrumContainer>
+          <div
+            style={{
+              width: "35%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                height: "50px",
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                alignSelf: "center",
+                padding: "8px",
+              }}
+            >
+              <MBtn
+                variant="outline-primary"
+                onClick={() => {
+                  mobileOnclickPre();
+                }}
+                style={{
+                  height: 40,
+                  width: 40,
+                  color: PrimaryColor,
+                  borderColor: PrimaryColor,
+                  backgroundColor: "transparent",
+                }}
+              >
+                <MdOutlineKeyboardArrowLeft />
+              </MBtn>
+
+              <MBtn
+                variant="outline-primary"
+                onClick={() => {
+                  mobileOnclickNext();
+                }}
+                style={{
+                  height: 40,
+                  width: 40,
+                  color: PrimaryColor,
+                  borderColor: PrimaryColor,
+                  backgroundColor: "transparent",
+                }}
+              >
+                <MdOutlineKeyboardArrowRight />
+              </MBtn>
+            </div>
+            <Link to="/assessment">
+              <Button
+                primary={true}
+                type="outlined"
+                height="7vh"
+                width="20vw"
+                display={true}
+              >
+                <Paragraph>Next Section</Paragraph>
+              </Button>
+            </Link>
+          </div>
+          <div
+            id="column_left_m_h"
+            style={{
+              width: "65%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <MTitle> {titles[mobileActiveTitle]}</MTitle>
+            <MobileHightlightCard style={{ height: "60%" }}>
+              {mobileActiveTitle === 0 && (
+                <div
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    padding: 8,
+                    color: SecondaryColor_Blk,
+                    textAlign: "left",
+                  }}
+                >
+                  <MobileP>
+                    ·
+                    <a
+                      className="ov_a"
+                      href="https://www.camh.ca/en/science-and-research/institutes-and-centres/cundill-centre-for-child-and-youth-depression"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      The Cundill Centre
+                    </a>
+                    {" " + highlightsContent[0]}
+                  </MobileP>
+                  <MobileP>{highlightsContent[1]}</MobileP>
+                  <MobileP>
+                    ·The content provides a step-by-step assessment and
+                    treatment pathway for youth depression and is based on
+                    our&nbsp;
+                    <a
+                      className="ov_a"
+                      href="https://pubmed.ncbi.nlm.nih.gov/29697887/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      systematic review
+                    </a>
+                    , which found the&nbsp;
+                    <a
+                      className="ov_a"
+                      href="https://www.nice.org.uk/guidance/ng134"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      NICE guidelines
+                    </a>
+                    &nbsp;to be the highest quality.
+                  </MobileP>
+                </div>
+              )}
+              {mobileActiveTitle === 1 && (
+                <div
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    padding: 8,
+                    color: SecondaryColor_Blk,
+                    textAlign: "left",
+                  }}
+                >
+                  <MobileP
+                    margin={MarginFirstRow}
+                    color={SecondaryColor_Blk}
+                    weight={fontWeight}
+                    size={size.height < 800 ? fontSize.p : fontSize.subTitle}
+                  >
+                    {highlightsContent[7]}
+                  </MobileP>
+                  <MobileP
+                    margin={MarginP}
+                    color={SecondaryColor_Blk}
+                    weight={fontWeight}
+                    size={size.height < 800 ? fontSize.p : fontSize.subTitle}
+                  >
+                    {highlightsContent[8]}
+                  </MobileP>
+                  <MobileP
+                    margin={MarginP}
+                    color={SecondaryColor_Blk}
+                    weight={fontWeight}
+                    size={size.height < 800 ? fontSize.p : fontSize.subTitle}
+                  >
+                    {highlightsContent[9]}
+                  </MobileP>
+                  <MobileP
+                    margin={MarginP}
+                    color={SecondaryColor_Blk}
+                    weight={fontWeight}
+                    size={size.height < 800 ? fontSize.p : fontSize.subTitle}
+                  >
+                    {highlightsContent[10]}
+                  </MobileP>
+                </div>
+              )}
+              {mobileActiveTitle === 2 && (
+                <div
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    padding: 8,
+                    color: SecondaryColor_Blk,
+                    textAlign: "left",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <MobileP
+                    margin={MarginP}
+                    color={SecondaryColor_Blk}
+                    weight={fontWeight}
+                    size={fontSize.subTitle}
+                  >
+                    {highlightsContent[3]}
+                  </MobileP>
+                  <IMG
+                    src={fs}
+                    style={{ height: 150, width: "50%", maxWidth: 120 }}
+                  />
+                  <a
+                    href="https://www.camh.ca/-/media/files/mood-foundations-package-youth-pdf.pdf"
+                    target="_blank"
+                    download
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      primary={false}
+                      height="7vh"
+                      width="20vw"
+                      display
+                      margin="25% 0 0 25%"
+                    >
+                      <Paragraph size="3vmin" color="white">
+                        Download
+                      </Paragraph>
+                    </Button>
+                  </a>
+                </div>
+              )}
+            </MobileHightlightCard>
+            <div
+              id="mobile_idicator"
+              style={{
+                width: "35px",
+                height: "20px",
+                alignSelf: "center",
+                display: "flex",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+              }}
+            >
+              <div
+                style={{
+                  height: 10,
+                  width: 10,
+                  borderRadius: 5,
+                  backgroundColor:
+                    mobileActiveTitle === 0 ? PrimaryColor : PrimaryLight,
+                }}
+              ></div>
+              <div
+                style={{
+                  height: 10,
+                  width: 10,
+                  borderRadius: 5,
+                  backgroundColor:
+                    mobileActiveTitle === 1 ? PrimaryColor : PrimaryLight,
+                }}
+              ></div>
+              <div
+                style={{
+                  height: 10,
+                  width: 10,
+                  borderRadius: 5,
+                  backgroundColor:
+                    mobileActiveTitle === 2 ? PrimaryColor : PrimaryLight,
+                }}
+              ></div>
+            </div>
+          </div>
+        </div>
       )}
     </MobileMain>
   ) : (

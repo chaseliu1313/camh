@@ -80,7 +80,6 @@
   .assess_simu_side {
     margin-top: 10px;
   }
- 
 }
 
 @media screen and (max-width: 768px) {
@@ -90,7 +89,7 @@
   #pearl_slide {
     overflow: auto;
     max-height: 60vh;
-    min-height: 500px  !important;
+    min-height: 500px !important;
   }
   .page_subtitle {
     font-size: 21px !important;
@@ -98,9 +97,7 @@
   .breadcrumb {
     display: none !important;
   }
-  
 }
-
 
 @media screen and (min-width: 1200px) {
   #dsm_modal {
@@ -255,4 +252,8 @@
 .btn-close {
   color: white !important;
   background-color: white;
+}
+
+.mobile_icd11_btn {
+  align-self: center;
 }
