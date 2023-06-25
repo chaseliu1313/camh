@@ -1,30 +1,30 @@
-import React, { useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Row as R, Col, ListGroup } from 'react-bootstrap';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import React, { useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import { Row as R, Col, ListGroup } from "react-bootstrap";
+import { Switch, Route, useLocation } from "react-router-dom";
 import {
   SecondaryColor_Blk,
   BackgroundColor,
   fontSize,
   PrimaryColor,
-} from '../../theme/resource';
-import Heading, { Paragraph } from '../../components/Text/Heading';
-import Button from '../../components/Buttons/Buttons';
-import ToolLayout, { VideoLayout } from './toolLayout';
-import CR from '../../resource/CognitiveRestructuring.png';
-import MH from '../../resource/MedicationHandout.png';
-import MF from '../../resource/MoodFoundations.png';
-import PS from '../../resource/ProblemSolving.png';
-import SpecialPo from '../../resource/specialPo.png';
-import RCADS from '../../resource/RCADSIntro.png';
-import ReactPlayer from 'react-player';
-import { ToolVideo1, ToolVideo2 } from '../../resource/content';
-import { useToolsPath } from '../../hooks/useToolsPath';
-import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
-import ToolsVideo from './toolsVideo';
-import './resources.css';
-import { useWindowResize } from '../../hooks/useWindowResize';
-import { useHistory } from 'react-router-dom';
+} from "../../theme/resource";
+import Heading, { Paragraph } from "../../components/Text/Heading";
+import Button from "../../components/Buttons/Buttons";
+import ToolLayout, { VideoLayout } from "./toolLayout";
+import CR from "../../resource/CognitiveRestructuring.png";
+import MH from "../../resource/MedicationHandout.png";
+import MF from "../../resource/MoodFoundations.png";
+import PS from "../../resource/ProblemSolving.png";
+import SpecialPo from "../../resource/specialPo.png";
+import RCADS from "../../resource/RCADSIntro.png";
+import ReactPlayer from "react-player";
+import { ToolVideo1, ToolVideo2 } from "../../resource/content";
+import { useToolsPath } from "../../hooks/useToolsPath";
+import NaviBtnGroup from "../../components/Buttons/NaviBtnGroup";
+import ToolsVideo from "./toolsVideo";
+import "./resources.css";
+import { useWindowResize } from "../../hooks/useWindowResize";
+import { useHistory } from "react-router-dom";
 
 const ReTools = ({ match }) => {
   const { path, getPath, getHeading } = useToolsPath();
@@ -60,7 +60,7 @@ const ReTools = ({ match }) => {
 
         <Route
           exact
-          path={match.path + '/psychoeducation'}
+          path={match.path + "/psychoeducation"}
           render={() => (
             <ToolLayout>
               <LeftCol size={size}>
@@ -73,18 +73,18 @@ const ReTools = ({ match }) => {
               <RightCol size={size}>
                 <RightCard position="center" size={size}>
                   <Heading
-                    size={size.width <= 1024 ? '18px' : '3vmin'}
+                    size={size.width <= 1024 ? "18px" : "3vmin"}
                     weight="bold"
                     align="center"
                     color={SecondaryColor_Blk}
-                    margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
+                    margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
                   >
                     Mood Foundations Package for Youth
                   </Heading>
                   <Paragraph
                     color={SecondaryColor_Blk}
-                    margin={size.width <= 1024 ? 0 : '0 0 25px 0'}
-                    size={size.width <= 1024 ? '16px' : fontSize.p}
+                    margin={size.width <= 1024 ? 0 : "0 0 25px 0"}
+                    size={size.width <= 1024 ? "16px" : fontSize.p}
                   >
                     Fact sheet on depression; tips on sleep, exercise and
                     healthy eating. Co-developed by youth, for youth. Free to
@@ -101,11 +101,11 @@ const ReTools = ({ match }) => {
                       height="5vh"
                       width="20vw"
                       display
-                      margin={size.height < 800 ? 0 : '25% 0 0 25%'}
+                      margin={size.height < 800 ? 0 : "25% 0 0 25%"}
                     >
                       <Paragraph
                         size={
-                          size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'
+                          size.width <= 1024 ? `${fontSize.subtext2}` : "3vmin"
                         }
                         color="white"
                       >
@@ -120,7 +120,7 @@ const ReTools = ({ match }) => {
         />
         <Route
           exact
-          path={match.path + '/video'}
+          path={match.path + "/video"}
           render={() => (
             <ToolsVideo
               title="Short Animated Videos for Youth"
@@ -130,27 +130,27 @@ const ReTools = ({ match }) => {
         />
         <Route
           exact
-          path={match.path + '/medhandout'}
+          path={match.path + "/medhandout"}
           render={() => <MedicalHandout size={size} />}
         />
         <Route
           exact
-          path={match.path + '/problemSolvingVideo'}
+          path={match.path + "/problemSolvingVideo"}
           render={() => <NewToolVideo size={size} />}
         />
         <Route
           exact
-          path={match.path + '/problemSolving'}
+          path={match.path + "/problemSolving"}
           render={() => <ProblemSolving size={size} />}
         />
         <Route
           exact
-          path={match.path + '/cognitive'}
+          path={match.path + "/cognitive"}
           render={() => <CognitiveRes size={size} />}
         />
         <Route
           exact
-          path={match.path + '/assessment/animateVideos'}
+          path={match.path + "/assessment/animateVideos"}
           render={() => (
             <ToolsVideo
               title="Short Animated Videos for Primary Care Providers"
@@ -160,17 +160,17 @@ const ReTools = ({ match }) => {
         />
         <Route
           exact
-          path={match.path + '/assessment/RCADS'}
+          path={match.path + "/assessment/RCADS"}
           render={() => <IntroRCADS size={size} />}
         />
         <Route
           exact
-          path={match.path + '/assessment'}
+          path={match.path + "/assessment"}
           render={() => <AssessmentTools size={size} />}
         />
         <Route
           exact
-          path={match.path + '/specialPopulation'}
+          path={match.path + "/specialPopulation"}
           render={() => <SpecialPopulations size={size} />}
         />
       </Switch>
@@ -197,9 +197,9 @@ const Catalogue = ({ size }) => {
         paddingBottom: 150,
       }}
     >
-      <div style={{ width: '85%' }}>
+      <div style={{ width: "85%" }}>
         <Heading
-          size={size.width <= 800 ? '18px' : '24px'}
+          size={size.width <= 800 ? "18px" : "24px"}
           weight="bold"
           align="center"
           color={SecondaryColor_Blk}
@@ -207,7 +207,7 @@ const Catalogue = ({ size }) => {
           The Cundill Centre for Child and Youth Depression, in partnership with
           youth, clinicians, and scientists, has developed practical tools to
           support young people, primary care providers, and other frontline
-          clinicians. Visit our{' '}
+          clinicians. Visit our{" "}
           <a
             className="ov_a"
             href="https://www.camh.ca/en/science-and-research/institutes-and-centres/cundill-centre-for-child-and-youth-depression/innovations-in-clinical-care"
@@ -215,29 +215,29 @@ const Catalogue = ({ size }) => {
             rel="noopener noreferrer"
           >
             website
-          </a>{' '}
+          </a>
           to download additional resources.
         </Heading>
       </div>
       <div
         style={{
-          height: '85%',
-          width: '95%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          padding: '2% 0',
+          height: "85%",
+          width: "95%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          padding: "2% 0",
         }}
       >
         <div
           id="psychoeducational tools"
           style={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <CatelogueContainer size={size}>
@@ -252,27 +252,27 @@ const Catalogue = ({ size }) => {
             >
               smart_display
             </span>
-            <Paragraph size="18px" weight="light" margin={0}>
+            <Paragraph size="16px" weight="light" margin={0}>
               Video- Mood Matters: Describing Depression
             </Paragraph>
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/video');
+                history.push("/resources/tools/video");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -285,28 +285,28 @@ const Catalogue = ({ size }) => {
             >
               smart_display
             </span>
-            <Paragraph size="18px" weight="light" margin={0}>
+            <Paragraph size="16px" weight="light" margin={0}>
               Video- Mood Matters: How Food, Movement & Sleep Can Have an Impact
               on You
             </Paragraph>
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/video');
+                history.push("/resources/tools/video");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -325,21 +325,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/psychoeducation');
+                history.push("/resources/tools/psychoeducation");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -349,11 +349,11 @@ const Catalogue = ({ size }) => {
         <div
           id="assessment tools"
           style={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <CatelogueContainer size={size}>
@@ -375,21 +375,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/assessment/animateVideos');
+                history.push("/resources/tools/assessment/animateVideos");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -409,21 +409,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/assessment/animateVideos');
+                history.push("/resources/tools/assessment/animateVideos");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -443,30 +443,30 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
                 window.open(
-                  'https://www.youtube.com/watch?v=NRKvtacOVfw&ab_channel=CAMH',
-                  '_blank'
+                  "https://www.youtube.com/watch?v=NRKvtacOVfw&ab_channel=CAMH",
+                  "_blank"
                 );
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
             </div>
           </CatelogueContainer>
-          <CatelogueContainer size={size}>
+          <CatelogueContainer size={size} id="test">
             <span
               className="material-symbols-outlined"
               style={{ marginRight: 20 }}
@@ -480,21 +480,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/assessment/RCADS');
+                history.push("/resources/tools/assessment/RCADS");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -515,21 +515,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/assessment');
+                history.push("/resources/tools/assessment");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -539,11 +539,11 @@ const Catalogue = ({ size }) => {
         <div
           id="treatmentTools"
           style={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <CatelogueContainer size={size}>
@@ -564,21 +564,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/medhandout');
+                history.push("/resources/tools/medhandout");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -597,21 +597,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/problemSolvingVideo');
+                history.push("/resources/tools/problemSolvingVideo");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -630,21 +630,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/problemSolving');
+                history.push("/resources/tools/problemSolving");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -663,21 +663,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/cognitive');
+                history.push("/resources/tools/cognitive");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -687,11 +687,11 @@ const Catalogue = ({ size }) => {
         <div
           id="special populations"
           style={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <CatelogueContainer size={size}>
@@ -713,21 +713,21 @@ const Catalogue = ({ size }) => {
             <div
               style={{
                 backgroundColor: PrimaryColor,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                cursor: 'pointer',
-                marginLeft: 'auto',
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                marginLeft: "auto",
               }}
               onClick={() => {
-                history.push('/resources/tools/specialPopulation');
+                history.push("/resources/tools/specialPopulation");
               }}
             >
               <span
                 className="material-symbols-outlined"
-                style={{ color: 'white' }}
+                style={{ color: "white" }}
               >
                 navigate_next
               </span>
@@ -755,18 +755,18 @@ const MedicalHandout = ({ size }) => {
       <RightCol size={size}>
         <RightCard position="center" size={size}>
           <Heading
-            size={size.width <= 1024 ? '18px' : '3vmin'}
+            size={size.width <= 1024 ? "18px" : "24px"}
             weight="bold"
             align="center"
             color={SecondaryColor_Blk}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
+            margin={size.width <= 1024 ? "24px 0 0 0" : "0 0 25px 0"}
           >
             Medication Handout for Youth
           </Heading>
           <Paragraph
             color={SecondaryColor_Blk}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
-            size={size.width <= 1024 ? `16px` : '3vmin'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
+            size={size.width <= 1024 ? `16px` : "18px"}
           >
             Explains, in simple language, what SSRIs are, when youth might see
             benefits and what side effects, if any, can occur. Developed by
@@ -784,10 +784,10 @@ const MedicalHandout = ({ size }) => {
               height="5vh"
               width="20vw"
               display
-              margin={size.width <= 1024 ? '0' : '"25% 0 0 25%"'}
+              margin={size.width <= 1024 ? "0" : '"25% 0 0 25%"'}
             >
               <Paragraph
-                size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
+                size={size.width <= 1024 ? `${fontSize.subtext2}` : "3vmin"}
                 color="white"
               >
                 Download
@@ -816,18 +816,18 @@ const ProblemSolving = ({ size }) => {
       <RightCol size={size}>
         <RightCard position="center" size={size}>
           <Heading
-            size={size.width <= 1024 ? '18px' : '3vmin'}
+            size={size.width <= 1024 ? "18px" : "24px"}
             weight="bold"
             align="center"
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
             color={SecondaryColor_Blk}
           >
             Problem Solving Worksheets
           </Heading>
           <Paragraph
             color={SecondaryColor_Blk}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
-            size={size.width <= 1024 ? `16px` : '3vmin'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
+            size={size.width <= 1024 ? `16px` : "18px"}
           >
             Helps youth think through their problems by prompting them to
             describe the situation, emotions and needs. Co-developed by youth,
@@ -844,10 +844,10 @@ const ProblemSolving = ({ size }) => {
               height="5vh"
               width="20vw"
               display
-              margin={size.width <= 1024 ? '0' : '"25% 0 0 25%"'}
+              margin={size.width <= 1024 ? "0" : '"25% 0 0 25%"'}
             >
               <Paragraph
-                size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
+                size={size.width <= 1024 ? `${fontSize.subtext2}` : "3vmin"}
                 color="white"
               >
                 Download
@@ -874,8 +874,8 @@ const NewToolVideo = ({ size }) => {
       <RightVideoCol size={size}>
         <RightCard position="center" size={size}>
           <Heading
-            size={size.width <= 1024 ? '18px' : '3vmin'}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
+            size={size.width <= 1024 ? "18px" : "24px"}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
             weight="bold"
             align="center"
             color={SecondaryColor_Blk}
@@ -884,8 +884,8 @@ const NewToolVideo = ({ size }) => {
           </Heading>
           <Paragraph
             color={SecondaryColor_Blk}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
-            size={size.width <= 1024 ? `16px` : '3vmin'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
+            size={size.width <= 1024 ? `16px` : "18px"}
           >
             This video for youth describes how problem solving can be one
             important ingredient in tackling depression.
@@ -912,18 +912,18 @@ const CognitiveRes = ({ size }) => {
       <RightCol size={size}>
         <RightCard position="center" size={size}>
           <Heading
-            size={size.width <= 1024 ? '18px' : '3vmin'}
+            size={size.width <= 1024 ? "18px" : "24px"}
             weight="bold"
             align="center"
             color={SecondaryColor_Blk}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
           >
             Cognitive Restructuring Worksheets
           </Heading>
           <Paragraph
             color={SecondaryColor_Blk}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
-            size={size.width <= 1024 ? `16px` : '3vmin'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
+            size={size.width <= 1024 ? `16px` : "18px"}
           >
             Helps youth examine thoughts that may not be helpful to them.
             Co-developed by youth, for health care providers. Free to download
@@ -940,10 +940,10 @@ const CognitiveRes = ({ size }) => {
               height="5vh"
               width="20vw"
               display
-              margin={size.width <= 1024 ? '0' : '"25% 0 0 25%"'}
+              margin={size.width <= 1024 ? "0" : '"25% 0 0 25%"'}
             >
               <Paragraph
-                size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
+                size={size.width <= 1024 ? `${fontSize.subtext2}` : "3vmin"}
                 color="white"
               >
                 Download
@@ -978,18 +978,18 @@ const IntroRCADS = ({ size }) => {
       <RightCol size={size}>
         <RightCard position="center" size={size}>
           <Heading
-            size={size.width <= 1024 ? '18px' : '3vmin'}
+            size={size.width <= 1024 ? "18px" : "24px"}
             weight="bold"
             align="center"
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
+            margin={size.width <= 1024 ? "24px 0 0 0" : "0 0 25px 0"}
             color={SecondaryColor_Blk}
           >
             Quick Guide to the Revised Children’s Anxiety and Depression Scale
           </Heading>
           <Paragraph
             color={SecondaryColor_Blk}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
-            size={size.width <= 1024 ? `16px` : '3vmin'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
+            size={size.width <= 1024 ? `16px` : "18px"}
           >
             Learn more about the Revised Children’s Anxiety and Depression Scale
             (RCADS) in our Quick Guide, which outlines how the questionnaire is
@@ -1009,10 +1009,10 @@ const IntroRCADS = ({ size }) => {
               height="5vh"
               width="20vw"
               display
-              margin={size.width <= 1024 ? '0' : '"25% 0 0 25%"'}
+              margin={size.width <= 1024 ? "0" : '"25% 0 0 25%"'}
             >
               <Paragraph
-                size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
+                size={size.width <= 1024 ? `${fontSize.subtext2}` : "3vmin"}
                 color="white"
               >
                 Download
@@ -1035,13 +1035,13 @@ const AssessmentTools = ({ size }) => {
             download
             rel="noopener noreferrer"
           >
-            <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
+            <Paragraph color={SecondaryColor_Blk} size="18px">
               Mood and Feelings Questionnaire (MFQ)
             </Paragraph>
           </a>
         </ListGroup.Item>
         <ListGroup.Item>
-          <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
+          <Paragraph color={SecondaryColor_Blk} size="18px">
             Provides a screening measure for depression.
           </Paragraph>
         </ListGroup.Item>
@@ -1054,13 +1054,13 @@ const AssessmentTools = ({ size }) => {
             download
             rel="noopener noreferrer"
           >
-            <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
+            <Paragraph color={SecondaryColor_Blk} size="18px">
               Revised Children’s Anxiety and Depression Scale (RCADS)
             </Paragraph>
           </a>
         </ListGroup.Item>
         <ListGroup.Item>
-          <Paragraph color={SecondaryColor_Blk} size="2.5vmin">
+          <Paragraph color={SecondaryColor_Blk} size="18px">
             Assesses symptoms of anxiety and depression.
           </Paragraph>
         </ListGroup.Item>
@@ -1073,14 +1073,14 @@ const AssessmentTools = ({ size }) => {
             download
             rel="noopener noreferrer"
           >
-            <Paragraph color={SecondaryColor_Blk} size="2.5vmin" align="center">
+            <Paragraph color={SecondaryColor_Blk} size="18px" align="center">
               ICHOM Standard Set for Children & Young People with Depression &
               Anxiety
             </Paragraph>
           </a>
         </ListGroup.Item>
         <ListGroup.Item>
-          <Paragraph color={SecondaryColor_Blk} size="2.5vmin" align="center">
+          <Paragraph color={SecondaryColor_Blk} size="18px" align="center">
             Standard set of outcome measures that matter most to children and
             young people with depression and anxiety. Globally recommended.
           </Paragraph>
@@ -1110,18 +1110,18 @@ const SpecialPopulations = ({ size }) => {
       <RightCol size={size}>
         <RightCard position="center" size={size}>
           <Heading
-            size={size.width <= 1024 ? '18px' : '3vmin'}
+            size={size.width <= 1024 ? "18px" : "24px"}
             weight="bold"
             align="center"
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
             color={SecondaryColor_Blk}
           >
             Autism and Depression Package
           </Heading>
           <Paragraph
             color={SecondaryColor_Blk}
-            margin={size.width <= 1024 ? '0' : '0 0 25px 0'}
-            size={size.width <= 1024 ? `16px` : '3vmin'}
+            margin={size.width <= 1024 ? "0" : "0 0 25px 0"}
+            size={size.width <= 1024 ? `16px` : "18px"}
           >
             Fact sheets on autism and depression; includes signs, coping
             strategies, ways to get help, caregiver resources, and
@@ -1143,7 +1143,7 @@ const SpecialPopulations = ({ size }) => {
               margin="25% 0 0 25%"
             >
               <Paragraph
-                size={size.width <= 1024 ? `${fontSize.subtext2}` : '3vmin'}
+                size={size.width <= 1024 ? `${fontSize.subtext2}` : "3vmin"}
                 color="white"
               >
                 Download
@@ -1235,23 +1235,25 @@ const RightCol = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  ${({ size }) => (size.width <= 776 ? 'width: 100%;' : '  width: 70%;')}
+  ${({ size }) => (size.width <= 776 ? "width: 100%;" : "  width: 70%;")}
 `;
 
 const RightCard = styled.div`
+  min-height: 220px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   background-color: ${BackgroundColor};
   display: flex;
   flex-direction: column;
-  padding: 5%;
+  padding: 16px;
   ${({ position }) =>
-    position === 'center'
+    position === "center"
       ? `justify-content: center;`
       : `justify-content: flex-start;`}
   ${({ size }) =>
     size.width <= 776 ? `height: auto;` : `height: ${size.height * 0.4}px;`}
   align-items: center;
+  overflow: auto;
 `;
 
 const RightVideoCol = styled.div`
@@ -1261,7 +1263,7 @@ const RightVideoCol = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  ${({ size }) => (size.width <= 776 ? 'width: 100%;' : '  width: 70%;')}
+  ${({ size }) => (size.width <= 776 ? "width: 100%;" : "  width: 70%;")}
 `;
 
 const VideoPanel = styled.div`
@@ -1280,7 +1282,7 @@ const CatelogueContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 5px 0;
-  ${({ size }) => (size.width <= 776 ? ` width: 85%;` : 'width: 75%;')}
+  ${({ size }) => (size.width <= 776 ? ` width: 85%;` : "width: 75%;")}
 `;
 
 const CatelogueOuterContainer = styled.div`

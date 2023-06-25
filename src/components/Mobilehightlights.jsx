@@ -20,4 +20,5 @@ export const MobileMain = styled.div`
   width: 100%;
   padding: 8px;
   background-color: #c3c6e7;
+  position: relative;
 `;

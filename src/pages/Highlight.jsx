@@ -10,7 +10,6 @@ import {
   TertiaryColor_Blu,
   TertiaryColor_Yel,
   TertiaryColor_Bro,
-  BackgroundColor,
   PrimaryLight,
   PrimaryColor,
 } from "../theme/resource";
@@ -57,7 +56,6 @@ export default function Hightlights() {
   }, []);
 
   function mobileOnclickNext() {
-    console.log("next");
     if (mobileActiveTitle < titles.length - 1) {
       setMobileActiveTitle(mobileActiveTitle + 1);
     } else {

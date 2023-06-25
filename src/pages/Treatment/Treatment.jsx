@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
-import { Row as R, Col as C } from 'react-bootstrap';
-import Card from '../../components/Cards/Card';
-import bg from '../../resource/mental.svg';
-import { PrimaryColor, TertiaryColor_Tel, size } from '../../theme/resource';
-import Heading, { Paragraph } from '../../components/Text/Heading';
-import { treatment } from '../../resource/content';
-import Button from '../../components/Buttons/Buttons';
-import './treatment.css';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import styled, { css } from "styled-components";
+import { Row as R, Col as C } from "react-bootstrap";
+import Card from "../../components/Cards/Card";
+import bg from "../../resource/mental.svg";
+import { PrimaryColor, TertiaryColor_Tel, size } from "../../theme/resource";
+import Heading, { Paragraph } from "../../components/Text/Heading";
+import { treatment } from "../../resource/content";
+import Button from "../../components/Buttons/Buttons";
+import "./treatment.css";
+import { useHistory } from "react-router-dom";
 import {
   enterAni3,
   enterAni2,
   exitAni3,
   exitAni2,
-} from '../../theme/animation';
+} from "../../theme/animation";
 
 const Treatment = () => {
   const [mount, setMount] = useState(false);
@@ -23,7 +23,7 @@ const Treatment = () => {
     setMount(true);
   }, []);
 
-  const Pmarging = '10px 0';
+  const Pmarging = "10px 0";
 
   const history = useHistory();
 
@@ -31,8 +31,8 @@ const Treatment = () => {
     setMount(false);
     setTimeout(() => {
       index === 1
-        ? history.push('/treatment/mild')
-        : history.push('/treatment/severe');
+        ? history.push("/treatment/mild")
+        : history.push("/treatment/severe");
     }, 850);
   };
 
@@ -49,7 +49,7 @@ const Treatment = () => {
             <Card
               height="95%"
               width="45vw"
-              padding={'8px'}
+              padding={"8px"}
               className="treatment_card"
               bgColor={TertiaryColor_Tel}
             >
@@ -98,7 +98,7 @@ const Treatment = () => {
         </ColLeft>
         <ColRight
           md={6}
-          sm={'12'}
+          sm={"12"}
           className="treatment_col_right"
           mount={mount.toString()}
         ></ColRight>
@@ -127,12 +127,11 @@ const ColLeft = styled(C)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 5vmin;
-  z-index: 2;
 
   ${({ mount }) =>
-    mount === 'true'
+    mount === "true"
       ? css`
           animation: ${enterAni2} 0.8s linear forwards;
         `
@@ -169,7 +168,7 @@ const ColRight = styled(C)`
   background-size: 80% 80%;
 
   ${({ mount }) =>
-    mount === 'true'
+    mount === "true"
       ? css`
           animation: ${enterAni3} 0.8s linear forwards;
         `

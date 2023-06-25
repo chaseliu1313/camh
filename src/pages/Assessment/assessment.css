@@ -257,3 +257,10 @@
 .mobile_icd11_btn {
   align-self: center;
 }
+
+.mobile_next_section_btn {
+  width: 120px !important;
+  position: absolute;
+  align-self: center;
+  bottom: 24px;
+}

@@ -1,36 +1,38 @@
-import { useState, useEffect  } from 'react';
-import { UAParser } from 'ua-parser-js'
+import { useState, useEffect } from "react";
+import { UAParser } from "ua-parser-js";
 
-export function useDevice(){
+export function useDevice() {
+  let parser = new UAParser();
+  const deviceType = parser.getDevice().type;
+  const angle = window.screen.orientation.angle;
+  const [state, setState] = useState({
+    isMobile:
+      (deviceType && deviceType === "mobile") || deviceType === "tablet",
+    isVertical: angle === 0 || angle === 180,
+  });
 
-    let parser = new UAParser(); 
-    const [state, setState] = useState({isMobile: false, isVertical: false});
-   
+  console.log({ state });
 
-    useEffect(()=>{
-        const deviceType = parser.getDevice().type;
-        const angle=window.screen.orientation.angle;
-        let isV = false;
-        let isM = false;
+  useEffect(() => {
+    let isV = false;
+    let isM = false;
 
-        if(deviceType && deviceType === 'mobile' || deviceType === 'tablet'){
-            isM = true;
-        }else {
-            isM = false;
-        }
+    if ((deviceType && deviceType === "mobile") || deviceType === "tablet") {
+      isM = true;
+    } else {
+      isM = false;
+    }
 
-        if(angle === 0 || angle === 180){
-            isV = true
-        }
+    if (angle === 0 || angle === 180) {
+      isV = true;
+    }
 
-        if(angle === 90 || angle === 270){
-            isV =false
-        }
+    if (angle === 90 || angle === 270) {
+      isV = false;
+    }
 
-     setState({isMobile: isM, isVertical: isV})
-    },[window.screen.orientation.angle])
+    setState({ isMobile: isM, isVertical: isV });
+  }, [window.screen.orientation.angle, parser.getDevice().type]);
 
-   
-    return state;
-
+  return state;
 }

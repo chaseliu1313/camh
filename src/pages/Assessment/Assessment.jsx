@@ -5,6 +5,7 @@ import "./assessment.css";
 import Intro from "./intro";
 import Simulation from "./Simulation";
 import SocialNetworks from "./SocialNetwork";
+import Modal from "react-bootstrap/Modal";
 import Button from "../../components/Buttons/Buttons";
 import { Link } from "react-router-dom";
 import { Assessment3 } from "../../resource/content";
@@ -19,6 +20,7 @@ import { fontSize, margin } from "../../theme/resource";
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
+  MdClose,
 } from "react-icons/md";
 import {
   MobileHightlightCard,
@@ -28,22 +30,23 @@ import { default as MBtn } from "react-bootstrap/Button";
 import { useDevice } from "../../hooks/useDevice";
 import { assessment1 } from "../../resource/content";
 import { video1, video2 } from "../../resource/content";
+import { DSMContent } from "../../resource/content";
 import ReactPlayer from "react-player";
 
 export default function Assessment() {
   const initialState = [false, true, true];
   const [btnAppeal, setDisplay] = useState(false);
   const [pageState, setPageState] = useState(initialState);
+  const [modalShow, setModalShow] = useState(false);
   let history = useHistory();
-  const { isMobile, isVertical } = useDevice();
-
-  useEffect(() => {
-    console.log({ isVertical, isMobile });
-  }, [isVertical, isMobile]);
-
+  let { isMobile, isVertical } = useDevice();
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
   //mobile
 
-  const [play, setPlay] = useState(false);
+  useEffect(() => {}, [pageState]);
+
+  const play = false;
   const videoURL = "https://www.youtube.com/watch?v=NRKvtacOVfw";
 
   //mobile =video
@@ -125,9 +128,15 @@ export default function Assessment() {
         : "Tips for Assessing Depressed youth";
     }
   };
+  const handleCloseModal = () => {
+    setModalShow(false);
+  };
+  const handleOpenModal = () => {
+    setModalShow(true);
+  };
 
   return isMobile ? (
-    <MobileMain>
+    <MobileMain onClick={forceUpdate}>
       {isVertical ? (
         <div
           style={{
@@ -144,7 +153,7 @@ export default function Assessment() {
           </MBreadCrumContainer>
           <div
             style={{
-              height: "70%",
+              height: "85%",
               width: "100%",
               display: "flex",
               flexDirection: "column",
@@ -187,7 +196,9 @@ export default function Assessment() {
                     type=" "
                     height="40px"
                     width="20vw"
-                    onClick={() => {}}
+                    onClick={() => {
+                      setModalShow(true);
+                    }}
                     display
                   >
                     <Paragraph size="3vmin" color="white">
@@ -319,9 +330,7 @@ export default function Assessment() {
               </div>
               <MBtn
                 variant="outline-primary"
-                onClick={() => {
-                  mobileOnclickNext();
-                }}
+                onClick={mobileOnclickNext}
                 style={{
                   height: 40,
                   width: 80,
@@ -339,6 +348,17 @@ export default function Assessment() {
                 <MdOutlineKeyboardArrowRight />
               </MBtn>
             </div>
+            <Link to="/treatment">
+              <Button
+                primary={true}
+                type="outlined"
+                height="7vh"
+                width="20vw"
+                display={true}
+              >
+                <MobileP style={{ margin: "unset" }}>Next Section</MobileP>
+              </Button>
+            </Link>
           </div>
         </div>
       ) : (
@@ -474,7 +494,9 @@ export default function Assessment() {
                     type=" "
                     height="40px"
                     width="20vw"
-                    onClick={() => {}}
+                    onClick={() => {
+                      setModalShow(true);
+                    }}
                     display
                   >
                     <Paragraph size="3vmin" color="white">
@@ -573,6 +595,83 @@ export default function Assessment() {
               ></div>
             </div>
           </div>
+        </div>
+      )}
+      {modalShow && (
+        <div
+          style={{
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+            left: 0,
+            top: 0,
+            backgroundColor: "rgba(96, 98, 102, 0.6)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            paddingTop: "10%",
+          }}
+        >
+          <MobileHightlightCard
+            style={{
+              border: `3px solid ${PrimaryColor}`,
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "column",
+              padding: 8,
+              textAlign: "left",
+            }}
+          >
+            <MBtn
+              variant="outline-primary"
+              onClick={handleCloseModal}
+              style={{
+                height: 40,
+                width: 40,
+                borderRadius: 25,
+                color: PrimaryColor,
+                borderColor: PrimaryColor,
+                alignSelf: "flex-end",
+                backgroundColor: "transparent",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <MdClose />
+            </MBtn>
+            <MobileP style={{ fontWeight: "bolder", fontSize: 18 }}>
+              ICD-11 Criteria
+            </MobileP>
+            <MobileP style={{ fontWeight: "bold" }}>{DSMContent[0]}</MobileP>
+            <MobileP style={{ fontWeight: "bold" }}> {DSMContent[1]}</MobileP>
+            {DSMContent[2].subContent.map((c, index) => (
+              <MobileP key={index}>{c}</MobileP>
+            ))}
+            <MobileP style={{ fontWeight: "bold" }}>
+              {DSMContent[3]}
+              <a
+                className="ov_a"
+                style={{ color: PrimaryLight }}
+                href="https://creativecommons.org/licenses/by-nc-nd/3.0/igo/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC BY-ND 3.0 IGO.
+              </a>
+            </MobileP>
+            <MobileP style={{ fontWeight: "bolder", color: "red" }}>
+              Important Notes:
+            </MobileP>
+            <MobileP>
+              The mood disturbance must result in significant functional
+              impairment and not be a manifestation of another health condition,
+              due to the effects of a substance or medication, or better
+              accounted for by bereavement. There have never been any prior
+              manic, hypomanic, or mixed episodes, which would indicate the
+              presence of a bipolar disorder.
+            </MobileP>
+          </MobileHightlightCard>
         </div>
       )}
     </MobileMain>

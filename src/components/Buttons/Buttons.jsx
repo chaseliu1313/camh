@@ -78,7 +78,7 @@ const Btn = styled.button`
   position: relative;
   text-decoration: none !important;
   text-transform: uppercase;
-
+  min-height: 25px;
   align-items: center;
   justify-content: center;
   min-width: 64px;

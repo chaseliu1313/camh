@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import Heading, { Paragraph } from '../../components/Text/Heading';
-import styled, { css } from 'styled-components';
-import VA from '../../components/Vertical_Accordions/va';
-import { Row, Col, Alert } from 'react-bootstrap';
-import { Psychotherapy } from '../../resource/content';
-import { SecondaryColor_Blk, SecondaryColor_Tel } from '../../theme/resource';
-import { enterAni2 } from '../../theme/animation';
-import { useHistory } from 'react-router-dom';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from '../../components/Buttons/Buttons';
+import React, { useState, useEffect } from "react";
+import Heading, { Paragraph } from "../../components/Text/Heading";
+import styled, { css } from "styled-components";
+import VA from "../../components/Vertical_Accordions/va";
+import { Row, Col, Alert } from "react-bootstrap";
+import { Psychotherapy } from "../../resource/content";
+import { SecondaryColor_Blk, SecondaryColor_Tel } from "../../theme/resource";
+import { enterAni2 } from "../../theme/animation";
+import { useHistory } from "react-router-dom";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "../../components/Buttons/Buttons";
+import { useDevice } from "../../hooks/useDevice";
 
 const Psycho = () => {
   const [show, setShow] = useState(false);
   const [mount, setMount] = useState(false);
+  let { isMobile, isVertical } = useDevice();
   const history = useHistory();
 
   const goBack = () => {
@@ -54,7 +56,7 @@ const Psycho = () => {
             type="outlined"
             height="5vmin"
             width="5vw"
-            className='backBtn'
+            className="backBtn"
             display
             onClick={() => goBack()}
           >
@@ -95,10 +97,10 @@ const Container = styled.div`
   padding: 1vmin 3vmin 5vmin 3vmin;
 
   ${({ mount }) =>
-    mount === 'true'
+    mount === "true"
       ? css`
           animation: ${enterAni2} 0.8s linear forwards;
         `
-      : ''}
+      : ""}
 `;
 export default Psycho;
