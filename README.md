@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## must run on npm version 8.1.0 node version 16.13.0
+
 ## test website link: https://www.camh.chaseliu.dev/
 
 ## Available Scripts
