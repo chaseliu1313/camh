@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import React, { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
-import { PrimaryColor, BackgroundColor } from '../../theme/resource';
-import surveyImg from '../../resource/survey.svg';
-import Heading, { Paragraph } from '../../components/Text/Heading';
-import { InputGroup } from 'react-bootstrap';
-import { useWindowResize } from '../../hooks/useWindowResize';
+import styled from "styled-components";
+import React, { useState } from "react";
+import { useSpring, animated } from "react-spring";
+import { PrimaryColor, BackgroundColor } from "../../theme/resource";
+import surveyImg from "../../resource/survey.svg";
+import Heading, { Paragraph } from "../../components/Text/Heading";
+import { InputGroup } from "react-bootstrap";
+import { useWindowResize } from "../../hooks/useWindowResize";
 
 export const SurveySnackBar = ({ persist }) => {
   const [motion, setMotion] = useState(persist);
@@ -14,15 +14,15 @@ export const SurveySnackBar = ({ persist }) => {
   const { size } = useWindowResize();
 
   const animation = useSpring({
-    height: motion ? '200px' : '100px',
+    height: motion ? "180px" : "100px",
     transform: motion
-      ? 'translate3d(450px, 0px, 0px)'
+      ? "translate3d(450px, 0px, 0px)"
       : `translate3d(250px, 0px, 0px)`,
   });
 
   const handleCheckbox = (id) => {
     const current = checkboxesState;
-    if (id === 'checkbox_yes') {
+    if (id === "checkbox_yes") {
       if (current[1]) {
         setCheckboxesState([!current[0], !current[1]]);
       } else {
@@ -39,7 +39,6 @@ export const SurveySnackBar = ({ persist }) => {
   return (
     <AnimatedContainer
       onMouseOver={() => {
-        console.log('setting true');
         if (!persist) setMotion(true);
       }}
       onMouseLeave={() => {
@@ -49,7 +48,7 @@ export const SurveySnackBar = ({ persist }) => {
         boxShadow: animation.boxShadow,
         height: animation.height,
         transform: animation.transform,
-        width: size.width <= 776 ? size.width * 0.8 : 350,
+        width: size.width <= 776 ? size.width * 0.8 : 250,
       }}
     >
       <Left>
@@ -57,7 +56,7 @@ export const SurveySnackBar = ({ persist }) => {
           Will you implement any new practices based on this tool?
         </Heading>
         <Checkboxes>
-          <InputGroup style={{width: 'fit-content'}}>
+          <InputGroup style={{ width: "fit-content" }}>
             <InputGroup.Checkbox
               aria-label="Yes"
               id="checkbox_yes"
@@ -66,7 +65,7 @@ export const SurveySnackBar = ({ persist }) => {
             />
           </InputGroup>
           <Paragraph size="16px">Yes</Paragraph>
-          <InputGroup style={{width: 'fit-content'}}>
+          <InputGroup style={{ width: "fit-content" }}>
             <InputGroup.Checkbox
               aria-label="No"
               id="checkbox_no"
@@ -77,7 +76,7 @@ export const SurveySnackBar = ({ persist }) => {
           <Paragraph size="16px">No</Paragraph>
         </Checkboxes>
         <Paragraph weight="normal" size="2vmin">
-          Tell us more? Complete our{' '}
+          Tell us more? Complete our{" "}
           <a
             className="ov_a"
             href="https://edc.camhx.ca/redcap/surveys/?s=7JHE89NFRF"
@@ -95,8 +94,6 @@ export const SurveySnackBar = ({ persist }) => {
     </AnimatedContainer>
   );
 };
-
- 
 
 const Container = styled.div`
   height: 250px;
@@ -139,5 +136,5 @@ const IMG = styled.img`
   width: 50px;
 
   ${({ isOpen }) =>
-    isOpen === 'true' ? ' margin-right: 0px;' : ' margin-right: -25px;'}
+    isOpen === "true" ? " margin-right: 0px;" : " margin-right: -25px;"}
 `;

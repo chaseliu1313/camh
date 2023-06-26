@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useState } from "react";
+import styled, { css } from "styled-components";
 import {
   PrimaryColor,
   DarkPurple,
@@ -9,7 +9,7 @@ import {
   Error_R_Hover,
   TertiaryColor_Tel,
   Correct_G,
-} from '../../theme/resource';
+} from "../../theme/resource";
 
 export default function Checkbox({ height, width, margin, padding, content }) {
   const [checked, setCheck] = useState(false);
@@ -33,7 +33,6 @@ export default function Checkbox({ height, width, margin, padding, content }) {
         checked={checked}
         onClick={() => {
           setCheck(!checked);
-          console.log(checked);
         }}
         height={height}
       >
@@ -48,10 +47,10 @@ const Container = styled.div`
   position: relative;
   display: block;
   ${({ height, width, margin, padding }) => `
-  height: ${height || '7vh'};
-  width: ${width || '40vw'};
-  margin: ${margin || '10px 0'};
-  padding: ${padding || '0.25em 1em'};
+  height: ${height || "7vh"};
+  width: ${width || "40vw"};
+  margin: ${margin || "10px 0"};
+  padding: ${padding || "0.25em 1em"};
   
   `}
 `;
@@ -71,8 +70,8 @@ const Input = styled.input`
 
 const Label = styled.label`
   font-family: Open Sans;
-  line-height: ${({ height }) => height || '7vh'};
-  color: ${({ checked }) => (checked ? '#fff' : SecondaryColor_Blk)};
+  line-height: ${({ height }) => height || "7vh"};
+  color: ${({ checked }) => (checked ? "#fff" : SecondaryColor_Blk)};
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -86,19 +85,16 @@ const Label = styled.label`
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    content: '';
+    content: "";
     background-color: ${PrimaryColor};
     position: absolute;
     left: 50%;
     top: 50%;
     ${({ checked }) =>
       checked
-        ? 'transform: translate(-50%, -50%) scale3d(56, 56, 1);'
-        : 'transform: translate(-50%, -50%) scale3d(1, 1, 1);'}
-    ${({ checked }) =>
-      checked
-        ? 'opacity: 1;'
-        : 'opacity: 0;'}
+        ? "transform: translate(-50%, -50%) scale3d(56, 56, 1);"
+        : "transform: translate(-50%, -50%) scale3d(1, 1, 1);"}
+    ${({ checked }) => (checked ? "opacity: 1;" : "opacity: 0;")}
     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -1;
   }
@@ -106,7 +102,7 @@ const Label = styled.label`
   &:after {
     width: 20px;
     height: 20px;
-    content: '';
+    content: "";
     border: 2px solid #d1d7dc;
 
     background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
@@ -115,8 +111,8 @@ const Label = styled.label`
 
     ${({ checked }) =>
       checked
-        ? 'background-color:' + Correct_G + ';'
-        : 'background-color: #fff;'}
+        ? "background-color:" + Correct_G + ";"
+        : "background-color: #fff;"}
 
     z-index: 2;
     position: absolute;

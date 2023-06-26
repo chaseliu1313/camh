@@ -957,8 +957,6 @@ const CognitiveRes = ({ size }) => {
 };
 
 const IntroRCADS = ({ size }) => {
-  console.log(size);
-
   return (
     <ToolLayout>
       <LeftCol size={size}>

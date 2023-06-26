@@ -11,8 +11,6 @@ export function useDevice() {
     isVertical: angle === 0 || angle === 180,
   });
 
-  console.log({ state });
-
   useEffect(() => {
     let isV = false;
     let isM = false;

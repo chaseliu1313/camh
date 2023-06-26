@@ -8,6 +8,28 @@
   height: 50%;
 }
 
+.accordion-button {
+  background-color: #6e298d;
+  color: white;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #6e298d;
+  color: white;
+}
+
+h2#accordian-header-1 > button {
+  background-color: #61247d;
+}
+h2#accordian-header-2 > button {
+  background-color: #56206e;
+}
+h2#accordian-header-3 > button {
+  background-color: #4b1a61;
+}
+h2#accordian-header-4 > button {
+  background-color: #39124a;
+}
+
 #treatment_bg {
   position: fixed;
   top: 0;
