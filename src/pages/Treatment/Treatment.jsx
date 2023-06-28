@@ -15,10 +15,11 @@ import {
   exitAni3,
   exitAni2,
 } from "../../theme/animation";
+import { useDevice } from "../../hooks/useDevice";
 
 const Treatment = () => {
   const [mount, setMount] = useState(false);
-
+  const { isMobile } = useDevice();
   useEffect(() => {
     setMount(true);
   }, []);
@@ -48,7 +49,7 @@ const Treatment = () => {
           <div className="treatment_wraper">
             <Card
               height="95%"
-              width="45vw"
+              width={isMobile ? "80%" : "45vw"}
               padding={"8px"}
               className="treatment_card"
               bgColor={TertiaryColor_Tel}
@@ -60,7 +61,7 @@ const Treatment = () => {
                 {treatment}
               </Paragraph>
             </Card>
-            <SubContainer>
+            <SubContainer style={{ height: isMobile ? "30%" : "100%" }}>
               <Button
                 primary
                 display
@@ -151,7 +152,6 @@ const ColLeft = styled(C)`
 `;
 
 const SubContainer = styled.div`
-  height: 100%;
   width: 100%;
   overflow: hidden;
   display: flex;

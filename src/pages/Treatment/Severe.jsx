@@ -4,36 +4,37 @@ import React, {
   Suspense,
   useCallback,
   useContext,
-} from 'react';
-import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
-import Button from '../../components/Buttons/Buttons';
-import StepCard from '../../components/Cards/StepCard';
-import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
-import { Row as R, Col as C } from 'react-bootstrap';
-import styled from 'styled-components';
-import Loading from '../../components/Loading';
-import { TreatmentContext } from '../../store/store';
+} from "react";
+import Heading, { Paragraph, SubText } from "../../components/Text/Heading";
+import Button from "../../components/Buttons/Buttons";
+import StepCard from "../../components/Cards/StepCard";
+import NaviBtnGroup from "../../components/Buttons/NaviBtnGroup";
+import { Row as R, Col as C } from "react-bootstrap";
+import styled from "styled-components";
+import Loading from "../../components/Loading";
+import { TreatmentContext } from "../../store/store";
 import {
   UPDATE_SEVERE_TREATMENT,
   RESET_SEVERE_TREATMENT,
   SET_SEVERE_CLICKED,
   SET_MILD_CLICKED,
-} from '../../store/actions';
-import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import bg from '../../resource/path_bg.svg';
+} from "../../store/actions";
+import { faRedoAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import bg from "../../resource/path_bg.svg";
 import {
   PrimaryColor,
   SecondaryColor_Blk,
   SecondaryColor_Blu,
   SecondaryColor_Tel,
-} from '../../theme/resource';
-import { useHistory } from 'react-router-dom';
-import { NotificationModal } from '../../components/NotificationModal';
-import { useWindowResize } from '../../hooks/useWindowResize';
-import { SurveySnackBar } from './SurveySnack';
+} from "../../theme/resource";
+import { useHistory } from "react-router-dom";
+import { NotificationModal } from "../../components/NotificationModal";
+import { useWindowResize } from "../../hooks/useWindowResize";
+import { SurveySnackBar } from "./SurveySnack";
+import { useDevice } from "../../hooks/useDevice";
 
-const TreatmentModal = lazy(() => import('./TreatmentModal'));
+const TreatmentModal = lazy(() => import("./TreatmentModal"));
 const Severe = () => {
   const [showModal, setShowModal] = useState(false);
   const [index, setIndex] = useState(0);
@@ -41,10 +42,10 @@ const Severe = () => {
   const { size } = useWindowResize();
   const { state, dispatch } = useContext(TreatmentContext);
   const history = useHistory();
-  const lineHeight_sm = '5vh';
-  const lineHeight_lg = '12vh';
+  const lineHeight_sm = "5vh";
+  const lineHeight_lg = "12vh";
   const responses = state.severState;
-
+  const { isMobile } = useDevice();
   const handleClicked = useCallback(
     (index) => {
       const updatedClickState = [...state.severeClickState];
@@ -69,14 +70,14 @@ const Severe = () => {
     (index) => {
       switch (index) {
         case 0:
-          history.push('/treatment/psycosocialStrategies');
+          history.push("/treatment/psycosocialStrategies");
           dispatch({
             type: UPDATE_SEVERE_TREATMENT,
             payload: [null, null, null, null, null, null, null, null],
           });
           break;
         case 1:
-          history.push('/treatment/psychotherapy');
+          history.push("/treatment/psychotherapy");
           dispatch({
             type: UPDATE_SEVERE_TREATMENT,
             payload: [null, false, null, null, null, true, null, null],
@@ -129,7 +130,7 @@ const Severe = () => {
           setIndex(5);
           break;
         case 9:
-          history.push('/treatment/psychotherapy');
+          history.push("/treatment/psychotherapy");
           break;
         case 10:
           dispatch({
@@ -165,8 +166,8 @@ const Severe = () => {
   return (
     <Container
       id="treatment_sever_container"
-      height={size.height <= 1024 ? '65%' : '100%'}
-      overflow={size.height <= 1024 ? 'auto' : 'hidden'}
+      height={size.height <= 1024 ? "65%" : "100%"}
+      overflow={size.height <= 1024 ? "auto" : "hidden"}
     >
       <Suspense fallback={<Loading loading="true" />}>
         <TreatmentModal
@@ -215,7 +216,7 @@ const Severe = () => {
               {
                 //state.severState[1] !== null || state.severState[0] === null
 
-                'Consider referral to or consultation with youth mental health specialist'
+                "Consider referral to or consultation with youth mental health specialist"
               }
             </Paragraph>
           </SubContainer>
@@ -242,7 +243,7 @@ const Severe = () => {
             height={lineHeight_sm}
             width="90%"
             cursor
-            showBadge={state.severeClickState[0] ? 'true' : 'false'}
+            showBadge={state.severeClickState[0] ? "true" : "false"}
             onClick={() => {
               handleResponse(0);
               handleClicked(0);
@@ -251,11 +252,11 @@ const Severe = () => {
             <Heading
               type="h4"
               weight="normal"
-              size="3vmin"
+              size={isMobile ? "16px" : "3vmin"}
               color="white"
               align="center"
             >
-              {'Lifestyle Advice & Psychosocial Strategies'}
+              {"Lifestyle Advice & Psychosocial Strategies"}
             </Heading>
           </StepCard>
         </CenterCol>
@@ -288,7 +289,7 @@ const Severe = () => {
                 height={lineHeight_lg}
                 cursor
                 width="30vw"
-                showBadge={state.severeClickState[1] ? 'true' : 'false'}
+                showBadge={state.severeClickState[1] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(1);
                   handleClicked(1);
@@ -297,7 +298,7 @@ const Severe = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "16px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -313,7 +314,7 @@ const Severe = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
-                showBadge={state.severeClickState[2] ? 'true' : 'false'}
+                showBadge={state.severeClickState[2] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(2);
                   handleClicked(2);
@@ -322,7 +323,7 @@ const Severe = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "16px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -354,7 +355,7 @@ const Severe = () => {
                 height={lineHeight_sm}
                 width="90%"
                 cursor
-                showBadge={state.severeClickState[3] ? 'true' : 'false'}
+                showBadge={state.severeClickState[3] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(9);
                   handleClicked(3);
@@ -363,7 +364,7 @@ const Severe = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "16px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -392,7 +393,7 @@ const Severe = () => {
                 height={lineHeight_sm}
                 width="90%"
                 cursor
-                showBadge={state.severeClickState[4] ? 'true' : 'false'}
+                showBadge={state.severeClickState[4] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(5);
                   handleClicked(4);
@@ -401,7 +402,7 @@ const Severe = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "16px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -412,7 +413,7 @@ const Severe = () => {
           </Row>
           {!responses[6] && !responses[7] ? (
             <>
-              {' '}
+              {" "}
               <Row className="p_row">
                 <C xs lg="2">
                   <Heading
@@ -435,7 +436,7 @@ const Severe = () => {
                       height={lineHeight_lg}
                       cursor
                       width="30vw"
-                      showBadge={state.severeClickState[5] ? 'true' : 'false'}
+                      showBadge={state.severeClickState[5] ? "true" : "false"}
                       onClick={() => {
                         handleResponse(10);
                         handleClicked(5);
@@ -444,7 +445,7 @@ const Severe = () => {
                       <Heading
                         type="h4"
                         weight="normal"
-                        size="3vmin"
+                        size={isMobile ? "16px" : "3vmin"}
                         color="white"
                         align="center"
                       >
@@ -460,7 +461,7 @@ const Severe = () => {
                       height={lineHeight_lg}
                       width="30vw"
                       cursor
-                      showBadge={state.severeClickState[6] ? 'true' : 'false'}
+                      showBadge={state.severeClickState[6] ? "true" : "false"}
                       onClick={() => {
                         handleResponse(11);
                         handleClicked(6);
@@ -469,7 +470,7 @@ const Severe = () => {
                       <Heading
                         type="h4"
                         weight="normal"
-                        size="3vmin"
+                        size={isMobile ? "16px" : "3vmin"}
                         color="white"
                         align="center"
                       >
@@ -509,7 +510,7 @@ const Severe = () => {
                       <Heading
                         type="h4"
                         weight="normal"
-                        size="3vmin"
+                        size={isMobile ? "16px" : "3vmin"}
                         color="white"
                         align="center"
                       >
@@ -540,7 +541,7 @@ const Severe = () => {
                     height={lineHeight_sm}
                     width="90%"
                     cursor
-                    showBadge={state.severeClickState[7] ? 'true' : 'false'}
+                    showBadge={state.severeClickState[7] ? "true" : "false"}
                     onClick={() => {
                       handleResponse(6);
                       handleClicked(7);
@@ -549,7 +550,7 @@ const Severe = () => {
                     <Heading
                       type="h4"
                       weight="normal"
-                      size="3vmin"
+                      size={isMobile ? "16px" : "3vmin"}
                       color="white"
                       align="center"
                     >
@@ -581,7 +582,7 @@ const Severe = () => {
                         height={lineHeight_sm}
                         width="100%"
                         cursor
-                        showBadge={state.severeClickState[8] ? 'true' : 'false'}
+                        showBadge={state.severeClickState[8] ? "true" : "false"}
                         onClick={() => {
                           handleResponse(13);
                           handleClicked(8);
@@ -590,7 +591,7 @@ const Severe = () => {
                         <Heading
                           type="h4"
                           weight="normal"
-                          size="3vmin"
+                          size={isMobile ? "16px" : "3vmin"}
                           color="white"
                           align="center"
                         >
@@ -624,7 +625,7 @@ const Severe = () => {
                         cursor
                         width="30vw"
                         flex="column"
-                        showBadge={state.severeClickState[9] ? 'true' : 'false'}
+                        showBadge={state.severeClickState[9] ? "true" : "false"}
                         onClick={() => {
                           handleResponse(7);
                           handleClicked(9);
@@ -633,7 +634,8 @@ const Severe = () => {
                         <Heading
                           type="p"
                           weight="normal"
-                          size="2.2vmin"
+                          size={isMobile ? "14px" : "2.2vmin"}
+                          lineHeight={isMobile ? 1.1 : 1.5}
                           color="white"
                           align="center"
                         >
@@ -642,7 +644,8 @@ const Severe = () => {
                         <Heading
                           type="p"
                           weight="normal"
-                          size="2.2vmin"
+                          size={isMobile ? "14px" : "2.2vmin"}
+                          lineHeight={isMobile ? 1.1 : 1.5}
                           color="white"
                           align="center"
                         >
@@ -659,7 +662,7 @@ const Severe = () => {
                         width="30vw"
                         cursor
                         showBadge={
-                          state.severeClickState[10] ? 'true' : 'false'
+                          state.severeClickState[10] ? "true" : "false"
                         }
                         onClick={() => {
                           handleResponse(12);
@@ -669,7 +672,7 @@ const Severe = () => {
                         <Heading
                           type="h4"
                           weight="normal"
-                          size="3vmin"
+                          size={isMobile ? "16px" : "3vmin"}
                           color="white"
                           align="center"
                         >
@@ -705,7 +708,7 @@ const Severe = () => {
                       height={lineHeight_sm}
                       width="100%"
                       cursor
-                      showBadge={state.severeClickState[11] ? 'true' : 'false'}
+                      showBadge={state.severeClickState[11] ? "true" : "false"}
                       onClick={() => {
                         handleResponse(13);
                         handleClicked(11);
@@ -714,7 +717,7 @@ const Severe = () => {
                       <Heading
                         type="h4"
                         weight="normal"
-                        size="3vmin"
+                        size={isMobile ? "16px" : "3vmin"}
                         color="white"
                         align="center"
                       >
@@ -748,7 +751,7 @@ const Severe = () => {
               height={lineHeight_sm}
               cursor
               width="30vw"
-              showBadge={state.severeClickState[12] ? 'true' : 'false'}
+              showBadge={state.severeClickState[12] ? "true" : "false"}
               onClick={() => {
                 handleResponse(4);
                 handleClicked(12);
@@ -757,7 +760,7 @@ const Severe = () => {
               <Heading
                 type="h4"
                 weight="normal"
-                size="3vmin"
+                size={isMobile ? "16px" : "3vmin"}
                 color="white"
                 align="center"
               >
@@ -770,7 +773,7 @@ const Severe = () => {
               height={lineHeight_sm}
               width="30vw"
               cursor
-              showBadge={state.severeClickState[13] ? 'true' : 'false'}
+              showBadge={state.severeClickState[13] ? "true" : "false"}
               onClick={() => {
                 handleResponse(9);
                 handleClicked(13);
@@ -779,7 +782,7 @@ const Severe = () => {
               <Heading
                 type="h4"
                 weight="normal"
-                size="3vmin"
+                size={isMobile ? "16px" : "3vmin"}
                 color="white"
                 align="center"
               >
@@ -811,7 +814,7 @@ const Severe = () => {
               height={lineHeight_sm}
               width="90%"
               cursor
-              showBadge={state.severeClickState[14] ? 'true' : 'false'}
+              showBadge={state.severeClickState[14] ? "true" : "false"}
               onClick={() => {
                 handleResponse(5);
                 handleClicked(14);
@@ -820,7 +823,7 @@ const Severe = () => {
               <Heading
                 type="h4"
                 weight="normal"
-                size="3vmin"
+                size={isMobile ? "16px" : "3vmin"}
                 color="white"
                 align="center"
               >
@@ -830,7 +833,7 @@ const Severe = () => {
           </CenterCol>
         </Row>
       ) : (
-        ''
+        ""
       )}
       {responses[0] && !responses[1] ? (
         <Row className="p_row">
@@ -855,7 +858,7 @@ const Severe = () => {
                 height={lineHeight_lg}
                 cursor
                 width="30vw"
-                showBadge={state.severeClickState[15] ? 'true' : 'false'}
+                showBadge={state.severeClickState[15] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(3);
                   handleClicked(15);
@@ -864,7 +867,7 @@ const Severe = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "16px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -880,7 +883,7 @@ const Severe = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
-                showBadge={state.severeClickState[16] ? 'true' : 'false'}
+                showBadge={state.severeClickState[16] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(8);
                   handleClicked(16);
@@ -889,7 +892,7 @@ const Severe = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "16px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -926,7 +929,7 @@ const Severe = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "16px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -937,7 +940,7 @@ const Severe = () => {
           </CenterCol>
         </Row>
       ) : (
-        ''
+        ""
       )}
       {responses[1] ? (
         <Row className="p_row">
@@ -960,7 +963,7 @@ const Severe = () => {
               height={lineHeight_sm}
               width="90%"
               cursor
-              showBadge={state.severeClickState[17] ? 'true' : 'false'}
+              showBadge={state.severeClickState[17] ? "true" : "false"}
               onClick={() => {
                 handleResponse(6);
                 handleClicked(17);
@@ -969,7 +972,7 @@ const Severe = () => {
               <Heading
                 type="h4"
                 weight="normal"
-                size="3vmin"
+                size={isMobile ? "16px" : "3vmin"}
                 color="white"
                 align="center"
               >
@@ -979,7 +982,7 @@ const Severe = () => {
           </CenterCol>
         </Row>
       ) : (
-        ' '
+        " "
       )}
       {responses[1] ? (
         <Row className="p_row">
@@ -1005,7 +1008,7 @@ const Severe = () => {
                 cursor
                 width="30vw"
                 flex="column"
-                showBadge={state.severeClickState[18] ? 'true' : 'false'}
+                showBadge={state.severeClickState[18] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(7);
                   handleClicked(18);
@@ -1014,7 +1017,8 @@ const Severe = () => {
                 <Heading
                   type="p"
                   weight="normal"
-                  size="2.2vmin"
+                  size={isMobile ? "14px" : "2.2vmin"}
+                  lineHeight={isMobile ? 1.1 : 1.5}
                   color="white"
                   align="center"
                 >
@@ -1023,7 +1027,8 @@ const Severe = () => {
                 <Heading
                   type="p"
                   weight="normal"
-                  size="2.2vmin"
+                  size={isMobile ? "14px" : "2.2vmin"}
+                  lineHeight={isMobile ? 1.1 : 1.5}
                   color="white"
                   align="center"
                 >
@@ -1048,7 +1053,7 @@ const Severe = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
-                showBadge={state.severeClickState[19] ? 'true' : 'false'}
+                showBadge={state.severeClickState[19] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(8);
                   handleClicked(19);
@@ -1057,7 +1062,7 @@ const Severe = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "16px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -1068,7 +1073,7 @@ const Severe = () => {
           </CenterCol>
         </Row>
       ) : (
-        ''
+        ""
       )}
       <Row>
         <C xs lg="2"></C>
@@ -1087,7 +1092,7 @@ const Severe = () => {
         heading="Notice"
         content="If there has been no response, consider the moderate to severe pathway and refer youth to specialized youth mental health services. You will now be taken to the beginning of the moderate to severe pathway."
       />
-   
+
       <img src={bg} id="treatment_bg" alt="background" />
     </Container>
   );

@@ -4,46 +4,48 @@ import React, {
   Suspense,
   useCallback,
   useContext,
-} from 'react';
-import Heading, { Paragraph, SubText } from '../../components/Text/Heading';
-import StepCard from '../../components/Cards/StepCard';
-import { Row as R, Col as C } from 'react-bootstrap';
-import styled from 'styled-components';
-import Loading from '../../components/Loading';
-import Button from '../../components/Buttons/Buttons';
-import NaviBtnGroup from '../../components/Buttons/NaviBtnGroup';
-import bg from '../../resource/path_bg.svg';
-import { TreatmentContext } from '../../store/store';
-import { useWindowResize } from '../../hooks/useWindowResize';
+} from "react";
+import Heading, { Paragraph, SubText } from "../../components/Text/Heading";
+import StepCard from "../../components/Cards/StepCard";
+import { Row as R, Col as C } from "react-bootstrap";
+import styled from "styled-components";
+import Loading from "../../components/Loading";
+import Button from "../../components/Buttons/Buttons";
+import NaviBtnGroup from "../../components/Buttons/NaviBtnGroup";
+import bg from "../../resource/path_bg.svg";
+import { TreatmentContext } from "../../store/store";
+import { useWindowResize } from "../../hooks/useWindowResize";
 import {
   fontSize,
   PrimaryColor,
   SecondaryColor_Blk,
   SecondaryColor_Blu,
   SecondaryColor_Tel,
-} from '../../theme/resource';
+} from "../../theme/resource";
 import {
   UPDATE_MILD_TREATMENT,
   RESET_MILD_TREATMENT,
   SET_MILD_CLICKED,
   SET_SEVERE_CLICKED,
-} from '../../store/actions';
-import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NotificationModal } from '../../components/NotificationModal';
-import { useHistory } from 'react-router-dom';
-import { SurveySnackBar } from './SurveySnack';
+} from "../../store/actions";
+import { faRedoAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NotificationModal } from "../../components/NotificationModal";
+import { useHistory } from "react-router-dom";
+import { SurveySnackBar } from "./SurveySnack";
+import { useDevice } from "../../hooks/useDevice";
 
-const TreatmentModal = lazy(() => import('./TreatmentModal'));
+const TreatmentModal = lazy(() => import("./TreatmentModal"));
 
 const Mild = () => {
   const [showModal, setShowModal] = useState(false);
   const { size } = useWindowResize();
   const [index, setIndex] = useState(0);
   const history = useHistory();
-  const lineHeight_sm = '5vh';
-  const lineHeight_lg = '12vh';
+  const lineHeight_sm = "5vh";
+  const lineHeight_lg = "12vh";
   const { state, dispatch } = useContext(TreatmentContext);
+  const { isMobile } = useDevice();
   const responses = state.mildState;
   const [showNotification, setShowNotification] = useState(false);
 
@@ -72,17 +74,17 @@ const Mild = () => {
     (index) => {
       switch (index) {
         case 0:
-          history.push('/treatment/psycosocialStrategies');
+          history.push("/treatment/psycosocialStrategies");
           break;
         case 1:
-          history.push('/treatment/psychotherapy_mild');
+          history.push("/treatment/psychotherapy_mild");
           break;
         case 2:
           setShowModal(true);
           setIndex(6);
           break;
         case 3:
-          history.push('/treatment/psychotherapy_mild');
+          history.push("/treatment/psychotherapy_mild");
           dispatch({ type: UPDATE_MILD_TREATMENT, payload: false });
           break;
         case 4:
@@ -106,8 +108,8 @@ const Mild = () => {
   return (
     <Container
       id="treatment_mild_container"
-      height={size.height <= 1024 ? '65%' : '100%'}
-      overflow={size.height <= 1024 ? 'auto' : 'hidden'}
+      height={size.height <= 1024 ? "65%" : "100%"}
+      overflow={size.height <= 1024 ? "auto" : "hidden"}
     >
       <Suspense fallback={<Loading loading="true" />}>
         <TreatmentModal
@@ -178,7 +180,7 @@ const Mild = () => {
             height={lineHeight_sm}
             width="90%"
             cursor
-            showBadge={state.mildClickState[0] ? 'true' : 'false'}
+            showBadge={state.mildClickState[0] ? "true" : "false"}
             onClick={() => {
               handleResponse(0);
               handleClicked(0);
@@ -187,11 +189,11 @@ const Mild = () => {
             <Heading
               type="h4"
               weight="normal"
-              size="3vmin"
+              size={isMobile ? "16px" : "3vmin"}
               color="white"
               align="center"
             >
-              {'Lifestyle Advice & Psychosocial Strategies'}
+              {"Lifestyle Advice & Psychosocial Strategies"}
             </Heading>
           </StepCard>
         </CenterCol>
@@ -216,7 +218,7 @@ const Mild = () => {
             height={lineHeight_sm}
             width="90%"
             cursor
-            showBadge={state.mildClickState[1] ? 'true' : 'false'}
+            showBadge={state.mildClickState[1] ? "true" : "false"}
             onClick={() => {
               handleClicked(1);
               handleResponse(2);
@@ -225,7 +227,7 @@ const Mild = () => {
             <Heading
               type="h4"
               weight="normal"
-              size="3vmin"
+              size={isMobile ? "16px" : "3vmin"}
               color="white"
               align="center"
             >
@@ -258,7 +260,7 @@ const Mild = () => {
                 cursor
                 width="30vw"
                 flex="column"
-                showBadge={state.mildClickState[2] ? 'true' : 'false'}
+                showBadge={state.mildClickState[2] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(4);
                   handleClicked(2);
@@ -267,18 +269,20 @@ const Mild = () => {
                 <Heading
                   type="p"
                   weight="normal"
-                  size="2.2vmin"
                   color="white"
                   align="center"
+                  size={isMobile ? "14px" : "2.2vmin"}
+                  lineHeight={isMobile ? 1.1 : 1.5}
                 >
                   ·Relapse prevention plan
                 </Heading>
                 <Heading
                   type="p"
                   weight="normal"
-                  size="2.2vmin"
+                  size={isMobile ? "14px" : "2.2vmin"}
                   color="white"
                   align="center"
+                  lineHeight={isMobile ? 1.1 : 1.5}
                 >
                   ·Reduce intensity & frequency of visits
                 </Heading>
@@ -292,7 +296,7 @@ const Mild = () => {
                 height={lineHeight_lg}
                 width="30vw"
                 cursor
-                showBadge={state.mildClickState[3] ? 'true' : 'false'}
+                showBadge={state.mildClickState[3] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(3);
                   handleClicked(3);
@@ -301,7 +305,7 @@ const Mild = () => {
                 <Heading
                   type="h4"
                   weight="normal"
-                  size="3vmin"
+                  size={isMobile ? "14px" : "3vmin"}
                   color="white"
                   align="center"
                 >
@@ -335,7 +339,7 @@ const Mild = () => {
                   height={lineHeight_sm}
                   width="100%"
                   cursor
-                  showBadge={state.mildClickState[4] ? 'true' : 'false'}
+                  showBadge={state.mildClickState[4] ? "true" : "false"}
                   onClick={() => {
                     handleResponse(1);
                     handleClicked(4);
@@ -374,7 +378,7 @@ const Mild = () => {
                 height={lineHeight_sm}
                 width="90%"
                 cursor
-                showBadge={state.mildClickState[5] ? 'true' : 'false'}
+                showBadge={state.mildClickState[5] ? "true" : "false"}
                 onClick={() => {
                   handleResponse(5);
                   handleClicked(5);
@@ -415,7 +419,7 @@ const Mild = () => {
                   cursor
                   width="30vw"
                   flex="column"
-                  showBadge={state.mildClickState[6] ? 'true' : 'false'}
+                  showBadge={state.mildClickState[6] ? "true" : "false"}
                   onClick={() => {
                     handleResponse(4);
                     handleClicked(6);
@@ -424,7 +428,8 @@ const Mild = () => {
                   <Heading
                     type="p"
                     weight="normal"
-                    size="2.2vmin"
+                    size={isMobile ? "14px" : "2.2vmin"}
+                    lineHeight={isMobile ? 1.1 : 1.5}
                     color="white"
                     align="center"
                   >
@@ -433,7 +438,8 @@ const Mild = () => {
                   <Heading
                     type="p"
                     weight="normal"
-                    size="2.2vmin"
+                    size={isMobile ? "14px" : "2.2vmin"}
+                    lineHeight={isMobile ? 1.1 : 1.5}
                     color="white"
                     align="center"
                   >
@@ -454,7 +460,8 @@ const Mild = () => {
                   <Heading
                     type="h4"
                     weight="normal"
-                    size="3vmin"
+                    size={isMobile ? "14px" : "3vmin"}
+                    lineHeight={isMobile ? 1.1 : 1.5}
                     color="white"
                     align="center"
                   >
